@@ -1,0 +1,120 @@
+---
+---
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm border-b border-slate-100 dark:border-slate-800 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo Section -->
+            <div class="flex-shrink-0 group">
+                <a href="/" class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white text-base">tb</span>
+                    tupbebek.com
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center gap-1 xl:gap-2">
+                <a class="px-2 py-2 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-sky-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all whitespace-nowrap" href="/sorunlar">İnfertilite Nedenleri</a>
+                <a class="px-2 py-2 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-sky-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all whitespace-nowrap" href="/tedavi-yontemleri">Tedavi Yöntemleri</a>
+                <a class="px-2 py-2 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-sky-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all whitespace-nowrap" href="/tani-sureci">Tanı Süreci</a>
+                <a class="px-2 py-2 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-sky-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all whitespace-nowrap" href="/rehberler">Rehberler</a>
+                <a class="px-2 py-2 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-sky-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all whitespace-nowrap" href="/sss">SSS</a>
+                <a class="px-2 py-2 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-sky-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all whitespace-nowrap" href="/makaleler">Makaleler</a>
+            </div>
+
+            <!-- Right Side: Search & User -->
+            <div class="hidden lg:flex items-center gap-4">
+                <div class="relative group">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none group-focus-within:text-primary transition-colors">search</span>
+                    <input class="bg-slate-100 dark:bg-slate-800 border-transparent border focus:border-primary/50 focus:bg-white dark:focus:bg-slate-900 rounded-full pl-10 pr-4 py-2 text-sm focus:ring-0 w-40 xl:w-56 transition-all" placeholder="Ara..." type="text"/>
+                </div>
+                <button class="p-2.5 bg-primary/5 text-primary hover:bg-primary hover:text-white rounded-full transition-all outline-none border-none">
+                    <span class="material-symbols-outlined">person</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden flex items-center gap-4">
+                <button id="mobile-menu-toggle" class="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all outline-none border-none">
+                    <span class="material-symbols-outlined" id="menu-icon">menu</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Overlay (hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-0 top-20 bg-white dark:bg-slate-950 px-4 pt-6 pb-12 z-[60] overflow-y-auto translate-x-full transition-transform duration-300 lg:hidden ease-in-out">
+        <div class="space-y-1">
+            <a href="/sorunlar" class="flex items-center px-4 py-4 text-lg font-medium text-slate-900 dark:text-slate-100 border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50/50 transition-colors">
+                İnfertilite Nedenleri
+                <span class="material-symbols-outlined ml-auto text-slate-400">chevron_right</span>
+            </a>
+            <a href="/tedavi-yontemleri" class="flex items-center px-4 py-4 text-lg font-medium text-slate-900 dark:text-slate-100 border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50/50 transition-colors">
+                Tedavi Yöntemleri
+                <span class="material-symbols-outlined ml-auto text-slate-400">chevron_right</span>
+            </a>
+            <a href="/tani-sureci" class="flex items-center px-4 py-4 text-lg font-medium text-slate-900 dark:text-slate-100 border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50/50 transition-colors">
+                Tanı Süreci
+                <span class="material-symbols-outlined ml-auto text-slate-400">chevron_right</span>
+            </a>
+            <a href="/rehberler" class="flex items-center px-4 py-4 text-lg font-medium text-slate-900 dark:text-slate-100 border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50/50 transition-colors">
+                Rehberler
+                <span class="material-symbols-outlined ml-auto text-slate-400">chevron_right</span>
+            </a>
+            <a href="/sss" class="flex items-center px-4 py-4 text-lg font-medium text-slate-900 dark:text-slate-100 border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50/50 transition-colors">
+                SSS
+                <span class="material-symbols-outlined ml-auto text-slate-400">chevron_right</span>
+            </a>
+            <a href="/makaleler" class="flex items-center px-4 py-4 text-lg font-medium text-slate-900 dark:text-slate-100 border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50/50 transition-colors">
+                Makaleler
+                <span class="material-symbols-outlined ml-auto text-slate-400">chevron_right</span>
+            </a>
+        </div>
+        
+        <div class="mt-auto pt-8 border-t border-slate-100 dark:border-slate-800 space-y-4">
+            <div class="relative">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                <input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-2xl pl-12 pr-4 py-4 text-base" placeholder="Makalelerde ara..." type="text"/>
+            </div>
+            <button class="w-full py-4 bg-primary text-white rounded-2xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-primary/20">
+                <span class="material-symbols-outlined">person</span>
+                Giriş Yap
+            </button>
+        </div>
+    </div>
+</nav>
+
+<script is:inline>
+    (function() {
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        let isOpen = false;
+
+        if (!toggle || !menu || !icon) return;
+
+        toggle.addEventListener('click', () => {
+            isOpen = !isOpen;
+            if (isOpen) {
+                menu.classList.remove('translate-x-full');
+                menu.classList.add('translate-x-0');
+                icon.textContent = 'close';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.remove('translate-x-0');
+                menu.classList.add('translate-x-full');
+                icon.textContent = 'menu';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                isOpen = false;
+                menu.classList.remove('translate-x-0');
+                menu.classList.add('translate-x-full');
+                icon.textContent = 'menu';
+                document.body.style.overflow = 'auto';
+            });
+        });
+    })();
+</script>

@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={`${entry.data.title} | tupbebek.com`}>
+    <Header />
+    
+    <main class="pt-32 pb-24">
+        <article class="max-w-4xl mx-auto px-6">
+            <header class="mb-12">
+                <nav class="flex items-center gap-2 text-xs font-label text-on-surface-variant mb-6 uppercase tracking-widest">
+                    <a href="/">Ana Sayfa</a>
+                    <span class="material-symbols-outlined text-[10px]">chevron_right</span>
+                    <a href="/makaleler">Makaleler</a>
+                    <span class="material-symbols-outlined text-[10px]">chevron_right</span>
+                    <span class="text-primary font-semibold">{entry.data.category}</span>
+                </nav>
+                <h1 class="font-headline text-4xl md:text-5xl font-bold text-on-surface leading-tight mb-8">
+                    {entry.data.title}
+                </h1>
+                
+                <div class="flex items-center gap-4 py-6 border-y border-surface-container">
+                    {entry.data.image && (
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+                             <img src="/images/senai-aksoy.jpg" alt={entry.data.author} class="w-full h-full object-cover" width="512" height="512" />
+                        </div>
+                    )}
+                    <div>
+                        <p class="text-sm font-bold text-on-surface">{entry.data.author}</p>
+                        <p class="text-xs text-on-surface-variant uppercase tracking-tighter">Tıbbi İnceleme & Onay</p>
+                    </div>
+                    <div class="ml-auto text-right">
+                        <p class="text-xs text-on-surface-variant uppercase tracking-widest leading-none mb-1">Yayınlanma</p>
+                        <p class="text-sm font-bold text-primary">Mart 2024</p>
+                    </div>
+                </div>
+            </header>
+
+            {entry.data.image && (
+                <div class="aspect-video rounded-3xl overflow-hidden mb-16 shadow-2xl">
+                    <img 
+                        src={entry.data.image} 
+                        alt={entry.data.imageAlt || entry.data.title} 
+                        class="w-full h-full object-cover"
+                        width="512"
+                        height="512"
+                        loading="eager"
+                        fetchpriority="high"
+                    />
+                </div>
+            )}
+
+            <div class="prose prose-lg max-w-none prose-slate dark:prose-invert 
+                prose-headings:font-headline prose-headings:text-on-surface 
+                prose-p:text-on-surface-variant prose-p:leading-relaxed
+                prose-li:text-on-surface-variant
+                prose-strong:text-on-surface prose-strong:font-bold">
+                <Content />
+            </div>
+
+            <footer class="mt-20 pt-12 border-t border-surface-container">
+                <div class="bg-surface-container-low p-8 rounded-2xl flex flex-col md:flex-row items-center gap-8 border border-outline-variant/10">
+                    <div class="w-20 h-20 rounded-full bg-surface-container-highest overflow-hidden shrink-0 border-4 border-white">
+                        <img alt="Dr. Senai Aksoy" class="w-full h-full object-cover" src="/images/senai-aksoy.jpg" width="512" height="512" />
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-headline font-bold text-on-surface mb-2 italic">Tıbbi Bilgi Notu</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Bu makale, Doç. Dr. Senai Aksoy tarafından tıbbi doğruluk ve güncel klinik protokoller açısından incelenmiş ve onaylanmıştır. Sunulan bilgiler genel bilgilendirme amaçlıdır.
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <Footer />
+</BaseLayout>
