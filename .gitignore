@@ -1,0 +1,11 @@
+# Local environment
+.env
+.DS_Store
+Thumbs.db
+System Volume Information
+$RECYCLE.BIN/
+
+# Git
+.git
+.idea
+.vscode
