@@ -16,14 +16,14 @@ const recentArticles = (await getCollection('articles')).slice(0, 3);
             <div class="grid lg:grid-cols-2 gap-16 items-center py-20">
                 <div class="order-2 lg:order-1">
                     <h1 class="text-5xl lg:text-6xl font-headline text-on-surface leading-tight mb-8">
-                        Kanıta Dayalı <br/><span class="italic text-primary">Üreme Sağlığı Bilgisi</span>
+                        Bilimsel Derinlik, <br/><span class="italic text-primary">İnsani Hassasiyet</span>
                     </h1>
                     <p class="text-lg text-secondary leading-relaxed mb-10 max-w-xl">
-                        İnsan fertilitesi ve üreme bilimi hakkında hakemli klinik bulgular, teknolojik gelişmeler ve temel bilgilerden oluşan kapsamlı bir bilgi havuzu.
+                        1996’dan bu yana, üreme tıbbındaki en ileri teknolojileri ve hakemli klinik verileri, otuz yılı aşkın hekimlik tecrübemizin süzgecinden geçiriyoruz. Akademik derinliğimizi, bir ailenin heyecanına duyduğumuz saygıyla harmanladık. Binlerce hikâyeye eşlik eden bu kapsamlı bilgi yolculuğunda, yanınızdayız.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-medium hover:bg-primary-dim transition-colors">Sorunları İncele</button>
-                        <button class="border border-outline-variant/30 text-primary px-8 py-3 rounded-xl font-medium hover:bg-surface-container transition-colors">Metodolojimizi Okuyun</button>
+                        <a href="/tedavi-yontemleri" class="bg-primary text-on-primary px-8 py-3 rounded-xl font-medium hover:bg-primary-dim transition-colors inline-block">Yaşama Dokunan Tedaviler</a>
+                        <a href="/makaleler" class="border border-outline-variant/30 text-primary px-8 py-3 rounded-xl font-medium hover:bg-surface-container transition-colors inline-block">Bilimsel Yaklaşımımız</a>
                     </div>
                 </div>
                 <div class="order-1 lg:order-2">
