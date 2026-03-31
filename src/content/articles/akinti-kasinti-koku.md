@@ -4,7 +4,7 @@ description: "Vajinal akıntı, koku ve kaşıntı neden olur? Mantar enfeksiyon
 publishDate: 2025-01-15
 author: "Doç. Dr. Senai Aksoy"
 category: "Kadın Sağlığı"
-image: "/images/articles/akinti-kasinti-koku.jpg"
+image: "/images/articles/akinti-kasinti-koku.webp"
 imageAlt: "akinti kasinti koku mantar mi bakteriyel vajinoz mu"
 ---
 

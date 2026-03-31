@@ -4,7 +4,7 @@ description: "Doğal siklus mu, ilaçlı (yapay) siklus mu? Dondurulmuş embriyo
 publishDate: 2025-11-10
 author: "Doç. Dr. Senai Aksoy"
 category: "Tedavi"
-image: "/images/articles/dondurulmus-embriyo-transferi.jpg"
+image: "/images/articles/dondurulmus-embriyo-transferi.webp"
 imageAlt: "dondurulmus embriyo transferi protokolleri karsilastirma"
 ---
 

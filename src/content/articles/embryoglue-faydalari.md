@@ -4,7 +4,7 @@ description: "Embriyo yapıştırıcısı (EmbryoGlue) nedir? Hangi durumda kull
 publishDate: 2025-02-05
 author: "Doç. Dr. Senai Aksoy"
 category: "Tedavi"
-image: "/images/articles/embryoglue-faydalari.jpg"
+image: "/images/articles/embryoglue-faydalari.webp"
 imageAlt: "embryoglue embriyo yapistiricisi faydalari"
 ---
 

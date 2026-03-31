@@ -4,7 +4,7 @@ description: "Embriyo 4AA, 3BB veya 5BC? Tüp bebek laboratuvar raporunuzu Dr. S
 publishDate: 2025-12-22
 author: "Doç. Dr. Senai Aksoy"
 category: "Tanı"
-image: "/images/articles/laboratuvar-raporu-yorumlama.jpg"
+image: "/images/articles/laboratuvar-raporu-yorumlama.webp"
 imageAlt: "embriyo tup bebek laboratuvar raporu yorumlama"
 ---
 
