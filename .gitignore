@@ -9,3 +9,4 @@ $RECYCLE.BIN/
 .git
 .idea
 .vscode
+node_modules/ 
