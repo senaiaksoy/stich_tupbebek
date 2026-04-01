@@ -146,119 +146,126 @@ declare module 'astro:content' {
   slug: "adet-duzensizligi-pcos";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "adet-gorememe.md": {
 	id: "adet-gorememe.md";
   slug: "adet-gorememe";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "akinti-kasinti-koku.md": {
 	id: "akinti-kasinti-koku.md";
   slug: "akinti-kasinti-koku";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "akraba-evliligi.md": {
 	id: "akraba-evliligi.md";
   slug: "akraba-evliligi";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "alkol-ve-fertilite.md": {
 	id: "alkol-ve-fertilite.md";
   slug: "alkol-ve-fertilite";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "asherman-sendromu.md": {
 	id: "asherman-sendromu.md";
   slug: "asherman-sendromu";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "azospermi-mikro-tese.md": {
 	id: "azospermi-mikro-tese.md";
   slug: "azospermi-mikro-tese";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "basari-oranlari.md": {
 	id: "basari-oranlari.md";
   slug: "basari-oranlari";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
+} & { render(): Render[".md"] };
+"basarisiz-denemeler.md": {
+	id: "basarisiz-denemeler.md";
+  slug: "basarisiz-denemeler";
+  body: string;
+  collection: "articles";
+  data: any
 } & { render(): Render[".md"] };
 "beta-hcg-testi.md": {
 	id: "beta-hcg-testi.md";
   slug: "beta-hcg-testi";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "dondurulmus-embriyo-transferi.md": {
 	id: "dondurulmus-embriyo-transferi.md";
   slug: "dondurulmus-embriyo-transferi";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "embryoglue-faydalari.md": {
 	id: "embryoglue-faydalari.md";
   slug: "embryoglue-faydalari";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "genetik-testler.md": {
 	id: "genetik-testler.md";
   slug: "genetik-testler";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "istanbul-tup-bebek-doktoru.md": {
 	id: "istanbul-tup-bebek-doktoru.md";
   slug: "istanbul-tup-bebek-doktoru";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "ivf-oncesi-histeroskopi.md": {
 	id: "ivf-oncesi-histeroskopi.md";
   slug: "ivf-oncesi-histeroskopi";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "iyi-tup-bebek-merkezi.md": {
 	id: "iyi-tup-bebek-merkezi.md";
   slug: "iyi-tup-bebek-merkezi";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "izotretinoin-sperm.md": {
 	id: "izotretinoin-sperm.md";
   slug: "izotretinoin-sperm";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "laboratuvar-raporu-yorumlama.md": {
 	id: "laboratuvar-raporu-yorumlama.md";
   slug: "laboratuvar-raporu-yorumlama";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 };
 
@@ -270,5 +277,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("./../../src/content/config.js");
+	export type ContentConfig = never;
 }

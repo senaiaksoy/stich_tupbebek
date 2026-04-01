@@ -3,6 +3,9 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import PatientJourney from '../components/PatientJourney.astro';
+import RecentArticlesCarousel from '../components/RecentArticlesCarousel.astro';
+import FAQHighlights from '../components/FAQHighlights.astro';
 
 const recentArticles = (await getCollection('articles')).slice(0, 3);
 ---
@@ -11,28 +14,92 @@ const recentArticles = (await getCollection('articles')).slice(0, 3);
     <Header />
     
     <main class="pt-24">
-        <!-- Hero Section -->
-        <section class="max-w-7xl mx-auto px-8 mb-20 relative">
-            <div class="grid lg:grid-cols-2 gap-16 items-center py-20">
-                <div class="order-2 lg:order-1">
-                    <h1 class="text-5xl lg:text-6xl font-headline text-on-surface leading-tight mb-8">
-                        Bilimsel Derinlik, <br/><span class="italic text-primary">İnsani Hassasiyet</span>
-                    </h1>
-                    <p class="text-lg text-secondary leading-relaxed mb-10 max-w-xl">
-                        1996’dan bu yana, üreme tıbbındaki en ileri teknolojileri ve hakemli klinik verileri, otuz yılı aşkın hekimlik tecrübemizin süzgecinden geçiriyoruz. Akademik derinliğimizi, bir ailenin heyecanına duyduğumuz saygıyla harmanladık. Binlerce hikâyeye eşlik eden bu kapsamlı bilgi yolculuğunda, yanınızdayız.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="/tedavi-yontemleri" class="bg-primary text-on-primary px-8 py-3 rounded-xl font-medium hover:bg-primary-dim transition-colors inline-block">Yaşama Dokunan Tedaviler</a>
-                        <a href="/makaleler" class="border border-outline-variant/30 text-primary px-8 py-3 rounded-xl font-medium hover:bg-surface-container transition-colors inline-block">Bilimsel Yaklaşımımız</a>
+        <!-- Hero Section: Intent-Based & Informative -->
+        <section class="max-w-7xl mx-auto px-8 mb-16 relative">
+            <div class="flex flex-col items-center text-center py-20 lg:py-28">
+                <span class="text-primary font-label uppercase tracking-[0.3em] text-xs font-bold mb-6 block animate-fade-in">BAĞIMSIZ BİLİMSEL REHBER</span>
+                <h1 class="text-5xl lg:text-7xl font-headline text-on-surface leading-tight mb-12 max-w-4xl">
+                    Bilimsel Derinlik, <br/><span class="italic text-primary">İnsani Hassasiyet</span>
+                </h1>
+                
+                <!-- Mega Search Bar (FertilityIQ Style) -->
+                <div class="w-full max-w-3xl relative mb-12 group">
+                    <div class="absolute inset-0 bg-primary/10 blur-3xl rounded-full opacity-0 group-focus-within:opacity-100 transition-opacity"></div>
+                    <div class="relative bg-white shadow-2xl shadow-primary/5 rounded-[2rem] p-2 flex items-center border border-outline-variant/30 focus-within:border-primary transition-all">
+                        <span class="material-symbols-outlined ml-6 text-slate-400">search</span>
+                        <input 
+                            type="text" 
+                            placeholder="Ne arıyorsunuz? Örn: PCOS, Sperm Analizi, IVF Başarı Oranları" 
+                            class="flex-1 bg-transparent border-none focus:ring-0 px-6 py-4 text-lg text-on-surface placeholder:text-slate-400"
+                        />
+                        <button class="bg-primary text-on-primary px-8 py-4 rounded-[1.5rem] font-bold hover:bg-primary-dim transition-all shadow-lg shadow-primary/20">
+                            KEŞFET
+                        </button>
                     </div>
                 </div>
-                <div class="order-1 lg:order-2">
-                    <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative">
-                        <img alt="temiz ve steril laboratuvar ortamında, mavi klinik ışıklandırma ve tıbbi camlar altında petri kabının mikroskobik yakın çekimi" class="w-full h-full object-cover" src="/images/home/hero.jpg" width="512" height="512" loading="eager" fetchpriority="high"/>
+
+                <!-- Quick Navigation Points -->
+                <div class="flex flex-wrap justify-center gap-6 mb-16">
+                    <a href="/tani-sureci" class="flex items-center gap-3 px-6 py-4 bg-surface-container rounded-2xl hover:bg-surface-container-high transition-all border border-outline-variant/10">
+                        <span class="material-symbols-outlined text-primary">clinical_notes</span>
+                        <span class="font-bold text-sm">Tanı Süreci Nedir?</span>
+                    </a>
+                    <a href="/tedavi-yontemleri" class="flex items-center gap-3 px-6 py-4 bg-surface-container rounded-2xl hover:bg-surface-container-high transition-all border border-outline-variant/10">
+                        <span class="material-symbols-outlined text-primary">biotech</span>
+                        <span class="font-bold text-sm">Tedavi Seçeneklerimi Gör</span>
+                    </a>
+                    <a href="/makaleler" class="flex items-center gap-3 px-6 py-4 bg-surface-container rounded-2xl hover:bg-surface-container-high transition-all border border-outline-variant/10">
+                        <span class="material-symbols-outlined text-primary">library_books</span>
+                        <span class="font-bold text-sm">Bütün Makaleleri İncele</span>
+                    </a>
+                </div>
+
+                <!-- Trust Badges Strip -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-outline-variant/10 w-full max-w-5xl">
+                    <div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
+                        <span class="text-xs font-bold uppercase tracking-widest text-[#C5A059]">1996'dan Beri</span>
+                        <p class="text-[10px] text-secondary">Sektörün Öncüsü</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
+                        <span class="text-xs font-bold uppercase tracking-widest text-[#C5A059]">Kanıta Dayalı Tıp</span>
+                        <p class="text-[10px] text-secondary">Bilimsel Literatür</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
+                        <span class="text-xs font-bold uppercase tracking-widest text-[#C5A059]">Ticari Reklamsız</span>
+                        <p class="text-[10px] text-secondary">Bağımsız Yayıncılık</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
+                        <span class="text-xs font-bold uppercase tracking-widest text-[#C5A059]">Tıbbi Denetim</span>
+                        <p class="text-[10px] text-secondary">Dr. Senai Aksoy Onaylı</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Stats Section -->
+        <section class="max-w-7xl mx-auto px-8 mb-24">
+            <div class="bg-primary-container rounded-[2.5rem] p-12 lg:p-20 flex flex-wrap justify-around gap-12 text-center border border-primary/10">
+                <div class="flex flex-col">
+                    <span class="text-4xl lg:text-6xl font-headline text-primary mb-2">30+</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-on-primary-container opacity-60">Klinik Tecrübe</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-4xl lg:text-6xl font-headline text-primary mb-2">100+</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-on-primary-container opacity-60">Bilimsel Makale</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-4xl lg:text-6xl font-headline text-primary mb-2">ESHRE</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-on-primary-container opacity-60">Uluslararası Standart</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-4xl lg:text-6xl font-headline text-primary mb-2">WHO</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-on-primary-container opacity-60">Dünya Sağlık Örgütü Uyumlu</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patient Journey Map Section -->
+        <PatientJourney />
 
         <!-- Bento Knowledge Grid -->
         <section class="bg-surface-container-low py-24 relative overflow-hidden">
@@ -42,8 +109,8 @@ const recentArticles = (await getCollection('articles')).slice(0, 3);
 
             <div class="max-w-7xl mx-auto px-8 relative z-10">
                 <div class="mb-16 text-center">
-                    <span class="text-[#C5A059] font-label uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Akademik Rehber</span>
-                    <h2 class="text-4xl lg:text-5xl font-headline text-on-surface mb-6">Temel Eğitim</h2>
+                    <span class="text-[#C5A059] font-label uppercase tracking-[0.3em] text-xs font-bold mb-4 block">AKADEMİK REHBER</span>
+                    <h2 class="text-4xl lg:text-5xl font-headline text-on-surface mb-6">Temel Eğitim Vitrini</h2>
                     <div class="h-0.5 w-24 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mx-auto opacity-50"></div>
                 </div>
 
@@ -102,77 +169,82 @@ const recentArticles = (await getCollection('articles')).slice(0, 3);
                         <span class="material-symbols-outlined self-end text-[#C5A059] opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_right_alt</span>
                     </a>
 
-                    <!-- Medium Feature: Data Transparency -->
-                    <a href="/makaleler/basari-oranlari" class="md:col-span-4 bg-primary text-on-primary rounded-[2rem] p-10 flex flex-col justify-between group cursor-pointer shadow-lg hover:shadow-primary/30 transition-all duration-1000 ease-in-out border border-primary-dim/20">
+                    <!-- Medium Feature: Male Infertility (NEW) -->
+                    <a href="/sorunlar#erkek" class="md:col-span-4 bg-blue-50/50 backdrop-blur-md rounded-[2rem] p-10 flex flex-col justify-between group cursor-pointer border border-blue-100 hover:border-primary/50 transition-all duration-1000 ease-in-out">
                         <div>
-                            <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-md">
-                                <span class="material-symbols-outlined text-white/80" style="font-size: 32px;">analytics</span>
+                            <div class="w-14 h-14 bg-primary text-on-primary rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-primary/20">
+                                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">male</span>
                             </div>
-                            <h3 class="text-2xl font-headline mb-5">Veri Şeffaflığı ve <br/>Küresel Standart</h3>
-                            <p class="text-on-primary/80 text-sm leading-relaxed font-light">
-                                İstatistiğin ötesinde, her başarı yeni bir başlangıçtır. Veriye dayalı şeffaflık vizyonumuzla, kişiselleştirilmiş protokollerin dünya çapındaki başarısını analiz edin.
+                            <h3 class="text-2xl font-headline text-on-surface mb-5">Erkek İnfertilitesi: <br/>Gizli Faktörler</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed font-light">
+                                Sperm sağlığı ve genetiği, bir ailenin oluşumunda eşit öneme sahiptir. Modern tanısal yaklaşımları keşfedin.
                             </p>
                         </div>
-                        <span class="material-symbols-outlined self-end text-white/50 group-hover:text-[#C5A059]/100 group-hover:translate-x-2 transition-all">north_east</span>
+                        <span class="material-symbols-outlined self-end text-primary opacity-40 group-hover:opacity-100 transition-all">clinical_notes</span>
+                    </a>
+
+                    <!-- Medium Feature: Data Transparency (Repositioned) -->
+                    <a href="/makaleler/basari-oranlari" class="md:col-span-8 bg-primary text-on-primary rounded-[2.5rem] p-10 flex flex-col md:flex-row gap-12 group cursor-pointer shadow-lg hover:shadow-primary/30 transition-all duration-1000 ease-in-out border border-primary-dim/20">
+                        <div class="md:w-1/2 flex flex-col justify-between h-full">
+                            <div>
+                                <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-md">
+                                    <span class="material-symbols-outlined text-white/80" style="font-size: 32px;">analytics</span>
+                                </div>
+                                <h3 class="text-3xl font-headline mb-5">Veri Şeffaflığı ve <br/>Başarı Analizi</h3>
+                                <p class="text-on-primary/80 text-sm leading-relaxed font-light">
+                                    Veriye dayalı şeffaflık vizyonumuzla, kişiselleştirilmiş protokollerin dünya çapındaki (SART data yaklaşımı) başarısını yaşa göre analiz edin.
+                                </p>
+                            </div>
+                            <span class="material-symbols-outlined self-end text-white/50 group-hover:text-[#C5A059]/100 group-hover:translate-x-2 transition-all">north_east</span>
+                        </div>
+                        <div class="md:w-1/2 bg-white/5 backdrop-blur-md rounded-2xl p-6 flex flex-col justify-center border border-white/10">
+                            <h4 class="text-xs font-bold uppercase tracking-widest mb-4 opacity-70 italic text-white/80">Yaşa Göre Başarı Oranları (IVF)</h4>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span class="text-sm">35 Yaş Altı</span>
+                                    <span class="text-xl font-bold text-[#C5A059]">~55%</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span class="text-sm">35 - 37 Yaş</span>
+                                    <span class="text-xl font-bold text-[#C5A059]">~45%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm">38 - 40 Yaş</span>
+                                    <span class="text-xl font-bold text-[#C5A059]">~35%</span>
+                                </div>
+                            </div>
+                        </div>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Latest Articles Section -->
-        <section class="bg-surface-container py-24">
-            <div class="max-w-7xl mx-auto px-8">
-                <div class="flex justify-between items-end mb-12">
-                    <div>
-                        <h2 class="text-3xl font-headline text-on-surface mb-4">Son Makaleler</h2>
-                        <p class="text-secondary">Üreme endokrinolojisi ve bilimindeki güncel yayınlar.</p>
-                    </div>
-                    <a href="/makaleler" class="hidden md:block text-primary font-semibold hover:underline">Bilimsel Arşivi Görüntüle</a>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {recentArticles.map(article => (
-                        <article class="bg-surface-container-lowest rounded-2xl p-6 hover:shadow-lg transition-shadow">
-                            <div class="aspect-video rounded-xl overflow-hidden mb-6">
-                                <img 
-                                    alt={article.data.imageAlt || article.data.title} 
-                                    class="w-full h-full object-cover" 
-                                    src={article.data.image} 
-                                    width="512" height="512" 
-                                    loading="lazy"
-                                />
-                            </div>
-                            <span class="text-xs font-label font-bold text-tertiary uppercase tracking-tighter mb-3 block">{article.data.category}</span>
-                            <a href={`/makaleler/${article.slug}`}>
-                                <h3 class="text-xl font-headline text-on-surface mb-4 line-clamp-2 hover:text-primary transition-colors">
-                                    {article.data.title}
-                                </h3>
-                            </a>
-                            <p class="text-secondary text-sm mb-6 line-clamp-3 leading-relaxed">
-                                {article.data.description}
-                            </p>
-                            <div class="flex items-center gap-3 pt-6 border-t border-surface-variant">
-                                <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center overflow-hidden">
-                                    <img src="/images/senai-aksoy.jpg" alt={article.data.author} class="w-full h-full object-cover" width="100" height="100" />
-                                </div>
-                                <span class="text-xs text-on-surface-variant font-medium uppercase tracking-widest">{article.data.author}</span>
-                            </div>
-                        </article>
-                    ))}
-                </div>
-            </div>
-        </section>
+        <!-- Dynamic Content Showcase -->
+        <RecentArticlesCarousel />
+        
+        <!-- FAQ Section -->
+        <FAQHighlights />
 
-        <!-- Medical Reviewer Section -->
-        <section class="py-20 bg-surface-container-low">
-            <div class="max-w-3xl mx-auto px-8 text-center">
-                <div class="mb-8">
-                    <img alt="portre" class="w-24 h-24 rounded-full mx-auto object-cover brightness-110 mb-6 border-4 border-surface-container-lowest shadow-sm" src="/images/senai-aksoy.jpg" width="512" height="512" loading="lazy"/>
+        <!-- Medical Reviewer Section: Expanded Trust -->
+        <section class="py-24 bg-surface-container-low border-t border-outline-variant/10">
+            <div class="max-w-4xl mx-auto px-8 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 text-center">
+                    <img alt="portre" class="w-32 h-32 rounded-full mx-auto object-cover grayscale-0 brightness-110 mb-6 border-4 border-white shadow-xl" src="/images/senai-aksoy.jpg" width="512" height="512" loading="lazy"/>
                     <h3 class="text-xl font-headline text-on-surface">Doç. Dr. Senai Aksoy</h3>
-                    <p class="text-primary font-label uppercase tracking-widest text-xs font-bold mt-1">Tıbbi İnceleme & Bilimsel Onay</p>
+                    <p class="text-primary font-label uppercase tracking-widest text-[10px] font-bold mt-1">Tıbbi İnceleme Başkanı</p>
                 </div>
-                <p class="text-secondary italic text-sm leading-relaxed">
-                    tupbebek.com platformundaki bilimsel doğruluk ve klinik dürüstlük, titiz bir editoryal denetimle sürdürülmektedir. Tüm makaleler, üreme tıbbındaki en son yayınlanmış konsensüs ile uyumu sağlamak amacıyla uzman tıp doktorları tarafından incelemeye tabidir.
-                </p>
+                <div class="md:w-2/3">
+                    <span class="text-[#C5A059] font-label uppercase tracking-widest text-[10px] font-bold mb-4 block">EDİTÖRYAL BAĞIMSIZLIK TAAHHÜDÜ</span>
+                    <h2 class="text-3xl font-headline text-on-surface mb-6 leading-tight">Yanıltıcı Bilgiden Arındırılmış Bilimsel Kaynak</h2>
+                    <p class="text-secondary italic text-sm leading-relaxed mb-6">
+                        "tupbebek.com platformundaki tüm içerikler, ticari kaygılardan arındırılmış, 30+ yıllık klinik tecrübemiz ve güncel dünya tıbbı literatürü (ESHRE, ASRM, WHO) ışığında hazırlanır. Bağımsızlığımız, dürüst bilgiye ulaşma hakkınızın teminatıdır."
+                    </p>
+                    <div class="flex gap-4">
+                        <span class="px-3 py-1 bg-white border border-outline-variant/30 rounded-lg text-[10px] font-bold text-outline">KANITA DAYALI TIP</span>
+                        <span class="px-3 py-1 bg-white border border-outline-variant/30 rounded-lg text-[10px] font-bold text-outline">REKLAMSIZ YAYIN</span>
+                        <span class="px-3 py-1 bg-white border border-outline-variant/30 rounded-lg text-[10px] font-bold text-outline">HAKEM DENETİMİ</span>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

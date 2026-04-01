@@ -1,0 +1,85 @@
+---
+const stages = [
+  {
+    step: 1,
+    title: "Gebe Kalamıyorum",
+    description: "İnfertilite nedenlerini ve ilk adımın ne olması gerektiğini öğrenin.",
+    link: "/sorunlar",
+    icon: "psychiatry"
+  },
+  {
+    step: 2,
+    title: "Testlerim Var",
+    description: "Tanı süreci, hormon paneli okuma ve laboratuvar raporu yorumlama.",
+    link: "/tani-sureci",
+    icon: "lab_research"
+  },
+  {
+    step: 3,
+    title: "Tedavi Seçenekleri",
+    description: "Size en uygun tedavi yöntemlerini (IVF, IUI vb.) karşılaştırın.",
+    link: "/tedavi-yontemleri",
+    icon: "biotech"
+  },
+  {
+    step: 4,
+    title: "Tüp Bebeğe Başlıyorum",
+    description: "Adım adım IVF rehberi: Hazırlık, ilaçlar ve klinik süreç.",
+    link: "/rehberler",
+    icon: "step_into"
+  },
+  {
+    step: 5,
+    title: "Transfer Bekliyorum",
+    description: "Embriyo transferi sonrası kritik dönem ve tutunma rehberi.",
+    link: "/makaleler/dondurulmus-embriyo-transferi",
+    icon: "hourglass_empty"
+  },
+  {
+    step: 6,
+    title: "Denedim Olmadı",
+    description: "Başarısız denemeler sonrası yeni stratejiler ve psikolojik destek.",
+    link: "/makaleler/basarisiz-denemeler",
+    icon: "healing"
+  }
+];
+---
+
+<section class="py-24 bg-surface">
+    <div class="max-w-7xl mx-auto px-8 text-center pb-16">
+        <span class="text-[#C5A059] font-label uppercase tracking-[0.3em] text-xs font-bold mb-4 block">YOL HARİTASI</span>
+        <h2 class="text-4xl lg:text-5xl font-headline text-on-surface mb-6">Hasta Yolculuğu Haritası</h2>
+        <p class="text-secondary max-w-2xl mx-auto">Hangi aşamada olursanız olun, bilimsel ve insani derinliğimizle yanınızdayız.</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-8 relative">
+        <!-- Connecting Line -->
+        <div class="hidden lg:block absolute top-[120px] left-8 right-8 h-0.5 bg-gradient-to-r from-primary/5 via-primary/40 to-primary/5 z-0"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 relative z-10">
+            {stages.map((stage) => (
+                <div class="group">
+                    <a href={stage.link} class="flex flex-col items-center">
+                        <!-- Icon Circle -->
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-outline-variant/30 flex items-center justify-center mb-8 shadow-sm group-hover:border-primary group-hover:shadow-lg group-hover:scale-110 transition-all duration-500 bg-surface">
+                            <span class="material-symbols-outlined text-primary text-3xl">{stage.icon}</span>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="text-center px-4">
+                            <h3 class="text-sm font-bold text-on-surface mb-3 group-hover:text-primary transition-colors h-10 flex items-center justify-center">{stage.title}</h3>
+                            <p class="text-xs text-secondary leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                {stage.description}
+                            </p>
+                        </div>
+                        
+                        <!-- Step Badge -->
+                        <div class="mt-4 px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold text-outline uppercase tracking-widest">
+                            AŞAMA {stage.step}
+                        </div>
+                    </a>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
