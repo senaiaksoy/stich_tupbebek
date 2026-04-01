@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(npx astro:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git restore:*)",
+      "Bash(git commit:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
