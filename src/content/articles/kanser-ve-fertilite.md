@@ -1,0 +1,124 @@
+---
+title: "Kanser ve Fertilite: Onkolojik Hastalar İçin Rehber"
+description: "Kanser tanısı sonrası fertilite koruma seçenekleri nelerdir? Onkolojik hastalarda yumurta, sperm ve embriyo dondurma süreçleri, acil protokoller ve hasta hakları rehberi."
+publishDate: 2026-04-01
+author: "Doç. Dr. Senai Aksoy"
+category: "Tedavi"
+image: "/images/articles/kanser-ve-fertilite.webp"
+imageAlt: "onkolojik fertilite koruma oncofertility danışmanlık"
+---
+
+Kanser tanısı almak, hayatın en zorlu anlarından biridir. Bu süreçte tedaviye odaklanmak ne kadar doğalsa, gelecekteki aile planları hakkında düşünmek de o kadar önemlidir. Neyse ki modern tıp, kanser tedavisi görecek hastalara fertilitelerini koruma imkânı sunmaktadır. **Onkofertilite** olarak adlandırılan bu alan, onkoloji ve üreme tıbbını bir araya getirerek hastalara hem sağlıklarını kazanma hem de gelecekte çocuk sahibi olabilme fırsatı tanımaktadır. Tanı aldığınız anda doğru adımları atmanız, bu fırsatı en üst düzeyde kullanmanızı sağlar.
+
+## Kanser Tanısı ve Fertilite: Neden Acil Hareket Gerekir?
+
+Kanser tedavileri — kemoterapi, radyoterapi ve cerrahi — üreme organlarına ciddi zarar verebilir. Bu nedenle **tedaviye başlamadan önce** fertilite koruma adımlarının atılması büyük önem taşır. Tedavi başladıktan sonra bu fırsat büyük ölçüde kapanabilir.
+
+Dünya genelinde tanınan iki büyük onkoloji kuruluşu, **ASCO** (Amerikan Klinik Onkoloji Derneği) ve **ESMO** (Avrupa Medikal Onkoloji Derneği), kılavuzlarında açıkça şunu belirtmektedir: Üreme çağındaki her kanser hastasına, tedaviye başlamadan önce fertilite koruma seçenekleri hakkında bilgi verilmeli ve uzman yönlendirmesi yapılmalıdır. Bu bir öneri değil, standart tıbbi bakımın bir parçasıdır.
+
+**Multidisipliner yaklaşım** bu sürecin merkezindedir. Onkolog, üreme tıbbı uzmanı, psikolog ve hasta bir arada hareket ederek en doğru kararı vermelidir. Zaman kısıtlı olsa da doğru planlamayla fertilite koruma mümkündür.
+
+## Kanser Tedavilerinin Fertiliteye Etkisi
+
+Her kanser tedavisi üreme sistemini aynı ölçüde etkilemez. Risk düzeyini anlamak, doğru koruma stratejisini belirlemek açısından kritiktir.
+
+### Kemoterapi
+
+Kemoterapi ilaçları, hızlı çoğalan hücreleri hedef aldığı için yumurtalık ve testis dokusuna zarar verebilir. **Gonadotoksisite riski** ilaca göre büyük farklılıklar gösterir:
+
+- **Yüksek risk (>%80 infertilite):** Siklofosfamid, busulfan, melfalan, klorambusil — özellikle alkilleyici ajanlar
+- **Orta risk (%40-60):** Cisplatin, karboplatin, doksorubisin
+- **Düşük risk (<%20):** Vincristin, bleomisin, metotreksat, 5-florourasil
+
+Tedavi öncesinde onkolojunuzdan hangi ilaçları alacağınızı öğrenmek ve bu bilgiyi üreme tıbbı uzmanıyla paylaşmak, size özel bir koruma planı hazırlanmasını sağlar.
+
+### Radyoterapi
+
+Pelvik veya gonadal bölgeye uygulanan radyasyon, yumurtalık ve testis dokusunu kalıcı olarak hasara uğratabilir. **Pelvik ışınlama** alan kadınlarda erken menopoz riski yüksektir; erkeklerde ise sperm üretimi ciddi biçimde azalabilir. Radyasyonun etkisi kümülatiftir — toplam doz ve ışınlama alanı ne kadar büyükse, hasar o kadar fazladır.
+
+### Cerrahi
+
+**Orşiektomi** (testis alınması) erkeklerde, **ooferektomi** (yumurtalık alınması) ise kadınlarda doğrudan fertilite kaybına yol açabilir. Tek taraflı işlemlerde fertilite korunabilir; ancak özellikle iki taraflı müdahalelerde fertilite koruma adımları daha da kritik hale gelir.
+
+## Kadınlar İçin Fertilite Koruma Seçenekleri
+
+Kanser tanısı almış kadınlar için birden fazla etkili seçenek mevcuttur. Hangisinin uygun olduğu; yaşa, medeni duruma, kanserin türüne ve tedaviye kadar kalan süreye göre belirlenir.
+
+**Oosit (Yumurta) Dondurma**
+
+En yaygın ve güvenilir yöntemlerden biridir. Yumurtalıklar hormonal ilaçlarla uyarılır, olgunlaşan yumurtalar toplanarak sıvı azot ortamında dondurulur. Bekâr kadınlar için ideal bir seçenektir. Başarı oranları son yıllarda vitrifikasyon (hızlı dondurma) tekniğiyle belirgin biçimde artmıştır.
+
+**Embriyo Dondurma**
+
+Partneri olan veya donör sperm kullanmayı kabul eden kadınlar için en yerleşik yöntemdir. Yumurtalar toplandıktan sonra spermle döllenerek embriyo elde edilir ve dondurulur. Gebelik başarı oranları yüksektir.
+
+**Over Doku Dondurma**
+
+Henüz deneysel kabul edilse de dünyada yüzlerce başarılı gebelik vakası bildirilmiştir. Yumurtalığın bir parçası laparoskopik yöntemle alınarak dondurulur; tedavi sonrasında ise geri nakledilir. Kemoterapi için zaman olmayan veya prepubertal kız çocukları için özellikle değerlidir.
+
+**GnRH Agonist ile Over Koruma**
+
+Kemoterapi süresince GnRH agonistleri kullanarak yumurtalıkların geçici olarak "uyutulması" sağlanabilir. Bu yöntem, diğer koruma stratejilerine ek olarak uygulanabilir; ancak tek başına yeterli bir koruma sağlamadığı için diğer yöntemlerle birlikte düşünülmelidir.
+
+**Acil Stimülasyon Protokolü (Random-Start)**
+
+Geleneksel yumurta toplama protokolleri adet döngüsünün belirli günlerinde başlar. Ancak **random-start protokolü**, döngünün herhangi bir gününde başlatılabildiği için kanser hastalarına büyük kolaylık sağlar. Bu sayede tedaviye başlanmadan önce kısa sürede yumurta toplanması mümkün olur.
+
+## Erkekler İçin Fertilite Koruma Seçenekleri
+
+Erkekler için fertilite koruma genellikle daha hızlı ve kolaydır; ancak vakit kaybetmemek yine de kritik önemdedir.
+
+**Sperm Dondurma (Sperm Kriyoprezervasyon)**
+
+Orşiektomi veya kemoterapi başlamadan önce semen örneği verilerek spermler dondurulur. İşlem hızlı, invaziv olmayan ve son derece etkili bir yöntemdir. Dondurulmuş spermler onlarca yıl saklanabilir, kalite büyük ölçüde korunur. Her erkek kanser hastasına öncelikle bu seçenek önerilmelidir.
+
+**Testis Doku Dondurma**
+
+Özellikle **prepubertal erkek çocuklar** için gündeme gelir; zira bu yaşta henüz olgun sperm üretilmez. Testis dokusundan alınan örnek dondurularak ileride kullanılmak üzere saklanır. Deneysel statüsünü korusa da gelecek vadeden bir yöntemdir.
+
+**Elektroejekülasyon ve Cerrahi Sperm Toplama**
+
+Sperm veremeyen hastalar (sinir hasarı, retrograd ejekülasyon vb.) için elektroejekülasyon veya doğrudan testisten sperm toplama (TESA/TESE) yöntemleri uygulanabilir.
+
+## Çocukluk Çağı Kanser Hastaları
+
+Çocuklarda kanser tanısı, fertilite koruması açısından özellikle hassas bir durum yaratır. Prepubertal çocuklarda yumurta ya da sperm henüz olgunlaşmadığından standart yöntemler uygulanamaz.
+
+Kız çocukları için **over doku dondurma** mevcut en umut verici seçenektir. Erkek çocuklar için **testis doku dondurma** araştırma aşamasındadır. Her iki yöntem de dünyada seçilmiş merkezlerde uygulanmaktadır.
+
+Bu kararlar beraberinde ciddi **etik ve yasal sorular** getirir: Çocuk adına kim karar verir? Saklanan doku ileride nasıl kullanılacaktır? Türkiye'de bu uygulamalar tıp etiği kurulları ve ilgili mevzuat çerçevesinde değerlendirilmektedir. Aile, çocuk ve sağlık ekibinin birlikte karar vermesi esastır.
+
+## Zaman Çizelgesi: Kanser Türüne Göre Fertilite Koruma Pencereleri
+
+Tedaviye kadar kalan süre, hangi koruma yönteminin uygulanabileceğini doğrudan etkiler. Aşağıdaki tablo, yaygın kanser türleri için genel zaman pencerelerini göstermektedir:
+
+| Kanser Türü | Fertilite Koruma için Uygun Süre | Önerilen Yöntem |
+|---|---|---|
+| Meme Kanseri | 2–4 hafta | Oosit veya embriyo dondurma, random-start protokol |
+| Lenfoma (Hodgkin/Non-Hodgkin) | 1–2 hafta (acil) | Oosit dondurma, sperm dondurma |
+| Testis Kanseri | Orşiektomi öncesi (günler) | Sperm dondurma (öncelikli) |
+| Kolorektal Kanser | 2–4 hafta | Oosit/embriyo dondurma, sperm dondurma |
+| Lösemi | Çok kısa (günler-1 hafta) | Acil sperm dondurma, over doku dondurma |
+| Serviks Kanseri | 2–3 hafta | Embriyo/oosit dondurma, over doku |
+
+Bu süreler yalnızca genel rehber niteliğindedir. Onkolojiniz ve üreme tıbbı uzmanınız birlikte size özel bir plan hazırlayacaktır.
+
+## Hasta Hakları
+
+**Bilgilendirilme hakkı** onkofertilite alanında temel bir ilkedir. ASCO kılavuzu açıkça şunu belirtmektedir: "Üreme çağındaki her kanser hastası, tedavinin fertilite üzerindeki olası etkileri ve koruma seçenekleri hakkında bilgilendirilmelidir." Bu bir tavsiye değil, standart tıbbi bakımın zorunlu bir parçasıdır.
+
+Ne var ki gerçekte pek çok hasta bu bilgiyi almadan tedaviye başlamaktadır. Eğer onkolojiniz fertilite konusunu gündirmemişse, **sormaktan çekinmeyin.** Bu hakkınızdır.
+
+**Türkiye'deki yasal çerçeve** açısından bakıldığında, Türk Medeni Kanunu ve Hasta Hakları Yönetmeliği, hastaların tıbbi kararlarında tam bilgilendirilme hakkını güvence altına almaktadır. Üreme tıbbı uygulamaları ise Sağlık Bakanlığı'nın yardımcı üreme teknikleri yönetmeliği kapsamında düzenlenmektedir. Evli çiftler için tüm standart yöntemler yasal olarak uygulanabilmektedir.
+
+## İlk Adım: Ne Yapmalı?
+
+Kanser tanısı aldıktan sonra fertilitenizi korumak için şu adımları izleyin:
+
+1. **Onkolojinizle konuşun.** Hangi ilaçları veya radyasyon tedavisini alacağınızı, bunların fertilite üzerindeki riskini ve tedaviye ne kadar süre kaldığını sorun. "Fertilite koruma için zaman var mı?" diye açıkça sorun.
+
+2. **Üreme tıbbı uzmanına yönlendirme isteyin.** Onkolojinizden sizi bir üreme endokrinolojisti veya tüp bebek uzmanına yönlendirmesini talep edin. Bu uzmanlar, kanserin tedavisini geciktirmeden fertilite koruma planı hazırlamanıza yardımcı olabilir.
+
+3. **Zaman kaybetmeyin.** Tedaviye kadar geçen süre değerlidir. Oosit veya sperm dondurma işlemleri günler-haftalar içinde tamamlanabilir. Ne kadar erken başvurursanız, seçenekleriniz o kadar genişler.
+
+Kanser tanısı almak ağırdır; ancak bu dönemde alınacak küçük ama kararlı adımlar, ileride yaşamak istediğiniz hayatı şekillendirme gücü taşır. Fertilite koruma, hastalıkla mücadelenizden taviz vermeden geleceğe bir kapı aralamaktır. Yalnız değilsiniz — doğru ekip ve doğru bilgiyle bu yolu birlikte yürüyebiliriz.
