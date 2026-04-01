@@ -48,13 +48,13 @@ Yumurta dondurma tedavisinde iki temel stimülasyon protokolü kullanılır:
 
 Yumurta dondurmanın başarısı, yumurtaların toplandığı yaşla doğrudan bağlantılıdır. Aşağıdaki tablo, güncel literatür verilerine dayalı tahmini oranları göstermektedir:
 
-| Yaş Grubu | Oosit Sağkalım Oranı (Erime) | Gebelik/Oosit Oranı | Önerilen Oosit Sayısı |
-|-----------|-------------------------------|---------------------|-----------------------|
-| < 30      | %90-95                        | %6-8                | 8-10                  |
-| 30-34     | %85-92                        | %5-7                | 10-12                 |
-| 35-37     | %80-88                        | %4-6                | 12-15                 |
-| 38-40     | %75-85                        | %3-5                | 15-20                 |
-| > 40      | %70-80                        | %2-3                | 20+                   |
+| Yaş Grubu | Oosit Sağkalım Oranı | Gebelik/Oosit Oranı | Önerilen Oosit Sayısı |
+|-----------|----------------------|---------------------|-----------------------|
+| < 30      | %90-97               | %8-10               | 10-15                 |
+| 30-34     | %90-95               | %6-8                | 15-20                 |
+| 35-37     | %85-90               | %4-6                | 20-25                 |
+| 38-40     | %80-85               | %2-4                | 25-30                 |
+| > 40      | %75-80               | %1-2                | Bireysel değerlendirme |
 
 Tablodaki "gebelik/oosit oranı" değerleri, her bir dondurulmuş yumurtanın canlı doğumla sonuçlanma olasılığını ifade eder. Bu nedenle, 35 yaşında %80 canlı doğum oranı hedefleniyorsa yaklaşık 12-15 yumurtanın dondurulması önerilmektedir.
 
