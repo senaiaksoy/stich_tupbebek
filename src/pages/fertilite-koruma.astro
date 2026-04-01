@@ -1,0 +1,635 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Fertilite Koruma: Yumurta, Sperm ve Embriyo Dondurma | Doç. Dr. Senai Aksoy" description="Yumurta dondurma, sperm dondurma ve embriyo dondurma hakkında kapsamlı bilgi. Onkolojik hastalarda fertilite koruma (oncofertility) seçenekleri, başarı oranları ve güncel klinik veriler.">
+    <Header />
+    <Breadcrumbs />
+    <main class="pb-24">
+
+        <!-- Hero Section -->
+        <header class="max-w-5xl mx-auto px-8 mb-20">
+            <div class="flex flex-col md:flex-row gap-12 items-start">
+                <div class="flex-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        Akademik Makale
+                    </div>
+                    <h1 class="font-headline text-5xl md:text-6xl text-on-surface leading-tight mb-8">
+                        Fertilite Koruma: <span class="text-primary italic">Geleceğinizi</span> Güvence Altına Alın
+                    </h1>
+                    <div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-dim">
+                            <img class="w-full h-full object-cover" src="/images/senai-aksoy.jpg" alt="Doç. Dr. Senai Aksoy" width="512" height="512" loading="eager" fetchpriority="high"/>
+                        </div>
+                        <div>
+                            <p class="font-headline italic text-on-surface text-sm">Tıbbi İnceleme:</p>
+                            <p class="font-bold text-primary">Doç. Dr. Senai Aksoy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block w-72 shrink-0 aspect-[4/5] bg-surface-container-highest rounded-2xl overflow-hidden shadow-2xl">
+                    <img class="w-full h-full object-cover grayscale opacity-80" src="/images/fertilite-koruma/hero.jpg" alt="Fertilite koruma" width="512" height="512" loading="eager" fetchpriority="high"/>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sticky Quick-Nav -->
+        <nav id="quick-nav" class="sticky top-20 z-40 bg-white/90 backdrop-blur-sm border-b border-slate-100 shadow-sm mb-16">
+            <div class="max-w-5xl mx-auto px-8 flex gap-1 overflow-x-auto" style="scrollbar-width: none;">
+                <a href="#yumurta-dondurma" class="quick-nav-link px-4 py-3 text-sm font-semibold text-slate-500 whitespace-nowrap hover:text-primary transition-colors border-b-2 border-transparent">Yumurta Dondurma</a>
+                <a href="#sperm-dondurma" class="quick-nav-link px-4 py-3 text-sm font-semibold text-slate-500 whitespace-nowrap hover:text-primary transition-colors border-b-2 border-transparent">Sperm Dondurma</a>
+                <a href="#embriyo-dondurma" class="quick-nav-link px-4 py-3 text-sm font-semibold text-slate-500 whitespace-nowrap hover:text-primary transition-colors border-b-2 border-transparent">Embriyo Dondurma</a>
+                <a href="#oncofertility" class="quick-nav-link px-4 py-3 text-sm font-semibold text-slate-500 whitespace-nowrap hover:text-primary transition-colors border-b-2 border-transparent">Oncofertility</a>
+            </div>
+        </nav>
+
+        <!-- Scientific Introduction -->
+        <section class="max-w-3xl mx-auto px-8 mb-24">
+            <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed font-body italic mb-12">
+                Kriyoprezervasyon (dondurarak saklama), üreme hücrelerinin ve embriyoların biyolojik aktivitelerini koruyarak gelecekte kullanılmak üzere saklanmasını sağlayan modern tıbbın en önemli başarılarından biridir. Bu teknoloji, tıbbi ve sosyal nedenlerle fertilite koruma ihtiyacı olan bireylere umut sunmaktadır.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
+                    <span class="material-symbols-outlined text-primary mb-3">ac_unit</span>
+                    <h3 class="font-bold text-sm mb-2">%97 Oosit Sağkalım</h3>
+                    <p class="text-xs text-on-surface-variant mb-0">Vitrifikasyon yöntemiyle dondurulmuş yumurtalarda çözme sonrası sağkalım oranı.</p>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
+                    <span class="material-symbols-outlined text-primary mb-3">pregnancy</span>
+                    <h3 class="font-bold text-sm mb-2">%40-50 Gebelik Oranı</h3>
+                    <p class="text-xs text-on-surface-variant mb-0">35 yaş altında dondurulmuş yumurta ile elde edilen kümülatif gebelik oranı.</p>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
+                    <span class="material-symbols-outlined text-primary mb-3">timer</span>
+                    <h3 class="font-bold text-sm mb-2">20+ Yıl Saklama</h3>
+                    <p class="text-xs text-on-surface-variant mb-0">Sıvı nitrojen içinde -196°C'de saklanan hücrelerin güvenli saklama süresi.</p>
+                </div>
+            </div>
+            <p class="text-on-surface-variant leading-relaxed mb-6">
+                Vitrifikasyon (ultra-hızlı dondurma) tekniğinin geliştirilmesi, kriyoprezervasyon alanında devrim yaratmıştır. Bu yöntem, hücre içi buz kristali oluşumunu önleyerek hücre hasarını minimize eder ve çözme sonrası sağkalım oranlarını dramatik şekilde artırır. Günümüzde vitrifikasyon, yumurta, sperm ve embriyo dondurma işlemlerinin altın standardı haline gelmiştir.
+            </p>
+        </section>
+
+        <!-- Yumurta Dondurma -->
+        <section id="yumurta-dondurma" class="bg-surface-container-low py-24 mb-24">
+            <div class="max-w-5xl mx-auto px-8">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="md:w-1/2">
+                        <h2 class="font-headline text-3xl text-on-surface mb-6">Yumurta Dondurma (Oosit Vitrifikasyonu)</h2>
+                        <div class="space-y-6 text-on-surface-variant">
+                            <p>Yumurta dondurma, kadının üreme potansiyelini korumak için olgun yumurtaların toplanarak vitrifikasyon yöntemiyle saklanması işlemidir. 2012 yılından itibaren ASRM tarafından deneysel olmaktan çıkarılan bu yöntem, günümüzde hem tıbbi hem de sosyal endikasyonlarla yaygın olarak uygulanmaktadır.</p>
+
+                            <!-- Yaşa Göre Başarı Tablosu -->
+                            <div class="border-l-4 border-primary bg-white p-6 rounded-r-xl shadow-sm">
+                                <h4 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">biotech</span>
+                                    Yaşa Göre Başarı Oranları
+                                </h4>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-sm">
+                                        <thead>
+                                            <tr class="border-b border-outline-variant/20">
+                                                <th class="text-left py-2 pr-4 font-semibold text-on-surface">Yaş</th>
+                                                <th class="text-left py-2 pr-4 font-semibold text-on-surface">Oosit Sağkalım</th>
+                                                <th class="text-left py-2 pr-4 font-semibold text-on-surface">Gebelik/Oosit</th>
+                                                <th class="text-left py-2 font-semibold text-on-surface">Önerilen Sayı</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-on-surface-variant">
+                                            <tr class="border-b border-outline-variant/10">
+                                                <td class="py-2 pr-4">&lt;30</td>
+                                                <td class="py-2 pr-4">%95-97</td>
+                                                <td class="py-2 pr-4">%8-10</td>
+                                                <td class="py-2">10-15</td>
+                                            </tr>
+                                            <tr class="border-b border-outline-variant/10">
+                                                <td class="py-2 pr-4">30-34</td>
+                                                <td class="py-2 pr-4">%90-95</td>
+                                                <td class="py-2 pr-4">%6-8</td>
+                                                <td class="py-2">15-20</td>
+                                            </tr>
+                                            <tr class="border-b border-outline-variant/10">
+                                                <td class="py-2 pr-4">35-37</td>
+                                                <td class="py-2 pr-4">%85-90</td>
+                                                <td class="py-2 pr-4">%4-6</td>
+                                                <td class="py-2">20-25</td>
+                                            </tr>
+                                            <tr class="border-b border-outline-variant/10">
+                                                <td class="py-2 pr-4">38-40</td>
+                                                <td class="py-2 pr-4">%80-85</td>
+                                                <td class="py-2 pr-4">%2-4</td>
+                                                <td class="py-2">25-30</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2 pr-4">&gt;40</td>
+                                                <td class="py-2 pr-4">%75-80</td>
+                                                <td class="py-2 pr-4">%1-2</td>
+                                                <td class="py-2">30+</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- İşlem Süreci -->
+                            <div class="border-l-4 border-primary bg-white p-6 rounded-r-xl shadow-sm">
+                                <h4 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">biotech</span>
+                                    İşlem Süreci
+                                </h4>
+                                <dl class="space-y-3 text-sm">
+                                    <div class="flex gap-3">
+                                        <dt class="font-semibold text-on-surface whitespace-nowrap">Stimülasyon:</dt>
+                                        <dd class="text-on-surface-variant">10-14 gün gonadotropin uygulaması ile çoklu folikül gelişimi sağlanır.</dd>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <dt class="font-semibold text-on-surface whitespace-nowrap">OPU (Toplama):</dt>
+                                        <dd class="text-on-surface-variant">Ultrason eşliğinde ~15-20 dakikalık yumurta toplama işlemi uygulanır.</dd>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <dt class="font-semibold text-on-surface whitespace-nowrap">Vitrifikasyon:</dt>
+                                        <dd class="text-on-surface-variant">Olgun oositler -196°C sıvı nitrojen içinde ultra-hızlı dondurulur.</dd>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <dt class="font-semibold text-on-surface whitespace-nowrap">Saklama:</dt>
+                                        <dd class="text-on-surface-variant">5 yıl ve üzeri güvenli saklama; uzun dönem veri 20+ yıl etkinlik göstermektedir.</dd>
+                                    </div>
+                                </dl>
+                            </div>
+
+                            <p>Yumurta dondurma endikasyonları arasında ileri yaş planlaması (sosyal fertilite koruma), kanser tedavisi öncesi koruma, endometriozis varlığında erken müdahale ve aile öyküsünde erken menopoz bulunması yer almaktadır.</p>
+
+                            <a href="/makaleler/yumurta-dondurma-rehberi" class="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline">
+                                Yumurta Dondurma Rehberi
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative group">
+                            <img class="rounded-2xl shadow-xl w-full" src="/images/fertilite-koruma/yumurta-dondurma.jpg" alt="Yumurta dondurma işlemi" width="512" height="512" loading="lazy"/>
+                            <div class="absolute -bottom-6 -right-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
+                                <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Vitrifikasyon</p>
+                                <p class="text-2xl font-headline">%97</p>
+                                <p class="text-[10px] text-on-surface-variant">Oosit sağkalım oranı</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sperm Dondurma -->
+        <section id="sperm-dondurma" class="max-w-5xl mx-auto px-8 mb-24">
+            <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="font-headline text-3xl text-on-surface mb-6">Sperm Dondurma (Sperm Kriyoprezervasyonu)</h2>
+                    <div class="space-y-6 text-on-surface-variant">
+                        <p>Sperm dondurma, erkek üreme hücrelerinin gelecekte kullanılmak üzere saklanmasının en köklü yöntemidir. İlk başarılı insan spermi dondurma işlemi 1953 yılında gerçekleştirilmiş olup, günümüzde rutin klinik uygulamanın vazgeçilmez bir parçasıdır.</p>
+
+                        <!-- Yöntemler Tablosu -->
+                        <div class="border-l-4 border-primary bg-white p-6 rounded-r-xl shadow-sm">
+                            <h4 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">biotech</span>
+                                Sperm Dondurma Yöntemleri
+                            </h4>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm">
+                                    <thead>
+                                        <tr class="border-b border-outline-variant/20">
+                                            <th class="text-left py-2 pr-4 font-semibold text-on-surface">Yöntem</th>
+                                            <th class="text-left py-2 pr-4 font-semibold text-on-surface">Sağkalım Oranı</th>
+                                            <th class="text-left py-2 font-semibold text-on-surface">Kullanım Alanı</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-on-surface-variant">
+                                        <tr class="border-b border-outline-variant/10">
+                                            <td class="py-2 pr-4">Yavaş Dondurma</td>
+                                            <td class="py-2 pr-4">%40-60</td>
+                                            <td class="py-2">Standart ejakülat</td>
+                                        </tr>
+                                        <tr class="border-b border-outline-variant/10">
+                                            <td class="py-2 pr-4">Vitrifikasyon</td>
+                                            <td class="py-2 pr-4">%60-80</td>
+                                            <td class="py-2">Düşük sayılı örnekler</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pr-4">Mikro-TESE Sonrası</td>
+                                            <td class="py-2 pr-4">%50-70</td>
+                                            <td class="py-2">Cerrahi elde edilen sperm</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Endikasyonlar -->
+                        <div class="border-l-4 border-primary bg-white p-6 rounded-r-xl shadow-sm">
+                            <h4 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">biotech</span>
+                                Endikasyonlar
+                            </h4>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
+                                    <span>Kanser tedavisi (kemoterapi/radyoterapi) öncesi fertilite koruma</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
+                                    <span>Mikro-TESE veya cerrahi sperm elde etme sonrası saklama</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
+                                    <span>Progresif oligospermi (giderek azalan sperm sayısı) durumunda</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
+                                    <span>Vazektomi veya gonadal cerrahi öncesi yedek saklama</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
+                                    <span>Mesleki risk faktörleri (toksik madde maruziyeti, radyasyon)</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="/makaleler/azospermi-mikro-tese" class="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline">
+                            Azospermi ve Mikro-TESE
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative group">
+                        <img class="rounded-2xl shadow-xl w-full" src="/images/fertilite-koruma/sperm-dondurma.jpg" alt="Sperm dondurma" width="512" height="512" loading="lazy"/>
+                        <div class="absolute -bottom-6 -left-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
+                            <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">İlk Başarı</p>
+                            <p class="text-2xl font-headline">1953</p>
+                            <p class="text-[10px] text-on-surface-variant">İlk insan spermi dondurma</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Embriyo Dondurma -->
+        <section id="embriyo-dondurma" class="bg-surface-container-low py-24 mb-24">
+            <div class="max-w-5xl mx-auto px-8">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="md:w-1/2">
+                        <h2 class="font-headline text-3xl text-on-surface mb-6">Embriyo Dondurma (Embriyo Kriyoprezervasyonu)</h2>
+                        <div class="space-y-6 text-on-surface-variant">
+                            <p>Embriyo dondurma, IVF sürecinde elde edilen fazla embriyoların gelecekteki kullanım için saklanmasıdır. Vitrifikasyon tekniği ile embriyo sağkalım oranları %99'a ulaşmakta olup, dondurulmuş embriyo transferi (FET) günümüzde taze transfere alternatif bir standart yaklaşım haline gelmiştir.</p>
+
+                            <!-- Vitrifikasyon vs Yavaş Dondurma -->
+                            <div class="border-l-4 border-primary bg-white p-6 rounded-r-xl shadow-sm">
+                                <h4 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">biotech</span>
+                                    Vitrifikasyon vs Yavaş Dondurma
+                                </h4>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-sm">
+                                        <thead>
+                                            <tr class="border-b border-outline-variant/20">
+                                                <th class="text-left py-2 pr-4 font-semibold text-on-surface">Parametre</th>
+                                                <th class="text-left py-2 pr-4 font-semibold text-on-surface">Vitrifikasyon</th>
+                                                <th class="text-left py-2 font-semibold text-on-surface">Yavaş Dondurma</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-on-surface-variant">
+                                            <tr class="border-b border-outline-variant/10">
+                                                <td class="py-2 pr-4">Sağkalım Oranı</td>
+                                                <td class="py-2 pr-4">%95-99</td>
+                                                <td class="py-2">%75-85</td>
+                                            </tr>
+                                            <tr class="border-b border-outline-variant/10">
+                                                <td class="py-2 pr-4">Buz Kristali Riski</td>
+                                                <td class="py-2 pr-4">Minimal</td>
+                                                <td class="py-2">Orta</td>
+                                            </tr>
+                                            <tr class="border-b border-outline-variant/10">
+                                                <td class="py-2 pr-4">İşlem Süresi</td>
+                                                <td class="py-2 pr-4">~15 dakika</td>
+                                                <td class="py-2">2-3 saat</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2 pr-4">Gebelik Oranı</td>
+                                                <td class="py-2 pr-4">Taze ile eşdeğer</td>
+                                                <td class="py-2">Tazeden düşük</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Embriyo Evreleri -->
+                            <div class="border-l-4 border-primary bg-white p-6 rounded-r-xl shadow-sm">
+                                <h4 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">biotech</span>
+                                    Embriyo Evreleri ve Dondurma
+                                </h4>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-sm">
+                                        <thead>
+                                            <tr class="border-b border-outline-variant/20">
+                                                <th class="text-left py-2 pr-4 font-semibold text-on-surface">Evre</th>
+                                                <th class="text-left py-2 pr-4 font-semibold text-on-surface">Gün</th>
+                                                <th class="text-left py-2 pr-4 font-semibold text-on-surface">Sağkalım</th>
+                                                <th class="text-left py-2 font-semibold text-on-surface">Tercih Nedeni</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-on-surface-variant">
+                                            <tr class="border-b border-outline-variant/10">
+                                                <td class="py-2 pr-4">Blastosist</td>
+                                                <td class="py-2 pr-4">5-6. gün</td>
+                                                <td class="py-2 pr-4">%95-99</td>
+                                                <td class="py-2">Daha yüksek implantasyon, genetik test imkanı</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2 pr-4">Klivaj</td>
+                                                <td class="py-2 pr-4">2-3. gün</td>
+                                                <td class="py-2 pr-4">%90-95</td>
+                                                <td class="py-2">Az embriyo olduğunda erken koruma</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- FET Protokolleri -->
+                            <div class="border-l-4 border-primary bg-white p-6 rounded-r-xl shadow-sm">
+                                <h4 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">biotech</span>
+                                    Dondurulmuş Embriyo Transferi (FET) Protokolleri
+                                </h4>
+                                <ul class="space-y-3 text-sm">
+                                    <li class="flex gap-3">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
+                                        <span><strong>Doğal Siklus:</strong> Spontan ovülasyona göre zamanlama; en fizyolojik yöntem.</span>
+                                    </li>
+                                    <li class="flex gap-3">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
+                                        <span><strong>Modifiye Doğal Siklus:</strong> hCG tetiklemesi ile ovülasyon zamanlaması optimize edilir.</span>
+                                    </li>
+                                    <li class="flex gap-3">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
+                                        <span><strong>Yapay (Programlanmış) Siklus:</strong> Östrojen ve progesteron ile endometrium hazırlığı; zamanlama esnekliği sağlar.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p class="text-sm bg-surface-container-high p-4 rounded-xl">
+                                <span class="material-symbols-outlined text-[16px] align-middle mr-1">gavel</span>
+                                <strong>Yasal Not:</strong> Türkiye'de embriyo dondurma yalnızca evli çiftler için uygulanabilmektedir. Embriyolar çiftin ortak rızasıyla saklanır ve kullanılır.
+                            </p>
+
+                            <a href="/makaleler/dondurulmus-embriyo-transferi" class="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline">
+                                Dondurulmuş Embriyo Transferi
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative group">
+                            <img class="rounded-2xl shadow-xl w-full" src="/images/fertilite-koruma/embriyo-dondurma.jpg" alt="Embriyo dondurma" width="512" height="512" loading="lazy"/>
+                            <div class="absolute -bottom-6 -right-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
+                                <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Embriyo Sağkalım</p>
+                                <p class="text-2xl font-headline">%99</p>
+                                <p class="text-[10px] text-on-surface-variant">Vitrifikasyon sonrası</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oncofertility -->
+        <section id="oncofertility" class="max-w-5xl mx-auto px-8 mb-24">
+            <div class="border-l-4 border-tertiary pl-8 mb-12">
+                <h2 class="font-headline text-3xl text-on-surface mb-3">Oncofertility: Kanser ve Fertilite Koruma</h2>
+                <p class="text-on-surface-variant italic">
+                    "Her kanser hastasının tedavi öncesinde fertilite koruma seçenekleri hakkında bilgilendirilme hakkı vardır." — ASCO Kılavuzu
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-12">
+                <!-- Sol Kolon (3/5) -->
+                <div class="md:w-3/5 space-y-6">
+
+                    <!-- Gonadotoksik Tedaviler -->
+                    <div class="border-l-4 border-tertiary bg-white p-6 rounded-r-xl shadow-sm">
+                        <h4 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-tertiary">biotech</span>
+                            Gonadotoksik Tedaviler ve Risk Düzeyleri
+                        </h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-outline-variant/20">
+                                        <th class="text-left py-2 pr-4 font-semibold text-on-surface">Risk</th>
+                                        <th class="text-left py-2 pr-4 font-semibold text-on-surface">Oran</th>
+                                        <th class="text-left py-2 pr-4 font-semibold text-on-surface">Kadın</th>
+                                        <th class="text-left py-2 font-semibold text-on-surface">Erkek</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-on-surface-variant">
+                                    <tr class="border-b border-outline-variant/10">
+                                        <td class="py-2 pr-4 text-error font-bold">Yüksek</td>
+                                        <td class="py-2 pr-4">&gt;%80</td>
+                                        <td class="py-2 pr-4">Siklofosfamid, busulfan, tüm vücut ışınlama</td>
+                                        <td class="py-2">Alkilleyici ajanlar, tüm vücut ışınlama</td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/10">
+                                        <td class="py-2 pr-4 text-orange-600 font-bold">Orta</td>
+                                        <td class="py-2 pr-4">%40-60</td>
+                                        <td class="py-2 pr-4">Sisplatin, doksorubisin</td>
+                                        <td class="py-2">Sisplatin, karboplatin</td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/10">
+                                        <td class="py-2 pr-4 text-tertiary font-bold">Düşük</td>
+                                        <td class="py-2 pr-4">&lt;%20</td>
+                                        <td class="py-2 pr-4">Metotreksat, 5-FU, vinkristin</td>
+                                        <td class="py-2">Metotreksat, vinkristin</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 pr-4 font-bold">Bilinmiyor</td>
+                                        <td class="py-2 pr-4">—</td>
+                                        <td class="py-2 pr-4">Hedefe yönelik tedaviler, immünoterapi</td>
+                                        <td class="py-2">Hedefe yönelik tedaviler</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Kanser Türüne Göre Algoritma -->
+                    <div class="border-l-4 border-tertiary bg-white p-6 rounded-r-xl shadow-sm">
+                        <h4 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-tertiary">biotech</span>
+                            Kanser Türüne Göre Fertilite Koruma Algoritması
+                        </h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-outline-variant/20">
+                                        <th class="text-left py-2 pr-4 font-semibold text-on-surface">Kanser Türü</th>
+                                        <th class="text-left py-2 pr-4 font-semibold text-on-surface">Zaman</th>
+                                        <th class="text-left py-2 pr-4 font-semibold text-on-surface">Birinci Seçenek</th>
+                                        <th class="text-left py-2 font-semibold text-on-surface">Alternatif</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-on-surface-variant">
+                                    <tr class="border-b border-outline-variant/10">
+                                        <td class="py-2 pr-4">Meme Kanseri</td>
+                                        <td class="py-2 pr-4">2-4 hafta</td>
+                                        <td class="py-2 pr-4">Oosit/embriyo dondurma</td>
+                                        <td class="py-2">GnRH agonist + over doku</td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/10">
+                                        <td class="py-2 pr-4">Lenfoma</td>
+                                        <td class="py-2 pr-4 text-error font-bold">&lt;1 hafta</td>
+                                        <td class="py-2 pr-4">Random-start stimülasyon</td>
+                                        <td class="py-2">Over doku dondurma</td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/10">
+                                        <td class="py-2 pr-4">Testis Kanseri</td>
+                                        <td class="py-2 pr-4">1-2 hafta</td>
+                                        <td class="py-2 pr-4">Sperm dondurma</td>
+                                        <td class="py-2">Mikro-TESE</td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/10">
+                                        <td class="py-2 pr-4">Kolorektal</td>
+                                        <td class="py-2 pr-4">2-6 hafta</td>
+                                        <td class="py-2 pr-4">Oosit/sperm dondurma</td>
+                                        <td class="py-2">GnRH agonist</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 pr-4">Çocukluk Çağı</td>
+                                        <td class="py-2 pr-4">Değişken</td>
+                                        <td class="py-2 pr-4">Over/testis doku dondurma</td>
+                                        <td class="py-2">GnRH agonist (pubertal)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Random-Start Stimülasyon -->
+                    <div class="border-l-4 border-tertiary bg-white p-6 rounded-r-xl shadow-sm">
+                        <h4 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-tertiary">biotech</span>
+                            Random-Start Stimülasyon Protokolü
+                        </h4>
+                        <dl class="space-y-3 text-sm">
+                            <div class="flex gap-3">
+                                <dt class="font-semibold text-on-surface whitespace-nowrap">Tanım:</dt>
+                                <dd class="text-on-surface-variant">Menstrüel siklüsten bağımsız, herhangi bir günde başlatılabilen stimülasyon protokolü.</dd>
+                            </div>
+                            <div class="flex gap-3">
+                                <dt class="font-semibold text-on-surface whitespace-nowrap">Süre:</dt>
+                                <dd class="text-on-surface-variant">Ortalama 12-14 gün; acil durumlarda 10 güne kadar kısaltılabilir.</dd>
+                            </div>
+                            <div class="flex gap-3">
+                                <dt class="font-semibold text-on-surface whitespace-nowrap">Etkinlik:</dt>
+                                <dd class="text-on-surface-variant">Konvansiyonel stimülasyonla karşılaştırılabilir oosit sayısı ve kalitesi elde edilir.</dd>
+                            </div>
+                            <div class="flex gap-3">
+                                <dt class="font-semibold text-on-surface whitespace-nowrap">Avantaj:</dt>
+                                <dd class="text-on-surface-variant">Kanser tedavisinde kritik zaman kaybını önler; menstrüasyon beklenmez.</dd>
+                            </div>
+                            <div class="flex gap-3">
+                                <dt class="font-semibold text-on-surface whitespace-nowrap">Güvenlik:</dt>
+                                <dd class="text-on-surface-variant">Meme kanseri hastalarında letrozol eklenerek östrojen düzeyi kontrol altında tutulur.</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <a href="/makaleler/kanser-ve-fertilite" class="inline-flex items-center gap-2 text-tertiary font-semibold text-sm hover:underline">
+                        Kanser ve Fertilite Koruma
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Sağ Kolon (2/5) -->
+                <div class="md:w-2/5 space-y-6">
+                    <img class="rounded-2xl shadow-xl w-full" src="/images/fertilite-koruma/oncofertility.jpg" alt="Oncofertility" width="512" height="512" loading="lazy"/>
+
+                    <div class="bg-surface-container-high p-6 rounded-2xl">
+                        <h4 class="font-bold text-on-surface mb-4">Deneysel Yöntemler</h4>
+                        <ul class="space-y-4 text-sm text-on-surface-variant">
+                            <li class="flex gap-3">
+                                <div class="w-1.5 h-1.5 rounded-full bg-tertiary mt-2 shrink-0"></div>
+                                <div>
+                                    <strong class="text-on-surface">Over Doku Dondurma:</strong> Prepubertal kız çocuklarında tek seçenek; ototransplantasyon sonrası doğal gebelik mümkün.
+                                </div>
+                            </li>
+                            <li class="flex gap-3">
+                                <div class="w-1.5 h-1.5 rounded-full bg-tertiary mt-2 shrink-0"></div>
+                                <div>
+                                    <strong class="text-on-surface">Testis Doku Dondurma:</strong> Prepubertal erkek çocuklarda araştırma aşamasında; in vitro spermatogenez çalışmaları devam etmekte.
+                                </div>
+                            </li>
+                            <li class="flex gap-3">
+                                <div class="w-1.5 h-1.5 rounded-full bg-tertiary mt-2 shrink-0"></div>
+                                <div>
+                                    <strong class="text-on-surface">GnRH Agonist Koruması:</strong> Kemoterapi sırasında overleri baskılayarak gonadotoksik hasarı azaltmayı hedefler; tek başına yeterli koruma sağlamaz.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Reviewer Card -->
+        <section class="max-w-3xl mx-auto px-8 mb-12">
+            <div class="flex items-center gap-6 p-6 bg-surface-container-low rounded-2xl border border-outline-variant/20">
+                <div class="w-16 h-16 rounded-full overflow-hidden bg-surface-dim shrink-0">
+                    <img class="w-full h-full object-cover" src="/images/senai-aksoy.jpg" alt="Doç. Dr. Senai Aksoy" width="512" height="512" loading="lazy"/>
+                </div>
+                <div>
+                    <p class="text-xs text-on-surface-variant uppercase tracking-widest mb-1">Tıbbi İnceleme</p>
+                    <p class="font-bold text-on-surface">Doç. Dr. Senai Aksoy</p>
+                    <p class="text-sm text-on-surface-variant">Kadın Hastalıkları ve Doğum Uzmanı, Tüp Bebek Tedavisi</p>
+                    <p class="text-xs text-on-surface-variant mt-1">Son güncelleme: Nisan 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Disclaimer -->
+        <section class="max-w-3xl mx-auto px-8">
+            <p class="text-xs text-on-surface-variant leading-relaxed p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+                <strong>Yasal Uyarı:</strong> Bu sayfadaki bilgiler yalnızca eğitim ve bilgilendirme amaçlıdır, tıbbi tavsiye yerine geçmez. Fertilite koruma kararları, bireysel tıbbi değerlendirme sonucunda uzman hekim tarafından verilmelidir. Tedavi seçenekleri hakkında mutlaka doktorunuza danışınız.
+            </p>
+        </section>
+
+    </main>
+    <Footer />
+</BaseLayout>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.quick-nav-link');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-primary', 'border-primary');
+                        link.classList.add('text-slate-500', 'border-transparent');
+                    });
+                    const activeLink = document.querySelector(`.quick-nav-link[href="#${entry.target.id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('text-primary', 'border-primary');
+                        activeLink.classList.remove('text-slate-500', 'border-transparent');
+                    }
+                }
+            });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        sections.forEach(section => observer.observe(section));
+    });
+</script>
