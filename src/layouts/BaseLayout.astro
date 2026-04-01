@@ -1,10 +1,13 @@
 ---
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
 interface Props {
 	title: string;
 	description?: string;
 }
 
 const { title, description = "tupbebek.com | Üreme Sağlığı Bilgisi" } = Astro.props;
+const isHome = Astro.url.pathname === '/';
 ---
 
 <!doctype html>
@@ -56,6 +59,7 @@ const { title, description = "tupbebek.com | Üreme Sağlığı Bilgisi" } = Ast
 		</style>
 	</head>
 	<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+		{!isHome && <Breadcrumbs />}
 		<slot />
 		
 		<!-- Floating Prestige Badge -->
