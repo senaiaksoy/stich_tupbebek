@@ -46,7 +46,7 @@ Yumurta dondurma, sperm dondurma ve embriyo dondurma konularinda kapsamli bir bi
 ## 3. Yumurta Dondurma (Oosit Kriyoprezervasyon)
 
 **Anchor:** `#yumurta-dondurma`
-**Layout:** `bg-surface-container-low`, gorsel sol tarafta
+**Layout:** `bg-surface-container-low`, gorsel sag tarafta (sorunlar.astro Section 1 patterni)
 **Floating data badge:** "Vitrifikasyon: %97 sagkalim"
 
 ### Giris Paragrafi
@@ -113,7 +113,7 @@ Mevcut: `/makaleler/azospermi-mikro-tese`
 ## 5. Embriyo Dondurma (Embriyo Kriyoprezervasyon)
 
 **Anchor:** `#embriyo-dondurma`
-**Layout:** `bg-surface-container-low`, gorsel sol tarafta
+**Layout:** `bg-surface-container-low`, gorsel sag tarafta (alternating: ayni yon yumurta dondurma ile)
 **Floating data badge:** "Vitrifikasyon sonrasi embriyo sagkalim: %99"
 
 ### Giris Paragrafi
@@ -220,8 +220,8 @@ Mevcut "Tedaviler" mega-menusundeki link degisikligi:
 
 Ek link eklenmeyecek, mevcut link guncellenir (Header.astro satir 127-130).
 
-### Header Mega-Menu — Mobil Akordeon
-Mobil menudeki "Tedaviler" akordeonunda ayni link guncellenir: `/tedavi-yontemleri#koruma` → `/fertilite-koruma`
+### Header Mega-Menu — Mobil
+Mobil menude "Tedaviler" yalnizca flat bir link (`/tedavi-yontemleri`, satir 298) olarak yer alir, alt-link icermez. Mobil menude degisiklik gerekmez.
 
 ### Breadcrumbs.astro
 - labelMap'e ekleme: `'fertilite-koruma': 'Fertilite Koruma'`
