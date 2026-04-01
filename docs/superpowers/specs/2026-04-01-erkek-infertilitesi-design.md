@@ -16,14 +16,16 @@ Erkek infertilitesi için bağımsız bir ana sayfa (`/erkek-infertilitesi`) olu
 ### Dahil
 - Yeni sayfa: `src/pages/erkek-infertilitesi.astro`
 - 6 detaylı içerik bölümü (anchor ID'lerle navigasyon)
-- Klinik bilgi kutusu bileşeni (sayfaya özgü, inline)
+- Klinik bilgi kutusu (sayfaya özgü, inline — ayrı bileşen dosyası gerektirmez)
 - Header mega menü güncellemesi (desktop + mobil)
-- SEO meta etiketleri ve breadcrumb
+- Breadcrumbs `labelMap`'e `'erkek-infertilitesi': 'Erkek İnfertilitesi'` eklenmesi
+- SEO meta etiketleri ve breadcrumb JSON-LD
 
 ### Hariç
 - Yeni makale yazımı (mevcut makalelere link verilecek)
 - Görsel üretimi (placeholder kullanılacak, sonra değiştirilir)
 - Diğer sayfalardaki değişiklikler (footer, diğer sayfalar)
+- `/sorunlar` sayfasındaki eksik anchor ID'ler (mevcut sorun, bu spec kapsamı dışında)
 
 ---
 
@@ -32,13 +34,18 @@ Erkek infertilitesi için bağımsız bir ana sayfa (`/erkek-infertilitesi`) olu
 ```
 /erkek-infertilitesi.astro
 
-├── HERO SECTION
-│   ├── Breadcrumb (Anasayfa > Erkek İnfertilitesi)
-│   ├── Başlık: "Erkek İnfertilitesi"
-│   ├── Alt başlık: İstatistiksel vurgu (%40-50 erkek faktörü)
-│   └── Tıbbi denetçi rozeti (Dr. Senai Aksoy)
+├── HERO SECTION (sorunlar.astro hero yapısını takip eder)
+│   ├── Breadcrumbs bileşeni (labelMap'te 'erkek-infertilitesi' kaydı gerekli)
+│   ├── Akademik Makale rozeti (sorunlar.astro'daki ile aynı)
+│   ├── H1: "Erkek İnfertilitesi: <span italic primary>Tıbbi Nedenler</span> ve Tedavi"
+│   ├── Tıbbi denetçi kartı (Dr. Senai Aksoy, sorunlar.astro'daki ile aynı yapı)
+│   └── Hero görseli (sağda, hidden md:block, sorunlar.astro düzeni)
 │
-├── QUICK-NAV BAR (sticky)
+├── QUICK-NAV BAR (sticky, sorunlar.astro'da yok — bu sayfaya özgü yeni eleman)
+│   ├── Stil: `sticky top-20 z-40 bg-white/90 backdrop-blur-sm border-b border-slate-100 shadow-sm`
+│   ├── İçerik: Yatay scroll, her bölüme anchor link
+│   ├── Aktif bölüm vurgusu: `text-primary border-b-2 border-primary` (JS intersection observer ile)
+│   ├── Mobil: yatay kaydırılabilir, `overflow-x-auto whitespace-nowrap`
 │   ├── Azospermi & Oligospermi
 │   ├── Varikosel
 │   ├── Genetik Faktörler
@@ -61,11 +68,14 @@ Erkek infertilitesi için bağımsız bir ana sayfa (`/erkek-infertilitesi`) olu
 │   ├── #yasam-tarzi — Yaşam Tarzı ve Erkek Fertilitesi
 │   └── #mikro-tese — Mikro-TESE ve Cerrahi Sperm Elde Etme
 │
-├── DOKTOR ONAY BANDI
-│   └── Dr. Senai Aksoy — tıbbi denetim bilgisi
+├── DOKTOR ONAY BANDI (hakkimizda.astro ve makaleler/[...slug].astro'daki kalıp)
+│   ├── Dr. Senai Aksoy fotoğrafı + isim + unvan
+│   ├── "Bu sayfa ... tarafından tıbbi açıdan incelenmiştir."
+│   └── Stil: `bg-surface-container-low p-8 rounded-2xl border-l-4 border-primary`
 │
-└── YASAL UYARI
-    └── Tıbbi sorumluluk reddi
+└── YASAL UYARI (makaleler/[...slug].astro'daki kalıp)
+    ├── "Bu içerik yalnızca bilgilendirme amaçlıdır..."
+    └── Stil: `bg-amber-50/50 border border-amber-200/50 rounded-xl p-6 text-sm`
 ```
 
 ---
@@ -88,10 +98,10 @@ Mevcut `/sorunlar` sayfasında olmayan, bu sayfaya özgü bileşen.
 
 ### Stil
 - Sol kenarlık: `border-l-4 border-primary`
-- Arka plan: `bg-blue-50/60`
+- Arka plan: `bg-surface-container-low` (site genelindeki token sistemine uyumlu; `sorunlar.astro`'daki `bg-surface-container-high` ile paralel)
 - Başlık: Mikroskop ikonu + "Klinik Bilgi" etiketi, `text-sm font-semibold uppercase tracking-wide text-primary`
 - İçerik: Tablo veya tanım listesi, değerler için `font-mono`
-- Kaynak notu: `text-xs text-gray-500`
+- Kaynak notu: `text-xs text-on-surface-variant`
 
 ### Bölüm Bazında İçerik
 
@@ -108,25 +118,21 @@ Mevcut `/sorunlar` sayfasında olmayan, bu sayfaya özgü bileşen.
 
 ## Header Mega Menü Güncellemesi
 
-"İnfertilite Rehberi" altındaki mevcut yapı güncellenir:
+Mevcut mega menü flat 3-sütun grid kullanıyor (`grid-cols-3 gap-y-6 gap-x-12`). Bu düzen korunur — alt grup başlıkları eklenmez. Değişiklikler:
 
-```
-İnfertilite Rehberi
-├── Kadın İnfertilitesi (/sorunlar)
-│   ├── Ovülasyon Bozuklukları → /sorunlar#ovulasyon
-│   ├── Anatomik Faktörler → /sorunlar#anatomik
-│   └── Yaş ve Metabolizma → /sorunlar#yas
-│
-├── Erkek İnfertilitesi (/erkek-infertilitesi)       ← YENİ
-│   ├── Azospermi & Oligospermi → /erkek-infertilitesi#azospermi
-│   ├── Varikosel → /erkek-infertilitesi#varikosel
-│   ├── Genetik Faktörler → /erkek-infertilitesi#genetik
-│   └── Mikro-TESE → /erkek-infertilitesi#mikro-tese
-│
-└── Açıklanamayan İnfertilite → /sorunlar#aciklanamayan
-```
+### Desktop Mega Menü (col-span-3 grid içindeki linkler)
+Mevcut linkleri değiştir:
 
-Mobil accordion menüde de aynı yapı güncellenecek.
+| Mevcut Link | Yeni Link | Açıklama |
+|---|---|---|
+| `/sorunlar#kadin` → Kadın Faktörleri | `/sorunlar` → Kadın Faktörleri | Aynı kalır (anchor zaten yok) |
+| `/sorunlar#erkek` → Erkek Faktörleri | `/erkek-infertilitesi` → Erkek Faktörleri | **Yeni sayfaya yönlendir** |
+| `/sorunlar#aciklanamayan` → Açıklanamayan | Aynı kalır | Kapsam dışı |
+| `/sorunlar#yas` → Yaş ve Fertilite | Aynı kalır | Kapsam dışı |
+| `/sorunlar#genetik` → Genetik Faktörler | `/erkek-infertilitesi#genetik` → Genetik Faktörler | **Erkek genetik sayfasına yönlendir** |
+
+### Mobil Menü
+Mobil accordion'daki ilgili linkler de aynı şekilde güncellenir.
 
 ---
 
@@ -134,12 +140,12 @@ Mobil accordion menüde de aynı yapı güncellenecek.
 
 | Bölüm | Mevcut Makale |
 |-------|--------------|
-| Azospermi & Oligospermi | `azospermi-mikro-tese` |
-| Genetik Faktörler | `genetik-testler` |
-| Yaşam Tarzı | `alkol-ve-fertilite` |
-| Varikosel | — (henüz yok) |
-| DNA Fragmentasyonu | — (henüz yok) |
-| Mikro-TESE | `azospermi-mikro-tese` (aynı makale) |
+| Azospermi & Oligospermi | `/makaleler/azospermi-mikro-tese` |
+| Genetik Faktörler | `/makaleler/genetik-testler` |
+| Yaşam Tarzı | `/makaleler/alkol-ve-fertilite` |
+| Varikosel | — (henüz makale yok, link eklenmez) |
+| DNA Fragmentasyonu | — (henüz makale yok, link eklenmez) |
+| Mikro-TESE | `/makaleler/azospermi-mikro-tese` (aynı makale) |
 
 ---
 
