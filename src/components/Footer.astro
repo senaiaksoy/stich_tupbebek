@@ -1,109 +1,110 @@
 ---
 ---
 ---
-// Footer.astro
+// Footer.astro — 4 Kolon Yapısı + Yasal Şerit
 ---
-<footer class="w-full bg-slate-900 text-slate-300 pt-20 pb-10 border-t border-slate-800">
+<footer class="w-full bg-slate-900 text-slate-300 pt-16 pb-10 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-8">
-        <!-- Main Footer Content -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-            <!-- Brand & Mission -->
-            <div class="lg:col-span-2">
-                <div class="font-serif font-bold text-2xl text-white mb-6">tupbebek.com</div>
-                <p class="text-sm leading-relaxed mb-8 max-w-sm opacity-80">
-                    1996'dan beri bağımsız, reklamsız ve bilimsel üreme sağlığı rehberi. Tüm içeriklerimiz Doç. Dr. Senai Aksoy ve tıbbi inceleme kurulumuzun denetimindedir.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                        <span class="material-symbols-outlined text-white scale-75">share</span>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                        <span class="material-symbols-outlined text-white scale-75">mail</span>
-                    </a>
-                </div>
-            </div>
 
-            <!-- Sitemap: Content Hierarchy -->
+        <!-- 4-KOLON FOOTER BÖLÜMÜ -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+            <!-- KOLON 1: İNFERTİLİTE -->
             <div>
-                <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Bilgi Kütüphanesi</h4>
-                <ul class="space-y-4 text-sm">
-                    <li><a href="/kadin-infertilitesi" class="hover:text-primary transition-colors">Kadın İnfertilitesi</a></li>
-                    <li><a href="/erkek-infertilitesi" class="hover:text-primary transition-colors">Erkek İnfertilitesi</a></li>
-                    <li><a href="/aciklanamayan-infertilite" class="hover:text-primary transition-colors">Açıklanamayan İnfertilite</a></li>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6 border-b border-slate-700 pb-3">
+                    İnfertilite
+                </h4>
+                <ul class="space-y-3 text-sm leading-relaxed">
+                    <li><a href="/kadin-infertilitesi" class="hover:text-primary transition-colors">Kadın Faktörleri</a></li>
+                    <li><a href="/erkek-infertilitesi" class="hover:text-primary transition-colors">Erkek Faktörleri</a></li>
                     <li><a href="/yas-ve-fertilite" class="hover:text-primary transition-colors">Yaş ve Fertilite</a></li>
                     <li><a href="/tani-sureci" class="hover:text-primary transition-colors">Tanı Süreci</a></li>
-                    <li><a href="/tedavi-yontemleri" class="hover:text-primary transition-colors">Tedavi Yöntemleri</a></li>
-                    <li><a href="/rehberler" class="hover:text-primary transition-colors">Tedavi Rehberi</a></li>
-                    <li><a href="/makaleler" class="hover:text-primary transition-colors">Tüm Makaleler</a></li>
-                    <li><a href="/sss" class="hover:text-primary transition-colors">SSS</a></li>
                 </ul>
             </div>
 
+            <!-- KOLON 2: TEDAVİ -->
             <div>
-                <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Kurumsal</h4>
-                <ul class="space-y-4 text-sm">
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6 border-b border-slate-700 pb-3">
+                    Tedavi
+                </h4>
+                <ul class="space-y-3 text-sm leading-relaxed">
+                    <li><a href="/tedavi-yontemleri" class="hover:text-primary transition-colors">Tedavi Yöntemleri</a></li>
+                    <li><a href="/ivf-rehberi" class="hover:text-primary transition-colors">IVF Rehberi</a></li>
+                    <li><a href="/ilac-rehberi" class="hover:text-primary transition-colors">İlaç Rehberi</a></li>
+                    <li><a href="/beslenme-yasam" class="hover:text-primary transition-colors">Beslenme &amp; Yaşam</a></li>
+                    <li><a href="/fertilite-koruma" class="hover:text-primary transition-colors">Fertilite Koruma</a></li>
+                </ul>
+            </div>
+
+            <!-- KOLON 3: KAYNAKLAR -->
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6 border-b border-slate-700 pb-3">
+                    Kaynaklar
+                </h4>
+                <ul class="space-y-3 text-sm leading-relaxed">
+                    <li><a href="/makaleler" class="hover:text-primary transition-colors">Makaleler</a></li>
+                    <li><a href="/tibbi-sozluk" class="hover:text-primary transition-colors">Tıbbi Sözlük</a></li>
+                    <li><a href="/sss" class="hover:text-primary transition-colors">Sık Sorulan Sorular</a></li>
+                    <li><a href="/duygusal-destek" class="hover:text-primary transition-colors">Duygusal Destek</a></li>
+                    <li><a href="/basarı-oranlari" class="hover:text-primary transition-colors">Başarı Oranları</a></li>
+                </ul>
+            </div>
+
+            <!-- KOLON 4: KURUMSAL -->
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6 border-b border-slate-700 pb-3">
+                    Kurumsal
+                </h4>
+                <ul class="space-y-3 text-sm leading-relaxed">
                     <li><a href="/hakkimizda" class="hover:text-primary transition-colors">Hakkımızda</a></li>
                     <li><a href="/editoryal-politika" class="hover:text-primary transition-colors">Editöryal Politika</a></li>
-                    <li><a href="/tbbi-sozluk" class="hover:text-primary transition-colors">Tıbbi Sözlük</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Yasal & Gizlilik</h4>
-                <ul class="space-y-4 text-sm">
-                    <li><a href="/gizlilik-politikasi" class="hover:text-primary transition-colors">KVKK Aydınlatma</a></li>
-                    <li><a href="/cerez-politikasi" class="hover:text-primary transition-colors">Çerez Politikası</a></li>
-                    <li><a href="/kullanim-kosullari" class="hover:text-primary transition-colors">Kullanım Koşulları</a></li>
-                    <li><a href="/tibbi-sorumluluk-reddi" class="hover:text-primary transition-colors">Tıbbi Sorumluluk Reddi</a></li>
+                    <li><a href="/iletisim" class="hover:text-primary transition-colors">İletişim</a></li>
                 </ul>
             </div>
         </div>
 
-        <!-- Medical Disclaimer -->
-        <div class="py-8 border-y border-slate-800 mb-8">
-            <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined text-[#C5A059] shrink-0">warning</span>
-                <p class="text-[11px] leading-relaxed opacity-60">
-                    <strong>TIBBİ SORUMLULUK REDDİ:</strong> tupbebek.com üzerinde yer alan tüm tıbbi bilgiler, akademik literatür ve klinik tecrübe ışığında genel bilgilendirme amacıyla hazırlanmıştır. Sitedeki içerikler hiçbir şekilde profesyonel bir tıbbi tavsiye, teşhis veya tedavi yerine geçemez. Herhangi bir tıbbi semptom veya endişeniz varsa, lütfen vakit kaybetmeden uzman bir hekime başvurunuz. Bu platform, herhangi bir sağlık kuruluşuna yönelik ticari yönlendirme yapmaz.
-                </p>
+        <!-- YASAL ZORUNLU ŞERİT -->
+        <div class="border-t border-slate-700 pt-8 pb-8">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-[11px] uppercase tracking-widest opacity-70">
+                <a href="/tibbi-sorumluluk-reddi" class="hover:text-primary transition-colors">Tıbbi Sorumluluk Reddi</a>
+                <span class="hidden md:inline">|</span>
+                <a href="/gizlilik-politikasi" class="hover:text-primary transition-colors">Gizlilik Politikası</a>
+                <span class="hidden md:inline">|</span>
+                <a href="/cerez-politikasi" class="hover:text-primary transition-colors">Çerez Politikası</a>
+                <span class="hidden md:inline">|</span>
+                <a href="/kullanim-kosullari" class="hover:text-primary transition-colors">Kullanım Koşulları</a>
             </div>
         </div>
 
-        <!-- Social Media Links -->
-        <div class="flex items-center justify-center gap-4 mb-8">
-            <a href="https://www.facebook.com/tupbebek" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                <span class="material-symbols-outlined text-white scale-75">facebook</span>
-            </a>
-            <a href="https://www.instagram.com/tupbebek" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                <span class="material-symbols-outlined text-white scale-75">instagram</span>
-            </a>
-            <a href="https://www.youtube.com/tupbebek" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                <span class="material-symbols-outlined text-white scale-75">youtube</span>
-            </a>
-            <a href="https://www.linkedin.com/company/tupbebek" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                <span class="material-symbols-outlined text-white scale-75">linkedin</span>
-            </a>
-        </div>
-
-        <!-- KVKK Compliance Text -->
-        <div class="text-center text-[10px] leading-relaxed opacity-60 mb-8">
-            <p class="mb-2">
-                Kişisel Verilerin Korunması Kanunu (§ 6698) kapsamında, web sitemizde yer alan çerezler (cookies) ve benzeri teknolojiler kullanılmaktadır. Bu teknolojiler, çevrimiçi deneyiminizi geliştirmek, trafiği analiz etmek ve hedefli içerik/sunum sunmak için kullanılmaktadır. Bu sitede gezinmeye devam ederek, bu teknolojilerin kullanımını kabul etmiş olursunuz. Ayrıntılı bilgi için <a href="/gizlilik-politikasi" class="text-primary hover:text-white transition-colors">KVKK Aydınlatma Metni</a>ni inceleyebilirsiniz.
+        <!-- ALT BİLGİ ve ÖZ KREDİ -->
+        <div class="border-t border-slate-700 pt-6 text-center">
+            <p class="text-[11px] leading-relaxed opacity-70 mb-2">
+                © 2026 tupbebek.com — Tüm içerikler <span class="text-primary font-semibold">Dr. Senai Aksoy</span> editöryal denetimindedir.
             </p>
-            <p>
-                Veri sorumlusunuz: tupbebek.com - Doç. Dr. Senai Aksoy - info@tupbebek.com
+            <p class="text-[10px] opacity-50 italic">
+                Bu sitedeki bilgiler tıbbi danışmanlık yerine geçmez.
             </p>
         </div>
 
-        <!-- Bottom Bar -->
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-[10px] uppercase tracking-widest opacity-50">
-                © 2024 tupbebek.com | BAĞIMSIZ ÜREME SAĞLIĞI PLATFORMU
+        <!-- SOSYAL MEDYA VE BAĞLANTI -->
+        <div class="flex flex-col items-center gap-4 mt-8 pt-6 border-t border-slate-700">
+            <div class="flex gap-3">
+                <a href="https://www.facebook.com/tupbebek" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" title="Facebook">
+                    <span class="material-symbols-outlined text-white text-lg">facebook</span>
+                </a>
+                <a href="https://www.instagram.com/tupbebek" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" title="Instagram">
+                    <span class="material-symbols-outlined text-white text-lg">instagram</span>
+                </a>
+                <a href="https://www.youtube.com/tupbebek" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" title="YouTube">
+                    <span class="material-symbols-outlined text-white text-lg">youtube</span>
+                </a>
+                <a href="https://www.linkedin.com/company/tupbebek" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" title="LinkedIn">
+                    <span class="material-symbols-outlined text-white text-lg">linkedin</span>
+                </a>
             </div>
-            <div class="flex items-center gap-3">
-                <img src="/images/home/prestige_seal_1996.png" alt="1996 Seal" class="h-8 grayscale opacity-50 contrast-125" />
-                <span class="text-[10px] font-bold opacity-40 italic uppercase tracking-tighter">ESTABLISHED 1996</span>
-            </div>
+            <p class="text-[10px] opacity-50">
+                İletişim: <a href="mailto:info@tupbebek.com" class="text-primary hover:text-white transition-colors">info@tupbebek.com</a>
+            </p>
         </div>
     </div>
 </footer>
