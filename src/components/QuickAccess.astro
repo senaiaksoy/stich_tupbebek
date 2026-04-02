@@ -12,9 +12,9 @@ const { items, title = "Hızlı Erişim" } = Astro.props;
 ---
 
 <section class="bg-surface-container-low py-8 my-12">
-  <div class="max-w-5xl mx-auto px-8">
+  <div class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
     {title && <h2 class="font-headline text-xl text-on-surface mb-6">{title}</h2>}
-    <div class="flex flex-wrap gap-3">
+    <div class="flex flex-wrap gap-4">
       {items.map((item) => (
         <a
           href={item.href}
