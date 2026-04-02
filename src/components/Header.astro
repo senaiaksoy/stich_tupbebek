@@ -55,10 +55,10 @@
                     </div>
                 </div>
 
-                {/* 2. Tanı Süreci */}
+                {/* 2. Tanı ve Değerlendirme */}
                 <div class="group h-full flex items-center">
                     <button class="px-3 py-2 text-sm font-semibold text-slate-600 hover:text-primary transition-colors flex items-center gap-1 group-hover:bg-slate-50 rounded-lg">
-                        Tanı Süreci <span class="material-symbols-outlined text-xs group-hover:rotate-180 transition-transform">expand_more</span>
+                        Tanı ve Değerlendirme <span class="material-symbols-outlined text-xs group-hover:rotate-180 transition-transform">expand_more</span>
                     </button>
                     <div class="absolute top-[100%] left-0 w-full bg-white shadow-2xl border-b border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50">
                         <div class="max-w-7xl mx-auto px-8 py-10 grid grid-cols-4 gap-8">
@@ -67,25 +67,21 @@
                                 <p class="text-sm text-slate-500 leading-relaxed italic">"Doğru tedavi, titiz ve hatasız bir tanı süreciyle başlar."</p>
                             </div>
                             <div class="col-span-3 grid grid-cols-3 gap-y-6 gap-x-12">
-                                <a href="/tani-sureci#kadin" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Kadın Değerlendirmesi</span>
-                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">HSG, Ultrason & Hormonlar</span>
-                                </a>
-                                <a href="/tani-sureci#erkek" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Erkek Değerlendirmesi</span>
-                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">İleri Spermiogram Analizi</span>
+                                <a href="/tani-sureci" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
+                                    <span class="text-sm font-bold">Genel Süreç</span>
+                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Kadın & Erkek Değerlendirmesi</span>
                                 </a>
                                 <a href="/genetik-testler" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Genetik Testler</span>
-                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Kromozomal Tarama</span>
+                                    <span class="text-sm font-bold">Testler</span>
+                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Genetik Tarama</span>
                                 </a>
                                 <a href="/hormon-paneli" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Hormon Paneli Okuma</span>
-                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">AMH, FSH & E2 Verileri</span>
+                                    <span class="text-sm font-bold">Okuma Rehberi</span>
+                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">AMH, FSH, E2</span>
                                 </a>
-                                <a href="/tani-sureci#algoritma" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Tanı Algoritması</span>
-                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Adım Adım Yol Haritası</span>
+                                <a href="/makaleler/laboratuvar-raporu-yorumlama" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
+                                    <span class="text-sm font-bold">Lab Raporu Yorumlama</span>
+                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Hormon & Semen Analizi</span>
                                 </a>
                             </div>
                         </div>
@@ -116,7 +112,7 @@
                                     <span class="text-sm font-bold">Ovülasyon İndüksiyonu</span>
                                     <span class="text-xs text-slate-500 uppercase tracking-tighter">Yumurta Takibi & Uyarım</span>
                                 </a>
-                                <a href="/makaleler/genetik-testler" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
+                                <a href="/pgt-merkezi" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
                                     <span class="text-sm font-bold">PGT</span>
                                     <span class="text-xs text-slate-500 uppercase tracking-tighter">Embriyo Seçiminde Bilim</span>
                                 </a>
@@ -227,7 +223,7 @@
                                     <span class="text-sm font-bold">Misyonumuz</span>
                                     <span class="text-xs text-slate-500 uppercase tracking-tighter">Neden Buradayız?</span>
                                 </a>
-                                <a href="/hakkimizda#editor" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
+                                <a href="/editoryal-politika" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
                                     <span class="text-sm font-bold">Editöryal Politika</span>
                                     <span class="text-xs text-slate-500 uppercase tracking-tighter">İçerik Standartları</span>
                                 </a>
@@ -295,18 +291,60 @@
                 </div>
                 <div class="mobile-accordion">
                     <button class="w-full flex items-center justify-between py-4 text-lg font-bold border-b border-slate-50">
-                        Tanı Süreci <span class="material-symbols-outlined text-slate-400 Transition-transform">expand_more</span>
+                        Tanı ve Değerlendirme <span class="material-symbols-outlined text-slate-400 Transition-transform">expand_more</span>
                     </button>
                     <div class="hidden py-4 pl-4 space-y-4">
-                        <a href="/tani-sureci#kadin" class="block text-slate-600">Kadın Değerlendirmesi</a>
-                        <a href="/tani-sureci#erkek" class="block text-slate-600">Erkek Değerlendirmesi</a>
+                        <a href="/tani-sureci" class="block text-slate-600">Genel Süreç</a>
+                        <a href="/genetik-testler" class="block text-slate-600">Genetik Testler</a>
+                        <a href="/hormon-paneli" class="block text-slate-600">Hormon Paneli</a>
                     </div>
                 </div>
-                {/* Simplified for demo, repeat for others */}
-                <a href="/tedavi-yontemleri" class="block py-4 text-lg font-bold border-b border-slate-50">Tedaviler</a>
-                <a href="/rehberler" class="block py-4 text-lg font-bold border-b border-slate-50">Tedavi Rehberi</a>
-                <a href="/makaleler" class="block py-4 text-lg font-bold border-b border-slate-50">Bilgi Merkezi</a>
-                <a href="/hakkimizda" class="block py-4 text-lg font-bold border-b border-slate-50">Hakkımızda</a>
+
+                <div class="mobile-accordion">
+                    <button class="w-full flex items-center justify-between py-4 text-lg font-bold border-b border-slate-50">
+                        Tedaviler <span class="material-symbols-outlined text-slate-400 Transition-transform">expand_more</span>
+                    </button>
+                    <div class="hidden py-4 pl-4 space-y-4">
+                        <a href="/tedavi-yontemleri" class="block text-slate-600">Tüp Bebek (IVF/ICSI)</a>
+                        <a href="/tedavi-yontemleri#iui" class="block text-slate-600">Aşılama (IUI)</a>
+                        <a href="/pgt-merkezi" class="block text-slate-600">PGT Bilgi Merkezi</a>
+                        <a href="/fertilite-koruma" class="block text-slate-600">Fertilite Koruma</a>
+                    </div>
+                </div>
+
+                <div class="mobile-accordion">
+                    <button class="w-full flex items-center justify-between py-4 text-lg font-bold border-b border-slate-50">
+                        Tedavi Rehberi <span class="material-symbols-outlined text-slate-400 Transition-transform">expand_more</span>
+                    </button>
+                    <div class="hidden py-4 pl-4 space-y-4">
+                        <a href="/rehberler" class="block text-slate-600">Adım Adım IVF</a>
+                        <a href="/ilac-rehberi" class="block text-slate-600">İlaç Rehberi</a>
+                        <a href="/beslenme-yasam" class="block text-slate-600">Beslenme & Yaşam</a>
+                    </div>
+                </div>
+
+                <div class="mobile-accordion">
+                    <button class="w-full flex items-center justify-between py-4 text-lg font-bold border-b border-slate-50">
+                        Bilgi Merkezi <span class="material-symbols-outlined text-slate-400 Transition-transform">expand_more</span>
+                    </button>
+                    <div class="hidden py-4 pl-4 space-y-4">
+                        <a href="/makaleler" class="block text-slate-600">Tüm Makaleler</a>
+                        <a href="/sss" class="block text-slate-600">Sık Sorulan Sorular</a>
+                        <a href="/tbbi-sozluk" class="block text-slate-600">Tıbbi Sözlük</a>
+                        <a href="/psikolojik-destek" class="block text-slate-600">Duygusal Destek</a>
+                        <a href="/basari-oranlari" class="block text-slate-600">Başarı Oranları</a>
+                    </div>
+                </div>
+
+                <div class="mobile-accordion">
+                    <button class="w-full flex items-center justify-between py-4 text-lg font-bold border-b border-slate-50">
+                        Kurumsal <span class="material-symbols-outlined text-slate-400 Transition-transform">expand_more</span>
+                    </button>
+                    <div class="hidden py-4 pl-4 space-y-4">
+                        <a href="/hakkimizda" class="block text-slate-600">Hakkımızda</a>
+                        <a href="/editoryal-politika" class="block text-slate-600">Editöryal Politika</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
