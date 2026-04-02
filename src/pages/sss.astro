@@ -54,6 +54,7 @@ import Footer from '../components/Footer.astro';
                         <button class="w-full text-left px-4 py-3 rounded-xl hover:bg-surface-container text-on-surface-variant transition-all">Tedavi Süreci</button>
                         <button class="w-full text-left px-4 py-3 rounded-xl hover:bg-surface-container text-on-surface-variant transition-all">Başarı Oranları</button>
                         <button class="w-full text-left px-4 py-3 rounded-xl hover:bg-surface-container text-on-surface-variant transition-all">Yaşam Tarzı</button>
+                        <button class="w-full text-left px-4 py-3 rounded-xl hover:bg-surface-container text-on-surface-variant transition-all">Erkek Faktörleri</button>
                     </nav>
                 </div>
                 <div class="p-6 rounded-2xl bg-tertiary-container text-on-tertiary-container">
@@ -128,6 +129,73 @@ import Footer from '../components/Footer.astro';
                                 <div class="text-on-surface-variant leading-relaxed max-w-4xl">
                                     <p>Modern klinik çalışmalar, transfer sonrası günlerce yatak istirahatinin gebelik oranlarını artırmadığını kanıtlamıştır. İşlem günü kısa bir istirahat yeterlidir. Sonraki günlerde aşırı fiziksel efordan kaçınmak kaydıyla günlük sosyal yaşama dönülmesi tavsiye edilir.</p>
                                     <p class="mt-4"><a href="/makaleler/dondurulmus-embriyo-transferi" class="text-primary font-bold hover:underline inline-flex items-center gap-1">İlgili Makale: Dondurulmuş Embriyo Transferi Rehberi <span class="material-symbols-outlined text-sm">open_in_new</span></a></p>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="mb-10 flex items-end justify-between">
+                        <div>
+                            <h2 class="text-3xl font-headline mb-2 text-on-surface">Erkek Faktörleri</h2>
+                            <p class="text-on-surface-variant text-sm">Erkek infertilitesi ve sperm kalitesi hakkında sık sorulan sorular.</p>
+                        </div>
+                        <div class="w-20 h-px bg-outline-variant/30 mb-2"></div>
+                    </div>
+                    <div class="space-y-4">
+                        <details class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                                <span class="text-lg font-medium text-on-surface pr-8">Erkek infertilitesi tanısı nasıl konur?</span>
+                                <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-8 pt-2">
+                                <div class="w-full h-px bg-surface-container mb-6"></div>
+                                <div class="text-on-surface-variant leading-relaxed space-y-4 max-w-4xl">
+                                    <p>Erkek infertilitesi tanısı, semen analizi ile başlar. WHO 2021 standartlarına göre en az 15 milyon/mL sperm konsantrasyonu, %40 toplam motilite ve %4 normal morfoloji normal kabul edilir. Analiz abnormal çıktığında hormon paneli (FSH, LH, Testosteron) yapılır.</p>
+                                    <p class="mt-4"><a href="/erkek-infertilitesi" class="text-primary font-bold hover:underline inline-flex items-center gap-1">Detaylı Bilgi: Erkek İnfertilitesi Rehberi <span class="material-symbols-outlined text-sm">open_in_new</span></a></p>
+                                </div>
+                            </div>
+                        </details>
+
+                        <details class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                                <span class="text-lg font-medium text-on-surface pr-8">Sperm kalitesi yaşam tarzından etkilenir mi?</span>
+                                <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-8 pt-2">
+                                <div class="w-full h-px bg-surface-container mb-6"></div>
+                                <div class="text-on-surface-variant leading-relaxed space-y-4 max-w-4xl">
+                                    <p>Evet. Sperm üretimi ~74 gün sürdüğü için yaşam tarzı değişiklikleri 3 ay sonra etkisini gösterir. Sigara, alkol, obezite, aşırı ısı maruziyeti ve stres sperm kalitesini bozar. Antioksidanlardan zengin beslenme ve düzenli egzersiz iyileşme sağlar.</p>
+                                    <p class="mt-4"><a href="/beslenme-yasam" class="text-primary font-bold hover:underline inline-flex items-center gap-1">Detaylı Bilgi: Beslenme ve Yaşam Tarzı <span class="material-symbols-outlined text-sm">open_in_new</span></a></p>
+                                </div>
+                            </div>
+                        </details>
+
+                        <details class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                                <span class="text-lg font-medium text-on-surface pr-8">Azospermi (sperm sayısı sıfır) tedavi edilebilir mi?</span>
+                                <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-8 pt-2">
+                                <div class="w-full h-px bg-surface-container mb-6"></div>
+                                <div class="text-on-surface-variant leading-relaxed space-y-4 max-w-4xl">
+                                    <p>Azospermi, obstrüktif (tıkanıklık) veya nonobstrüktif (üretim sorunu) olabilir. Obstrüktif azospermi cerrahi çözüm ile tedavi edilebilir. Nonobstrüktif azospermide TESE/microTESE prosedürü ile testisten sperm çıkartılıp ICSI ile kullanılabilir.</p>
+                                    <p class="mt-4"><a href="/makaleler/azospermi-mikro-tese" class="text-primary font-bold hover:underline inline-flex items-center gap-1">İlgili Makale: Azospermi ve microTESE <span class="material-symbols-outlined text-sm">open_in_new</span></a></p>
+                                </div>
+                            </div>
+                        </details>
+
+                        <details class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                                <span class="text-lg font-medium text-on-surface pr-8">Erkek infertilitesinin duygusal etkileri nedir?</span>
+                                <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-8 pt-2">
+                                <div class="w-full h-px bg-surface-container mb-6"></div>
+                                <div class="text-on-surface-variant leading-relaxed space-y-4 max-w-4xl">
+                                    <p>Erkek infertilitesi, erkeklerde yetersizlik hissi, özgüven kaybı ve utanç duyguları yaratabilir. Erkeklerin duygusal destek araması ve profesyonel yardım alması tedavi başarısını ve ilişki kalitesini artırır.</p>
+                                    <p class="mt-4"><a href="/duygusal-destek" class="text-primary font-bold hover:underline inline-flex items-center gap-1">Detaylı Bilgi: Duygusal Destek ve Baş Etme <span class="material-symbols-outlined text-sm">open_in_new</span></a></p>
                                 </div>
                             </div>
                         </details>
