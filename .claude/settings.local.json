@@ -9,7 +9,13 @@
       "Bash(git commit:*)",
       "Bash(npm run:*)",
       "WebFetch(domain:docs.google.com)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(find public/images -type f \\\\\\( -name \"*.jpg\" -o -name \"*.jpeg\" -o -name \"*.png\" -o -name \"*.gif\" \\\\\\) -exec ls -lhS {} \\\\;)",
+      "Bash(magick --version)",
+      "Bash(npm list:*)",
+      "Bash(npm install:*)",
+      "Bash(node:*)",
+      "Bash(grep <main:*)"
     ]
   }
 }
