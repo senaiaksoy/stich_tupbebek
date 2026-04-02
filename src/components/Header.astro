@@ -146,10 +146,10 @@
                     </div>
                 </div>
 
-                {/* 5. Bilgi Merkezi */}
+                {/* 5. Bilgi Kütüphanesi */}
                 <div class="group h-full flex items-center">
                     <button class="px-3 py-2 text-sm font-semibold text-slate-600 hover:text-primary transition-colors flex items-center gap-1 group-hover:bg-slate-50 rounded-lg">
-                        Bilgi Merkezi <span class="material-symbols-outlined text-xs group-hover:rotate-180 transition-transform">expand_more</span>
+                        Bilgi Kütüphanesi <span class="material-symbols-outlined text-xs group-hover:rotate-180 transition-transform">expand_more</span>
                     </button>
                     <div class="absolute top-[100%] left-0 w-full bg-white shadow-2xl border-b border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50">
                         <div class="max-w-7xl mx-auto px-8 py-10 grid grid-cols-4 gap-8">
@@ -157,26 +157,18 @@
                                 <h4 class="text-xs uppercase tracking-widest text-[#c5a059] font-bold mb-4">Knowledge Base</h4>
                                 <p class="text-sm text-slate-500 leading-relaxed italic">"Akademik veriler, güncel çalışmalar ve tarafsız bilgilendirme arşivi."</p>
                             </div>
-                            <div class="col-span-3 grid grid-cols-3 gap-y-6 gap-x-12">
+                            <div class="col-span-3 grid grid-cols-4 gap-y-6 gap-x-12">
                                 <a href="/makaleler" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Tüm Makaleler</span>
-                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Bilimsel Kütüphane</span>
-                                </a>
-                                <a href="/makaleler?filter=research" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Bilimsel Araştırmalar</span>
-                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">İleri Klinik Veriler</span>
-                                </a>
-                                <a href="/makaleler?filter=stories" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Hasta Hikayeleri</span>
-                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Deneyim Paylaşımları</span>
-                                </a>
-                                <a href="/sss" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Sık Sorulan Sorular</span>
-                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Pratik Bilgiler</span>
+                                    <span class="text-sm font-bold">Makaleler</span>
+                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Tüm Makaleler</span>
                                 </a>
                                 <a href="/tbbi-sozluk" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Tıbbi Sözlük</span>
+                                    <span class="text-sm font-bold">Sözlük</span>
                                     <span class="text-xs text-slate-500 uppercase tracking-tighter">A-Z Terimler</span>
+                                </a>
+                                <a href="/sss" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
+                                    <span class="text-sm font-bold">SSS</span>
+                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Sık Sorulan Sorular</span>
                                 </a>
                                 <a href="/psikolojik-destek" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
                                     <span class="text-sm font-bold">Duygusal Destek</span>
@@ -203,21 +195,17 @@
                                 <p class="text-sm text-slate-500 leading-relaxed italic">"Şeffaflık, bağımsızlık ve bilimsel doğruluk taahhüdümüz."</p>
                             </div>
                             <div class="col-span-3 grid grid-cols-3 gap-y-6 gap-x-12">
-                                <a href="/hakkimizda#misyon" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Misyonumuz</span>
+                                <a href="/hakkimizda" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
+                                    <span class="text-sm font-bold">Misyon</span>
                                     <span class="text-xs text-slate-500 uppercase tracking-tighter">Neden Buradayız?</span>
                                 </a>
                                 <a href="/editoryal-politika" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Editöryal Politika</span>
-                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">İçerik Standartları</span>
-                                </a>
-                                <a href="/hakkimizda#dr-senai" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
-                                    <span class="text-sm font-bold">Dr. Senai Aksoy</span>
-                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Medikal İnceleme Kurulu</span>
+                                    <span class="text-sm font-bold">Editöryal</span>
+                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Yayın Süreci &amp; Politikalar</span>
                                 </a>
                                 <a href="/hakkimizda#contact" class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors">
                                     <span class="text-sm font-bold">İletişim</span>
-                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">Bize Ulaşın</span>
+                                    <span class="text-xs text-slate-500 uppercase tracking-tighter">İletişim Formu</span>
                                 </a>
                             </div>
                         </div>
@@ -308,12 +296,12 @@
 
                 <div class="mobile-accordion">
                     <button class="w-full flex items-center justify-between py-4 text-lg font-bold border-b border-slate-50">
-                        Bilgi Merkezi <span class="material-symbols-outlined text-slate-400 Transition-transform">expand_more</span>
+                        Bilgi Kütüphanesi <span class="material-symbols-outlined text-slate-400 Transition-transform">expand_more</span>
                     </button>
                     <div class="hidden py-4 pl-4 space-y-4">
-                        <a href="/makaleler" class="block text-slate-600">Tüm Makaleler</a>
-                        <a href="/sss" class="block text-slate-600">Sık Sorulan Sorular</a>
-                        <a href="/tbbi-sozluk" class="block text-slate-600">Tıbbi Sözlük</a>
+                        <a href="/makaleler" class="block text-slate-600">Makaleler</a>
+                        <a href="/tbbi-sozluk" class="block text-slate-600">Sözlük</a>
+                        <a href="/sss" class="block text-slate-600">SSS</a>
                         <a href="/psikolojik-destek" class="block text-slate-600">Duygusal Destek</a>
                         <a href="/basari-oranlari" class="block text-slate-600">Başarı Oranları</a>
                     </div>
@@ -321,11 +309,12 @@
 
                 <div class="mobile-accordion">
                     <button class="w-full flex items-center justify-between py-4 text-lg font-bold border-b border-slate-50">
-                        Kurumsal <span class="material-symbols-outlined text-slate-400 Transition-transform">expand_more</span>
+                        Hakkımızda <span class="material-symbols-outlined text-slate-400 Transition-transform">expand_more</span>
                     </button>
                     <div class="hidden py-4 pl-4 space-y-4">
-                        <a href="/hakkimizda" class="block text-slate-600">Hakkımızda</a>
-                        <a href="/editoryal-politika" class="block text-slate-600">Editöryal Politika</a>
+                        <a href="/hakkimizda" class="block text-slate-600">Misyon</a>
+                        <a href="/editoryal-politika" class="block text-slate-600">Editöryal</a>
+                        <a href="/hakkimizda#contact" class="block text-slate-600">İletişim</a>
                     </div>
                 </div>
             </div>
