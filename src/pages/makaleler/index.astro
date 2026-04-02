@@ -83,7 +83,7 @@ const recentArticles = articles.filter(a => !a.data.featured).sort((a, b) =>
                                 />
                             </div>
                             <div class={`w-full md:w-1/2 ${index === 1 ? 'md:text-right' : ''}`}>
-                                <div class={`flex items-center gap-3 mb-4 ${index === 1 ? 'justify-end' : ''}`}>
+                                <div class={`flex items-center gap-4 mb-4 ${index === 1 ? 'justify-end' : ''}`}>
                                     <span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">Derin İnceleme</span>
                                     <span class="text-xs text-on-surface-variant font-label">12 Dakika Okuma</span>
                                 </div>
@@ -95,7 +95,7 @@ const recentArticles = articles.filter(a => !a.data.featured).sort((a, b) =>
                                 <p class="font-body text-on-surface-variant mb-6 leading-relaxed text-sm">
                                     {article.data.description}
                                 </p>
-                                <div class={`flex items-center gap-3 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10 ${index === 1 ? 'justify-end' : ''}`}>
+                                <div class={`flex items-center gap-4 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10 ${index === 1 ? 'justify-end' : ''}`}>
                                     {index === 0 && (
                                         <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
                                             <span class="material-symbols-outlined text-primary">verified_user</span>
@@ -161,7 +161,7 @@ const recentArticles = articles.filter(a => !a.data.featured).sort((a, b) =>
                             <div class="relative z-10">
                                 <h3 class="font-headline text-xl font-bold mb-4 italic">Bültene Abone Olun</h3>
                                 <p class="font-body text-sm opacity-90 mb-6 leading-relaxed">En yeni bilimsel araştırmalar ve tıbbi güncellemeler doğrudan e-posta kutunuza gelsin.</p>
-                                <div class="space-y-3">
+                                <div class="space-y-4">
                                     <input class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-white/30 placeholder:text-white/50" placeholder="E-posta adresiniz" type="email"/>
                                     <button class="w-full bg-white text-primary font-bold text-sm py-3 rounded-lg hover:bg-on-primary transition-all">Kaydol</button>
                                 </div>

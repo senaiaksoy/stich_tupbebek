@@ -31,7 +31,7 @@ Yumurta dondurma, sperm dondurma ve embriyo dondurma konularinda kapsamli bir bi
 - **Pattern:** `erkek-infertilitesi` spec'indeki sticky nav
 - **Bolumler:** Yumurta Dondurma | Sperm Dondurma | Embriyo Dondurma | Oncofertility
 - **Teknik:** Intersection Observer ile aktif bolum vurgusu
-- **Stil:** `sticky top-20 z-40`, `bg-white/90 backdrop-blur-sm`
+devam- **Stil:** `sticky top-20 z-40`, `bg-white/90 backdrop-blur-sm`
 - **Mobil:** Yatay scroll, no-scrollbar
 
 ### Bilimsel Giris — 3 Stat Karti Grid
