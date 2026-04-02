@@ -53,6 +53,25 @@ const isHome = Astro.url.pathname === '/';
 		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
 		<style is:global>
+			/* Skip Navigation Link (A11y) */
+			.skip-link {
+				position: absolute;
+				top: -100%;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 9999;
+				padding: 0.75rem 1.5rem;
+				background-color: #35618f;
+				color: #f5f7ff;
+				font-size: 1rem;
+				font-weight: 700;
+				border-radius: 0.5rem;
+				transition: top 0.15s;
+			}
+			.skip-link:focus {
+				top: 1rem;
+			}
+
 			/* Typography reset */
 			html, body {
 				overflow-x: hidden;
@@ -115,6 +134,7 @@ const isHome = Astro.url.pathname === '/';
 		</style>
 	</head>
 	<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+			<a href="#main-content" class="skip-link">Ana içeriğe geç</a>
 		{!isHome && <Breadcrumbs />}
 		<slot />
 		<CookieConsent />
