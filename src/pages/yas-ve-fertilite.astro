@@ -1,13 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Footer from '../components/Footer.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+import DisclaimerBar from '../components/DisclaimerBar.astro';
 ---
 
 <BaseLayout title="Yaş ve Fertilite: Üreme Başarısı Üzerinde Yaşın Etkileri | tupbebek.com" description="Kadın ve erkek yaşının fertilite ve tüp bebek başarısı üzerindeki etkisi, yaşlanma ve oosit kalitesi, erkek yaşının sperm parametrelerine etkisi.">
     <Header />
-    <Breadcrumbs />
 
     <main class="pb-24">
         <!-- Hero Section -->
@@ -42,23 +43,11 @@ import Footer from '../components/Footer.astro';
             <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed font-body italic mb-12">
                 Üreme sağlığında yaş, en kritik faktörlerden biridir. Kadınlar sınırlı sayıda yumurta ile doğarlar ve bu reserve zamanla azalır, kalitesi düşer. Erkeklerde ise yaş, sperm parametrelerini ve DNA fragmentasyonunu etkiler. Bu rehberde yaşın üreme başarısı üzerindeki bilimsel etkisini inceleyeceğiz.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
-                    <span class="material-symbols-outlined text-primary mb-3">fertile</span>
-                    <h3 class="font-bold text-sm mb-2">En Verimli</h3>
-                    <p class="text-xs text-on-surface-variant mb-0">20-30 yaş arası en yüksek doğal fertilite</p>
-                </div>
-                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
-                    <span class="material-symbols-outlined text-primary mb-3">trending_down</span>
-                    <h3 class="font-bold text-sm mb-2">35+ Kırılma</h3>
-                    <p class="text-xs text-on-surface-variant mb-0">35 yaşından sonra başarı oranları düşüş gösterir</p>
-                </div>
-                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
-                    <span class="material-symbols-outlined text-primary mb-3">science</span>
-                    <h3 class="font-bold text-sm mb-2">DNA</h3>
-                    <p class="text-xs text-on-surface-variant mb-0">Yaş arttıkça oosit DNA fragmentasyonu artıyor</p>
-                </div>
-            </div>
+            <StatsStrip items={[
+              { icon: 'fertile', heading: 'En Verimli', text: '20-30 yaş arası en yüksek doğal fertilite' },
+              { icon: 'trending_down', heading: '35+ Kırılma', text: '35 yaşından sonra başarı oranları düşüş gösterir' },
+              { icon: 'science', heading: 'DNA', text: 'Yaş arttıkça oosit DNA fragmentasyonu artıyor' }
+            ]} />
         </section>
 
         <!-- Kadın Yaşı -->
@@ -108,26 +97,11 @@ import Footer from '../components/Footer.astro';
         </section>
 
         <!-- İlgili Kaynaklar -->
-        <section class="max-w-5xl mx-auto px-8 mb-16">
-            <h2 class="font-headline text-2xl text-on-surface mb-6">İlgili Kaynaklar</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="/kadin-infertilitesi" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">woman</span>
-                    <h3 class="font-bold text-on-surface text-sm">Kadın İnfertilitesi</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">Yaşın nedenler üzerindeki etkisi</p>
-                </a>
-                <a href="/erkek-infertilitesi" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">man</span>
-                    <h3 class="font-bold text-on-surface text-sm">Erkek İnfertilitesi</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">Erkek yaşının etkisi</p>
-                </a>
-                <a href="/basari-oranlari" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">trending_up</span>
-                    <h3 class="font-bold text-on-surface text-sm">Başarı Oranları</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">Yaşa göre IVF başarı verileri</p>
-                </a>
-            </div>
-        </section>
+        <RelatedContent items={[
+          { href: '/kadin-infertilitesi', icon: 'woman', title: 'Kadın İnfertilitesi', description: 'Yaşın nedenler üzerindeki etkisi' },
+          { href: '/erkek-infertilitesi', icon: 'man', title: 'Erkek İnfertilitesi', description: 'Erkek yaşının etkisi' },
+          { href: '/basari-oranlari', icon: 'trending_up', title: 'Başarı Oranları', description: 'Yaşa göre IVF başarı verileri' }
+        ]} />
 
         <!-- Doktor Onay -->
         <section class="max-w-3xl mx-auto px-8 mb-16">
@@ -146,11 +120,9 @@ import Footer from '../components/Footer.astro';
 
         <!-- Yasal Uyarı -->
         <section class="max-w-3xl mx-auto px-8">
-            <div class="bg-amber-50/50 border border-amber-200/50 rounded-xl p-6 text-sm text-on-surface-variant">
-                <p>
-                    <strong class="text-on-surface">Yasal Uyarı:</strong> Bu rehber genel bilgilendirme amaçlıdır. Yaş ve fertilite hakkında kişisel kararlar için lütfen bir üreme sağlığı uzmanına danışınız. tupbebek.com, bu bilgilere dayanılarak alınan kararlardan sorumlu tutulamaz.
-                </p>
-            </div>
+            <DisclaimerBar title="Yasal Uyarı">
+                Bu rehber genel bilgilendirme amaçlıdır. Yaş ve fertilite hakkında kişisel kararlar için lütfen bir üreme sağlığı uzmanına danışınız. tupbebek.com, bu bilgilere dayanılarak alınan kararlardan sorumlu tutulamaz.
+            </DisclaimerBar>
         </section>
     </main>
 

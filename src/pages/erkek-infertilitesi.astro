@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Footer from '../components/Footer.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+import RelatedContent from '../components/RelatedContent.astro';
 ---
 
 <BaseLayout title="Erkek İnfertilitesi: Nedenler ve Tedavi Seçenekleri | tupbebek.com" description="Erkek infertilitesi nedenleri, semen analizi, tedaviler (ICSI, TESE, ilaç), yaşam tarzı etkileri ve başarı oranları.">
     <Header />
-    <Breadcrumbs />
 
     <main class="pb-24">
         <!-- Hero Section -->
@@ -42,23 +42,11 @@ import Footer from '../components/Footer.astro';
             <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed font-body italic mb-12">
                 Erkek infertilitesi, üreme çiftlerinin yaklaşık yarısında rol oynayan bir faktördür. Ancak, erkek infertilitesinin nedenleri tanı ve tedavi edilebilir olduğunda, çoğu çift başarılı gebeliklere ulaşabilmektedir. Bu rehber, erkek üreme sağlığını kapsamlı şekilde inceler.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
-                    <span class="material-symbols-outlined text-primary mb-3">man</span>
-                    <h3 class="font-bold text-sm mb-2">~%50</h3>
-                    <p class="text-xs text-on-surface-variant mb-0">Vakaların yarısında erkek faktörü mevcut</p>
-                </div>
-                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
-                    <span class="material-symbols-outlined text-primary mb-3">analytics</span>
-                    <h3 class="font-bold text-sm mb-2">%60</h3>
-                    <p class="text-xs text-on-surface-variant mb-0">Varikosel en sık erkek infertilite nedeni</p>
-                </div>
-                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
-                    <span class="material-symbols-outlined text-primary mb-3">science</span>
-                    <h3 class="font-bold text-sm mb-2">ICSI</h3>
-                    <p class="text-xs text-on-surface-variant mb-0">Çok düşük sperm sayılarında bile gebelik mümkün</p>
-                </div>
-            </div>
+            <StatsStrip items={[
+              { icon: 'man', heading: '~%50', text: 'Vakaların yarısında erkek faktörü mevcut' },
+              { icon: 'analytics', heading: '%60', text: 'Varikosel en sık erkek infertilite nedeni' },
+              { icon: 'science', heading: 'ICSI', text: 'Çok düşük sperm sayılarında bile gebelik mümkün' }
+            ]} />
         </section>
 
         <!-- Quick-Nav -->
@@ -313,41 +301,14 @@ import Footer from '../components/Footer.astro';
         </section>
 
         <!-- Related Pages / İlgili Sayfalar -->
-        <section class="max-w-5xl mx-auto px-8 mb-16">
-            <h2 class="font-headline text-2xl text-on-surface mb-6">İlgili Sayfalar</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="/kadin-infertilitesi" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">woman</span>
-                    <h3 class="font-bold text-on-surface text-sm">Kadın İnfertilitesi</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">Kadın faktörleri ve tanı süreçleri</p>
-                </a>
-                <a href="/tani-sureci" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">assignment</span>
-                    <h3 class="font-bold text-on-surface text-sm">Tanı Süreci</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">İnfertilite değerlendirmesi adımları</p>
-                </a>
-                <a href="/tedavi-yontemleri" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">biotech</span>
-                    <h3 class="font-bold text-on-surface text-sm">Tedavi Yöntemleri</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">IVF, ICSI, IUI ve diğer teknikler</p>
-                </a>
-                <a href="/beslenme-yasam" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">nutrition</span>
-                    <h3 class="font-bold text-on-surface text-sm">Beslenme ve Yaşam</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">Yaşam tarzı ve fertilite optimizasyonu</p>
-                </a>
-                <a href="/duygusal-destek" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">favorite</span>
-                    <h3 class="font-bold text-on-surface text-sm">Duygusal Destek</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">İnfertilite ve duygusal zorluklar</p>
-                </a>
-                <a href="/ilac-rehberi" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">medication</span>
-                    <h3 class="font-bold text-on-surface text-sm">İlaç Rehberi</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">IVF ve erkek infertilitesi ilaçları</p>
-                </a>
-            </div>
-        </section>
+        <RelatedContent items={[
+          { href: '/kadin-infertilitesi', icon: 'woman', title: 'Kadın İnfertilitesi', description: 'Kadın faktörleri ve tanı süreçleri' },
+          { href: '/tani-sureci', icon: 'assignment', title: 'Tanı Süreci', description: 'İnfertilite değerlendirmesi adımları' },
+          { href: '/tedavi-yontemleri', icon: 'biotech', title: 'Tedavi Yöntemleri', description: 'IVF, ICSI, IUI ve diğer teknikler' },
+          { href: '/beslenme-yasam', icon: 'nutrition', title: 'Beslenme ve Yaşam', description: 'Yaşam tarzı ve fertilite optimizasyonu' },
+          { href: '/duygusal-destek', icon: 'favorite', title: 'Duygusal Destek', description: 'İnfertilite ve duygusal zorluklar' },
+          { href: '/ilac-rehberi', icon: 'medication', title: 'İlaç Rehberi', description: 'IVF ve erkek infertilitesi ilaçları' }
+        ]} />
 
         <!-- Doktor Onay Bandı -->
         <section class="max-w-3xl mx-auto px-8 mb-16">

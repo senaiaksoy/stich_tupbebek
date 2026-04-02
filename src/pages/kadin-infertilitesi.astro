@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Footer from '../components/Footer.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+import RelatedContent from '../components/RelatedContent.astro';
 ---
 
 <BaseLayout title="Kadın İnfertilitesi: Tıbbi Nedenler | tupbebek.com">
     <Header />
-    <Breadcrumbs />
 
     <main class="pt-24 pb-24">
         <!-- Hero Section -->
@@ -42,23 +42,11 @@ import Footer from '../components/Footer.astro';
             <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed font-body italic mb-12">
                 Kadın fertilitesi, endokrin sistem, anatomik bütünlük ve hücresel yaşlanma arasındaki hassas bir dengenin ürünüdür. Üreme sağlığı, karmaşık biyolojik süreçlerin senkronize bir şekilde işlemesine dayanır.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
-                    <span class="material-symbols-outlined text-primary mb-3">fertile</span>
-                    <h3 class="font-bold text-sm mb-2">Ovülasyon</h3>
-                    <p class="text-xs text-on-surface-variant mb-0">Hormonal döngülerin düzenliliği ve yumurta kalitesi.</p>
-                </div>
-                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
-                    <span class="material-symbols-outlined text-primary mb-3">account_tree</span>
-                    <h3 class="font-bold text-sm mb-2">Anatomik Yapı</h3>
-                    <p class="text-xs text-on-surface-variant mb-0">Fallop tüpleri, uterus ve servikal kanalın geçirgenliği.</p>
-                </div>
-                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
-                    <span class="material-symbols-outlined text-primary mb-3">hourglass_empty</span>
-                    <h3 class="font-bold text-sm mb-2">Yaş Faktörü</h3>
-                    <p class="text-xs text-on-surface-variant mb-0">Oosit rezervinin niceliksel ve niteliksel değişimi.</p>
-                </div>
-            </div>
+            <StatsStrip items={[
+              { icon: 'fertile', heading: 'Ovülasyon', text: 'Hormonal döngülerin düzenliliği ve yumurta kalitesi.' },
+              { icon: 'account_tree', heading: 'Anatomik Yapı', text: 'Fallop tüpleri, uterus ve servikal kanalın geçirgenliği.' },
+              { icon: 'hourglass_empty', heading: 'Yaş Faktörü', text: 'Oosit rezervinin niceliksel ve niteliksel değişimi.' }
+            ]} />
             <p class="text-on-surface-variant leading-relaxed mb-6">
                 İnfertilite, korunmasız düzenli cinsel ilişkiye rağmen bir yıl (35 yaş üstü kadınlarda 6 ay) içerisinde gebelik oluşmaması olarak tanımlanır. İnfertilite vakalarında kadın faktörü ~%33, erkek faktörü ~%50, çiftin ikisinde de faktör ~%20-30 oranında rol oynar. Bu nedenle <a href="/tani-sureci" class="text-primary hover:underline">tanı süreci</a> her iki partneri de değerlendirmelidir. <a href="/erkek-infertilitesi" class="text-primary hover:underline">Erkek infertilitesi</a> sayfamızda erkek faktörlerini inceleyebilirsiniz.
             </p>
@@ -181,41 +169,14 @@ import Footer from '../components/Footer.astro';
         </section>
 
         <!-- Related Pages -->
-        <section class="max-w-5xl mx-auto px-8 mb-16">
-            <h2 class="font-headline text-2xl text-on-surface mb-6">İlgili Sayfalar</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="/erkek-infertilitesi" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">man</span>
-                    <h3 class="font-bold text-on-surface text-sm">Erkek İnfertilitesi</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">Erkek faktörleri ve tedavi seçenekleri</p>
-                </a>
-                <a href="/tani-sureci" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">assignment</span>
-                    <h3 class="font-bold text-on-surface text-sm">Tanı Süreci</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">İnfertilite değerlendirmesi adımları</p>
-                </a>
-                <a href="/tedavi-yontemleri" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">biotech</span>
-                    <h3 class="font-bold text-on-surface text-sm">Tedavi Yöntemleri</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">IVF, ICSI, IUI ve diğer teknikler</p>
-                </a>
-                <a href="/hormon-paneli" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">bloodtype</span>
-                    <h3 class="font-bold text-on-surface text-sm">Hormon Paneli</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">AMH, FSH, E2 değerleri ve yorumlama</p>
-                </a>
-                <a href="/fertilite-koruma" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">shield</span>
-                    <h3 class="font-bold text-on-surface text-sm">Fertilite Koruma</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">Yumurta dondurma ve koruyucu yöntemler</p>
-                </a>
-                <a href="/duygusal-destek" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary mb-2">favorite</span>
-                    <h3 class="font-bold text-on-surface text-sm">Duygusal Destek</h3>
-                    <p class="text-xs text-on-surface-variant mt-1">İnfertilite ve duygusal zorluklar</p>
-                </a>
-            </div>
-        </section>
+        <RelatedContent items={[
+          { href: '/erkek-infertilitesi', icon: 'man', title: 'Erkek İnfertilitesi', description: 'Erkek faktörleri ve tedavi seçenekleri' },
+          { href: '/tani-sureci', icon: 'assignment', title: 'Tanı Süreci', description: 'İnfertilite değerlendirmesi adımları' },
+          { href: '/tedavi-yontemleri', icon: 'biotech', title: 'Tedavi Yöntemleri', description: 'IVF, ICSI, IUI ve diğer teknikler' },
+          { href: '/hormon-paneli', icon: 'bloodtype', title: 'Hormon Paneli', description: 'AMH, FSH, E2 değerleri ve yorumlama' },
+          { href: '/fertilite-koruma', icon: 'shield', title: 'Fertilite Koruma', description: 'Yumurta dondurma ve koruyucu yöntemler' },
+          { href: '/duygusal-destek', icon: 'favorite', title: 'Duygusal Destek', description: 'İnfertilite ve duygusal zorluklar' }
+        ]} />
     </main>
 
     <Footer />

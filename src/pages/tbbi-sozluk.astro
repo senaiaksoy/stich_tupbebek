@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Footer from '../components/Footer.astro';
 import { getCollection } from 'astro:content';
 
@@ -10,7 +9,6 @@ const articles = await getCollection('articles');
 
 <BaseLayout title="Tıp Terimleri Sözlüğü | IVF ve Üreme Tıbbı Terimleri | tupbebek.com" description="AMH, FSH, ICSI, blastosist, endometrium gibi medikal terimlerin açıklamaları ve ilgili kaynaklara bağlantılar.">
     <Header />
-    <Breadcrumbs />
 
     <main class="pb-24">
         <!-- Hero Section -->
