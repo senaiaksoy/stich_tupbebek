@@ -1,0 +1,408 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="İlaç Rehberi: IVF İlaçları, Dozajlar ve Yan Etkiler | tupbebek.com" description="IVF sürecinde kullanılan gonadotropinler, GnRH analogları, progesteron, hCG ve diğer ilaçların detaylı açıklamaları, yan etkileri ve kullanım talimatları.">
+    <Header />
+    <Breadcrumbs />
+
+    <main class="pb-24">
+        <!-- Hero Section -->
+        <header class="max-w-5xl mx-auto px-8 mb-20">
+            <div class="flex flex-col md:flex-row gap-12 items-start">
+                <div class="flex-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        Klinik Rehber
+                    </div>
+                    <h1 class="font-headline text-5xl md:text-6xl text-on-surface leading-tight mb-8">
+                        IVF İlaç Rehberi: <span class="text-primary italic">Kullanım, Dozaj</span> ve Yan Etkiler
+                    </h1>
+                    <div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-dim">
+                            <img class="w-full h-full object-cover" src="/images/senai-aksoy.jpg" alt="Dr. Senai Aksoy" width="512" height="512" loading="eager" fetchpriority="high"/>
+                        </div>
+                        <div>
+                            <p class="font-headline italic text-on-surface text-sm">Tıbbi İnceleme:</p>
+                            <p class="font-bold text-primary">Dr. Senai Aksoy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block w-72 shrink-0 aspect-[4/5] bg-surface-container-highest rounded-2xl overflow-hidden shadow-2xl">
+                    <img class="w-full h-full object-cover grayscale opacity-80" src="/images/sorunlar/hormonal-cycles.jpg" alt="IVF ilaçları" width="512" height="512" loading="eager" fetchpriority="high"/>
+                </div>
+            </div>
+        </header>
+
+        <!-- Scientific Introduction -->
+        <section class="max-w-3xl mx-auto px-8 mb-24">
+            <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed font-body italic mb-12">
+                IVF sürecinde kullanılan ilaçlar, over stimülasyonu, yumurta olgunlaşması, tetikleme ve lüteal faz desteği için titizlikle seçilir ve ayarlanır. Bu rehber, hastaların ilaçlarını anlamaları, doğru uygulama tekniklerini öğrenmeleri ve olası yan etkileri tanımaları için hazırlanmıştır.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
+                    <span class="material-symbols-outlined text-primary mb-3">medication</span>
+                    <h3 class="font-bold text-sm mb-2">6+</h3>
+                    <p class="text-xs text-on-surface-variant mb-0">Temel ilaç grubu</p>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
+                    <span class="material-symbols-outlined text-primary mb-3">science</span>
+                    <h3 class="font-bold text-sm mb-2">10-14 gün</h3>
+                    <p class="text-xs text-on-surface-variant mb-0">Ortalama stimülasyon süresi</p>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
+                    <span class="material-symbols-outlined text-primary mb-3">biotech</span>
+                    <h3 class="font-bold text-sm mb-2">Sub-Q</h3>
+                    <p class="text-xs text-on-surface-variant mb-0">Birincil enjeksiyon yolu</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick-Nav Bar -->
+        <nav id="quick-nav" class="sticky top-20 z-40 bg-white/90 backdrop-blur-sm border-b border-slate-100 shadow-sm mb-16">
+            <div class="max-w-5xl mx-auto px-8 overflow-x-auto whitespace-nowrap">
+                <div class="flex items-center gap-1 py-3">
+                    <a href="#gonadotropin" class="quick-nav-link px-4 py-2 text-sm font-semibold text-slate-500 hover:text-primary rounded-lg transition-colors shrink-0">Gonadotropinler</a>
+                    <a href="#gnrh" class="quick-nav-link px-4 py-2 text-sm font-semibold text-slate-500 hover:text-primary rounded-lg transition-colors shrink-0">GnRH Analogları</a>
+                    <a href="#tetikleme" class="quick-nav-link px-4 py-2 text-sm font-semibold text-slate-500 hover:text-primary rounded-lg transition-colors shrink-0">Tetikleme</a>
+                    <a href="#luteal" class="quick-nav-link px-4 py-2 text-sm font-semibold text-slate-500 hover:text-primary rounded-lg transition-colors shrink-0">Lüteal Desteği</a>
+                    <a href="#enjeksiyon" class="quick-nav-link px-4 py-2 text-sm font-semibold text-slate-500 hover:text-primary rounded-lg transition-colors shrink-0">Enjeksiyon</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Section 1: Gonadotropinler -->
+        <section id="gonadotropin" class="bg-surface-container-low py-24 mb-24">
+            <div class="max-w-5xl mx-auto px-8">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="md:w-1/2">
+                        <h2 class="font-headline text-3xl text-on-surface mb-6">1. Gonadotropinler (FSH, FSH+LH)</h2>
+                        <div class="space-y-6 text-on-surface-variant">
+                            <p>
+                                Gonadotropinler, ovaryan stimülasyonunun temelidir. Folikül stimüle hormonu (FSH) ve luteinize hormonu (LH) içeren bu ilaçlar, overdeki foliküllerin gelişimini hızlandırır. Günümüzde recombinant ve uriner kaynaklı iki tür gonadotropin mevcuttur.
+                            </p>
+                            <div class="bg-white border-l-4 border-primary rounded-xl p-6 mrd-container">
+                                <h4 class="font-bold text-on-surface text-sm mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">medication</span>
+                                    Yaygın Gonadotropin İlaçları
+                                </h4>
+                                <div class="space-y-4 text-sm">
+                                    <div class="border-b border-outline-variant/10 pb-3">
+                                        <p class="font-semibold text-on-surface mb-1">Gonal-f, Puregon (r-FSH)</p>
+                                        <p class="text-xs">Recombinant FSH. Doz: 100-225 IU/gün, SC enjeksiyon. Folikül gelişimini izlemek için ultrason ve E2 takibi.</p>
+                                    </div>
+                                    <div class="border-b border-outline-variant/10 pb-3">
+                                        <p class="font-semibold text-on-surface mb-1">Menopur, Merional (hMG)</p>
+                                        <p class="text-xs">Uriner menopozajotropin (FSH+LH aktivitesi). Doz: 75-225 IU/gün. Düşük LH seviyeli hastalarda tercih edilir.</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-on-surface mb-1">Fostimon, Metrodin</p>
+                                        <p class="text-xs">Uriner FSH. Geleneksel kullanım, ancak recombinanter'den daha az saf.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-on-surface-variant">
+                                Dozaj, yaş, BMI, AMH ve AFC değerlerine göre bireyselleştirilir. Düşük yanıt beklenenlerde yüksek doz (≥300 IU) kullanılabilir; yüksek yanıt riski taşıyanlarda (PCOS) düşük doz (≤150 IU) tercih edilir.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative group">
+                            <img class="rounded-2xl shadow-xl w-full" src="/images/sorunlar/hormonal-cycles.jpg" alt="Gonadotropin enjeksiyonu" width="512" height="512" loading="lazy"/>
+                            <div class="absolute -bottom-6 -right-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
+                                <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Klinik Veri</p>
+                                <p class="text-2xl font-headline">10-14</p>
+                                <p class="text-[10px] text-on-surface-variant">Ortalama stimülasyon günü</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: GnRH Analogları -->
+        <section id="gnrh" class="max-w-5xl mx-auto px-8 mb-24">
+            <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="font-headline text-3xl text-on-surface mb-6">2. GnRH Analogları</h2>
+                    <div class="space-y-6 text-on-surface-variant">
+                        <p>
+                            GnRH analogları, hipofiz over uyarımını kontrol etmek için kullanılır. Agonistler ve antagonistler olmak üzere iki tür vardır. Agonistler başlangıçta flare-up yapar, ardından down-regülasyon; antagonistler ise hemen bloke eder.
+                        </p>
+                        <div class="bg-white border-l-4 border-primary rounded-xl p-6 mrd-container">
+                            <h4 class="font-bold text-on-surface text-sm mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">biotech</span>
+                                Agonistler vs. Antagonistler
+                            </h4>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm">
+                                    <thead>
+                                        <tr class="border-b border-outline-variant/20">
+                                            <th class="text-left py-2 pr-4 font-semibold text-on-surface-variant">Özellik</th>
+                                            <th class="text-left py-2 pr-4 font-semibold text-on-surface-variant">Agonist</th>
+                                            <th class="text-left py-2 pr-4 font-semibold text-on-surface-variant">Antagonist</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-b border-outline-variant/10">
+                                            <td class="py-2 pr-4 font-semibold text-on-surface">Etki zamanı</td>
+                                            <td class="py-2 pr-4 text-on-surface-variant">Yavaş (7-10 gün)</td>
+                                            <td class="py-2 pr-4 text-on-surface-variant">Hızlı (24-48 saat)</td>
+                                        </tr>
+                                        <tr class="border-b border-outline-variant/10">
+                                            <td class="py-2 pr-4 font-semibold text-on-surface">Flare-up</td>
+                                            <td class="py-2 pr-4 text-on-surface-variant">Evet</td>
+                                            <td class="py-2 pr-4 text-on-surface-variant">Hayır</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pr-4 font-semibold text-on-surface">OHSS riski</td>
+                                            <td class="py-2 pr-4 text-on-surface-variant">Daha yüksek</td>
+                                            <td class="py-2 pr-4 text-on-surface-variant">Daha düşük</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="text-xs text-on-surface-variant mt-3">Kaynak: ASRM, 2022</p>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <p><strong>Agonistler:</strong> Suprefact, Decapeptyl. Genellikle streptokoma inekte edilir. Daha uzun tedavi süresi, ancak düşük maliyet.</p>
+                            <p><strong>Antagonistler:</strong> Cetrotide, Orgalutran. Hızlı etki, kısa süreli kullanım, OHSS riskini azaltır. Günümüzde tercih edilen yöntem.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative group">
+                        <img class="rounded-2xl shadow-xl w-full" src="/images/sorunlar/hormonal-cycles.jpg" alt="GnRH analogları" width="512" height="512" loading="lazy"/>
+                        <div class="absolute -bottom-6 -left-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
+                            <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Klinik Veri</p>
+                            <p class="text-2xl font-headline">24-48h</p>
+                            <p class="text-[10px] text-on-surface-variant">Antagonist etki süresi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Tetikleme -->
+        <section id="tetikleme" class="bg-surface-container-low py-24 mb-24">
+            <div class="max-w-5xl mx-auto px-8">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="md:w-1/2">
+                        <h2 class="font-headline text-3xl text-on-surface mb-6">3. Tetikleme İlaçları</h2>
+                        <div class="space-y-6 text-on-surface-variant">
+                            <p>
+                                Foliküller olgunlaştığında (en az 3 folikül ≥17 mm), ovülasyonu tetiklemek için hCG veya GnRH agonist kullanılır. Bu işlem, OPU'dan tam 36 saat önce yapılır.
+                            </p>
+                            <div class="bg-white border-l-4 border-primary rounded-xl p-6 mrd-container">
+                                <h4 class="font-bold text-on-surface text-sm mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">biotech</span>
+                                    Tetikleme Ajanları
+                                </h4>
+                                <div class="space-y-4 text-sm">
+                                    <div class="border-b border-outline-variant/10 pb-3">
+                                        <p class="font-semibold text-on-surface mb-1">Ovitrelle (r-hCG)</p>
+                                        <p class="text-xs">Recombinant hCG. Standart doz 250 mcg SC. Son tetikleme olarak kullanılır.</p>
+                                    </div>
+                                    <div class="border-b border-outline-variant/10 pb-3">
+                                        <p class="font-semibold text-on-surface mb-1">Pregnyl (u-hCG)</p>
+                                        <p class="text-xs">Uriner hCG. Daha uzun yarı ömürlü, ancak safsızlık riski daha yüksek.</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-on-surface mb-1">Suprefact (GnRH agonist trigger)</p>
+                                        <p class="text-xs">Antagonist protokollerinde kullanılır. OHSS riskini minimize eder. Daha kısa yarı ömürlü.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-on-surface-variant">
+                                GnRH agonist tetikleme, PCOS ve yüksek OHSS riskli hastalarda tercih edilir. Ancak bu durumda lüteal faz desteği daha yoğun gereklidir.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative group">
+                            <img class="rounded-2xl shadow-xl w-full" src="/images/sorunlar/hormonal-cycles.jpg" alt="Tetikleme enjeksiyonu" width="512" height="512" loading="lazy"/>
+                            <div class="absolute -bottom-6 -right-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
+                                <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Klinik Veri</p>
+                                <p class="text-2xl font-headline">36h</p>
+                                <p class="text-[10px] text-on-surface-variant">OPU'ya kalan süre</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Lüteal Faz Desteği -->
+        <section id="luteal" class="max-w-5xl mx-auto px-8 mb-24">
+            <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="font-headline text-3xl text-on-surface mb-6">4. Lüteal Faz Desteği (Progesteron)</h2>
+                    <div class="space-y-6 text-on-surface-variant">
+                        <p>
+                            OPU sonrası luteal faz, gebelik kurulması için kritik öneme sahiptir. Progesteron desteği genellikle OPU'dan bir sonraki gün başlar ve gebelik testi pozitif çıkana kadar devam eder (yaklaşık 10-12 hafta).
+                        </p>
+                        <div class="bg-surface-container-low border-l-4 border-primary rounded-xl p-6 mrd-container">
+                            <h4 class="font-bold text-on-surface text-sm mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">biotech</span>
+                                Progesteron Uygulama Yolları
+                            </h4>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-start gap-3">
+                                    <span class="font-mono font-bold text-primary shrink-0">Vajinal</span>
+                                    <span class="text-on-surface-variant">Crinone jel, Utrogestan suppozituvar. Yerel etki, daha az yan etki.</span>
+                                </div>
+                                <div class="flex items-start gap-3 border-t border-outline-variant/10 pt-3">
+                                    <span class="font-mono font-bold text-primary shrink-0">IM</span>
+                                    <span class="text-on-surface-variant">Prontogest 50-100 mg/gün. Musculoenjektsiyon, kan düzeyleri düzenli.</span>
+                                </div>
+                                <div class="flex items-start gap-3 border-t border-outline-variant/10 pt-3">
+                                    <span class="font-mono font-bold text-primary shrink-0">Oral</span>
+                                    <span class="text-on-surface-variant">Progynova (estrogen). Çoğunlukla ikinci aşamada, endometrial kalınlığı artırmak için.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-on-surface-variant">
+                            Progesteron yan etkileri: badem kasılması,民生 çarpıntısı, uykusuzluk, bulantı. Dozaj, laboratuvar sonuçlarına göre ayarlanır (progesteron seviyesi ≥10 ng/mL hedefli).
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative group">
+                        <img class="rounded-2xl shadow-xl w-full" src="/images/sorunlar/hormonal-cycles.jpg" alt="Progesteron desteği" width="512" height="512" loading="lazy"/>
+                        <div class="absolute -bottom-6 -left-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
+                            <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Klinik Veri</p>
+                            <p class="text-2xl font-headline">10-12</p>
+                            <p class="text-[10px] text-on-surface-variant">Haftalık progesteron destek süresi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Enjeksiyon Tekniği -->
+        <section id="enjeksiyon" class="bg-surface-container-low py-24 mb-24">
+            <div class="max-w-5xl mx-auto px-8">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="md:w-1/2">
+                        <h2 class="font-headline text-3xl text-on-surface mb-6">5. Enjeksiyon Tekniği ve Saklama</h2>
+                        <div class="space-y-6 text-on-surface-variant">
+                            <p>
+                                IVF ilaçlarının çoğu subkutan (SC) yolla uygulanır. Doğru enjeksiyon tekniği, ilacın etkinliğini ve hasta konforunu maksimize eder.
+                            </p>
+                            <div class="bg-white border-l-4 border-primary rounded-xl p-6 mrd-container">
+                                <h4 class="font-bold text-on-surface text-sm mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">biotech</span>
+                                    Adım Adım SC Enjeksiyon
+                                </h4>
+                                <ol class="space-y-2 text-sm list-decimal list-inside">
+                                    <li>Elleri yıkayın, ilaç kutusunu ısınma odasında (20-25°C) 30 dakika bekletin.</li>
+                                    <li>Alüminyum kapağı çıkarın, flakon/vial karıştırın (iltihap olmayacak şekilde).</li>
+                                    <li>İnce ineklemeyi (27-30G) flakona yerleştirin, ilaçı çekin (bölünmüş dozlar için ölçün).</li>
+                                    <li>Havucun enliğine veya karın derisine 45-90° açıyla enjekte edin.</li>
+                                    <li>Enjeksiyonu yapın, iğneyi çıkarın, basınç uygulayın (kanama yoksa).</li>
+                                    <li>İğneyi güvenlik kutusuna atın, kullanılmış ilaçlarınızı saklayın (dondurmayın).</li>
+                                </ol>
+                            </div>
+                            <div class="bg-surface-container-low border-l-4 border-primary rounded-xl p-6">
+                                <h4 class="font-bold text-on-surface text-sm mb-3">Saklama Koşulları</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li>• Rekombinant gonadotropinler: 2-8°C (buzdolabı), 28 gün. Oda sıcaklığında (≤25°C) 14-28 gün.</li>
+                                    <li>• Uriner ürünler: Daha hassas, mutlaka 2-8°C. Dondurmayın.</li>
+                                    <li>• Progesteron jel/suppozit: Oda sıcaklığında saklanabilir; ısıtmaya gerek yok.</li>
+                                    <li>• Işık duyarlı ilaçlar (hCG): Opak kutu, karanlık ortam.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative group">
+                            <img class="rounded-2xl shadow-xl w-full" src="/images/sorunlar/hormonal-cycles.jpg" alt="Enjeksiyon teknikleri" width="512" height="512" loading="lazy"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: SSS (Yaklaşık) -->
+        <section id="sss" class="max-w-5xl mx-auto px-8 mb-24">
+            <h2 class="font-headline text-3xl text-on-surface mb-8">Sık Sorulan Sorular</h2>
+            <div class="space-y-6">
+                <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+                    <h3 class="font-bold text-on-surface mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">help</span>
+                        Ilacı atladığımı ne zaman fark ederim?
+                    </h3>
+                    <p class="text-sm text-on-surface-variant">Stimülasyon sürecinde tek bir doz atlamak genellikle klinik sonuçları önemli ölçüde etkilemez. Ancak tetikleme dozu atlanırsa OPU ertelenebilir. Atladığınız dozu hemen veflerimize ulaşın.</p>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+                    <h3 class="font-bold text-on-surface mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">help</span>
+                        Yan etkiler nasıl yönetilir?
+                    </h3>
+                    <p class="text-sm text-on-surface-variant">Yaygın yan etkiler: lokal ağrı/kızarıklık (enjeksiyon bölgesi), ovaryan kitle oluşumu, OHSS. OHSS şüphesi varsa (şiddet karın ağrısı, şişkinlik, bulantı) acilen bağış kurunuzu arayın.</p>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+                    <h3 class="font-bold text-on-surface mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">help</span>
+                        İlaçları dondurabilir miyim?
+                    </h3>
+                    <p class="text-sm text-on-surface-variant">Gonadotropinler dondurulmaz. Yerel karıncalama/iltihap riski. Eğer uçuş sonrası ikinci enjeksiyon gerekirse, ilacın kutusunda "flakonlardan çekilmiş ve dondurulmamış" uyarısı vardır. PRN olarak dondurmayın.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doktor Onay Bandı -->
+        <section class="max-w-3xl mx-auto px-8 mb-16">
+            <div class="bg-surface-container-low p-8 rounded-2xl border-l-4 border-primary flex flex-col md:flex-row items-center gap-8">
+                <div class="w-20 h-20 rounded-full overflow-hidden bg-surface-dim shrink-0">
+                    <img class="w-full h-full object-cover" src="/images/senai-aksoy.jpg" alt="Doç. Dr. Senai Aksoy" width="512" height="512" loading="lazy"/>
+                </div>
+                <div>
+                    <p class="font-headline text-lg text-on-surface mb-1">Doç. Dr. Senai Aksoy</p>
+                    <p class="text-sm text-on-surface-variant">
+                        Bu rehber, üreme sağlığı alanında uzman <strong class="text-primary">Doç. Dr. Senai Aksoy</strong> tarafından tıbbi açıdan incelenmiş ve onaylanmıştır. İçerik, güncel kılavuzlar ve kanıta dayalı tıp ilkeleri doğrultusunda hazırlanmıştır.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Yasal Uyarı -->
+        <section class="max-w-3xl mx-auto px-8">
+            <div class="bg-amber-50/50 border border-amber-200/50 rounded-xl p-6 text-sm text-on-surface-variant">
+                <p>
+                    <strong class="text-on-surface">Yasal Uyarı:</strong> Bu rehber yalnızca genel bilgilendirme amaçlıdır. İlaç dozajları ve protokoller tekil hastaya göre değişir. Hiçbir zaman kendi başınıza ilaç kullanmayın veya doz ayarlamayın. Tüm tedavi kararlarınız için üreme tıbbı uzmanınızın yönlendirmelerine uyun. tupbebek.com, bu rehbere dayanılarak alınan kararlardan sorumlu tutulamaz.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+
+<script is:inline>
+(function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.quick-nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('text-primary', 'border-b-2', 'border-primary');
+                    link.classList.add('text-slate-500');
+                });
+                const activeLink = document.querySelector(`.quick-nav-link[href="#${entry.target.id}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('text-primary', 'border-b-2', 'border-primary');
+                    activeLink.classList.remove('text-slate-500');
+                }
+            }
+        });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(section => observer.observe(section));
+})();
+</script>
+</BaseLayout>
