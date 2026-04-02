@@ -5,1340 +5,399 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Erkek İnfertilitesi: Nedenler ve Tedavi Seçenekleri | tupbebek.com" description="Erkek infertilitesi nedir? Nedenler, tedavi seçenekleri ve önlemler.">
+<BaseLayout title="Erkek İnfertilitesi: Nedenler ve Tedavi Seçenekleri | tupbebek.com" description="Erkek infertilitesi nedenleri, semen analizi, tedaviler (ICSI, TESE, ilaç), yaşam tarzı etkileri ve başarı oranları.">
     <Header />
+    <Breadcrumbs />
 
     <main class="pb-24">
         <!-- Hero Section -->
         <header class="max-w-5xl mx-auto px-8 mb-20">
-            <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="flex flex-col md:flex-row gap-12 items-start">
                 <div class="flex-1">
-                    <h1 class="font-headline text-3xl md:text-4xl text-on-surface mb-4">Erkek İnfertilitesi: Nedenler ve Tedavi Seçenekleri</h1>
-                    <p class="text-on-surface-variant text-sm">Tıbbi İnceleme: Doç. Dr. Senai Aksoy</p>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">badge</span>
+                        Klinik Rehber
+                    </div>
+                    <h1 class="font-headline text-5xl md:text-6xl text-on-surface leading-tight mb-8">
+                        Erkek İnfertilitesi: <span class="text-primary italic">Nedenler</span> ve Tedavi Seçenekleri
+                    </h1>
+                    <div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-dim">
+                            <img class="w-full h-full object-cover" src="/images/senai-aksoy.jpg" alt="Dr. Senai Aksoy" width="512" height="512" loading="eager" fetchpriority="high"/>
+                        </div>
+                        <div>
+                            <p class="font-headline italic text-on-surface text-sm">Tıbbi İnceleme:</p>
+                            <p class="font-bold text-primary">Doç. Dr. Senai Aksoy</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="hidden md:block">
-                    <img class="w-full h-56 object-cover rounded-xl" src="/images/sorunlar/cell-biology.jpg" alt="Erkek infertilitesi">
+                <div class="hidden md:block w-72 shrink-0 aspect-[4/5] bg-surface-container-highest rounded-2xl overflow-hidden shadow-2xl">
+                    <img class="w-full h-full object-cover grayscale opacity-80" src="/images/sorunlar/cell-biology.jpg" alt="Erkek infertilitesi" width="512" height="512" loading="eager" fetchpriority="high"/>
                 </div>
             </div>
         </header>
 
         <!-- Scientific Introduction -->
-        <section class="max-w-3xl mx-auto px-6 mb-16">
-            <div class="space-y-6">
-                <h2 class="font-bold text-2xl text-on-surface mb-4">İnfertilite Nedir?</h2>
-                <p class="text-on-surface-variant">Erkek infertilitesi, sperm üretimi, sperm kalitesi veya sperm yolculuğu sırasında karşılaşılan sorunlara yol açan bir sağlık sorunu olarak tanımlanır. Bu durum, bir erkekin 12 ay içinde 1 yıl içinde 1 kez seksel aktifliğe sahip olmayıp, ya da sperm sayısı, kalite veya aktivite düşük olması nedeniyle oluşur.</p>
-                <div class="bg-white border-l-4 border-primary rounded-xl p-6">
-                    <h3 class="font-bold text-lg mb-3">Klinik Örnekler</h3>
-                    <ul class="space-y-2">
-                        <li class="text-on-surface-variant">Sperm sayısı azaltılmış (oligospermie)</li>
-                        <li class="text-on-surface-variant">Sperm kalitesi düşük (oligospermia)</li>
-                        <li class="text-on-surface-variant">Sperm aktivitesi düşük (asthenozoospermia)</li>
-                        <li class="text-on-surface-variant">Sperm biyolojisi (DNA kırıklığı)</li>
-                    </ul>
+        <section class="max-w-3xl mx-auto px-8 mb-16">
+            <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed font-body italic mb-12">
+                Erkek infertilitesi, üreme çiftlerinin yaklaşık yarısında rol oynayan bir faktördür. Ancak, erkek infertilitesinin nedenleri tanı ve tedavi edilebilir olduğunda, çoğu çift başarılı gebeliklere ulaşabilmektedir. Bu rehber, erkek üreme sağlığını kapsamlı şekilde inceler.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
+                    <span class="material-symbols-outlined text-primary mb-3">man</span>
+                    <h3 class="font-bold text-sm mb-2">~%50</h3>
+                    <p class="text-xs text-on-surface-variant mb-0">Vakaların yarısında erkek faktörü mevcut</p>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
+                    <span class="material-symbols-outlined text-primary mb-3">analytics</span>
+                    <h3 class="font-bold text-sm mb-2">%60</h3>
+                    <p class="text-xs text-on-surface-variant mb-0">Varikosel en sık erkek infertilite nedeni</p>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-t-2 border-primary-fixed">
+                    <span class="material-symbols-outlined text-primary mb-3">science</span>
+                    <h3 class="font-bold text-sm mb-2">ICSI</h3>
+                    <p class="text-xs text-on-surface-variant mb-0">Çok düşük sperm sayılarında bile gebelik mümkün</p>
                 </div>
             </div>
         </section>
 
-        <!-- Treatment Options -->
-        <section class="max-w-3xl mx-auto px-6 mb-16">
-            <div class="bg-white border-l-4 border-primary rounded-xl p-6">
-                <h3 class="font-bold text-2xl text-on-surface mb-4">Tedavi Seçenekleri</h3>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-primary text-sm">science</span>
-                        <p class="text-on-surface-variant mb-1">Klinik Tedavi:</p>
-                        <p class="text-on-surface-variant mb-1">Sperm kalitesini artırmak için hormon tedavileri (FSH, LH)</p>
+        <!-- Quick-Nav -->
+        <nav id="quick-nav" class="sticky top-20 z-40 bg-white/90 backdrop-blur-sm border-b border-slate-100 shadow-sm mb-16">
+            <div class="max-w-5xl mx-auto px-8 overflow-x-auto whitespace-nowrap">
+                <div class="flex items-center gap-1 py-3">
+                    <a href="#nedenler" class="quick-nav-link px-4 py-2 text-sm font-semibold text-slate-500 hover:text-primary rounded-lg transition-colors shrink-0">Nedenler</a>
+                    <a href="#tani" class="quick-nav-link px-4 py-2 text-sm font-semibold text-slate-500 hover:text-primary rounded-lg transition-colors shrink-0">Tanı</a>
+                    <a href="#tedaviler" class="quick-nav-link px-4 py-2 text-sm font-semibold text-slate-500 hover:text-primary rounded-lg transition-colors shrink-0">Tedaviler</a>
+                    <a href="#yasam" class="quick-nav-link px-4 py-2 text-sm font-semibold text-slate-500 hover:text-primary rounded-lg transition-colors shrink-0">Yaşam Tarzı</a>
+                    <a href="#duygusal" class="quick-nav-link px-4 py-2 text-sm font-semibold text-slate-500 hover:text-primary rounded-lg transition-colors shrink-0">Duygusal Boyut</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Section 1: Nedenler -->
+        <section id="nedenler" class="bg-surface-container-low py-24 mb-24">
+            <div class="max-w-5xl mx-auto px-8">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="md:w-1/2">
+                        <h2 class="font-headline text-3xl text-on-surface mb-6">1. Erkek İnfertilitesinin Nedenleri</h2>
+                        <div class="space-y-4 text-on-surface-variant">
+                            <p>
+                                Erkek infertilitesi, sperm üretimi, fonksiyon veya transportundaki sorunlardan kaynaklanabilir. Bir çift bir yıl (kadın 35 yaş üstü ise 6 ay) korunmasız ilişkiye rağmen gebelik elde edemiyorsa erkek değerlendirilmesi de yapılmalıdır.
+                            </p>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm">
+                                    <span class="font-mono font-bold text-red-600 shrink-0">%60</span>
+                                    <span class="text-on-surface-variant"><strong>Varikosel:</strong> Skrotal venlerin genişlemesi, testis sıcaklığını artırarak sperm kalitesini düşürür.</span>
+                                </div>
+                                <div class="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm">
+                                    <span class="font-mono font-bold text-amber-600 shrink-0">%</span>
+                                    <span class="text-on-surface-variant"><strong>İnfeksiyon:</strong> Epididimit, orşit, prostatit. Belirti vermeyen infeksiyonlar bile sperm parametrelerini etkileyebilir.</span>
+                                </div>
+                                <div class="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm">
+                                    <span class="font-mono font-bold text-primary shrink-0">→</span>
+                                    <span class="text-on-surface-variant"><strong>Hormonal bozukluklar:</strong> Düşük FSH/LH, hipogonadizm veya hipotalamik disfonksiyon.</span>
+                                </div>
+                                <div class="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm">
+                                    <span class="font-mono font-bold text-primary shrink-0">→</span>
+                                    <span class="text-on-surface-variant"><strong>Genetik faktörler:</strong> Klinefelter, Y-kromozom mikrodelesyonları. <a href="/genetik-testler" class="text-primary hover:underline">Genetik testler hakkında bilgi</a></span>
+                                </div>
+                                <div class="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm">
+                                    <span class="font-mono font-bold text-primary shrink-0">→</span>
+                                    <span class="text-on-surface-variant"><strong>Tıkanıklık:</strong> Vaz deferens yokluğu (CFTR mutation), postinfeksiyon obstrüksiyon.</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-white border-l-4 border-primary rounded-xl p-6 mrd-container">
-                        <h3 class="font-bold text-on-surface text-lg mb-4">İn Vitro Fertilizasyon (IVF)</h3>
-                        <p class="text-on-surface-variant mb-3">
-                            IVF, sperm ve yumurta olgusunu birlikte birlikte kavrulması için laboratuvarda birleştirir. Bu, erkek faktörlerinin (sperm kalitesi, sayısı) düşük olması durumunda kullanılır.
-                        </p>
-                        <div class="space-y-3">
-                            <p><strong>Success Rate:</strong> %35-40 (genel oran)</p>
-                            <p><strong>Risk:</strong> OHSS (Ovary Hyper Stimulation Syndrome)</p>
+                    <div class="md:w-1/2">
+                        <div class="relative group">
+                            <img class="rounded-2xl shadow-xl w-full" src="/images/sorunlar/cell-biology.jpg" alt="Erkek üreme anatomisi" width="512" height="512" loading="lazy"/>
+                            <div class="absolute -bottom-6 -right-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
+                                <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Klinik Veri</p>
+                                <p class="text-2xl font-headline">~1/6</p>
+                                <p class="text-[10px] text-on-surface-variant">Çift infertilite ile karşı karşıya</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Conclusion -->
-        <section class="max-w-3xl mx-auto px-6 mb-16">
-            <div class="bg-white border-l-4 border-primary rounded-xl p-6 mrd-container">
-                <h3 class="font-bold text-on-surface text-lg mb-4">Sonuç</h3>
-                <p class="text-on-surface-variant mb-3">
-                    Erkek infertilitesi, genellikle bir erkek faktörü olmadan oluşan bir durumdur. Çoğu durum, tedavi edilebilir. İlgili doktorunuza danışın ve doğru tedavi planını uygulayın.
+        <!-- Section 2: Tanı -->
+        <section id="tani" class="max-w-5xl mx-auto px-8 mb-24">
+            <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="font-headline text-3xl text-on-surface mb-6">2. Erkek Değerlendirme ve Tanı</h2>
+                    <div class="space-y-4 text-on-surface-variant">
+                        <p>
+                            Erkek infertilitesi değerlendirmesi, semen analizi ile başlar. <a href="/makaleler/laboratuvar-raporu-yorumlama" class="text-primary hover:underline">Laboratuvar raporu yorumlama</a> kılavuzumuzda semen analizi parametrelerini detaylı inceleyebilirsiniz. WHO 2021 kriterlerine göre normal değerler:
+                        </p>
+                        <div class="bg-white border-l-4 border-primary rounded-xl p-6">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-outline-variant/20">
+                                        <th class="text-left py-2 pr-4 font-semibold text-on-surface-variant">Parametre</th>
+                                        <th class="text-left py-2 pr-4 font-semibold text-on-surface-variant">Alt Sınır</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-outline-variant/10">
+                                        <td class="py-2 pr-4 text-on-surface-variant">Sperm konsantrasyonu</td>
+                                        <td class="py-2 pr-4 font-bold text-primary">≥15 milyon/mL</td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/10">
+                                        <td class="py-2 pr-4 text-on-surface-variant">Toplam sperm sayısı</td>
+                                        <td class="py-2 pr-4 font-bold text-primary">≥39 milyon/ejakülat</td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/10">
+                                        <td class="py-2 pr-4 text-on-surface-variant">Hareketlilik (total motilite)</td>
+                                        <td class="py-2 pr-4 font-bold text-primary">≥40%</td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/10">
+                                        <td class="py-2 pr-4 text-on-surface-variant">İleri hareketlilik (progressif)</td>
+                                        <td class="py-2 pr-4 font-bold text-primary">≥32%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 pr-4 text-on-surface-variant">Normal morfoloji</td>
+                                        <td class="py-2 pr-4 font-bold text-primary">≥4%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>
+                            Semen analizi abnormal çıktığında <a href="/hormon-paneli" class="text-primary hover:underline">hormon paneli</a> (FSH, LH, Testosteron, Prolaktin) ve gerekirse genetik testler istenir. Daha ileri değerlendirme için <a href="/tani-sureci" class="text-primary hover:underline">tanı süreci</a> sayfamıza bakın.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative group">
+                        <img class="rounded-2xl shadow-xl w-full" src="/images/sorunlar/hormonal-cycles.jpg" alt="Semen analizi" width="512" height="512" loading="lazy"/>
+                        <div class="absolute -bottom-6 -left-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
+                            <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Klinik Veri</p>
+                            <p class="text-2xl font-headline">WHO</p>
+                            <p class="text-[10px] text-on-surface-variant">2021 referans değerleri</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Tedaviler -->
+        <section id="tedaviler" class="bg-surface-container-low py-24 mb-24">
+            <div class="max-w-5xl mx-auto px-8">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="md:w-1/2">
+                        <h2 class="font-headline text-3xl text-on-surface mb-6">3. Tedavi Seçenekleri</h2>
+                        <div class="space-y-4 text-on-surface-variant">
+                            <p>
+                                Tedavi, infertilite nedenine göre bireyselleşir. Hafif erkek faktörlerinde yaşam tarzı düzenlemeleri ve IUI yeterli olabilirken, ağır olgularda <a href="/tedavi-yontemleri" class="text-primary hover:underline">IVF ve ICSI</a> gerekebilir.
+                            </p>
+                            <div class="space-y-3 text-sm">
+                                <div class="bg-white border-l-4 border-primary rounded-xl p-6">
+                                    <div class="flex items-center gap-2 mb-3"><span class="material-symbols-outlined text-primary">medication</span><strong>İlaç Tedavileri</strong></div>
+                                    <ul class="space-y-1">
+                                        <li>• <strong>Klomifen sitrat:</strong> Hipogonadotropik hastalarda alternatif</li>
+                                        <li>• <strong>Gonadotropinler (FSH/hCG):</strong> Hipogonadotropik hipogonadizmde</li>
+                                        <li>• <strong>Anti-estrogenler (Tamoksifen):</strong> İdiyopatik infertilitede</li>
+                                        <li>• <strong>Aromataz inhibitörleri (Anastrozole):</strong> T/E2 oranı düşük hastalarda</li>
+                                        <li>• <strong>Ilaç rehberi</strong>: <a href="/ilac-rehberi" class="text-primary hover:underline">Detaylı ilaç bilgileri</a></li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white border-l-4 border-primary rounded-xl p-6">
+                                    <div class="flex items-center gap-2 mb-3"><span class="material-symbols-outlined text-primary">biotech</span><strong>Cerrahi Seçenekler</strong></div>
+                                    <ul class="space-y-1">
+                                        <li>• <strong>Varikoselektomi:</strong> Palpabl varikoselde en etkili cerrahi tedavi</li>
+                                        <li>• <strong>Vaz vazostomi / Vazepididimostomi:</strong> Obstrüktif infertilitede</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white border-l-4 border-primary rounded-xl p-6">
+                                    <div class="flex items-center gap-2 mb-3"><span class="material-symbols-outlined text-primary">vital_signs</span><strong>Yardımcı Üreme Teknikleri</strong></div>
+                                    <ul class="space-y-1">
+                                        <li>• <strong>IUI (Intrauterin İnseminasyon):</strong> Toplam mobil sperm ≥5-10 milyon ise</li>
+                                        <li>• <strong>IVF/ICSI:</strong> Ciddi erkek faktöründe ilk tercih</li>
+                                        <li>• <strong>TESE/microTESE + ICSI:</strong> <a href="/makaleler/azospermi-mikro-tese" class="text-primary hover:underline">Azospermi ve microTESE hakkında</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p>
+                                Sperm sayısı 15 milyon/mL'nin altında ise (oligozoospermi), hafif (&lt; 5 milyon), orta (5–15 milyon) veya ağır (&lt; 5 milyon) olarak sınıflandırılır. Ciddi oligozoospermide ICSI en etkin yöntemdir. <a href="/basari-oranlari" class="text-primary hover:underline">ICSI ve IVF başarı oranları</a> için verilerimize bakın.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative group">
+                            <img class="rounded-2xl shadow-xl w-full" src="/images/rehberler/clinical-prep.jpg" alt="Sperm mikro enjeksiyonu" width="512" height="512" loading="lazy"/>
+                            <div class="absolute -bottom-6 -right-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
+                                <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Başarı</p>
+                                <p class="text-2xl font-headline">%35-45</p>
+                                <p class="text-[10px] text-on-surface-variant">ICSI canlı doğum oranı (35 yaş altı)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Yaşam Tarzı -->
+        <section id="yasam" class="max-w-5xl mx-auto px-8 mb-24">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="font-headline text-3xl text-on-surface mb-6">4. Yaşam Tarzı ve Sperm Kalitesi</h2>
+                    <div class="space-y-4 text-on-surface-variant">
+                        <p>
+                            Sperm üretimi yaklaşık 74 gün sürer. Bu nedenle yaşam tarzı değişikliklerinin etkisi 3 ay sonra görülmeye başlar. Aşağıdaki faktörler sperm kalitesini olumsuz etkiler:
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white border-l-4 border-red-500 rounded-xl p-4">
+                                <strong class="text-red-600 text-sm block mb-1">Sigara</strong>
+                                <p class="text-xs text-on-surface-variant">DNA fragmentasyonu artırır, motiliteyi ve morfolojiyi bozar</p>
+                            </div>
+                            <div class="bg-white border-l-4 border-red-500 rounded-xl p-4">
+                                <strong class="text-red-600 text-sm block mb-1">Alkol</strong>
+                                <p class="text-xs text-on-surface-variant">Testosteron üretimini baskılar, <a href="/makaleler/alkol-ve-fertilite" class="text-primary hover:underline">alkol ve fertilite</a></p>
+                            </div>
+                            <div class="bg-white border-l-4 border-amber-500 rounded-xl p-4">
+                                <strong class="text-amber-600 text-sm block mb-1">Obezite</strong>
+                                <p class="text-xs text-on-surface-variant">Vücut ısısı ve hormonal dengesizlik</p>
+                            </div>
+                            <div class="bg-white border-l-4 border-amber-500 rounded-xl p-4">
+                                <strong class="text-amber-600 text-sm block mb-1">Isı maruziyeti</strong>
+                                <p class="text-xs text-on-surface-variant">Sık hamam/sauna, dizüstü bilgisayar kullanımı</p>
+                            </div>
+                        </div>
+                        <p class="text-sm">
+                            <strong>Öneriler:</strong> Antioksidan zengini beslenme (C vitamini, E, çinko, folik asit, koenzim Q10) sperm kalitesini artırabilir. <a href="/beslenme-yasam" class="text-primary hover:underline">Beslenme ve yaşam tarzı önerileri</a> sayfamızı inceleyin.
+                        </p>
+                        <p class="text-sm">
+                            Bazı ilaçlar (özellikle SSRIs, kemoterapi ilaçları, <a href="/makaleler/izotretinoin-sperm" class="text-primary hover:underline">izotretinoin</a> gibi ilaçlar) sperm parametrelerini geçici olarak bozabilir. İlaç kullanımı hakkında doktorunuzla konuşun.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative group">
+                        <img class="rounded-2xl shadow-xl w-full" src="/images/sorunlar/hormonal-cycles.jpg" alt="Erkek üreme ve sağlık" width="512" height="512" loading="lazy"/>
+                        <div class="absolute -bottom-6 -left-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
+                            <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Spermatogenez</p>
+                            <p class="text-2xl font-headline">~74 gün</p>
+                            <p class="text-[10px] text-on-surface-variant">Yeni sperm üretimi döngü süresi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Duygusal Boyut -->
+        <section id="duygusal" class="bg-surface-container-low py-24 mb-24">
+            <div class="max-w-5xl mx-auto px-8">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="font-headline text-3xl text-on-surface mb-6">5. Erkek İnfertilitesinin Duygusal Boyutu</h2>
+                    <div class="space-y-4 text-on-surface-variant">
+                        <p>
+                            Erkek infertilitesi, erkeklerde sıklıkla yetersizlik hissi, özgüven kaybı ve utanç duyguları yaratır. Toplumsal beklentiler ve "erkeklik" kavramı ile ilişkilendirilen bu durum, erkeklerin duygusal destek aramalarını da zorlaştırabilir.
+                        </p>
+                        <p>
+                            Çiftler birlikte bu süreci yönetmelidir. Erkek infertilitesi bir "hata" veya "kusur" değil, tıbbi bir durumdur ve tedavi edilebilir. <a href="/psikolojik-destek" class="text-primary hover:underline">Psikolojik destek ve duygusal rehber</a> sayfamızda bu zorlu süreçte baş etme stratejilerini bulabilirsiniz.
+                        </p>
+                        <div class="bg-white border-l-4 border-primary rounded-xl p-6">
+                            <h4 class="font-bold text-on-surface text-sm mb-3">Baş Etme Stratejileri</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>Açık iletişim:</strong> Partnerinizle duygularınızı paylaşın</li>
+                                <li>• <strong>Profesyonel destek:</strong> Bilişsel davranışçı terapi (CBT) infertilite kaygısında etkilidir</li>
+                                <li>• <strong>Bilgi edinmek:</strong> Durumunuzu anlamak güçsüzlüğü azaltır</li>
+                                <li>• <strong>Yaşam tarzı değişiklikleri:</strong> Aktif olma hissi kontrolü yeniden verir</li>
+                                <li>• <strong>Destek grupları:</strong> Benzer deneyimleri yaşayan diğer erkeklerle bağlantı kurmak</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Pages / İlgili Sayfalar -->
+        <section class="max-w-5xl mx-auto px-8 mb-16">
+            <h2 class="font-headline text-2xl text-on-surface mb-6">İlgili Sayfalar</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/kadin-infertilitesi" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
+                    <span class="material-symbols-outlined text-primary mb-2">woman</span>
+                    <h3 class="font-bold text-on-surface text-sm">Kadın İnfertilitesi</h3>
+                    <p class="text-xs text-on-surface-variant mt-1">Kadın faktörleri ve tanı süreçleri</p>
+                </a>
+                <a href="/tani-sureci" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
+                    <span class="material-symbols-outlined text-primary mb-2">assignment</span>
+                    <h3 class="font-bold text-on-surface text-sm">Tanı Süreci</h3>
+                    <p class="text-xs text-on-surface-variant mt-1">İnfertilite değerlendirmesi adımları</p>
+                </a>
+                <a href="/tedavi-yontemleri" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
+                    <span class="material-symbols-outlined text-primary mb-2">biotech</span>
+                    <h3 class="font-bold text-on-surface text-sm">Tedavi Yöntemleri</h3>
+                    <p class="text-xs text-on-surface-variant mt-1">IVF, ICSI, IUI ve diğer teknikler</p>
+                </a>
+                <a href="/beslenme-yasam" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
+                    <span class="material-symbols-outlined text-primary mb-2">nutrition</span>
+                    <h3 class="font-bold text-on-surface text-sm">Beslenme ve Yaşam</h3>
+                    <p class="text-xs text-on-surface-variant mt-1">Yaşam tarzı ve fertilite optimizasyonu</p>
+                </a>
+                <a href="/duygusal-destek" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
+                    <span class="material-symbols-outlined text-primary mb-2">favorite</span>
+                    <h3 class="font-bold text-on-surface text-sm">Duygusal Destek</h3>
+                    <p class="text-xs text-on-surface-variant mt-1">İnfertilite ve duygusal zorluklar</p>
+                </a>
+                <a href="/ilac-rehberi" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
+                    <span class="material-symbols-outlined text-primary mb-2">medication</span>
+                    <h3 class="font-bold text-on-surface text-sm">İlaç Rehberi</h3>
+                    <p class="text-xs text-on-surface-variant mt-1">IVF ve erkek infertilitesi ilaçları</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Doktor Onay Bandı -->
+        <section class="max-w-3xl mx-auto px-8 mb-16">
+            <div class="bg-surface-container-low p-8 rounded-2xl border-l-4 border-primary flex flex-col md:flex-row items-center gap-8">
+                <div class="w-20 h-20 rounded-full overflow-hidden bg-surface-dim shrink-0">
+                    <img class="w-full h-full object-cover" src="/images/senai-aksoy.jpg" alt="Doç. Dr. Senai Aksoy" width="512" height="512" loading="lazy"/>
+                </div>
+                <div>
+                    <p class="font-headline text-lg text-on-surface mb-1">Doç. Dr. Senai Aksoy</p>
+                    <p class="text-sm text-on-surface-variant">
+                        Bu rehber, üreme sağlığı alanında uzman <strong class="text-primary">Doç. Dr. Senai Aksoy</strong> tarafından tıbbi açıdan incelenmiş ve onaylanmıştır. İçerik, güncel kılavuzlar ve kanıta dayalı tıp ilkeleri doğrultusunda hazırlanmıştır.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Yasal Uyarı -->
+        <section class="max-w-3xl mx-auto px-8">
+            <div class="bg-amber-50/50 border border-amber-200/50 rounded-xl p-6 text-sm text-on-surface-variant">
+                <p>
+                    <strong class="text-on-surface">Yasal Uyarı:</strong> Bu rehber yalnızca genel bilgilendirme amaçlıdır ve tıbbi tavsiye niteliği taşımaz. Erkek infertilitesi bireysel bir durumdur ve değerlendirilmesi için uzman bir ürolog veya üreme endokrinologuna başvurulmalıdır. tupbebek.com, bu bilgilere dayanılarak alınan kararlardan sorumlu tutulamaz.
                 </p>
             </div>
         </section>
     </main>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
-</BaseLayout>
+
+    <Footer />
+
+<script is:inline>
+(function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.quick-nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('text-primary', 'border-b-2', 'border-primary');
+                    link.classList.add('text-slate-500');
+                });
+                const activeLink = document.querySelector(`.quick-nav-link[href="#${entry.target.id}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('text-primary', 'border-b-2', 'border-primary');
+                    activeLink.classList.remove('text-slate-500');
+                }
+            }
+        });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(section => observer.observe(section));
+})();
+</script>
 </BaseLayout>
