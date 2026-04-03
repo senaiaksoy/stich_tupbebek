@@ -10,16 +10,15 @@ import FAQHighlights from '../components/FAQHighlights.astro';
 const recentArticles = (await getCollection('articles')).slice(0, 3);
 ---
 
-<BaseLayout title="tupbebek.com | Üreme Sağlığı Bilgisi" description="Tüp bebek (IVF), infertilite nedenleri, tedavi yöntemleri, başarı oranları ve üreme sağlığı hakkında bilimsel ve güncel bilgiler. Doç. Dr. Senai Aksoy editöryal denetiminde.">
+<BaseLayout title="tupbebek.com | Üreme Sağlığı Bilgisi">
     <Header />
     
-    <main id="main-content" tabindex="-1" class="pt-24">
-
+    <main class="pt-24">
         <!-- Hero Section: Intent-Based & Informative -->
-        <section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-16 relative">
+        <section class="max-w-7xl mx-auto px-8 mb-16 relative">
             <div class="flex flex-col items-center text-center py-20 lg:py-28">
                 <span class="text-primary font-label uppercase tracking-[0.3em] text-xs font-bold mb-6 block animate-fade-in">BAĞIMSIZ BİLİMSEL REHBER</span>
-                <h1 class="text-hero font-headline text-on-surface leading-tight mb-12 max-w-4xl">
+                <h1 class="text-5xl lg:text-7xl font-headline text-on-surface leading-tight mb-12 max-w-4xl">
                     Bilimsel Derinlik, <br/><span class="italic text-primary">İnsani Hassasiyet</span>
                 </h1>
                 
@@ -41,17 +40,17 @@ const recentArticles = (await getCollection('articles')).slice(0, 3);
 
                 <!-- Quick Navigation Points -->
                 <div class="flex flex-wrap justify-center gap-6 mb-16">
-                    <a href="/kadin-infertilitesi" class="flex items-center gap-4 px-6 py-4 bg-surface-container rounded-2xl hover:bg-surface-container-high transition-all border border-outline-variant/10">
-                        <span class="material-symbols-outlined text-primary">psychiatry</span>
-                        <span class="font-bold text-sm">İnfertiliteyi Anla</span>
+                    <a href="/tani-sureci" class="flex items-center gap-3 px-6 py-4 bg-surface-container rounded-2xl hover:bg-surface-container-high transition-all border border-outline-variant/10">
+                        <span class="material-symbols-outlined text-primary">clinical_notes</span>
+                        <span class="font-bold text-sm">Tanı Süreci Nedir?</span>
                     </a>
-                    <a href="/rehberler" class="flex items-center gap-4 px-6 py-4 bg-surface-container rounded-2xl hover:bg-surface-container-high transition-all border border-outline-variant/10">
+                    <a href="/tedavi-yontemleri" class="flex items-center gap-3 px-6 py-4 bg-surface-container rounded-2xl hover:bg-surface-container-high transition-all border border-outline-variant/10">
                         <span class="material-symbols-outlined text-primary">biotech</span>
-                        <span class="font-bold text-sm">Tedavi Rehberine Git</span>
+                        <span class="font-bold text-sm">Tedavi Seçeneklerimi Gör</span>
                     </a>
-                    <a href="/makaleler" class="flex items-center gap-4 px-6 py-4 bg-surface-container rounded-2xl hover:bg-surface-container-high transition-all border border-outline-variant/10">
+                    <a href="/makaleler" class="flex items-center gap-3 px-6 py-4 bg-surface-container rounded-2xl hover:bg-surface-container-high transition-all border border-outline-variant/10">
                         <span class="material-symbols-outlined text-primary">library_books</span>
-                        <span class="font-bold text-sm">Tüm Makaleleri Keşfet</span>
+                        <span class="font-bold text-sm">Bütün Makaleleri İncele</span>
                     </a>
                 </div>
 
@@ -77,282 +76,8 @@ const recentArticles = (await getCollection('articles')).slice(0, 3);
             </div>
         </section>
 
-
-        <!-- Key Information: Decision-Making Section -->
-        <section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-16">
-            <div class="text-center mb-12">
-                <span class="text-[#C5A059] font-label uppercase tracking-ultra text-xs font-bold mb-4 block">ANA BİLGİLER</span>
-                <h2 class="text-3xl lg:text-4xl font-headline text-on-surface leading-snug">Tedavi Sürecine Genel Bakış</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Kimler İçin -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-outline-variant/10 hover:shadow-lg transition-shadow">
-                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-primary" style="font-size: 32px;">groups</span>
-                    </div>
-                    <h3 class="text-xl font-headline text-on-surface mb-4">Kimler İçin Uygundur?</h3>
-                    <ul class="space-y-4 text-sm text-on-surface-variant">
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
-                            <span>En az 1 yıldır düzenli ilişkiye rağmen gebelik sağlayamayan çiftler</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
-                            <span>Tüpler tıkalı olan ve doğal yolla gebelik şansı olmayan kadınlar</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
-                            <span>Ciddi erkek faktörü infertilitesi (düşük sperm sayısı / hareketliliği)</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
-                            <span>Yumurtlama bozukluğu (PCOS vb.) olan hastalar</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
-                            <span>Yumurtalık rezervi azalmış – yaşa bağlı üreme zorluğu yaşayanlar</span>
-                        </li>
-                    </ul>
-                    <a href="/kadin-infertilitesi" class="mt-6 inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">
-                        Detaylı Bilgi <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
-                    </a>
-                </div>
-
-                <!-- Maliyet -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-outline-variant/10 hover:shadow-lg transition-shadow">
-                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-primary" style="font-size: 32px;">payments</span>
-                    </div>
-                    <h3 class="text-xl font-headline text-on-surface mb-4">Maliyet ve Kapsam</h3>
-                    <ul class="space-y-4 text-sm text-on-surface-variant">
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
-                            <span>Sağlık Bakanlığı destek programı ile ilk denemede %50'ye varan devlet desteği</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
-                            <span>SGK kapsamında 3 deneme (çift başı, tüm yurttaşlar için)</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
-                            <span>İlaç maliyetlerinin önemli kısmı devlet tarafından karşılanır</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
-                            <span>Yaş ve sağlık durumuna göre değişen ek tetkik ücretleri olabilir</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
-                            <span>Özel sigorta / tamamlayıcı sağlık kapsamı kullanan merkezler mevcuttur</span>
-                        </li>
-                    </ul>
-                    <a href="/sss" class="mt-6 inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">
-                        SSS'yi Keşfet <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
-                    </a>
-                </div>
-
-                <!-- Süreç -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-outline-variant/10 hover:shadow-lg transition-shadow">
-                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-primary" style="font-size: 32px;">event_repeat</span>
-                    </div>
-                    <h3 class="text-xl font-headline text-on-surface mb-4">Süreç ve Zaman Çizelgesi</h3>
-                    <ul class="space-y-4 text-sm text-on-surface-variant">
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">schedule</span>
-                            <span>İlk değerlendirme ve ön tetkikler: ~1 adet döngü</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">schedule</span>
-                            <span>Yumurtalık uyarımı ve takip: 10 – 14 gün</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">schedule</span>
-                            <span>Yumurta toplama ve laboratuvar (ICSI/IVF): 3 – 5 gün</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">schedule</span>
-                            <span>Embriyo transferi: 5. veya 6. gün (blastokist aşaması)</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary text-sm mt-0.5">schedule</span>
-                            <span>Toplam süreç: ilk görüşmeden gebelik_testine ~4 – 6 hafta</span>
-                        </li>
-                    </ul>
-                    <a href="/tedavi-yontemleri" class="mt-6 inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">
-                        Süreci Detaylı İncele <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Bento Knowledge Grid -->
-        <section class="bg-surface-container-low py-24 relative overflow-hidden">
-            <!-- Subtle Background glow -->
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 blur-[120px] rounded-full"></div>
-            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-tertiary/5 blur-[120px] rounded-full"></div>
-
-            <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-                <div class="mb-16 text-center">
-                    <span class="text-[#C5A059] font-label uppercase tracking-ultra text-xs font-bold mb-4 block">AKADEMİK REHBER</span>
-                    <h2 class="text-3xl lg:text-4xl font-headline text-on-surface leading-snug mb-6">Temel Eğitim Vitrini</h2>
-                    <div class="h-0.5 w-24 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mx-auto opacity-50"></div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 auto-rows-[320px]">
-                    <!-- Large Feature: Woman Infertility (8 cols, row-span-2) -->
-                    <a href="/kadin-infertilitesi" class="md:col-span-8 md:row-span-2 bg-white/40 backdrop-blur-md border border-white/20 rounded-[2.5rem] flex flex-col md:flex-row group cursor-pointer overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-1000 ease-in-out">
-                        <!-- Left Content (60%) -->
-                        <div class="p-10 lg:p-12 md:w-[60%] flex flex-col justify-between relative z-10 bg-white/40">
-                            <div>
-                                <span class="text-primary/60 font-label uppercase tracking-widest text-xs font-bold mb-6 block">Klinik Derinlik</span>
-                                <h3 class="text-2xl lg:text-3xl font-headline text-on-surface mb-8 group-hover:text-[#C5A059] transition-colors duration-700 leading-tight">Kadın İnfertilitesi: <br/>Bilimsel Derinlik</h3>
-                                <p class="text-secondary/90 max-w-md text-lg leading-relaxed font-light">
-                                    Doç. Dr. Senai Aksoy'un 30+ yıllık klinik tecrübesiyle şekillenen bu rehber, kadın infertilitesinin nedenlerini, tanı süreçlerini ve tedavi yollarını bilimsel açıdan aydınlatır.
-                                </p>
-                            </div>
-                            <div class="mt-12">
-                                <span class="flex items-center text-primary font-bold group-hover:text-[#C5A059] group-hover:gap-6 transition-all duration-700">
-                                    İNFERTİLİTEYİ ANLA <span class="material-symbols-outlined ml-3 scale-110">trending_flat</span>
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Right Image Area (40%) -->
-                        <div class="md:w-[40%] bg-primary relative flex items-center justify-center overflow-hidden">
-                            <!-- Artistic Organic Frame -->
-                            <div class="relative w-full h-full flex items-center justify-center p-8">
-                                <div class="w-full h-full bg-white/5 backdrop-blur-sm rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] border border-white/10 overflow-hidden shadow-2xl relative group-hover:scale-105 transition-transform duration-1000 ease-in-out">
-                                    <img
-                                        alt="kadın infertilitesi ve üreme sağlığını simgeleyen modern tıbbi illüstrasyon"
-                                        class="w-full h-full object-cover opacity-100 brightness-110 group-hover:scale-110 transition-transform duration-1000 ease-in-out"
-                                        src="/images/home/luxury-embryo.webp"
-                                        width="512" height="512"
-                                        loading="lazy"
-                                    />
-                                    <!-- Inner Gold Glow -->
-                                    <div class="absolute inset-0 bg-gradient-to-tr from-[#C5A059]/20 to-transparent pointer-events-none"></div>
-                                </div>
-                                <!-- Outer Gold Accents -->
-                                <div class="absolute top-10 right-10 w-20 h-20 bg-[#C5A059]/10 blur-2xl rounded-full"></div>
-                                <div class="absolute bottom-10 left-10 w-24 h-24 bg-primary-dim/20 blur-3xl rounded-full"></div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Medium Feature: Lab Technology (4 cols) -->
-                    <a href="/makaleler/laboratuvar-raporu-yorumlama" class="md:col-span-4 bg-surface-container-highest/50 backdrop-blur-sm rounded-[2rem] p-10 flex flex-col justify-between group cursor-pointer border border-white/10 hover:border-[#C5A059]/30 hover:shadow-xl transition-all duration-700 ease-in-out">
-                        <div>
-                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:shadow-md transition-all">
-                                <span class="material-symbols-outlined text-[#C5A059]" style="font-size: 32px;">biotech</span>
-                            </div>
-                            <h3 class="text-xl lg:text-2xl font-headline text-on-surface mb-6 group-hover:text-primary transition-colors leading-snug">Fütüristik Laboratuvar: <br/>Mikro-Mükemmeliyet</h3>
-                            <p class="text-on-surface-variant text-sm leading-relaxed font-light">
-                                Yaşamın ilk anlarını optimize eden, yapay zeka destekli inkübasyon ve ultra-modern embriyo seleksiyon sistemleriyle geleceği bugün inşa ediyoruz.
-                            </p>
-                        </div>
-                        <span class="material-symbols-outlined self-end text-[#C5A059] opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_right_alt</span>
-                    </a>
-
-                    <!-- Medium Feature: Success Rates (4 cols) -->
-                    <a href="/basari-oranlari" class="md:col-span-4 bg-surface-container-highest/50 backdrop-blur-sm rounded-[2rem] p-10 flex flex-col justify-between group cursor-pointer border border-white/10 hover:border-[#C5A059]/30 hover:shadow-xl transition-all duration-700 ease-in-out">
-                        <div>
-                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:shadow-md transition-all">
-                                <span class="material-symbols-outlined text-[#C5A059]" style="font-size: 32px;">monitoring</span>
-                            </div>
-                            <h3 class="text-xl lg:text-2xl font-headline text-on-surface mb-6 group-hover:text-primary transition-colors leading-snug">Başarı Oranları: <br/>Veri Şeffaflığı</h3>
-                            <p class="text-on-surface-variant text-sm leading-relaxed font-light">
-                                IVF ve diğer tedavi yöntemlerinde yaşa göre başarı oranları. Veriye dayalı şeffaflık vizyonumuzla kişiselleştirilmiş protokolleri analiz edin.
-                            </p>
-                        </div>
-                        <span class="material-symbols-outlined self-end text-[#C5A059] opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all">north_east</span>
-                    </a>
-
-                    <!-- NEW: Erkek İnfertilitesi (6 cols) -->
-                    <a href="/erkek-infertilitesi" class="md:col-span-6 bg-blue-50/50 backdrop-blur-md rounded-[2rem] p-10 flex flex-col justify-between group cursor-pointer border border-blue-100 hover:border-primary/50 transition-all duration-1000 ease-in-out">
-                        <div>
-                            <div class="w-14 h-14 bg-primary text-on-primary rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-primary/20">
-                                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">male</span>
-                            </div>
-                            <h3 class="text-xl lg:text-2xl font-headline text-on-surface mb-6 leading-snug">Erkek İnfertilitesi: <br/>Gizli Faktörler</h3>
-                            <p class="text-on-surface-variant text-sm leading-relaxed font-light">
-                                Sperm sağlığı ve genetiği, bir ailenin oluşumunda eşit öneme sahiptir. Azospermi, varikosel ve hormonal dengesizlikler hakkında bilgi edinin.
-                            </p>
-                        </div>
-                        <span class="material-symbols-outlined self-end text-primary opacity-40 group-hover:opacity-100 transition-all">clinical_notes</span>
-                    </a>
-
-                    <!-- NEW: Duygusal Destek (6 cols) -->
-                    <a href="/duygusal-destek" class="md:col-span-6 bg-purple-50/50 backdrop-blur-md rounded-[2rem] p-10 flex flex-col justify-between group cursor-pointer border border-purple-100 hover:border-purple-400 transition-all duration-1000 ease-in-out">
-                        <div>
-                            <div class="w-14 h-14 bg-purple-200 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:shadow-md transition-all">
-                                <span class="material-symbols-outlined text-purple-600" style="font-size: 32px;">self_improvement</span>
-                            </div>
-                            <h3 class="text-xl lg:text-2xl font-headline text-on-surface mb-6 group-hover:text-purple-700 transition-colors leading-snug">Duygusal Destek: <br/>Birlikte Güçlüyüz</h3>
-                            <p class="text-on-surface-variant text-sm leading-relaxed font-light">
-                                İnfertilite süreci psikolojik olarak da yönetilmelidir. Stres azaltma, depresyon baş etme stratejileri ve çift olarak güçlenme rehberi.
-                            </p>
-                        </div>
-                        <span class="material-symbols-outlined self-end text-purple-400 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all">psychiatry</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Patient Journey Map Section -->
-        <PatientJourney />
-
-
-        <!-- Dynamic Content Showcase -->
-        <RecentArticlesCarousel />
-
-        
-        <!-- FAQ Section -->
-        <FAQHighlights />
-
-
-        <!-- Quick Access Section -->
-        <section class="py-20 bg-surface">
-            <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <span class="text-[#C5A059] font-label uppercase tracking-ultra text-xs font-bold mb-4 block">KOLAY ERİŞİM</span>
-                    <h2 class="text-3xl lg:text-4xl font-headline text-on-surface leading-snug">Hızlı Erişim</h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <a href="/tbbi-sozluk" class="flex flex-col items-center p-10 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10 group">
-                        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                            <span class="material-symbols-outlined text-primary text-4xl">dictionary</span>
-                        </div>
-                        <h3 class="text-lg font-headline text-on-surface mb-2 group-hover:text-primary transition-colors">Tıbbi Sözlük</h3>
-                        <p class="text-xs text-secondary text-center">AMH, FSH, ICSI gibi terimlerin açıklamaları</p>
-                    </a>
-
-                    <a href="/sss" class="flex flex-col items-center p-10 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10 group">
-                        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                            <span class="material-symbols-outlined text-primary text-4xl">help</span>
-                        </div>
-                        <h3 class="text-lg font-headline text-on-surface mb-2 group-hover:text-primary transition-colors">Sık Sorulan Sorular</h3>
-                        <p class="text-xs text-secondary text-center">En çok merak edilen sorular ve yanıtları</p>
-                    </a>
-
-                    <a href="/ilac-rehberi" class="flex flex-col items-center p-10 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10 group">
-                        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                            <span class="material-symbols-outlined text-primary text-4xl">medication</span>
-                        </div>
-                        <h3 class="text-lg font-headline text-on-surface mb-2 group-hover:text-primary transition-colors">İlaç Rehberi</h3>
-                        <p class="text-xs text-secondary text-center">Gonadotropinler, GnRH analogları ve daha fazlası</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-
         <!-- Stats Section -->
-        <section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-24">
+        <section class="max-w-7xl mx-auto px-8 mb-24">
             <div class="bg-primary-container rounded-[2.5rem] p-12 lg:p-20 flex flex-wrap justify-around gap-12 text-center border border-primary/10">
                 <div class="flex flex-col">
                     <span class="text-4xl lg:text-6xl font-headline text-primary mb-2">30+</span>
@@ -367,18 +92,144 @@ const recentArticles = (await getCollection('articles')).slice(0, 3);
                     <span class="text-xs font-bold uppercase tracking-widest text-on-primary-container opacity-60">Uluslararası Standart</span>
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-4xl lg:text-6xl font-headline text-primary mb-2">0</span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-on-primary-container opacity-60">Ticari Reklam</span>
+                    <span class="text-4xl lg:text-6xl font-headline text-primary mb-2">WHO</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-on-primary-container opacity-60">Dünya Sağlık Örgütü Uyumlu</span>
                 </div>
             </div>
         </section>
 
+        <!-- Patient Journey Map Section -->
+        <PatientJourney />
+
+        <!-- Bento Knowledge Grid -->
+        <section class="bg-surface-container-low py-24 relative overflow-hidden">
+            <!-- Subtle Background glow -->
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-tertiary/5 blur-[120px] rounded-full"></div>
+
+            <div class="max-w-7xl mx-auto px-8 relative z-10">
+                <div class="mb-16 text-center">
+                    <span class="text-[#C5A059] font-label uppercase tracking-[0.3em] text-xs font-bold mb-4 block">AKADEMİK REHBER</span>
+                    <h2 class="text-4xl lg:text-5xl font-headline text-on-surface mb-6">Temel Eğitim Vitrini</h2>
+                    <div class="h-0.5 w-24 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mx-auto opacity-50"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 auto-rows-[320px]">
+                    <!-- Large Feature: Journey to Source of Life -->
+                    <a href="/hakkimizda" class="md:col-span-8 md:row-span-2 bg-white/40 backdrop-blur-md border border-white/20 rounded-[2.5rem] flex flex-col md:flex-row group cursor-pointer overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-1000 ease-in-out">
+                        <!-- Left Content (60%) -->
+                        <div class="p-10 lg:p-12 md:w-[60%] flex flex-col justify-between relative z-10 bg-white/40">
+                            <div>
+                                <span class="text-primary/60 font-label uppercase tracking-widest text-xs font-bold mb-6 block">Klinik Derinlik</span>
+                                <h3 class="text-4xl lg:text-5xl font-headline text-on-surface mb-8 group-hover:text-[#C5A059] transition-colors duration-700">Yaşamın Kaynağına <br/>Bilimsel Bir Yolculuk</h3>
+                                <p class="text-secondary/90 max-w-md text-lg leading-relaxed font-light">
+                                    İnsan fertilitesinin gizemli dünyasını, bilimin sınırlarını zorlayan araştırmalarla keşfedin. Doç. Dr. Senai Aksoy'un otuz yılı aşkın klinik derinliğiyle şekillenen bu rehber, biyolojik engelleri aşmanın vizyoner yollarını sunuyor.
+                                </p>
+                            </div>
+                            <div class="mt-12">
+                                <span class="flex items-center text-primary font-bold group-hover:text-[#C5A059] group-hover:gap-6 transition-all duration-700">
+                                    KEŞFETMEYE BAŞLA <span class="material-symbols-outlined ml-3 scale-110">trending_flat</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Right Image Area (40%) -->
+                        <div class="md:w-[40%] bg-primary relative flex items-center justify-center overflow-hidden">
+                            <!-- Artistic Organic Frame -->
+                            <div class="relative w-full h-full flex items-center justify-center p-8">
+                                <div class="w-full h-full bg-white/5 backdrop-blur-sm rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] border border-white/10 overflow-hidden shadow-2xl relative group-hover:scale-105 transition-transform duration-1000 ease-in-out">
+                                    <img 
+                                        alt="yaşamın başlangıcını simgeleyen lüks safir mavisi ve altın moleküler yapılar içeren modern tıbbi illüstrasyon" 
+                                        class="w-full h-full object-cover opacity-100 brightness-110 group-hover:scale-110 transition-transform duration-1000 ease-in-out" 
+                                        src="/images/home/luxury-embryo.png" 
+                                        width="512" height="512" 
+                                        loading="lazy"
+                                    />
+                                    <!-- Inner Gold Glow -->
+                                    <div class="absolute inset-0 bg-gradient-to-tr from-[#C5A059]/20 to-transparent pointer-events-none"></div>
+                                </div>
+                                <!-- Outer Gold Accents -->
+                                <div class="absolute top-10 right-10 w-20 h-20 bg-[#C5A059]/10 blur-2xl rounded-full"></div>
+                                <div class="absolute bottom-10 left-10 w-24 h-24 bg-primary-dim/20 blur-3xl rounded-full"></div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Medium Feature: Futuristic Lab -->
+                    <a href="/makaleler/laboratuvar-raporu-yorumlama" class="md:col-span-4 bg-surface-container-highest/50 backdrop-blur-sm rounded-[2rem] p-10 flex flex-col justify-between group cursor-pointer border border-white/10 hover:border-[#C5A059]/30 hover:shadow-xl transition-all duration-700 ease-in-out">
+                        <div>
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:shadow-md transition-all">
+                                <span class="material-symbols-outlined text-[#C5A059]" style="font-size: 32px;">biotech</span>
+                            </div>
+                            <h3 class="text-2xl font-headline text-on-surface mb-5 group-hover:text-primary transition-colors">Fütüristik Laboratuvar: <br/>Mikro-Mükemmeliyet</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed font-light">
+                                Yaşamın ilk anlarını optimize eden, yapay zeka destekli inkübasyon ve ultra-modern embriyo seleksiyon sistemleriyle geleceği bugün inşa ediyoruz.
+                            </p>
+                        </div>
+                        <span class="material-symbols-outlined self-end text-[#C5A059] opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_right_alt</span>
+                    </a>
+
+                    <!-- Medium Feature: Male Infertility (NEW) -->
+                    <a href="/sorunlar#erkek" class="md:col-span-4 bg-blue-50/50 backdrop-blur-md rounded-[2rem] p-10 flex flex-col justify-between group cursor-pointer border border-blue-100 hover:border-primary/50 transition-all duration-1000 ease-in-out">
+                        <div>
+                            <div class="w-14 h-14 bg-primary text-on-primary rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-primary/20">
+                                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">male</span>
+                            </div>
+                            <h3 class="text-2xl font-headline text-on-surface mb-5">Erkek İnfertilitesi: <br/>Gizli Faktörler</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed font-light">
+                                Sperm sağlığı ve genetiği, bir ailenin oluşumunda eşit öneme sahiptir. Modern tanısal yaklaşımları keşfedin.
+                            </p>
+                        </div>
+                        <span class="material-symbols-outlined self-end text-primary opacity-40 group-hover:opacity-100 transition-all">clinical_notes</span>
+                    </a>
+
+                    <!-- Medium Feature: Data Transparency (Repositioned) -->
+                    <a href="/makaleler/basari-oranlari" class="md:col-span-8 bg-primary text-on-primary rounded-[2.5rem] p-10 flex flex-col md:flex-row gap-12 group cursor-pointer shadow-lg hover:shadow-primary/30 transition-all duration-1000 ease-in-out border border-primary-dim/20">
+                        <div class="md:w-1/2 flex flex-col justify-between h-full">
+                            <div>
+                                <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-md">
+                                    <span class="material-symbols-outlined text-white/80" style="font-size: 32px;">analytics</span>
+                                </div>
+                                <h3 class="text-3xl font-headline mb-5">Veri Şeffaflığı ve <br/>Başarı Analizi</h3>
+                                <p class="text-on-primary/80 text-sm leading-relaxed font-light">
+                                    Veriye dayalı şeffaflık vizyonumuzla, kişiselleştirilmiş protokollerin dünya çapındaki (SART data yaklaşımı) başarısını yaşa göre analiz edin.
+                                </p>
+                            </div>
+                            <span class="material-symbols-outlined self-end text-white/50 group-hover:text-[#C5A059]/100 group-hover:translate-x-2 transition-all">north_east</span>
+                        </div>
+                        <div class="md:w-1/2 bg-white/5 backdrop-blur-md rounded-2xl p-6 flex flex-col justify-center border border-white/10">
+                            <h4 class="text-xs font-bold uppercase tracking-widest mb-4 opacity-70 italic text-white/80">Yaşa Göre Başarı Oranları (IVF)</h4>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span class="text-sm">35 Yaş Altı</span>
+                                    <span class="text-xl font-bold text-[#C5A059]">~55%</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span class="text-sm">35 - 37 Yaş</span>
+                                    <span class="text-xl font-bold text-[#C5A059]">~45%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm">38 - 40 Yaş</span>
+                                    <span class="text-xl font-bold text-[#C5A059]">~35%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Showcase -->
+        <RecentArticlesCarousel />
+        
+        <!-- FAQ Section -->
+        <FAQHighlights />
 
         <!-- Medical Reviewer Section: Expanded Trust -->
         <section class="py-24 bg-surface-container-low border-t border-outline-variant/10">
-            <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div class="max-w-4xl mx-auto px-8 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/3 text-center">
-                    <img alt="portre" class="w-32 h-32 rounded-full mx-auto object-cover grayscale-0 brightness-110 mb-6 border-4 border-white shadow-xl" src="/images/senai-aksoy.webp" width="512" height="512" loading="lazy"/>
+                    <img alt="portre" class="w-32 h-32 rounded-full mx-auto object-cover grayscale-0 brightness-110 mb-6 border-4 border-white shadow-xl" src="/images/senai-aksoy.jpg" width="512" height="512" loading="lazy"/>
                     <h3 class="text-xl font-headline text-on-surface">Doç. Dr. Senai Aksoy</h3>
                     <p class="text-primary font-label uppercase tracking-widest text-[10px] font-bold mt-1">Tıbbi İnceleme Başkanı</p>
                 </div>
@@ -393,25 +244,6 @@ const recentArticles = (await getCollection('articles')).slice(0, 3);
                         <span class="px-3 py-1 bg-white border border-outline-variant/30 rounded-lg text-[10px] font-bold text-outline">REKLAMSIZ YAYIN</span>
                         <span class="px-3 py-1 bg-white border border-outline-variant/30 rounded-lg text-[10px] font-bold text-outline">HAKEM DENETİMİ</span>
                     </div>
-                    <a href="/editoryal-politika" class="mt-6 inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">
-                        Editöryal Politika Detayları <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Medical Disclaimer Strip (Footer Üstü) -->
-        <section class="w-full bg-amber-50 border-y border-amber-200 py-8">
-            <div class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 flex items-start gap-4">
-                <span class="material-symbols-outlined text-amber-500 shrink-0 mt-1">warning</span>
-                <div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-amber-800 mb-2">Tıbbi Uyarı</h4>
-                    <p class="text-sm leading-relaxed text-amber-900">
-                        Bu sitedeki tüm bilgiler eğitim ve genel bilgilendirme amaçlıdır.
-                        Tıbbi tanı, tedavi veya kişisel sağlık önerisi yerine geçmez.
-                        Sağlık durumunuzla ilgili kararlarınız için hekiminize danışınız.
-                    </p>
                 </div>
             </div>
         </section>

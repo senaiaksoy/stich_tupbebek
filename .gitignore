@@ -9,7 +9,4 @@ $RECYCLE.BIN/
 .git
 .idea
 .vscode
-node_modules/
-
-# Build output
-dist/ 
+node_modules/ 

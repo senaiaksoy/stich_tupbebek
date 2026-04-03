@@ -1,15 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout title="Fertilite Koruma: Yumurta, Sperm ve Embriyo Dondurma | Doç. Dr. Senai Aksoy" description="Yumurta dondurma, sperm dondurma ve embriyo dondurma hakkında kapsamlı bilgi. Onkolojik hastalarda fertilite koruma (oncofertility) seçenekleri, başarı oranları ve güncel klinik veriler.">
     <Header />
-    <main id="main-content" tabindex="-1" class="pb-24">
+    <Breadcrumbs />
+    <main class="pb-24">
 
         <!-- Hero Section -->
-        <header class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 mb-20">
+        <header class="max-w-5xl mx-auto px-8 mb-20">
             <div class="flex flex-col md:flex-row gap-12 items-start">
                 <div class="flex-1">
                     <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
@@ -21,7 +23,7 @@ import Footer from '../components/Footer.astro';
                     </h1>
                     <div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
                         <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-dim">
-                            <img class="w-full h-full object-cover" src="/images/senai-aksoy.webp" alt="Doç. Dr. Senai Aksoy" width="512" height="512" loading="eager" fetchpriority="high"/>
+                            <img class="w-full h-full object-cover" src="/images/senai-aksoy.jpg" alt="Doç. Dr. Senai Aksoy" width="512" height="512" loading="eager" fetchpriority="high"/>
                         </div>
                         <div>
                             <p class="font-headline italic text-on-surface text-sm">Tıbbi İnceleme:</p>
@@ -30,14 +32,14 @@ import Footer from '../components/Footer.astro';
                     </div>
                 </div>
                 <div class="hidden md:block w-72 shrink-0 aspect-[4/5] bg-surface-container-highest rounded-2xl overflow-hidden shadow-2xl">
-                    <img class="w-full h-full object-cover grayscale opacity-80" src="/images/fertilite-koruma/hero.webp" alt="Fertilite koruma" width="512" height="512" loading="eager" fetchpriority="high"/>
+                    <img class="w-full h-full object-cover grayscale opacity-80" src="/images/fertilite-koruma/hero.jpg" alt="Fertilite koruma" width="512" height="512" loading="eager" fetchpriority="high"/>
                 </div>
             </div>
         </header>
 
         <!-- Sticky Quick-Nav -->
         <nav id="quick-nav" class="sticky top-20 z-40 bg-white/90 backdrop-blur-sm border-b border-slate-100 shadow-sm mb-16">
-            <div class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 flex gap-1 overflow-x-auto" style="scrollbar-width: none;">
+            <div class="max-w-5xl mx-auto px-8 flex gap-1 overflow-x-auto" style="scrollbar-width: none;">
                 <a href="#yumurta-dondurma" class="quick-nav-link px-4 py-3 text-sm font-semibold text-slate-500 whitespace-nowrap hover:text-primary transition-colors border-b-2 border-transparent">Yumurta Dondurma</a>
                 <a href="#sperm-dondurma" class="quick-nav-link px-4 py-3 text-sm font-semibold text-slate-500 whitespace-nowrap hover:text-primary transition-colors border-b-2 border-transparent">Sperm Dondurma</a>
                 <a href="#embriyo-dondurma" class="quick-nav-link px-4 py-3 text-sm font-semibold text-slate-500 whitespace-nowrap hover:text-primary transition-colors border-b-2 border-transparent">Embriyo Dondurma</a>
@@ -46,7 +48,7 @@ import Footer from '../components/Footer.astro';
         </nav>
 
         <!-- Scientific Introduction -->
-        <section class="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 mb-24">
+        <section class="max-w-3xl mx-auto px-8 mb-24">
             <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed font-body italic mb-12">
                 Kriyoprezervasyon (dondurarak saklama), üreme hücrelerinin ve embriyoların biyolojik aktivitelerini koruyarak gelecekte kullanılmak üzere saklanmasını sağlayan modern tıbbın en önemli başarılarından biridir. Bu teknoloji, tıbbi ve sosyal nedenlerle fertilite koruma ihtiyacı olan bireylere umut sunmaktadır.
             </p>
@@ -74,7 +76,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Yumurta Dondurma -->
         <section id="yumurta-dondurma" class="bg-surface-container-low py-24 mb-24">
-            <div class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto px-8">
                 <div class="flex flex-col md:flex-row gap-16 items-center">
                     <div class="md:w-1/2">
                         <h2 class="font-headline text-3xl text-on-surface mb-6">Yumurta Dondurma (Oosit Vitrifikasyonu)</h2>
@@ -139,20 +141,20 @@ import Footer from '../components/Footer.astro';
                                     <span class="material-symbols-outlined text-primary">biotech</span>
                                     İşlem Süreci
                                 </h4>
-                                <dl class="space-y-4 text-sm">
-                                    <div class="flex gap-4">
+                                <dl class="space-y-3 text-sm">
+                                    <div class="flex gap-3">
                                         <dt class="font-semibold text-on-surface whitespace-nowrap">Stimülasyon:</dt>
                                         <dd class="text-on-surface-variant">10-14 gün gonadotropin uygulaması ile çoklu folikül gelişimi sağlanır.</dd>
                                     </div>
-                                    <div class="flex gap-4">
+                                    <div class="flex gap-3">
                                         <dt class="font-semibold text-on-surface whitespace-nowrap">OPU (Toplama):</dt>
                                         <dd class="text-on-surface-variant">Ultrason eşliğinde ~15-20 dakikalık yumurta toplama işlemi uygulanır.</dd>
                                     </div>
-                                    <div class="flex gap-4">
+                                    <div class="flex gap-3">
                                         <dt class="font-semibold text-on-surface whitespace-nowrap">Vitrifikasyon:</dt>
                                         <dd class="text-on-surface-variant">Olgun oositler -196°C sıvı nitrojen içinde ultra-hızlı dondurulur.</dd>
                                     </div>
-                                    <div class="flex gap-4">
+                                    <div class="flex gap-3">
                                         <dt class="font-semibold text-on-surface whitespace-nowrap">Saklama:</dt>
                                         <dd class="text-on-surface-variant">5 yıl ve üzeri güvenli saklama; uzun dönem veri 20+ yıl etkinlik göstermektedir.</dd>
                                     </div>
@@ -169,7 +171,7 @@ import Footer from '../components/Footer.astro';
                     </div>
                     <div class="md:w-1/2">
                         <div class="relative group">
-                            <img class="rounded-2xl shadow-xl w-full" src="/images/fertilite-koruma/yumurta-dondurma.webp" alt="Yumurta dondurma işlemi" width="512" height="512" loading="lazy"/>
+                            <img class="rounded-2xl shadow-xl w-full" src="/images/fertilite-koruma/yumurta-dondurma.jpg" alt="Yumurta dondurma işlemi" width="512" height="512" loading="lazy"/>
                             <div class="absolute -bottom-6 -right-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
                                 <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Vitrifikasyon</p>
                                 <p class="text-2xl font-headline">%97</p>
@@ -182,7 +184,7 @@ import Footer from '../components/Footer.astro';
         </section>
 
         <!-- Sperm Dondurma -->
-        <section id="sperm-dondurma" class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 mb-24">
+        <section id="sperm-dondurma" class="max-w-5xl mx-auto px-8 mb-24">
             <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
                 <div class="md:w-1/2">
                     <h2 class="font-headline text-3xl text-on-surface mb-6">Sperm Dondurma (Sperm Kriyoprezervasyonu)</h2>
@@ -235,24 +237,24 @@ import Footer from '../components/Footer.astro';
                                 <span class="material-symbols-outlined text-primary">biotech</span>
                                 Endikasyonlar
                             </h4>
-                            <ul class="space-y-4 text-sm">
-                                <li class="flex gap-4">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex gap-3">
                                     <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
                                     <span>Kanser tedavisi öncesi (kemoterapi, radyoterapi)</span>
                                 </li>
-                                <li class="flex gap-4">
+                                <li class="flex gap-3">
                                     <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
                                     <span>Cerrahi öncesi (orşiektomi, retroperitoneal cerrahiler)</span>
                                 </li>
-                                <li class="flex gap-4">
+                                <li class="flex gap-3">
                                     <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
                                     <span>Progresif oligospermi (kötüleşen sperm parametreleri)</span>
                                 </li>
-                                <li class="flex gap-4">
+                                <li class="flex gap-3">
                                     <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
                                     <span>Mikro-TESE ile elde edilen sperm güvencesi</span>
                                 </li>
-                                <li class="flex gap-4">
+                                <li class="flex gap-3">
                                     <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
                                     <span>Meslek riski (toksik madde maruziyeti, radyasyon)</span>
                                 </li>
@@ -267,7 +269,7 @@ import Footer from '../components/Footer.astro';
                 </div>
                 <div class="md:w-1/2">
                     <div class="relative group">
-                        <img class="rounded-2xl shadow-xl w-full" src="/images/fertilite-koruma/sperm-dondurma.webp" alt="Sperm dondurma" width="512" height="512" loading="lazy"/>
+                        <img class="rounded-2xl shadow-xl w-full" src="/images/fertilite-koruma/sperm-dondurma.jpg" alt="Sperm dondurma" width="512" height="512" loading="lazy"/>
                         <div class="absolute -bottom-6 -left-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
                             <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">İlk Başarı</p>
                             <p class="text-2xl font-headline">1953</p>
@@ -280,7 +282,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Embriyo Dondurma -->
         <section id="embriyo-dondurma" class="bg-surface-container-low py-24 mb-24">
-            <div class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto px-8">
                 <div class="flex flex-col md:flex-row gap-16 items-center">
                     <div class="md:w-1/2">
                         <h2 class="font-headline text-3xl text-on-surface mb-6">Embriyo Dondurma (Embriyo Kriyoprezervasyonu)</h2>
@@ -368,16 +370,16 @@ import Footer from '../components/Footer.astro';
                                     <span class="material-symbols-outlined text-primary">biotech</span>
                                     Dondurulmuş Embriyo Transferi (FET) Protokolleri
                                 </h4>
-                                <ul class="space-y-4 text-sm">
-                                    <li class="flex gap-4">
+                                <ul class="space-y-3 text-sm">
+                                    <li class="flex gap-3">
                                         <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
                                         <span><strong>Doğal Siklus:</strong> Spontan ovülasyona göre zamanlama; en fizyolojik yöntem.</span>
                                     </li>
-                                    <li class="flex gap-4">
+                                    <li class="flex gap-3">
                                         <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
                                         <span><strong>Modifiye Doğal Siklus:</strong> hCG tetiklemesi ile ovülasyon zamanlaması optimize edilir.</span>
                                     </li>
-                                    <li class="flex gap-4">
+                                    <li class="flex gap-3">
                                         <div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
                                         <span><strong>Yapay (Programlanmış) Siklus:</strong> Östrojen ve progesteron ile endometrium hazırlığı; zamanlama esnekliği sağlar.</span>
                                     </li>
@@ -397,7 +399,7 @@ import Footer from '../components/Footer.astro';
                     </div>
                     <div class="md:w-1/2">
                         <div class="relative group">
-                            <img class="rounded-2xl shadow-xl w-full" src="/images/fertilite-koruma/embriyo-dondurma.webp" alt="Embriyo dondurma" width="512" height="512" loading="lazy"/>
+                            <img class="rounded-2xl shadow-xl w-full" src="/images/fertilite-koruma/embriyo-dondurma.jpg" alt="Embriyo dondurma" width="512" height="512" loading="lazy"/>
                             <div class="absolute -bottom-6 -right-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
                                 <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Embriyo Sağkalım</p>
                                 <p class="text-2xl font-headline">%99</p>
@@ -410,7 +412,7 @@ import Footer from '../components/Footer.astro';
         </section>
 
         <!-- Oncofertility -->
-        <section id="oncofertility" class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 mb-24">
+        <section id="oncofertility" class="max-w-5xl mx-auto px-8 mb-24">
             <div class="border-l-4 border-tertiary pl-8 mb-12">
                 <h2 class="font-headline text-3xl text-on-surface mb-3">Oncofertility: Kanser ve Fertilite Koruma</h2>
                 <p class="text-on-surface-variant text-lg italic">
@@ -526,24 +528,24 @@ import Footer from '../components/Footer.astro';
                             <span class="material-symbols-outlined text-tertiary">biotech</span>
                             Random-Start Stimülasyon Protokolü
                         </h4>
-                        <dl class="space-y-4 text-sm">
-                            <div class="flex gap-4">
+                        <dl class="space-y-3 text-sm">
+                            <div class="flex gap-3">
                                 <dt class="font-semibold text-on-surface whitespace-nowrap">Tanım:</dt>
                                 <dd class="text-on-surface-variant">Menstrüel siklüsten bağımsız, herhangi bir günde başlatılabilen stimülasyon protokolü.</dd>
                             </div>
-                            <div class="flex gap-4">
+                            <div class="flex gap-3">
                                 <dt class="font-semibold text-on-surface whitespace-nowrap">Süre:</dt>
                                 <dd class="text-on-surface-variant">Ortalama 12-14 gün; acil durumlarda 10 güne kadar kısaltılabilir.</dd>
                             </div>
-                            <div class="flex gap-4">
+                            <div class="flex gap-3">
                                 <dt class="font-semibold text-on-surface whitespace-nowrap">Etkinlik:</dt>
                                 <dd class="text-on-surface-variant">Konvansiyonel stimülasyonla karşılaştırılabilir oosit sayısı ve kalitesi elde edilir.</dd>
                             </div>
-                            <div class="flex gap-4">
+                            <div class="flex gap-3">
                                 <dt class="font-semibold text-on-surface whitespace-nowrap">Avantaj:</dt>
                                 <dd class="text-on-surface-variant">Kanser tedavisinde kritik zaman kaybını önler; menstrüasyon beklenmez.</dd>
                             </div>
-                            <div class="flex gap-4">
+                            <div class="flex gap-3">
                                 <dt class="font-semibold text-on-surface whitespace-nowrap">Güvenlik:</dt>
                                 <dd class="text-on-surface-variant">Meme kanseri hastalarında letrozol eklenerek östrojen düzeyi kontrol altında tutulur.</dd>
                             </div>
@@ -558,24 +560,24 @@ import Footer from '../components/Footer.astro';
 
                 <!-- Sağ Kolon (2/5) -->
                 <div class="md:w-2/5 space-y-6">
-                    <img class="rounded-2xl shadow-xl w-full" src="/images/fertilite-koruma/oncofertility.webp" alt="Oncofertility" width="512" height="512" loading="lazy"/>
+                    <img class="rounded-2xl shadow-xl w-full" src="/images/fertilite-koruma/oncofertility.jpg" alt="Oncofertility" width="512" height="512" loading="lazy"/>
 
                     <div class="bg-surface-container-high p-6 rounded-2xl">
                         <h4 class="font-bold text-on-surface mb-4">Deneysel Yöntemler</h4>
                         <ul class="space-y-4 text-sm text-on-surface-variant">
-                            <li class="flex gap-4">
+                            <li class="flex gap-3">
                                 <div class="w-1.5 h-1.5 rounded-full bg-tertiary mt-2 shrink-0"></div>
                                 <div>
                                     <strong class="text-on-surface">Over Doku Dondurma:</strong> Prepubertal kız çocuklarında tek seçenek; ototransplantasyon sonrası doğal gebelik mümkün.
                                 </div>
                             </li>
-                            <li class="flex gap-4">
+                            <li class="flex gap-3">
                                 <div class="w-1.5 h-1.5 rounded-full bg-tertiary mt-2 shrink-0"></div>
                                 <div>
                                     <strong class="text-on-surface">Testis Doku Dondurma:</strong> Prepubertal erkek çocuklarda araştırma aşamasında; in vitro spermatogenez çalışmaları devam etmekte.
                                 </div>
                             </li>
-                            <li class="flex gap-4">
+                            <li class="flex gap-3">
                                 <div class="w-1.5 h-1.5 rounded-full bg-tertiary mt-2 shrink-0"></div>
                                 <div>
                                     <strong class="text-on-surface">GnRH Agonist Koruması:</strong> Kemoterapi sırasında overleri baskılayarak gonadotoksik hasarı azaltmayı hedefler; tek başına yeterli koruma sağlamaz.
@@ -588,10 +590,10 @@ import Footer from '../components/Footer.astro';
         </section>
 
         <!-- Medical Reviewer Card -->
-        <section class="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 mb-12">
+        <section class="max-w-3xl mx-auto px-8 mb-12">
             <div class="flex items-center gap-6 p-6 bg-surface-container-low rounded-2xl border border-outline-variant/20">
                 <div class="w-16 h-16 rounded-full overflow-hidden bg-surface-dim shrink-0">
-                    <img class="w-full h-full object-cover" src="/images/senai-aksoy.webp" alt="Doç. Dr. Senai Aksoy" width="512" height="512" loading="lazy"/>
+                    <img class="w-full h-full object-cover" src="/images/senai-aksoy.jpg" alt="Doç. Dr. Senai Aksoy" width="512" height="512" loading="lazy"/>
                 </div>
                 <div>
                     <p class="text-xs text-on-surface-variant uppercase tracking-widest mb-1">Tıbbi İnceleme</p>
@@ -603,7 +605,7 @@ import Footer from '../components/Footer.astro';
         </section>
 
         <!-- Legal Disclaimer -->
-        <section class="max-w-3xl mx-auto px-4 md:px-6 lg:px-8">
+        <section class="max-w-3xl mx-auto px-8">
             <p class="text-xs text-on-surface-variant leading-relaxed p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
                 <strong>Yasal Uyarı:</strong> Bu sayfadaki bilgiler yalnızca eğitim ve bilgilendirme amaçlıdır, tıbbi tavsiye yerine geçmez. Fertilite koruma kararları, bireysel tıbbi değerlendirme sonucunda uzman hekim tarafından verilmelidir. Tedavi seçenekleri hakkında mutlaka doktorunuza danışınız.
             </p>

@@ -10,8 +10,6 @@ imageAlt: "yumurta dondurma süreci vitrifikasyon laboratuvarı"
 
 Yumurta dondurma, yani **oosit kriyoprezervasyonu**, bir kadının yumurtalarını gelecekte kullanmak üzere dondurarak saklamasına olanak tanıyan modern bir tıp uygulamasıdır. Geçmişte yalnızca kanser tedavisi görecek kadınlar için uygulanan bu yöntem, **vitrifikasyon** teknolojisinin gelişmesiyle birlikte hem medikal hem de sosyal endikasyonlarda yaygın bir tercih haline gelmiştir.
 
-![Yumurta dondurma süreci ve vitrifikasyon laboratuvarı](/images/articles/yumurta-dondurma-rehberi.webp)
-
 ## Yumurta Dondurma Nedir?
 
 **Oosit kriyoprezervasyonu**, olgun yumurtaların vücuttan alınarak laboratuvar ortamında ultra-hızlı dondurma yöntemiyle sıvı nitrojende saklandığı bir işlemdir. 2012 yılında Amerikan Üreme Tıbbı Derneği (ASRM) bu yöntemi artık deneysel olmaktan çıkararak klinik uygulamaya kabul etmiştir. Bu kararın ardından **vitrifikasyon** — kristal oluşumunu önleyen cam benzeri bir dondurma tekniği — yumurta koruma alanında devrim yarattı.

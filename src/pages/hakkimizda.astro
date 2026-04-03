@@ -4,12 +4,12 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Hakkımızda | tupbebek.com" description="1996'dan beri bağımsız, reklamsız ve bilimsel üreme sağlığı rehberi. tupbebek.com ekibi, editöryal politikamız ve misyonumuz.">
+<BaseLayout title="Hakkımızda | tupbebek.com">
     <Header />
     
-    <main id="main-content" tabindex="-1" class="pt-32">
+    <main class="pt-32">
         <!-- Hero Section: The Editorial Statement -->
-        <section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-24">
+        <section class="max-w-7xl mx-auto px-8 mb-24">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
                 <div class="lg:col-span-8">
                     <span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">HAKKIMIZDA</span>
@@ -31,7 +31,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Bento Grid: Mission & Existence -->
         <section class="bg-surface-container-low py-24">
-            <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto px-8">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Why We Exist -->
                     <div class="md:col-span-2 bg-surface-container-lowest p-12 rounded-xl shadow-sm">
@@ -43,11 +43,11 @@ import Footer from '../components/Footer.astro';
                             İnfertilite tedavisi süreci, bilgi kirliliğinin ve duygusal sömürünün en yoğun olduğu alanlardan biridir. tupbebek.com, hastaların "en iyi klinik" reklamları arasında kaybolmadan, kendi tedavi süreçlerini anlayabilmeleri için kuruldu.
                         </p>
                         <ul class="space-y-4">
-                            <li class="flex items-start gap-4">
+                            <li class="flex items-start gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
                                 <span class="text-on-surface">Karmaşık tıbbi verileri herkesin anlayabileceği bir dile dönüştürmek.</span>
                             </li>
-                            <li class="flex items-start gap-4">
+                            <li class="flex items-start gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
                                 <span class="text-on-surface">Tedavi seçeneklerini ticari bir yönlendirme yapmadan sunmak.</span>
                             </li>
@@ -86,7 +86,7 @@ import Footer from '../components/Footer.astro';
                                 </div>
                             </div>
                             <div class="relative aspect-video rounded-xl overflow-hidden">
-                                <img alt="Clinical Review" class="object-cover w-full h-full" src="/images/hakkimizda/clinical-review.webp"/>
+                                <img alt="Clinical Review" class="object-cover w-full h-full" src="/images/hakkimizda/clinical-review.jpg"/>
                                 <div class="absolute inset-0 bg-primary/10"></div>
                             </div>
                         </div>
@@ -97,14 +97,14 @@ import Footer from '../components/Footer.astro';
 
         <!-- Medical Reviewer: Dr. Senai Aksoy -->
         <section class="py-32">
-            <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto px-8">
                 <div class="text-center mb-16">
                     <span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">TIBBİ İNCELEME KURULU</span>
                     <h2 class="font-headline text-4xl font-bold">Uzman Denetimi</h2>
                 </div>
                 <div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col lg:flex-row border border-outline-variant/10">
                     <div class="lg:w-1/3 h-[500px]">
-                        <img alt="Dr. Senai Aksoy" class="w-full h-full object-cover" src="/images/senai-aksoy.webp"/>
+                        <img alt="Dr. Senai Aksoy" class="w-full h-full object-cover" src="/images/senai-aksoy.jpg"/>
                     </div>
                     <div class="lg:w-2/3 p-12 lg:p-20 flex flex-col justify-center">
                         <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-xs font-bold w-fit mb-6">
@@ -117,11 +117,11 @@ import Footer from '../components/Footer.astro';
                             Dr. Senai Aksoy, tupbebek.com bünyesindeki tüm tıbbi içeriklerin bilimsel doğruluğunu ve güncelliğini denetleyen baş inceleyicimizdir. Yayınlanan her rehber, hastaların en doğru ve güncel tedavi protokollerine erişebilmesi için kendisinin ve ekibinin onayından geçer.
                         </p>
                         <div class="flex flex-wrap gap-4">
-                            <div class="flex items-center gap-4 bg-surface p-4 rounded-xl border border-outline-variant/20">
+                            <div class="flex items-center gap-3 bg-surface p-4 rounded-xl border border-outline-variant/20">
                                 <span class="material-symbols-outlined text-primary">school</span>
                                 <span class="text-sm font-semibold">Akademik Doğrulama</span>
                             </div>
-                            <div class="flex items-center gap-4 bg-surface p-4 rounded-xl border border-outline-variant/20">
+                            <div class="flex items-center gap-3 bg-surface p-4 rounded-xl border border-outline-variant/20">
                                 <span class="material-symbols-outlined text-primary">fact_check</span>
                                 <span class="text-sm font-semibold">Güncel Protokoller</span>
                             </div>
@@ -132,7 +132,7 @@ import Footer from '../components/Footer.astro';
         </section>
 
         <!-- CTA / Final Statement -->
-        <section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-32">
+        <section class="max-w-7xl mx-auto px-8 mb-32">
             <div class="bg-secondary-container rounded-3xl p-16 text-center relative overflow-hidden">
                 <div class="relative z-10 max-w-2xl mx-auto">
                     <h2 class="font-headline text-3xl font-bold text-on-secondary-container mb-6">Sağlığınız İçin Bir Not</h2>
