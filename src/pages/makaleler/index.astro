@@ -3,16 +3,30 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import SearchAutocomplete from '../../components/SearchAutocomplete.astro';
 
 const articles = await getCollection('articles');
 const featuredArticles = articles.filter(a => a.data.featured).slice(0, 2);
-const recentArticles = articles.filter(a => !a.data.featured).sort((a, b) => 
+const recentArticles = articles.filter(a => !a.data.featured).sort((a, b) =>
     (b.data.publishDate?.getTime() ?? 0) - (a.data.publishDate?.getTime() ?? 0)
 );
+
+// Prepare search data
+const searchData = articles.map(a => ({
+    id: a.slug,
+    title: a.data.title,
+    description: a.data.description,
+    url: `/makaleler/${a.slug}`,
+    category: a.data.category || 'Makale',
+    type: 'article'
+}));
 ---
 
 <BaseLayout title="Bilimsel Makaleler ve Yayınlar | tupbebek.com">
     <Header />
+
+    <!-- Search Component -->
+    <SearchAutocomplete searchData={searchData} maxResults={10} />
     
     <main class="pt-32 pb-24">
         <!-- Hero Header -->

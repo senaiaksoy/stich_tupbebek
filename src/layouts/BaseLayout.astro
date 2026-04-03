@@ -1,5 +1,7 @@
 ---
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Notifications from '../components/Notifications.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
 
 interface Props {
 	title: string;
@@ -61,15 +63,22 @@ const isHome = Astro.url.pathname === '/';
 	<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
 		{!isHome && <Breadcrumbs />}
 		<slot />
+
+		<!-- Global Toast Notifications System -->
+		<Notifications id="global-toast" />
 		
 		<!-- Floating Prestige Badge -->
 		<div class="fixed left-8 top-32 z-[100] pointer-events-none md:pointer-events-auto group">
 			<div class="relative w-24 h-24 sm:w-32 sm:h-32 -rotate-12 group-hover:rotate-0 group-hover:scale-110 transition-all duration-500">
-				<img 
-					src="/images/home/prestige_seal_1996.png" 
-					alt="Türkiye'nin İlk Üreme Sağlığı Platformu - 1996" 
-					class="w-full h-full object-contain pointer-events-auto rounded-full drop-shadow-2xl"
-					style="clip-path: circle(50%); mix-blend-mode: multiply;"
+				<OptimizedImage
+					src="/images/home/prestige_seal_1996.png"
+					type="badge"
+					alt="Türkiye'nin İlk Üreme Sağlığı Platformu - 1996"
+					className="w-full h-full object-contain pointer-events-auto rounded-full drop-shadow-2xl"
+					style={{
+						clipPath: 'circle(50%)',
+						mixBlendMode: 'multiply',
+					}}
 				/>
 				<div class="absolute inset-0 rounded-full border-2 border-[#c5a059]/20 pointer-events-none"></div>
 			</div>

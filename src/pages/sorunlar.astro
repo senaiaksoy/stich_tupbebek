@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
 ---
 
 <BaseLayout title="Kadın İnfertilitesi: Tıbbi Nedenler | tupbebek.com">
@@ -21,7 +22,7 @@ import Footer from '../components/Footer.astro';
                     </h1>
                     <div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
                         <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-dim">
-                            <img class="w-full h-full object-cover" src="/images/senai-aksoy.jpg" alt="Dr. Senai Aksoy" width="512" height="512" loading="eager" fetchpriority="high"/>
+                            <OptimizedImage src="/images/senai-aksoy.jpg" type="avatar" alt="Dr. Senai Aksoy" />
                         </div>
                         <div>
                             <p class="font-headline italic text-on-surface text-sm">Tıbbi İnceleme:</p>
@@ -30,7 +31,7 @@ import Footer from '../components/Footer.astro';
                     </div>
                 </div>
                 <div class="hidden md:block w-72 shrink-0 aspect-[4/5] bg-surface-container-highest rounded-2xl overflow-hidden shadow-2xl">
-                    <img class="w-full h-full object-cover grayscale opacity-80" src="/images/sorunlar/cell-biology.jpg" alt="Hücre biyolojisi" width="512" height="512" loading="eager" fetchpriority="high"/>
+                    <OptimizedImage src="/images/sorunlar/cell-biology.jpg" type="medical-illustration" alt="Hücre biyolojisi" className="w-full h-full object-cover grayscale opacity-80" />
                 </div>
             </div>
         </header>
@@ -97,7 +98,7 @@ import Footer from '../components/Footer.astro';
                     </div>
                     <div class="md:w-1/2">
                         <div class="relative group">
-                            <img class="rounded-2xl shadow-xl w-full" src="/images/sorunlar/hormonal-cycles.jpg" alt="Hormonal döngüler" width="512" height="512" loading="lazy"/>
+                            <OptimizedImage src="/images/sorunlar/hormonal-cycles.jpg" type="medical-illustration" alt="Hormonal döngüler" className="rounded-2xl shadow-xl w-full" />
                             <div class="absolute -bottom-6 -right-6 bg-surface-container-highest p-4 rounded-lg hidden md:block">
                                 <p class="text-xs font-bold text-primary tracking-widest uppercase mb-1">Klinik Veri</p>
                                 <p class="text-2xl font-headline">25%</p>

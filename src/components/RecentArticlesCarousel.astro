@@ -1,12 +1,21 @@
 ---
 import { getCollection } from 'astro:content';
-const articles = (await getCollection('articles'))
-    .sort((a, b) => {
-        const dateA = a.data.publishDate ? new Date(a.data.publishDate).getTime() : 0;
-        const dateB = b.data.publishDate ? new Date(b.data.publishDate).getTime() : 0;
-        return dateB - dateA;
-    })
-    .slice(0, 5);
+import LoadingSkeletons from './LoadingSkeletons.astro';
+
+let articles = null;
+let error = null;
+
+try {
+    articles = (await getCollection('articles'))
+        .sort((a, b) => {
+            const dateA = a.data.publishDate ? new Date(a.data.publishDate).getTime() : 0;
+            const dateB = b.data.publishDate ? new Date(b.data.publishDate).getTime() : 0;
+            return dateB - dateA;
+        })
+        .slice(0, 5);
+} catch (e) {
+    error = e;
+}
 ---
 
 <section class="py-24 bg-surface-container-low overflow-hidden">
@@ -21,7 +30,21 @@ const articles = (await getCollection('articles'))
             </a>
         </div>
 
+        <!-- Loading State -->
+        {articles === null && !error && (
+            <LoadingSkeletons type="carousel" count={5} />
+        )}
+
+        <!-- Error State -->
+        {error && (
+            <div class="p-8 text-center text-slate-500">
+                <span class="material-symbols-outlined text-4xl block mb-4 opacity-50">error</span>
+                <p class="font-medium">Makaleler yüklenemedi</p>
+            </div>
+        )}
+
         <!-- Carousel Container (Horizontal Scroll) -->
+        {articles && articles.length > 0 && (
         <div class="flex gap-8 overflow-x-auto pb-12 snap-x no-scrollbar">
             {articles.map((article) => (
                 <article class="min-w-[320px] md:min-w-[400px] snap-start bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10 group">
@@ -50,6 +73,7 @@ const articles = (await getCollection('articles'))
                 </article>
             ))}
         </div>
+        )}
     </div>
 </section>
 

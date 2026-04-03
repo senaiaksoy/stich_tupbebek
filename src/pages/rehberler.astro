@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
 ---
 
 <BaseLayout title="Tedavi Süreci: Adım Adım Rehber | tupbebek.com">
@@ -44,14 +45,14 @@ import Footer from '../components/Footer.astro';
             
             <!-- Visual for Prep -->
             <div class="md:col-span-5 relative overflow-hidden rounded-xl">
-                <img alt="Klinik Hazırlık" class="w-full h-full object-cover grayscale-[0.2]" src="/images/rehberler/clinical-prep.jpg" width="512" height="512" loading="eager" fetchpriority="high"/>
+                <OptimizedImage src="/images/rehberler/clinical-prep.jpg" type="hero" alt="Klinik Hazırlık" className="w-full h-full object-cover grayscale-[0.2]" />
                 <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
             </div>
 
             <!-- Step 2: Ovulation Induction -->
             <div class="md:col-span-5 bg-surface-container rounded-xl overflow-hidden flex flex-col">
                 <div class="h-64 overflow-hidden">
-                    <img alt="Hormon Takibi" class="w-full h-full object-cover" src="/images/rehberler/hormone-tracking.jpg" width="512" height="512" loading="lazy"/>
+                    <OptimizedImage src="/images/rehberler/hormone-tracking.jpg" type="medical-illustration" alt="Hormon Takibi" className="w-full h-full object-cover" />
                 </div>
                 <div class="p-8">
                     <div class="flex items-center gap-4 mb-4">
@@ -143,7 +144,7 @@ import Footer from '../components/Footer.astro';
         <footer class="mt-20 border-t border-outline-variant/20 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-4">
                 <div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container-high border-2 border-primary-container">
-                    <img alt="Dr. Senai Aksoy" class="w-full h-full object-cover" src="/images/senai-aksoy.jpg" width="512" height="512" loading="lazy"/>
+                    <OptimizedImage src="/images/senai-aksoy.jpg" type="avatar" alt="Dr. Senai Aksoy" className="w-full h-full object-cover" />
                 </div>
                 <div>
                     <p class="text-xs text-on-surface-variant uppercase font-bold tracking-wide">Tıbbi Editör & Kontrol</p>
