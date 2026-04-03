@@ -141,6 +141,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"articles": {
+"aciklanamayan-infertilite.md": {
+	id: "aciklanamayan-infertilite.md";
+  slug: "aciklanamayan-infertilite";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "adet-duzensizligi-pcos.md": {
 	id: "adet-duzensizligi-pcos.md";
   slug: "adet-duzensizligi-pcos";
@@ -211,9 +218,23 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"cep-telefonu-sperm-kalitesi.md": {
+	id: "cep-telefonu-sperm-kalitesi.md";
+  slug: "cep-telefonu-sperm-kalitesi";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "dondurulmus-embriyo-transferi.md": {
 	id: "dondurulmus-embriyo-transferi.md";
   slug: "dondurulmus-embriyo-transferi";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"embriyo-transferi-sonrasi-bakim.md": {
+	id: "embriyo-transferi-sonrasi-bakim.md";
+  slug: "embriyo-transferi-sonrasi-bakim";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -225,9 +246,86 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"embryoscope-yapay-zeka.md": {
+	id: "embryoscope-yapay-zeka.md";
+  slug: "embryoscope-yapay-zeka";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"endometrioma.md": {
+	id: "endometrioma.md";
+  slug: "endometrioma";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"endometriozis-akilli-stratejiler.md": {
+	id: "endometriozis-akilli-stratejiler.md";
+  slug: "endometriozis-akilli-stratejiler";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"endometriozis-tup-bebek.md": {
+	id: "endometriozis-tup-bebek.md";
+  slug: "endometriozis-tup-bebek";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"endoskopik-cerrahi-histeroskopi.md": {
+	id: "endoskopik-cerrahi-histeroskopi.md";
+  slug: "endoskopik-cerrahi-histeroskopi";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"erkek-dogurganlik-besin-takviyeleri.md": {
+	id: "erkek-dogurganlik-besin-takviyeleri.md";
+  slug: "erkek-dogurganlik-besin-takviyeleri";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"erkek-kisirligi-besin-takviyeleri.md": {
+	id: "erkek-kisirligi-besin-takviyeleri.md";
+  slug: "erkek-kisirligi-besin-takviyeleri";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "genetik-testler.md": {
 	id: "genetik-testler.md";
   slug: "genetik-testler";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"hidrosalpinx-ve-kisirlik.md": {
+	id: "hidrosalpinx-ve-kisirlik.md";
+  slug: "hidrosalpinx-ve-kisirlik";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"hiperprolaktinemi-prolaktinom.md": {
+	id: "hiperprolaktinemi-prolaktinom.md";
+  slug: "hiperprolaktinemi-prolaktinom";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"hiperprolaktinemi-ve-kisirlik.md": {
+	id: "hiperprolaktinemi-ve-kisirlik.md";
+  slug: "hiperprolaktinemi-ve-kisirlik";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"hormonal-tedavi-adenomyozis.md": {
+	id: "hormonal-tedavi-adenomyozis.md";
+  slug: "hormonal-tedavi-adenomyozis";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -239,9 +337,23 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"iui-nedir.md": {
+	id: "iui-nedir.md";
+  slug: "iui-nedir";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "ivf-oncesi-histeroskopi.md": {
 	id: "ivf-oncesi-histeroskopi.md";
   slug: "ivf-oncesi-histeroskopi";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"ivf-protokolleri.md": {
+	id: "ivf-protokolleri.md";
+  slug: "ivf-protokolleri";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -260,9 +372,30 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"kac-yumurta-gerekir.md": {
+	id: "kac-yumurta-gerekir.md";
+  slug: "kac-yumurta-gerekir";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"kadin-kisirligi-tup-bebek.md": {
+	id: "kadin-kisirligi-tup-bebek.md";
+  slug: "kadin-kisirligi-tup-bebek";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "kanser-ve-fertilite.md": {
 	id: "kanser-ve-fertilite.md";
   slug: "kanser-ve-fertilite";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"kimyasal-gebelik.md": {
+	id: "kimyasal-gebelik.md";
+  slug: "kimyasal-gebelik";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -274,9 +407,121 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"mikroenjeksiyon-icsi-nedir.md": {
+	id: "mikroenjeksiyon-icsi-nedir.md";
+  slug: "mikroenjeksiyon-icsi-nedir";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"miyom-ameliyati.md": {
+	id: "miyom-ameliyati.md";
+  slug: "miyom-ameliyati";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"miyomlar-ve-tup-bebek.md": {
+	id: "miyomlar-ve-tup-bebek.md";
+  slug: "miyomlar-ve-tup-bebek";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"myomlar-ve-kisirlik.md": {
+	id: "myomlar-ve-kisirlik.md";
+  slug: "myomlar-ve-kisirlik";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"opk-ve-ivf.md": {
+	id: "opk-ve-ivf.md";
+  slug: "opk-ve-ivf";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"over-prp.md": {
+	id: "over-prp.md";
+  slug: "over-prp";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"pgt-cinsiyet-secimi.md": {
+	id: "pgt-cinsiyet-secimi.md";
+  slug: "pgt-cinsiyet-secimi";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"pgt-m.md": {
+	id: "pgt-m.md";
+  slug: "pgt-m";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"pkos-ve-tup-bebek.md": {
+	id: "pkos-ve-tup-bebek.md";
+  slug: "pkos-ve-tup-bebek";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"taze-dondurulmus-transfer.md": {
+	id: "taze-dondurulmus-transfer.md";
+  slug: "taze-dondurulmus-transfer";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"tup-bebek-nedir.md": {
+	id: "tup-bebek-nedir.md";
+  slug: "tup-bebek-nedir";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"tup-bebek-sureci-rehber.md": {
+	id: "tup-bebek-sureci-rehber.md";
+  slug: "tup-bebek-sureci-rehber";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"tup-bebek-yanlis-bilinenler.md": {
+	id: "tup-bebek-yanlis-bilinenler.md";
+  slug: "tup-bebek-yanlis-bilinenler";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"vajinal-mikrobiyom-fiv.md": {
+	id: "vajinal-mikrobiyom-fiv.md";
+  slug: "vajinal-mikrobiyom-fiv";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "yumurta-dondurma-rehberi.md": {
 	id: "yumurta-dondurma-rehberi.md";
   slug: "yumurta-dondurma-rehberi";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"yumurtalik-kistleri-dogurganlik.md": {
+	id: "yumurtalik-kistleri-dogurganlik.md";
+  slug: "yumurtalik-kistleri-dogurganlik";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"yumurtlama-takibi.md": {
+	id: "yumurtlama-takibi.md";
+  slug: "yumurtlama-takibi";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
