@@ -1,0 +1,115 @@
+---
+const stages = [
+  {
+    step: 1,
+    title: "Gebe Kalamıyorum",
+    description: "İnfertilite nedenlerini ve ilk adımın ne olması gerektiğini öğrenin.",
+    link: "/sorunlar",
+    icon: "psychiatry",
+    bg: "bg-primary-container",
+    text: "text-primary",
+    ring: "border-primary/30",
+    glow: "group-hover:shadow-primary/20"
+  },
+  {
+    step: 2,
+    title: "Testlerim Var",
+    description: "Tanı süreci, hormon paneli okuma ve laboratuvar raporu yorumlama.",
+    link: "/tani-sureci",
+    icon: "lab_research",
+    bg: "bg-tertiary-container",
+    text: "text-tertiary",
+    ring: "border-tertiary/30",
+    glow: "group-hover:shadow-tertiary/20"
+  },
+  {
+    step: 3,
+    title: "Tedavi Seçenekleri",
+    description: "Size en uygun tedavi yöntemlerini (IVF, IUI vb.) karşılaştırın.",
+    link: "/tedavi-yontemleri",
+    icon: "biotech",
+    bg: "bg-secondary-container",
+    text: "text-secondary",
+    ring: "border-secondary/30",
+    glow: "group-hover:shadow-secondary/20"
+  },
+  {
+    step: 4,
+    title: "Tüp Bebeğe Başlıyorum",
+    description: "Adım adım IVF rehberi: Hazırlık, ilaçlar ve klinik süreç.",
+    link: "/rehberler",
+    icon: "step_into",
+    bg: "bg-primary-container",
+    text: "text-primary",
+    ring: "border-primary/30",
+    glow: "group-hover:shadow-primary/20"
+  },
+  {
+    step: 5,
+    title: "Transfer Bekliyorum",
+    description: "Embriyo transferi sonrası kritik dönem ve tutunma rehberi.",
+    link: "/transfer-sureci",
+    icon: "hourglass_empty",
+    bg: "bg-tertiary-container",
+    text: "text-tertiary",
+    ring: "border-tertiary/30",
+    glow: "group-hover:shadow-tertiary/20"
+  },
+  {
+    step: 6,
+    title: "Denedim Olmadı",
+    description: "Başarısız denemeler sonrası yeni stratejiler ve psikolojik destek.",
+    link: "/basarisiz-denemeler",
+    icon: "healing",
+    bg: "bg-error-container",
+    text: "text-error",
+    ring: "border-error/30",
+    glow: "group-hover:shadow-error/20"
+  }
+];
+---
+
+<section class="py-24 bg-surface relative overflow-hidden">
+    <!-- Background decorative visual -->
+    <div class="absolute inset-0 opacity-[0.03]">
+        <img src="/images/home/hero.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true" loading="lazy" />
+    </div>
+    <div class="absolute top-0 left-1/3 w-[500px] h-[500px] bg-primary/5 blur-[150px] rounded-full"></div>
+    <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-tertiary/5 blur-[120px] rounded-full"></div>
+
+    <div class="max-w-7xl mx-auto px-8 text-center pb-16 relative z-10">
+        <span class="text-accent font-label uppercase tracking-[0.3em] text-xs font-bold mb-4 block">YOL HARİTASI</span>
+        <h2 class="text-4xl lg:text-5xl font-headline text-on-surface mb-6">Hasta Yolculuğu Haritası</h2>
+        <p class="text-secondary max-w-2xl mx-auto">Hangi aşamada olursanız olun, bilimsel ve insani derinliğimizle yanınızdayız.</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-8 relative z-10">
+        <!-- Connecting Line -->
+        <div class="hidden lg:block absolute top-[72px] left-8 right-8 h-0.5 bg-gradient-to-r from-primary/5 via-primary/30 to-primary/5 z-0"></div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-4 relative z-10">
+            {stages.map((stage) => (
+                <div class="group">
+                    <a href={stage.link} class="flex flex-col items-center text-center">
+                        <!-- Icon Container -->
+                        <div class="relative mb-6">
+                            <div class={`w-24 h-24 lg:w-28 lg:h-28 rounded-3xl ${stage.bg} border-2 ${stage.ring} flex items-center justify-center shadow-md group-hover:shadow-xl ${stage.glow} group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500`}>
+                                <span class={`material-symbols-outlined icon-filled ${stage.text}`} style="font-size: 40px;">{stage.icon}</span>
+                            </div>
+                            <!-- Step number badge -->
+                            <div class={`absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center border-2 ${stage.ring}`}>
+                                <span class={`text-xs font-bold ${stage.text}`}>{stage.step}</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <h3 class="text-sm font-bold text-on-surface mb-2 group-hover:text-primary transition-colors leading-tight min-h-[2.5rem] flex items-center">{stage.title}</h3>
+                        <p class="text-[11px] text-secondary leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 px-2">
+                            {stage.description}
+                        </p>
+                    </a>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

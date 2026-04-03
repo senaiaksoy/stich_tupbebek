@@ -1,0 +1,80 @@
+---
+// Footer.astro
+---
+<footer class="w-full bg-slate-900 text-slate-300 pt-20 pb-10 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-8">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+            <!-- Brand & Mission -->
+            <div class="lg:col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="/images/logo-tupbebek.png" alt="tupbebek.com" class="h-10 w-auto brightness-0 invert" width="100" height="43" loading="lazy" />
+                    <span class="font-serif font-bold text-2xl text-white">tupbebek.com</span>
+                </div>
+                <p class="text-sm leading-relaxed mb-8 max-w-sm opacity-80">
+                    1996'dan beri bağımsız, reklamsız ve bilimsel üreme sağlığı rehberi. Tüm içeriklerimiz Yayın Kurulu ve tıbbi inceleme kurulumuzun denetimindedir.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-white scale-75">share</span>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-white scale-75">mail</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sitemap: Content Hierarchy -->
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Bilgi Kütüphanesi</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="/sorunlar" class="hover:text-primary transition-colors">İnfertilite Rehberi</a></li>
+                    <li><a href="/tani-sureci" class="hover:text-primary transition-colors">Tanı Süreci</a></li>
+                    <li><a href="/tedavi-yontemleri" class="hover:text-primary transition-colors">Tedavi Yöntemleri</a></li>
+                    <li><a href="/rehberler" class="hover:text-primary transition-colors">Tedavi Rehberi</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Kurumsal</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="/hakkimizda" class="hover:text-primary transition-colors">Hakkımızda</a></li>
+                    <li><a href="/sss" class="hover:text-primary transition-colors">Sıkça Sorulan Sorular</a></li>
+                    <li><a href="/makaleler" class="hover:text-primary transition-colors">Tüm Makaleler</a></li>
+                    <li><a href="/iletisim" class="hover:text-primary transition-colors">İletişim</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Yasal</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="/gizlilik-politikasi" class="hover:text-primary transition-colors">Gizlilik Politikası</a></li>
+                    <li><a href="/kvkk" class="hover:text-primary transition-colors">KVKK Aydınlatma</a></li>
+                    <li><a href="/kullanim-kosullari" class="hover:text-primary transition-colors">Kullanım Koşulları</a></li>
+                    <li><a href="/yayin-sureci" class="hover:text-primary transition-colors">Yayın Süreci</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Medical Disclaimer -->
+        <div class="py-8 border-y border-slate-800 mb-8">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-accent shrink-0">warning</span>
+                <p class="text-[11px] leading-relaxed opacity-60">
+                    <strong>TIBBİ SORUMLULUK REDDİ:</strong> tupbebek.com üzerinde yer alan tüm tıbbi bilgiler, akademik literatür ve klinik tecrübe ışığında genel bilgilendirme amacıyla hazırlanmıştır. Sitedeki içerikler hiçbir şekilde profesyonel bir tıbbi tavsiye, teşhis veya tedavi yerine geçemez. Herhangi bir tıbbi semptom veya endişeniz varsa, lütfen vakit kaybetmeden uzman bir hekime başvurunuz. Bu platform, herhangi bir sağlık kuruluşuna yönelik ticari yönlendirme yapmaz.
+                </p>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-[10px] uppercase tracking-widest opacity-50">
+                © 2024 tupbebek.com | BAĞIMSIZ ÜREME SAĞLIĞI PLATFORMU
+            </div>
+            <div class="flex items-center gap-3">
+                <img src="/images/home/prestige_seal_1996.png" alt="1996 Seal" class="h-8 grayscale opacity-50 contrast-125" />
+                <span class="text-[10px] font-bold opacity-40 italic uppercase tracking-tighter">ESTABLISHED 1996</span>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,350 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ReadingProgress from '../../components/ReadingProgress.astro';
+import ShareButtons from '../../components/ShareButtons.astro';
+import BackToTop from '../../components/BackToTop.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// İlgili makaleler
+const allArticles = await getCollection('articles');
+const sameCategory = allArticles
+  .filter(a => a.slug !== entry.slug && a.data.category === entry.data.category)
+  .sort((a, b) => (b.data.publishDate?.getTime() ?? 0) - (a.data.publishDate?.getTime() ?? 0));
+
+const otherArticles = allArticles
+  .filter(a => a.slug !== entry.slug && a.data.category !== entry.data.category)
+  .sort((a, b) => (b.data.publishDate?.getTime() ?? 0) - (a.data.publishDate?.getTime() ?? 0));
+
+const relatedArticles = [...sameCategory, ...otherArticles].slice(0, 3);
+
+const articleUrl = `https://tupbebek.com/makaleler/${entry.slug}`;
+---
+
+<BaseLayout title={`${entry.data.title} | tupbebek.com`}>
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "MedicalWebPage",
+        "headline": entry.data.title,
+        "description": entry.data.description,
+        "datePublished": entry.data.publishDate?.toISOString().split('T')[0],
+        "dateModified": entry.data.lastModified?.toISOString().split('T')[0] || entry.data.publishDate?.toISOString().split('T')[0],
+        "author": {
+            "@type": "Person",
+            "name": entry.data.author || "Doc. Dr. Senai Aksoy",
+            "jobTitle": "Ureme Endokrinolojisi ve Infertilite Uzmani"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "tupbebek.com",
+            "url": "https://tupbebek.com"
+        },
+        "medicalAudience": {
+            "@type": "Patient"
+        },
+        "reviewedBy": {
+            "@type": "Organization",
+            "name": entry.data.medicalReviewer || "Yayin Kurulu"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": articleUrl
+        }
+    })} />
+    <Header />
+    <ReadingProgress />
+
+    <main class="pt-32 pb-24">
+        <!-- Makale Header -->
+        <div class="max-w-4xl mx-auto px-6">
+            <header class="mb-10">
+                <nav class="flex items-center gap-2 text-xs font-label text-on-surface-variant mb-6 uppercase tracking-widest">
+                    <a href="/" class="hover:text-primary transition-colors">Ana Sayfa</a>
+                    <span class="material-symbols-outlined text-[10px]">chevron_right</span>
+                    <a href="/makaleler" class="hover:text-primary transition-colors">Makaleler</a>
+                    <span class="material-symbols-outlined text-[10px]">chevron_right</span>
+                    <span class="text-primary font-semibold">{entry.data.category}</span>
+                </nav>
+
+                <h1 class="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-on-surface leading-tight mb-6">
+                    {entry.data.title}
+                </h1>
+
+                {entry.data.description && (
+                    <p class="text-lg text-on-surface-variant leading-relaxed mb-6 font-body">
+                        {entry.data.description}
+                    </p>
+                )}
+
+                <!-- Icindekiler (acilir-kapanir) -->
+                <details id="article-toc" class="mb-8 group/toc">
+                    <summary class="flex items-center gap-2.5 cursor-pointer select-none py-3 px-4 -mx-4 rounded-xl hover:bg-surface-container/60 transition-colors">
+                        <span class="material-symbols-outlined text-primary text-lg">toc</span>
+                        <span class="text-sm font-semibold text-on-surface">Bu yazida neler var?</span>
+                        <span class="text-xs text-on-surface-variant ml-1" id="toc-reading-badge"></span>
+                        <span class="material-symbols-outlined text-on-surface-variant text-base ml-auto transition-transform duration-200 group-open/toc:rotate-180">expand_more</span>
+                    </summary>
+                    <nav class="mt-2 pb-2 pl-1">
+                        <ul id="toc-list" class="space-y-0.5"></ul>
+                    </nav>
+                </details>
+
+                <div class="flex flex-wrap items-center gap-4 sm:gap-6 py-5 border-y border-surface-container">
+                    <!-- Inceleme -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-tertiary flex items-center justify-center shadow-sm">
+                            <span class="material-symbols-outlined icon-filled text-white text-lg">verified</span>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-1.5">
+                                <p class="text-sm font-bold text-on-surface">{entry.data.medicalReviewer || 'Yayin Kurulu'}</p>
+                                <span class="material-symbols-outlined icon-filled text-primary text-xs">check_circle</span>
+                            </div>
+                            <p class="text-[11px] text-on-surface-variant">Tibbi Inceleme Onayli</p>
+                        </div>
+                    </div>
+                    <!-- Tarihler -->
+                    <div class="flex items-center gap-4 sm:ml-auto">
+                        {entry.data.publishDate && (
+                            <div class="text-right">
+                                <p class="text-[10px] text-on-surface-variant uppercase tracking-widest leading-none mb-1">Yayinlanma</p>
+                                <p class="text-sm font-semibold text-on-surface">
+                                    {entry.data.publishDate.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                </p>
+                            </div>
+                        )}
+                        {entry.data.lastModified && (
+                            <div class="text-right border-l border-outline-variant/30 pl-4">
+                                <p class="text-[10px] text-on-surface-variant uppercase tracking-widest leading-none mb-1">Guncelleme</p>
+                                <p class="text-sm font-semibold text-on-surface">
+                                    {entry.data.lastModified.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                </p>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <!-- Makale Icerigi -->
+        <div class="max-w-4xl mx-auto px-6">
+                <article class="min-w-0">
+
+                    {entry.data.image && (
+                        <div class="aspect-[2/1] rounded-2xl overflow-hidden mb-10 shadow-xl">
+                            <img
+                                src={entry.data.image}
+                                alt={entry.data.imageAlt || entry.data.title}
+                                class="w-full h-full object-cover"
+                                width="896"
+                                height="448"
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 720px"
+                                loading="eager"
+                                fetchpriority="high"
+                            />
+                        </div>
+                    )}
+
+                    <!-- Makale Icerigi -->
+                    <div class="prose prose-lg max-w-none
+                        prose-headings:font-headline
+                        prose-p:leading-[1.85]
+                        prose-li:leading-relaxed
+                        prose-img:rounded-2xl prose-img:shadow-lg
+                        prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                        prose-blockquote:not-italic
+                        prose-hr:border-outline-variant
+                        prose-table:overflow-hidden prose-table:rounded-xl prose-table:shadow-sm
+                        prose-th:text-left
+                        prose-pre:rounded-xl prose-pre:shadow-md">
+                        <Content />
+                    </div>
+
+                    <!-- Paylasim -->
+                    <div class="mt-12 pt-8 border-t border-surface-container">
+                        <ShareButtons title={entry.data.title} url={articleUrl} />
+                    </div>
+
+                    <!-- Makale Footer -->
+                    <footer class="mt-12 space-y-6">
+                        <!-- Yazar Bilgisi -->
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 bg-surface-container rounded-2xl">
+                            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-tertiary flex items-center justify-center shadow-md shrink-0">
+                                <span class="material-symbols-outlined icon-filled text-white text-2xl">edit_note</span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-0.5">Yazar</p>
+                                <p class="text-lg font-headline font-bold text-on-surface">{entry.data.author || 'Doc. Dr. Senai Aksoy'}</p>
+                                <p class="text-xs text-on-surface-variant">Ureme Endokrinolojisi ve Infertilite Uzmani</p>
+                            </div>
+                            <div class="flex flex-col items-start sm:items-end gap-1">
+                                {entry.data.publishDate && (
+                                    <p class="text-xs text-on-surface-variant">
+                                        <span class="material-symbols-outlined text-[12px] align-middle mr-1">calendar_today</span>
+                                        {entry.data.publishDate.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                    </p>
+                                )}
+                                {entry.data.lastModified && (
+                                    <p class="text-xs text-on-surface-variant">
+                                        <span class="material-symbols-outlined text-[12px] align-middle mr-1">update</span>
+                                        {entry.data.lastModified.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                    </p>
+                                )}
+                            </div>
+                        </div>
+
+                        <!-- Tibbi Inceleme Notu -->
+                        <div class="bg-surface-container-low p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-5 border border-outline-variant/10">
+                            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-tertiary to-primary overflow-hidden shrink-0 flex items-center justify-center shadow-md">
+                                <span class="material-symbols-outlined icon-filled text-white text-2xl">verified</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-headline font-bold text-on-surface mb-1">Tibbi Inceleme Notu</h4>
+                                <p class="text-xs text-primary font-semibold mb-2">{entry.data.medicalReviewer || 'Yayin Kurulu'} tarafindan incelenmis ve onaylanmistir</p>
+                                <p class="text-sm text-on-surface-variant leading-relaxed">
+                                    Bu makale, tibbi dogruluk ve guncel klinik protokoller acisindan denetlenmistir. Sunulan bilgiler genel bilgilendirme amaclidir; kisisel tedavi kararlari icin mutlaka uzman hekiminize danisin.
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+                </article>
+        </div>
+
+        <!-- Ilgili Makaleler -->
+        {relatedArticles.length > 0 && (
+            <section class="max-w-7xl mx-auto px-6 mt-24">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="material-symbols-outlined text-primary text-2xl">auto_stories</span>
+                    <h2 class="font-headline text-2xl font-bold text-on-surface">Benzer Makaleler</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {relatedArticles.map(article => (
+                        <a href={`/makaleler/${article.slug}`}
+                           class="group bg-surface-container-lowest rounded-2xl border border-outline-variant/15 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                            {article.data.image && (
+                                <div class="aspect-[2/1] overflow-hidden">
+                                    <img src={article.data.image}
+                                         alt={article.data.imageAlt || article.data.title}
+                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                         loading="lazy" />
+                                </div>
+                            )}
+                            <div class="p-5">
+                                <span class="inline-block text-[10px] font-label uppercase tracking-widest text-primary bg-primary/8 px-2.5 py-1 rounded-md mb-3">
+                                    {article.data.category}
+                                </span>
+                                <h3 class="font-headline font-bold text-on-surface text-base leading-snug mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                                    {article.data.title}
+                                </h3>
+                                {article.data.description && (
+                                    <p class="text-sm text-on-surface-variant leading-relaxed line-clamp-2">
+                                        {article.data.description}
+                                    </p>
+                                )}
+                                {article.data.publishDate && (
+                                    <p class="text-xs text-on-surface-variant mt-3">
+                                        {article.data.publishDate.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                    </p>
+                                )}
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </section>
+        )}
+    </main>
+
+    <BackToTop />
+    <Footer />
+
+    <style is:global>
+        .toc-item {
+            display: flex; align-items: baseline; gap: 8px;
+            padding: 5px 0; color: #586064; font-size: 14px;
+            line-height: 1.5; transition: color 0.2s;
+        }
+        .toc-item:hover { color: #35618f; }
+        .toc-item::before {
+            content: ''; display: block; flex-shrink: 0;
+            width: 5px; height: 5px; border-radius: 50%;
+            background: #abb3b7; margin-top: 7px;
+            transition: background 0.2s;
+        }
+        .toc-item:hover::before { background: #35618f; }
+        .toc-item.toc-h3 { padding-left: 20px; font-size: 13px; }
+        .toc-item.toc-h3::before { width: 4px; height: 4px; }
+    </style>
+
+    <script is:inline>
+    (function() {
+    function initToc() {
+        var article = document.querySelector('article .prose');
+        if (!article) return;
+
+        var headings = article.querySelectorAll('h2, h3');
+        if (headings.length < 2) {
+            var tocEl = document.getElementById('article-toc');
+            if (tocEl) tocEl.style.display = 'none';
+            return;
+        }
+
+        var tocList = document.getElementById('toc-list');
+        var badge = document.getElementById('toc-reading-badge');
+        if (!tocList) return;
+
+        // Okuma suresi
+        var wordCount = (article.textContent || '').trim().split(/\s+/).length;
+        var totalMinutes = Math.ceil(wordCount / 200);
+        if (badge) badge.textContent = totalMinutes + ' dk okuma';
+
+        // Heading id fallback
+        headings.forEach(function(h, i) { if (!h.id) h.id = 'heading-' + i; });
+
+        // Sadece h2 goster (h3 opsiyonel - cok uzun olmamasi icin)
+        var h2Count = 0;
+        headings.forEach(function(h) { if (h.tagName === 'H2') h2Count++; });
+
+        headings.forEach(function(h) {
+            // Manuel icindekiler basligini atla
+            var txt = (h.textContent || '').trim();
+            if (/[iİ][çc][iİ]ndek[iİ]ler/i.test(txt)) return;
+            // h3'leri sadece h2 sayisi az ise goster (< 10)
+            if (h.tagName === 'H3' && h2Count >= 10) return;
+
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.href = '#' + h.id;
+            a.textContent = h.textContent;
+            a.className = 'toc-item' + (h.tagName === 'H3' ? ' toc-h3' : '');
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                var t = document.getElementById(h.id);
+                if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+                // Paneli kapat
+                var details = document.getElementById('article-toc');
+                if (details) details.removeAttribute('open');
+            });
+            li.appendChild(a);
+            tocList.appendChild(li);
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initToc);
+    } else {
+        initToc();
+    }
+    })();
+    </script>
+</BaseLayout>

@@ -1,0 +1,70 @@
+---
+// Breadcrumbs.astro
+const { pathname } = Astro.url;
+const paths = pathname.split('/').filter(Boolean);
+
+const labelMap: Record<string, string> = {
+  'sorunlar': 'İnfertilite Rehberi',
+  'tedavi-yontemleri': 'Tedavi Yöntemleri',
+  'tani-sureci': 'Tanı Süreci',
+  'rehberler': 'Tedavi Rehberi',
+  'sss': 'Sıkça Sorulan Sorular',
+  'makaleler': 'Bilgi Merkezi',
+  'hakkimizda': 'Hakkımızda',
+  'erkek-infertilitesi': 'Erkek İnfertilitesi',
+  'fertilite-koruma': 'Fertilite Koruma'
+};
+
+const breadcrumbs = paths.map((path, index) => {
+  const href = `/${paths.slice(0, index + 1).join('/')}`;
+  return {
+    label: labelMap[path] || path.charAt(0).toUpperCase() + path.slice(1).replace(/-/g, ' '),
+    href
+  };
+});
+
+// JSON-LD for SEO
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": Astro.site
+    },
+    ...breadcrumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      "position": index + 2,
+      "name": crumb.label,
+      "item": new URL(crumb.href, Astro.url).toString()
+    }))
+  ]
+};
+---
+
+<nav aria-label="Breadcrumb" class="py-4 px-6 lg:px-8 max-w-7xl mx-auto mt-24">
+  <ol class="flex items-center space-x-2 text-sm text-slate-500">
+    <li>
+      <a href="/" class="hover:text-primary transition-colors flex items-center">
+        <span class="material-symbols-outlined text-base">home</span>
+        <span class="sr-only">Ana Sayfa</span>
+      </a>
+    </li>
+    {breadcrumbs.map((crumb, index) => (
+      <li class="flex items-center space-x-2">
+        <span class="material-symbols-outlined text-xs text-slate-300">chevron_right</span>
+        {index === breadcrumbs.length - 1 ? (
+          <span class="font-bold text-slate-900 truncate max-w-[200px] md:max-w-none" aria-current="page">{crumb.label}</span>
+        ) : (
+          <a href={crumb.href} class="hover:text-primary transition-colors whitespace-nowrap">
+            {crumb.label}
+          </a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

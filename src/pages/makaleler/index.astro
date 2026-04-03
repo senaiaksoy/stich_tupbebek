@@ -1,0 +1,279 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import SearchAutocomplete from '../../components/SearchAutocomplete.astro';
+
+const articles = await getCollection('articles');
+const featuredArticles = articles.filter(a => a.data.featured).slice(0, 2);
+
+// Sort all articles by date
+const sortedArticles = articles.sort((a, b) =>
+    (b.data.publishDate?.getTime() ?? 0) - (a.data.publishDate?.getTime() ?? 0)
+);
+
+// Category definitions with icons and colors
+const categories = [
+    { name: 'Kadın Sağlığı', icon: 'female', color: 'primary', bgClass: 'bg-primary-container', textClass: 'text-primary', borderClass: 'border-primary' },
+    { name: 'Erkek Sağlığı', icon: 'male', color: 'tertiary', bgClass: 'bg-tertiary-container', textClass: 'text-tertiary', borderClass: 'border-tertiary' },
+    { name: 'Tedavi Yöntemleri', icon: 'biotech', color: 'secondary', bgClass: 'bg-secondary-container', textClass: 'text-secondary', borderClass: 'border-secondary' },
+    { name: 'Genetik & Tarama', icon: 'genetics', color: 'primary', bgClass: 'bg-primary-container', textClass: 'text-primary', borderClass: 'border-primary' },
+    { name: 'Fertilite Koruma', icon: 'ac_unit', color: 'tertiary', bgClass: 'bg-tertiary-container', textClass: 'text-tertiary', borderClass: 'border-tertiary' },
+    { name: 'Yaşam & Rehber', icon: 'menu_book', color: 'secondary', bgClass: 'bg-secondary-container', textClass: 'text-secondary', borderClass: 'border-secondary' },
+];
+
+// Group articles by category
+const articlesByCategory = categories.map(cat => ({
+    ...cat,
+    articles: sortedArticles.filter(a => a.data.category === cat.name),
+    count: sortedArticles.filter(a => a.data.category === cat.name).length
+}));
+
+// Prepare search data
+const searchData = articles.map(a => ({
+    id: a.slug,
+    title: a.data.title,
+    description: a.data.description,
+    url: `/makaleler/${a.slug}`,
+    category: a.data.category || 'Makale',
+    type: 'article'
+}));
+---
+
+<BaseLayout title="Bilimsel Makaleler ve Yayınlar | tupbebek.com">
+    <Header />
+
+    <!-- Search Component -->
+    <SearchAutocomplete searchData={searchData} maxResults={10} />
+
+    <main class="pt-32 pb-24">
+        <!-- Hero Header -->
+        <header class="max-w-7xl mx-auto px-6 mb-16">
+            <div class="max-w-3xl">
+                <nav class="flex items-center gap-2 text-xs font-label text-on-surface-variant mb-6 uppercase tracking-widest">
+                    <a href="/">Ana Sayfa</a>
+                    <span class="material-symbols-outlined text-[10px]">chevron_right</span>
+                    <span class="text-primary font-semibold">Makaleler</span>
+                </nav>
+                <h1 class="font-headline text-5xl font-bold text-on-surface leading-tight mb-6">Bilimsel Yaklaşımlar ve <br/><span class="italic text-primary">Güncel Literatür</span></h1>
+                <p class="font-body text-lg text-on-surface-variant leading-relaxed">Üreme sağlığı ve tüp bebek teknolojilerindeki en son gelişmeleri, klinik araştırmaları ve uzman görüşlerini içeren akademik arşivimiz.</p>
+            </div>
+        </header>
+
+        <!-- Category Filter Bar -->
+        <section class="max-w-7xl mx-auto px-6 mb-16">
+            <div class="flex flex-wrap gap-3" id="category-filters">
+                <button data-category="all" class="category-btn active inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all bg-primary text-on-primary shadow-lg shadow-primary/20">
+                    <span class="material-symbols-outlined text-lg">grid_view</span>
+                    Tümü
+                    <span class="bg-white/20 text-xs px-2 py-0.5 rounded-full">{articles.length}</span>
+                </button>
+                {articlesByCategory.map(cat => (
+                    <button data-category={cat.name} class={`category-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all bg-surface-container-lowest border border-outline-variant/20 text-on-surface-variant hover:border-primary/30 hover:text-primary hover:shadow-md`}>
+                        <span class="material-symbols-outlined text-lg">{cat.icon}</span>
+                        {cat.name}
+                        <span class="bg-surface-container text-xs px-2 py-0.5 rounded-full">{cat.count}</span>
+                    </button>
+                ))}
+            </div>
+        </section>
+
+        <!-- Öne Çıkan Makaleler -->
+        {featuredArticles.length > 0 && (
+        <section class="bg-surface-container-low py-20 mb-16" id="featured-section">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex items-end justify-between mb-12">
+                    <div>
+                        <span class="text-accent font-label uppercase tracking-[0.3em] text-xs font-bold mb-3 block">Editörün Seçimi</span>
+                        <h2 class="font-headline text-3xl font-bold">Öne Çıkan Makaleler</h2>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    {featuredArticles.map((article, index) => (
+                        <article class={`flex flex-col md:flex-row gap-8 items-center ${index === 1 ? 'md:flex-row-reverse' : ''}`}>
+                            <div class="w-full md:w-1/2 aspect-[4/5] rounded-xl overflow-hidden shadow-xl">
+                                <img
+                                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                                    src={article.data.image}
+                                    alt={article.data.imageAlt || article.data.title}
+                                    width="512" height="640"
+                                    loading="eager"
+                                    fetchpriority="high"
+                                />
+                            </div>
+                            <div class={`w-full md:w-1/2 ${index === 1 ? 'md:text-right' : ''}`}>
+                                <div class={`flex items-center gap-3 mb-4 ${index === 1 ? 'justify-end' : ''}`}>
+                                    <span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">{article.data.category}</span>
+                                </div>
+                                <a href={`/makaleler/${article.slug}`}>
+                                    <h3 class="font-headline text-2xl font-bold mb-4 leading-snug hover:text-primary transition-colors cursor-pointer">
+                                        {article.data.title}
+                                    </h3>
+                                </a>
+                                <p class="font-body text-on-surface-variant mb-6 leading-relaxed text-sm">
+                                    {article.data.description}
+                                </p>
+                                <div class="flex items-center gap-3 mt-auto">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-tertiary flex items-center justify-center shadow-sm">
+                                        <span class="material-symbols-outlined icon-filled text-white text-lg">shield</span>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-1.5">
+                                            <p class="text-xs font-bold text-on-surface">Yayın Kurulu</p>
+                                            <span class="material-symbols-outlined icon-filled text-primary text-sm">verified</span>
+                                        </div>
+                                        <p class="text-[10px] text-on-surface-variant">Bilimsel İçerik Onayı</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </div>
+        </section>
+        )}
+
+        <!-- Kategorilere Göre Makaleler -->
+        <section class="max-w-7xl mx-auto px-6">
+            {articlesByCategory.map(cat => (
+                <div class="category-section mb-20" data-category-section={cat.name}>
+                    <!-- Kategori Başlığı -->
+                    <div class="flex items-center gap-4 mb-10">
+                        <div class={`w-12 h-12 ${cat.bgClass} rounded-xl flex items-center justify-center`}>
+                            <span class={`material-symbols-outlined icon-filled ${cat.textClass} text-2xl`}>{cat.icon}</span>
+                        </div>
+                        <div>
+                            <h2 class="font-headline text-2xl font-bold text-on-surface">{cat.name}</h2>
+                            <p class="text-xs text-on-surface-variant">{cat.count} makale</p>
+                        </div>
+                        <div class="flex-1 h-px bg-outline-variant/20 ml-4"></div>
+                    </div>
+
+                    <!-- Makale Kartları -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {cat.articles.map(article => (
+                            <article class="article-card group bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/10 hover:shadow-xl hover:border-primary/10 transition-all duration-300 hover:-translate-y-1" data-article-category={cat.name}>
+                                {article.data.image && (
+                                    <div class="h-44 overflow-hidden relative">
+                                        <img
+                                            src={article.data.image}
+                                            alt={article.data.imageAlt || article.data.title}
+                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            width="400" height="176"
+                                            loading="lazy"
+                                        />
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                                        <span class={`absolute bottom-3 left-3 ${cat.bgClass} ${cat.textClass} px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider`}>{cat.name}</span>
+                                    </div>
+                                )}
+                                {!article.data.image && (
+                                    <div class={`h-3 ${cat.borderClass} border-t-4`}></div>
+                                )}
+                                <div class="p-6">
+                                    {!article.data.image && (
+                                        <span class={`${cat.bgClass} ${cat.textClass} px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider inline-block mb-3`}>{cat.name}</span>
+                                    )}
+                                    <a href={`/makaleler/${article.slug}`}>
+                                        <h3 class="font-headline text-lg font-bold text-on-surface mb-3 leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                                            {article.data.title}
+                                        </h3>
+                                    </a>
+                                    <p class="text-sm text-on-surface-variant leading-relaxed line-clamp-3 mb-4">
+                                        {article.data.description}
+                                    </p>
+                                    <div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-tertiary flex items-center justify-center">
+                                                <span class="material-symbols-outlined icon-filled text-white text-[11px]">shield</span>
+                                            </div>
+                                            <span class="text-[11px] text-on-surface-variant">Yayın Kurulu</span>
+                                            <span class="material-symbols-outlined icon-filled text-primary text-xs">verified</span>
+                                        </div>
+                                        <a href={`/makaleler/${article.slug}`} class="text-primary">
+                                            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            ))}
+
+            <!-- Sonuç Bulunamadı (JS ile gösterilir) -->
+            <div id="no-filter-results" class="hidden text-center py-20">
+                <span class="material-symbols-outlined text-5xl text-on-surface-variant/30 mb-4 block">search_off</span>
+                <p class="text-on-surface-variant font-medium">Bu kategoride makale bulunamadı.</p>
+            </div>
+        </section>
+
+        <!-- Newsletter Sidebar (Full Width) -->
+        <section class="max-w-7xl mx-auto px-6 mt-10">
+            <div class="bg-primary text-on-primary rounded-2xl p-10 md:p-16 overflow-hidden relative">
+                <div class="relative z-10 max-w-xl">
+                    <h3 class="font-headline text-2xl font-bold mb-4 italic">Bültene Abone Olun</h3>
+                    <p class="font-body text-sm opacity-90 mb-6 leading-relaxed">En yeni bilimsel araştırmalar ve tıbbi güncellemeler doğrudan e-posta kutunuza gelsin.</p>
+                    <div class="flex gap-3">
+                        <input class="flex-1 bg-white/10 border border-white/20 rounded-xl px-5 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-white/30 placeholder:text-white/50" placeholder="E-posta adresiniz" type="email"/>
+                        <button class="bg-white text-primary font-bold text-sm px-8 py-3 rounded-xl hover:bg-on-primary transition-all">Kaydol</button>
+                    </div>
+                </div>
+                <div class="absolute -right-8 -bottom-8 opacity-10">
+                    <span class="material-symbols-outlined text-[200px]">mail</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+
+    <script is:inline>
+    (function() {
+        const buttons = document.querySelectorAll('.category-btn');
+        const sections = document.querySelectorAll('.category-section');
+        const featuredSection = document.getElementById('featured-section');
+        const noResults = document.getElementById('no-filter-results');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+
+                // Update active button
+                buttons.forEach(b => {
+                    b.classList.remove('active', 'bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
+                    b.classList.add('bg-surface-container-lowest', 'border', 'border-outline-variant/20', 'text-on-surface-variant');
+                });
+                btn.classList.add('active', 'bg-primary', 'text-on-primary', 'shadow-lg', 'shadow-primary/20');
+                btn.classList.remove('bg-surface-container-lowest', 'border', 'border-outline-variant/20', 'text-on-surface-variant');
+
+                // Show/hide sections
+                if (category === 'all') {
+                    sections.forEach(s => s.style.display = '');
+                    if (featuredSection) featuredSection.style.display = '';
+                    noResults.classList.add('hidden');
+                } else {
+                    if (featuredSection) featuredSection.style.display = 'none';
+                    let found = false;
+                    sections.forEach(s => {
+                        if (s.dataset.categorySection === category) {
+                            s.style.display = '';
+                            found = true;
+                        } else {
+                            s.style.display = 'none';
+                        }
+                    });
+                    if (!found) {
+                        noResults.classList.remove('hidden');
+                    } else {
+                        noResults.classList.add('hidden');
+                    }
+                }
+
+                // Scroll to content
+                window.scrollTo({ top: document.getElementById('category-filters').offsetTop - 80, behavior: 'smooth' });
+            });
+        });
+    })();
+    </script>
+</BaseLayout>
