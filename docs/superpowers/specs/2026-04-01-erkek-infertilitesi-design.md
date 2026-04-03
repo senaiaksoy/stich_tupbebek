@@ -38,7 +38,7 @@ Erkek infertilitesi için bağımsız bir ana sayfa (`/erkek-infertilitesi`) olu
 │   ├── Breadcrumbs bileşeni (labelMap'te 'erkek-infertilitesi' kaydı gerekli)
 │   ├── Akademik Makale rozeti (sorunlar.astro'daki ile aynı)
 │   ├── H1: "Erkek İnfertilitesi: <span italic primary>Tıbbi Nedenler</span> ve Tedavi"
-│   ├── Tıbbi denetçi kartı (Dr. Senai Aksoy, sorunlar.astro'daki ile aynı yapı)
+│   ├── Tıbbi denetçi kartı (Yayın Kurulu, sorunlar.astro'daki ile aynı yapı)
 │   └── Hero görseli (sağda, hidden md:block, sorunlar.astro düzeni)
 │
 ├── QUICK-NAV BAR (sticky, sorunlar.astro'da yok — bu sayfaya özgü yeni eleman)
@@ -69,7 +69,7 @@ Erkek infertilitesi için bağımsız bir ana sayfa (`/erkek-infertilitesi`) olu
 │   └── #mikro-tese — Mikro-TESE ve Cerrahi Sperm Elde Etme
 │
 ├── DOKTOR ONAY BANDI (hakkimizda.astro ve makaleler/[...slug].astro'daki kalıp)
-│   ├── Dr. Senai Aksoy fotoğrafı + isim + unvan
+│   ├── Yayın Kurulu fotoğrafı + isim + unvan
 │   ├── "Bu sayfa ... tarafından tıbbi açıdan incelenmiştir."
 │   └── Stil: `bg-surface-container-low p-8 rounded-2xl border-l-4 border-primary`
 │

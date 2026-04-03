@@ -1,0 +1,630 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Başarısız Tüp Bebek Denemesi Sonrası | tupbebek.com" description="Tüp bebek tedavisi başarısız olduysa ne yapmalı? Başarısızlık nedenleri, yeni stratejiler, ikinci deneme planlaması ve psikolojik destek rehberi.">
+    <Header />
+
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <!-- Hero Section -->
+        <header class="mb-20 text-center max-w-4xl mx-auto">
+            <p class="text-primary font-bold tracking-widest uppercase text-xs mb-4">Yeniden Başlamak</p>
+            <h1 class="text-4xl md:text-6xl font-headline text-on-surface mb-8 leading-tight">Denedim Olmadı, <span class="italic text-primary">Şimdi Ne Yapmalıyım?</span></h1>
+            <p class="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">Başarısız bir tüp bebek denemesi yıkıcı olabilir. Ama bu bir son değildir. Nedenleri anlamak, stratejiyi değiştirmek ve kendinize zaman tanımak yeni bir başlangıcın temelidir.</p>
+            <div class="h-1 w-24 bg-primary mx-auto opacity-30 mt-8"></div>
+        </header>
+
+        <!-- Section 1: Neden Başarısız Oldu? -->
+        <section class="mb-24" id="nedenler">
+            <div class="text-center mb-12">
+                <span class="text-accent font-label uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Anlama</span>
+                <h2 class="text-3xl md:text-4xl font-headline text-on-surface mb-4">Neden Başarısız Oldu?</h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto">IVF başarısızlığının birçok nedeni olabilir. Bazen tek bir faktör belirleyici olurken, bazen birden fazla faktör bir arada etkili olur.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group bg-surface-container-lowest p-8 rounded-xl hover:shadow-xl transition-all duration-300 border border-transparent hover:border-outline-variant/10">
+                    <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined icon-filled text-primary">egg</span>
+                    </div>
+                    <h3 class="text-lg font-headline font-bold text-on-surface mb-3">Embriyo Kalitesi</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Embriyoların genetik yapısı veya gelişim kalitesi implantasyonu engelleyebilir. Yaşla birlikte oosit kalitesi azalır ve kromozomal anomali riski artar.</p>
+                </div>
+
+                <div class="group bg-surface-container-lowest p-8 rounded-xl hover:shadow-xl transition-all duration-300 border border-transparent hover:border-outline-variant/10">
+                    <div class="w-12 h-12 bg-tertiary-container rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined icon-filled text-tertiary">ecg</span>
+                    </div>
+                    <h3 class="text-lg font-headline font-bold text-on-surface mb-3">Endometrium Sorunları</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Rahim iç tabakasının kalınlığı, yapısı veya reseptivitesi yetersiz olabilir. İnce endometrium, polipler, myomlar veya adenomiyozis implantasyonu zorlaştırır.</p>
+                </div>
+
+                <div class="group bg-surface-container-lowest p-8 rounded-xl hover:shadow-xl transition-all duration-300 border border-transparent hover:border-outline-variant/10">
+                    <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined icon-filled text-secondary">genetics</span>
+                    </div>
+                    <h3 class="text-lg font-headline font-bold text-on-surface mb-3">Genetik Faktörler</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Embriyodaki kromozomal anormallikler en sık başarısızlık nedenidir. 35 yaş üstünde anöploidi oranı %40'ı, 40 yaş üstünde %60'ı aşabilir.</p>
+                </div>
+
+                <div class="group bg-surface-container-lowest p-8 rounded-xl hover:shadow-xl transition-all duration-300 border border-transparent hover:border-outline-variant/10">
+                    <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined icon-filled text-primary">immune</span>
+                    </div>
+                    <h3 class="text-lg font-headline font-bold text-on-surface mb-3">İmmünolojik Nedenler</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Bağışıklık sisteminin embriyoyu "yabancı" olarak algılayıp reddetmesi. NK hücre aktivitesi, antifosfolipid antikorları ve otoimmün durumlar araştırılmalıdır.</p>
+                </div>
+
+                <div class="group bg-surface-container-lowest p-8 rounded-xl hover:shadow-xl transition-all duration-300 border border-transparent hover:border-outline-variant/10">
+                    <div class="w-12 h-12 bg-tertiary-container rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined icon-filled text-tertiary">bloodtype</span>
+                    </div>
+                    <h3 class="text-lg font-headline font-bold text-on-surface mb-3">Trombofili</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Pıhtılaşma bozuklukları plasental kan akışını etkileyebilir. Faktör V Leiden, MTHFR mutasyonu ve antitrombin eksikliği araştırılması gerekebilir.</p>
+                </div>
+
+                <div class="group bg-surface-container-lowest p-8 rounded-xl hover:shadow-xl transition-all duration-300 border border-transparent hover:border-outline-variant/10">
+                    <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined icon-filled text-secondary">mystery</span>
+                    </div>
+                    <h3 class="text-lg font-headline font-bold text-on-surface mb-3">Açıklanamayan Başarısızlık</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Tüm testler normal çıkmasına rağmen implantasyon gerçekleşmeyebilir. Bu durum hastaların yaklaşık %25'inde görülür ve yeni yaklaşımlar gerektirir.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Doktorunuza Sormanız Gereken Sorular -->
+        <section class="mb-24 bg-surface-container-low rounded-2xl p-8 md:p-16" id="sorular">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-5">
+                    <span class="text-accent font-label uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Değerlendirme</span>
+                    <h2 class="text-3xl font-headline text-on-surface mb-6">Doktorunuza Sormanız Gereken Sorular</h2>
+                    <p class="text-on-surface-variant leading-relaxed mb-6">Başarısız bir denemeden sonra yapılacak en önemli şey, detaylı bir değerlendirme görüşmesidir. Bu görüşmede tedavinin her aşamasını gözden geçirin.</p>
+                    <div class="p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                        <p class="text-sm text-on-surface-variant"><strong class="text-on-surface">İpucu:</strong> Bu soruları yazılı olarak götürün. Randevu stresinde önemli soruları atlamak çok yaygındır.</p>
+                    </div>
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="bg-white p-5 rounded-xl flex items-start gap-4 shadow-sm">
+                        <span class="w-8 h-8 bg-primary-container rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-sm font-bold text-primary">1</span>
+                        </span>
+                        <div>
+                            <p class="font-bold text-on-surface">"Embriyolarımın kalitesi nasıldı?"</p>
+                            <p class="text-sm text-on-surface-variant mt-1">Embriyo dereceleri, gelişim hızları ve dondurma/çözme sürecinde kayıp olup olmadığını öğrenin.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl flex items-start gap-4 shadow-sm">
+                        <span class="w-8 h-8 bg-primary-container rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-sm font-bold text-primary">2</span>
+                        </span>
+                        <div>
+                            <p class="font-bold text-on-surface">"Endometriumum yeterli miydi?"</p>
+                            <p class="text-sm text-on-surface-variant mt-1">Transfer günü kalınlık, patern (üçlü çizgi) ve kan akışı değerlendirmesini sorun.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl flex items-start gap-4 shadow-sm">
+                        <span class="w-8 h-8 bg-primary-container rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-sm font-bold text-primary">3</span>
+                        </span>
+                        <div>
+                            <p class="font-bold text-on-surface">"Protokol değişikliği düşünüyor musunuz?"</p>
+                            <p class="text-sm text-on-surface-variant mt-1">Stimülasyon protokolü, ilaç dozajı veya tetikleme zamanlamasında değişiklik gerekip gerekmediğini sorun.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl flex items-start gap-4 shadow-sm">
+                        <span class="w-8 h-8 bg-primary-container rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-sm font-bold text-primary">4</span>
+                        </span>
+                        <div>
+                            <p class="font-bold text-on-surface">"Ek testlere ihtiyacım var mı?"</p>
+                            <p class="text-sm text-on-surface-variant mt-1">ERA testi, histeroskopi, immünolojik panel veya trombofili taraması gerekip gerekmediğini değerlendirin.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl flex items-start gap-4 shadow-sm">
+                        <span class="w-8 h-8 bg-primary-container rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-sm font-bold text-primary">5</span>
+                        </span>
+                        <div>
+                            <p class="font-bold text-on-surface">"PGT-A düşünmeli miyiz?"</p>
+                            <p class="text-sm text-on-surface-variant mt-1">Preimplantasyon genetik test, özellikle tekrarlayan başarısızlıklarda kromozomal olarak normal embriyo seçimini sağlar.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl flex items-start gap-4 shadow-sm">
+                        <span class="w-8 h-8 bg-primary-container rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-sm font-bold text-primary">6</span>
+                        </span>
+                        <div>
+                            <p class="font-bold text-on-surface">"Başarı şansım ne kadar değişir?"</p>
+                            <p class="text-sm text-on-surface-variant mt-1">Yeni stratejilerle birlikte gerçekçi beklentiler ve istatistiksel başarı oranlarını konuşun.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Yeni Stratejiler -->
+        <section class="mb-24" id="yeni-stratejiler">
+            <div class="text-center mb-12">
+                <span class="text-accent font-label uppercase tracking-[0.3em] text-xs font-bold mb-4 block">İkinci Deneme</span>
+                <h2 class="text-3xl md:text-4xl font-headline text-on-surface mb-4">Yeni Tedavi Stratejileri</h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto">İlk denemede elde edilen veriler, ikinci denemeyi kişiselleştirmek için çok değerlidir. İşte sıkça uygulanan yeni yaklaşımlar.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Strateji 1 -->
+                <div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-primary">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined icon-filled text-primary">biotech</span>
+                        <h3 class="text-lg font-headline font-bold">Protokol Değişikliği</h3>
+                    </div>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Stimülasyon protokolü hastanın yanıtına göre değiştirilir. Antagonist, mikrodoz flare, doğal siklus IVF veya minimal stimülasyon gibi alternatif yaklaşımlar değerlendirilir.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full font-semibold">Antagonist Protokol</span>
+                        <span class="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full font-semibold">Mikrodoz Flare</span>
+                        <span class="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full font-semibold">Doğal Siklus IVF</span>
+                    </div>
+                </div>
+
+                <!-- Strateji 2 -->
+                <div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-tertiary">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined icon-filled text-tertiary">genetics</span>
+                        <h3 class="text-lg font-headline font-bold">PGT-A (Genetik Test)</h3>
+                    </div>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Embriyoların transferden önce genetik taraması yapılarak kromozomal olarak normal (öploid) embriyolar seçilir. Özellikle 35+ yaş ve tekrarlayan başarısızlıklarda önerilir.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-3 py-1 bg-tertiary/10 text-tertiary rounded-full font-semibold">Anöploidi Taraması</span>
+                        <span class="text-xs px-3 py-1 bg-tertiary/10 text-tertiary rounded-full font-semibold">Mozaisizm Analizi</span>
+                    </div>
+                </div>
+
+                <!-- Strateji 3 -->
+                <div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-secondary">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined icon-filled text-secondary">labs</span>
+                        <h3 class="text-lg font-headline font-bold">ERA Testi (Endometrial Reseptivite)</h3>
+                    </div>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Endometriumu biyopsi ile inceleyerek implantasyon penceresini kişiselleştirilmiş olarak belirler. Hastaların %25'inde pencere kayması tespit edilir.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-3 py-1 bg-secondary/10 text-secondary rounded-full font-semibold">Biyopsi</span>
+                        <span class="text-xs px-3 py-1 bg-secondary/10 text-secondary rounded-full font-semibold">Kişiselleştirilmiş Transfer</span>
+                    </div>
+                </div>
+
+                <!-- Strateji 4 -->
+                <div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-primary">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined icon-filled text-primary">microscope</span>
+                        <h3 class="text-lg font-headline font-bold">Histeroskopi</h3>
+                    </div>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Rahim iç yüzeyinin kamera ile doğrudan görüntülenmesi. Polip, myom, yapışıklık veya septum gibi yapısal sorunları hem tespit eder hem tedavi eder.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full font-semibold">Tanısal</span>
+                        <span class="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full font-semibold">Operatif</span>
+                        <span class="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full font-semibold">Endometrial Scratching</span>
+                    </div>
+                </div>
+
+                <!-- Strateji 5 -->
+                <div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-tertiary">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined icon-filled text-tertiary">immune</span>
+                        <h3 class="text-lg font-headline font-bold">İmmünolojik Tedaviler</h3>
+                    </div>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">NK hücre aktivitesi yüksek hastalarda intralipid infüzyonu, steroid tedavisi veya IVIG gibi immünomodülatör tedaviler uygulanabilir.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-3 py-1 bg-tertiary/10 text-tertiary rounded-full font-semibold">İntralipid</span>
+                        <span class="text-xs px-3 py-1 bg-tertiary/10 text-tertiary rounded-full font-semibold">Steroid</span>
+                        <span class="text-xs px-3 py-1 bg-tertiary/10 text-tertiary rounded-full font-semibold">IVIG</span>
+                    </div>
+                </div>
+
+                <!-- Strateji 6 -->
+                <div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-secondary">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined icon-filled text-secondary">science</span>
+                        <h3 class="text-lg font-headline font-bold">Laboratuvar Teknikleri</h3>
+                    </div>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Assisted hatching, time-lapse inkübatör kullanımı, PICSI veya IMSI gibi ileri laboratuvar tekniklerinin eklenmesi değerlendirilebilir.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-3 py-1 bg-secondary/10 text-secondary rounded-full font-semibold">Assisted Hatching</span>
+                        <span class="text-xs px-3 py-1 bg-secondary/10 text-secondary rounded-full font-semibold">Time-Lapse</span>
+                        <span class="text-xs px-3 py-1 bg-secondary/10 text-secondary rounded-full font-semibold">PICSI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: İstatistikler ve Umut -->
+        <section class="mb-24 bg-surface-container-low rounded-2xl p-8 md:p-16" id="istatistikler">
+            <div class="text-center mb-12">
+                <span class="text-accent font-label uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Veriler Ne Diyor?</span>
+                <h2 class="text-3xl md:text-4xl font-headline text-on-surface mb-4">Kümülatif Başarı Oranları</h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto">İlk denemede başarısız olan çiftlerin büyük çoğunluğu sonraki denemelerde başarı elde eder. Umudunuzu kaybetmeyin.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                <div class="bg-white p-8 rounded-xl text-center">
+                    <span class="text-4xl font-headline font-bold text-primary block mb-2">%35-45</span>
+                    <p class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">1. Deneme Başarı Oranı</p>
+                    <p class="text-xs text-on-surface-variant mt-2 opacity-70">35 yaş altı, iyi prognoz</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl text-center">
+                    <span class="text-4xl font-headline font-bold text-tertiary block mb-2">%60-70</span>
+                    <p class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">2. Deneme Kümülatif</p>
+                    <p class="text-xs text-on-surface-variant mt-2 opacity-70">İki siklus sonunda toplam</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl text-center">
+                    <span class="text-4xl font-headline font-bold text-secondary block mb-2">%75-80</span>
+                    <p class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">3. Deneme Kümülatif</p>
+                    <p class="text-xs text-on-surface-variant mt-2 opacity-70">Üç siklus sonunda toplam</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl text-center border-2 border-green-200">
+                    <span class="text-4xl font-headline font-bold text-green-600 block mb-2">%85-90</span>
+                    <p class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">4-6 Deneme Kümülatif</p>
+                    <p class="text-xs text-on-surface-variant mt-2 opacity-70">Altı siklus sonunda toplam</p>
+                </div>
+            </div>
+
+            <div class="p-6 bg-white rounded-xl border-l-4 border-primary">
+                <p class="text-sm text-on-surface-variant leading-relaxed"><strong class="text-on-surface">Önemli Not:</strong> Bu oranlar genel istatistiklerdir ve yaş, tanı, embriyo kalitesi gibi bireysel faktörlere göre değişir. Doktorunuz sizin özel durumunuza göre kişiselleştirilmiş bir değerlendirme yapacaktır. Kaynak: ESHRE ve SART verileri.</p>
+            </div>
+        </section>
+
+        <!-- Section 5: Ne Kadar Beklemeli? -->
+        <section class="mb-24" id="zamanlama">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                <div class="md:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl flex flex-col justify-center">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-tertiary-container rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined icon-filled text-tertiary text-2xl">schedule</span>
+                        </div>
+                        <h2 class="text-2xl font-headline font-bold">Yeniden Ne Zaman Denemeliyim?</h2>
+                    </div>
+                    <p class="text-on-surface-variant leading-relaxed mb-6">İkinci deneme zamanlaması birçok faktöre bağlıdır. Acele etmek kadar gereksiz yere beklemek de doğru değildir.</p>
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4">
+                            <span class="w-8 h-8 bg-primary-container rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="material-symbols-outlined icon-filled text-primary text-lg">timer</span>
+                            </span>
+                            <div>
+                                <p class="font-bold text-on-surface">Fiziksel Toparlanma: 1-2 Adet Döngüsü</p>
+                                <p class="text-sm text-on-surface-variant">Vücudun hormonal dengesini yeniden kurması için genellikle 1-2 adet döngüsü beklenmesi yeterlidir.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="w-8 h-8 bg-tertiary-container rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="material-symbols-outlined icon-filled text-tertiary text-lg">psychology</span>
+                            </span>
+                            <div>
+                                <p class="font-bold text-on-surface">Psikolojik Hazırlık: Kendinize Zaman Tanıyın</p>
+                                <p class="text-sm text-on-surface-variant">Yas sürecini yaşamak önemlidir. Hazır hissetmeden başlamak stresi artırır ve tedaviye olumsuz yansıyabilir.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="w-8 h-8 bg-secondary-container rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="material-symbols-outlined icon-filled text-secondary text-lg">labs</span>
+                            </span>
+                            <div>
+                                <p class="font-bold text-on-surface">Ek Testler Gerekiyorsa: 2-3 Ay</p>
+                                <p class="text-sm text-on-surface-variant">ERA, histeroskopi veya immünolojik testler planlanıyorsa bu süreç 2-3 ay uzayabilir.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="w-8 h-8 bg-primary-container rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="material-symbols-outlined icon-filled text-primary text-lg">warning</span>
+                            </span>
+                            <div>
+                                <p class="font-bold text-on-surface">Yaş Faktörü: Gereksiz Beklemeyin</p>
+                                <p class="text-sm text-on-surface-variant">Özellikle 38 yaş üstü hastalarda her ay değerlidir. Fiziksel olarak hazırsanız ve doktorunuz onay veriyorsa uzun beklemeye gerek yoktur.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-5 bg-surface-container rounded-xl p-8 flex flex-col justify-center">
+                    <h3 class="text-lg font-headline font-bold mb-6 text-on-surface">İkinci Deneme Öncesi Checklist</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-lg">
+                            <span class="material-symbols-outlined text-primary">check_box</span>
+                            <span class="text-sm">Başarısızlık nedenlerini doktorunuzla detaylıca tartışın</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-lg">
+                            <span class="material-symbols-outlined text-primary">check_box</span>
+                            <span class="text-sm">Önerilen ek testleri yaptırın</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-lg">
+                            <span class="material-symbols-outlined text-primary">check_box</span>
+                            <span class="text-sm">Yaşam tarzı değişikliklerini uygulayın</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-lg">
+                            <span class="material-symbols-outlined text-primary">check_box</span>
+                            <span class="text-sm">Psikolojik destek alın veya destek grubuna katılın</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-lg">
+                            <span class="material-symbols-outlined text-primary">check_box</span>
+                            <span class="text-sm">Yeni protokolü ve beklentileri netleştirin</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-lg">
+                            <span class="material-symbols-outlined text-primary">check_box</span>
+                            <span class="text-sm">İkinci görüş almayı değerlendirin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Psikolojik Destek -->
+        <section class="mb-24 bg-surface-container-low rounded-2xl p-8 md:p-16" id="psikolojik-destek">
+            <div class="text-center mb-12">
+                <span class="text-accent font-label uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Ruhsal İyileşme</span>
+                <h2 class="text-3xl md:text-4xl font-headline text-on-surface mb-4">Kayıp ve Yas Süreci</h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto">Başarısız bir IVF denemesi gerçek bir kayıptır. Bu kaybın yasını tutmak zayıflık değil, iyileşmenin ilk adımıdır.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+                <div class="bg-white p-8 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <span class="material-symbols-outlined icon-filled text-primary text-3xl">sentiment_sad</span>
+                    </div>
+                    <h3 class="font-headline font-bold text-on-surface mb-3">Hissetmeye İzin Verin</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Üzüntü, öfke, kıskançlık, suçluluk — hepsi geçerli duygulardır. Bastırmak yerine yaşayın. Ağlamak iyileştirir.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-tertiary-container rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <span class="material-symbols-outlined icon-filled text-tertiary text-3xl">group</span>
+                    </div>
+                    <h3 class="font-headline font-bold text-on-surface mb-3">Yalnız Değilsiniz</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Her 6 çiftten 1'i infertilite yaşar. Online destek grupları, benzer deneyimleri paylaşan insanlarla bağ kurmanızı sağlar.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-secondary-container rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <span class="material-symbols-outlined icon-filled text-secondary text-3xl">psychology</span>
+                    </div>
+                    <h3 class="font-headline font-bold text-on-surface mb-3">Profesyonel Destek</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">İnfertilite konusunda uzmanlaşmış bir psikolog veya psikiyatrist ile çalışmak, sürecinizi önemli ölçüde kolaylaştırır.</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl">
+                <h3 class="font-headline font-bold text-on-surface mb-6 text-center">Eşinizle Birlikte Başa Çıkmak</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined icon-filled text-primary flex-shrink-0 mt-1">favorite</span>
+                        <div>
+                            <p class="font-semibold text-on-surface">Açık iletişim kurun</p>
+                            <p class="text-sm text-on-surface-variant">Her iki partner de farklı şekillerde yas tutabilir. Birbirinizin duygularını yargılamadan dinleyin.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined icon-filled text-primary flex-shrink-0 mt-1">diversity_3</span>
+                        <div>
+                            <p class="font-semibold text-on-surface">Birlikte karar verin</p>
+                            <p class="text-sm text-on-surface-variant">Tekrar deneme, mola verme veya alternatif yolları birlikte değerlendirin. Tek taraflı baskı ilişkiye zarar verir.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined icon-filled text-tertiary flex-shrink-0 mt-1">spa</span>
+                        <div>
+                            <p class="font-semibold text-on-surface">İlişkinizi koruyun</p>
+                            <p class="text-sm text-on-surface-variant">Tedavi süreci ilişkinin merkezine oturmamalı. Birlikte keyifli aktiviteler yapmaya devam edin.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined icon-filled text-tertiary flex-shrink-0 mt-1">self_improvement</span>
+                        <div>
+                            <p class="font-semibold text-on-surface">Sınırlarınızı belirleyin</p>
+                            <p class="text-sm text-on-surface-variant">Kaç deneme yapacağınız, bütçe sınırlarınız ve duygusal sınırlarınız hakkında önceden konuşun.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Yasal Çerçeve ve Alternatif Yollar -->
+        <section class="mb-24" id="alternatifler">
+            <div class="text-center mb-12">
+                <span class="text-accent font-label uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Yasal Çerçeve ve Seçenekler</span>
+                <h2 class="text-3xl md:text-4xl font-headline text-on-surface mb-4">Türkiye'de Yasal Düzenleme ve Alternatif Yollar</h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto">Tedavi seçeneklerinizi değerlendirirken yasal sınırları bilmek önemlidir. Türkiye'deki mevzuat, ÜYTE uygulamalarını net kurallarla düzenler.</p>
+            </div>
+
+            <!-- Yasal Çerçeve Bilgi Kutusu -->
+            <div class="bg-amber-50 p-8 md:p-10 rounded-2xl border border-amber-200/50 mb-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
+                        <span class="material-symbols-outlined icon-filled text-amber-700 text-2xl">gavel</span>
+                    </span>
+                    <div>
+                        <h3 class="text-lg font-headline font-bold text-amber-900">Yasal Düzenleme</h3>
+                        <a href="https://resmigazete.gov.tr/eskiler/2014/09/20140930-4.htm" target="_blank" rel="noopener noreferrer" class="text-xs text-amber-700 underline hover:text-amber-900 transition-colors inline-flex items-center gap-1">ÜYTE Yönetmeliği — 30.09.2014 tarih, 29135 sayılı Resmi Gazete <span class="material-symbols-outlined text-xs">open_in_new</span></a>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-amber-600 flex-shrink-0 mt-0.5">info</span>
+                        <div>
+                            <p class="font-semibold text-on-surface">Yalnızca Evli Çiftlere Uygulanır (Madde 15/1)</p>
+                            <p class="text-sm text-on-surface-variant">ÜYTE yaptırmak üzere başvuran adayların evli çift olmaları ve birlikte işlem yaptırmaları gerekir.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-amber-600 flex-shrink-0 mt-0.5">info</span>
+                        <div>
+                            <p class="font-semibold text-on-surface">Yalnızca Kendi Üreme Hücreleri Kullanılır (Madde 18/5)</p>
+                            <p class="text-sm text-on-surface-variant">ÜYTE uygulanacak eşlere sadece kendilerine ait üreme hücreleri uygulanır. Herhangi bir şekilde donör kullanılması, donör kullanılarak embriyo elde edilmesi, adaylardan alınan üreme hücreleri ile elde edilen embriyoların başka adaylarda kullanılması yasaktır.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-amber-600 flex-shrink-0 mt-0.5">info</span>
+                        <div>
+                            <p class="font-semibold text-on-surface">Yönlendirme Yasağı (Madde 18/6)</p>
+                            <p class="text-sm text-on-surface-variant">Yurt içinde veya yurt dışındaki merkezlere donör temini amacıyla hasta sevk etmek, yönlendirmek veya bu işleme aracılık etmek yasaktır. Bu yasağa uymayan merkezlerin faaliyetine valilikçe son verilir.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Evlat Edinme - Detaylı Bölüm -->
+            <div class="rounded-3xl overflow-hidden mb-10 shadow-lg shadow-tertiary/5" id="evlat-edinme">
+                <!-- Üst Banner -->
+                <div class="bg-gradient-to-r from-tertiary to-tertiary/80 p-8 md:p-10 flex items-center gap-5">
+                    <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined icon-filled text-white text-3xl">volunteer_activism</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-headline font-bold text-white">Evlat Edinme</h3>
+                        <p class="text-white/80 text-sm mt-1">Aile olmanın farklı ve değerli bir yolu</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 md:p-12">
+                    <p class="text-on-surface-variant leading-relaxed text-lg mb-10 max-w-3xl">Türkiye'de evlat edinme süreci, Aile ve Sosyal Hizmetler Bakanlığı koordinasyonunda yürütülür. Biyolojik bağ olmaksızın kurulan aile bağı, sevgi ve adanmışlıkla örülür ve yasal olarak biyolojik ebeveynlik ile <strong class="text-on-surface">eşdeğer haklara</strong> sahiptir.</p>
+
+                    <!-- Adımlar Timeline -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-0 mb-10 relative">
+                        <!-- Bağlantı çizgisi (desktop) -->
+                        <div class="hidden md:block absolute top-10 left-[16.5%] right-[16.5%] h-0.5 bg-tertiary/20 z-0"></div>
+
+                        <div class="relative z-10 text-center px-6 mb-8 md:mb-0">
+                            <div class="w-20 h-20 bg-tertiary-container rounded-full flex items-center justify-center mx-auto mb-5 shadow-md">
+                                <span class="material-symbols-outlined icon-filled text-tertiary text-3xl">description</span>
+                            </div>
+                            <span class="text-xs font-bold text-tertiary uppercase tracking-widest block mb-2">Adım 1</span>
+                            <h4 class="font-headline font-bold text-on-surface mb-2">Başvuru</h4>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">İl Müdürlüğü'ne başvuru yapılır. Evli çiftler ve 30 yaş üstü bekar bireyler başvurabilir. Nüfus cüzdanı, sağlık raporu, adli sicil kaydı ve gelir belgesi gerekir.</p>
+                        </div>
+                        <div class="relative z-10 text-center px-6 mb-8 md:mb-0">
+                            <div class="w-20 h-20 bg-tertiary-container rounded-full flex items-center justify-center mx-auto mb-5 shadow-md">
+                                <span class="material-symbols-outlined icon-filled text-tertiary text-3xl">home_work</span>
+                            </div>
+                            <span class="text-xs font-bold text-tertiary uppercase tracking-widest block mb-2">Adım 2</span>
+                            <h4 class="font-headline font-bold text-on-surface mb-2">Sosyal İnceleme</h4>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Sosyal hizmet uzmanları ev ziyareti yapar. Aile yapısı, yaşam koşulları ve çocuk yetiştirme yetkinliği değerlendirilir. Ortalama 3-6 ay sürer.</p>
+                        </div>
+                        <div class="relative z-10 text-center px-6">
+                            <div class="w-20 h-20 bg-tertiary-container rounded-full flex items-center justify-center mx-auto mb-5 shadow-md">
+                                <span class="material-symbols-outlined icon-filled text-tertiary text-3xl">family_restroom</span>
+                            </div>
+                            <span class="text-xs font-bold text-tertiary uppercase tracking-widest block mb-2">Adım 3</span>
+                            <h4 class="font-headline font-bold text-on-surface mb-2">Eşleştirme ve Yerleştirme</h4>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Uygun çocuk eşleştirmesi sonrası geçici bakım süreci başlar. Uyum dönemi ardından mahkeme kararıyla evlat edinme kesinleşir.</p>
+                        </div>
+                    </div>
+
+                    <!-- Bilgi Kartları -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+                        <div class="flex items-start gap-4 p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+                            <span class="w-10 h-10 bg-tertiary-container rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined icon-filled text-tertiary">diversity_1</span>
+                            </span>
+                            <div>
+                                <h4 class="font-bold text-on-surface mb-1">Koruyucu Aile Seçeneği</h4>
+                                <p class="text-sm text-on-surface-variant leading-relaxed">Evlat edinme sürecinde veya alternatif olarak koruyucu ailelik de değerlendirilebilir. Devlet desteği alır, çocuğun bakımını geçici ya da uzun süreli üstlenirsiniz.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+                            <span class="w-10 h-10 bg-tertiary-container rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined icon-filled text-tertiary">hourglass_top</span>
+                            </span>
+                            <div>
+                                <h4 class="font-bold text-on-surface mb-1">Ortalama Bekleme Süresi</h4>
+                                <p class="text-sm text-on-surface-variant leading-relaxed">Başvurudan yerleştirmeye kadar 1-3 yıl sürebilir. Yaş tercihi, sağlık durumu tercihi ve bölgesel talep yoğunluğu süreyi etkiler.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="flex items-center gap-4 p-5 bg-tertiary/5 rounded-xl">
+                        <span class="material-symbols-outlined icon-filled text-tertiary text-2xl flex-shrink-0">open_in_new</span>
+                        <p class="text-sm text-on-surface-variant flex-1"><strong class="text-on-surface">Başvuru için:</strong> Bulunduğunuz ilin <strong>Aile ve Sosyal Hizmetler İl Müdürlüğü</strong>'ne başvurabilir veya detaylı bilgi alabilirsiniz.</p>
+                        <a href="https://www.aile.gov.tr" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-tertiary text-white font-bold text-sm rounded-full hover:shadow-lg hover:shadow-tertiary/20 transition-all flex-shrink-0">aile.gov.tr</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Çocuksuz Yaşam - Detaylı Bölüm -->
+            <div class="rounded-3xl overflow-hidden shadow-lg shadow-secondary/5" id="cocuksuz-yasam">
+                <!-- Üst Banner -->
+                <div class="bg-gradient-to-r from-secondary to-secondary/80 p-8 md:p-10 flex items-center gap-5">
+                    <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined icon-filled text-white text-3xl">nest_eco_leaf</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-headline font-bold text-white">Çocuksuz Yaşam</h3>
+                        <p class="text-white/80 text-sm mt-1">Bilinçli bir tercih, cesur bir karar</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 md:p-12">
+                    <p class="text-on-surface-variant leading-relaxed text-lg mb-10 max-w-3xl">Tedavi sürecinin sonunda çocuksuz bir yaşamı bilinçli olarak benimsemek, toplumsal baskılara rağmen <strong class="text-on-surface">kendi hayatınızın kararını vermek</strong> demektir. Bu bir "vazgeçiş" değil, yeni bir başlangıç ve öz kabuldür.</p>
+
+                    <!-- 4 Kart -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+                        <div class="group p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 hover:shadow-lg hover:border-secondary/20 transition-all duration-300">
+                            <div class="w-12 h-12 bg-secondary-container rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined icon-filled text-secondary text-xl">psychology</span>
+                            </div>
+                            <h4 class="font-headline font-bold text-on-surface mb-2">Yas Sürecini Tamamlamak</h4>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Hayal ettiğiniz ebeveynlik deneyiminin yasını tutmak normaldir ve gereklidir. Bu kayıp, somut bir kayıp kadar gerçektir. Kendinize zaman tanıyın, profesyonel destek almaktan çekinmeyin.</p>
+                        </div>
+                        <div class="group p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 hover:shadow-lg hover:border-secondary/20 transition-all duration-300">
+                            <div class="w-12 h-12 bg-secondary-container rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined icon-filled text-secondary text-xl">shield_person</span>
+                            </div>
+                            <h4 class="font-headline font-bold text-on-surface mb-2">Çevre ile Başa Çıkmak</h4>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">"Ne zaman çocuğunuz olacak?" sorusu acı verici olabilir. Sınırlarınızı net koyun. Ne kadar paylaşacağınıza siz karar verin. Sizi anlayan insanlarla vakit geçirin.</p>
+                        </div>
+                        <div class="group p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 hover:shadow-lg hover:border-secondary/20 transition-all duration-300">
+                            <div class="w-12 h-12 bg-secondary-container rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined icon-filled text-secondary text-xl">favorite</span>
+                            </div>
+                            <h4 class="font-headline font-bold text-on-surface mb-2">İlişkinizi Yeniden Tanımlamak</h4>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Tedavi sürecinde ilişkiniz yıpranmış olabilir. Ebeveynlik hedefinin ötesinde birbirinizi yeniden keşfedin. Birlikte yeni hedefler, hobiler ve hayaller oluşturun.</p>
+                        </div>
+                        <div class="group p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 hover:shadow-lg hover:border-secondary/20 transition-all duration-300">
+                            <div class="w-12 h-12 bg-secondary-container rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined icon-filled text-secondary text-xl">explore</span>
+                            </div>
+                            <h4 class="font-headline font-bold text-on-surface mb-2">Anlam ve Amaç Bulmak</h4>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Hayatınıza anlam katan başka yollar keşfedin: gönüllülük, mentorluk, kariyer hedefleri, seyahat, sanat. Çocuk sahibi olmak anlam bulmanın tek yolu değildir.</p>
+                        </div>
+                    </div>
+
+                    <!-- Alıntı -->
+                    <div class="relative bg-gradient-to-br from-secondary/5 to-secondary/10 p-8 md:p-10 rounded-2xl">
+                        <span class="material-symbols-outlined text-secondary/20 text-6xl absolute top-4 left-6">format_quote</span>
+                        <blockquote class="relative z-10 text-center max-w-2xl mx-auto">
+                            <p class="text-on-surface italic leading-relaxed text-lg mb-4">"Ebeveynlik bir insanın hayatına anlam katabilir, ama bir insanın değerini belirlemez. Siz tedavi sürecinde gösterdiğiniz güç ve dayanıklılıkla zaten olağanüstü insanlarsınız."</p>
+                            <cite class="text-xs text-secondary font-bold uppercase tracking-widest">Klinik Psikoloji Perspektifi</cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="text-center">
+            <h2 class="text-2xl font-headline text-on-surface mb-8">İlgili Rehberler</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/transfer-sureci" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-container text-primary font-bold rounded-full hover:shadow-lg transition-all">
+                    <span class="material-symbols-outlined text-lg">hourglass_empty</span>
+                    Transfer ve Bekleme Süreci
+                </a>
+                <a href="/tedavi-yontemleri" class="inline-flex items-center gap-2 px-6 py-3 bg-tertiary-container text-tertiary font-bold rounded-full hover:shadow-lg transition-all">
+                    <span class="material-symbols-outlined text-lg">biotech</span>
+                    Tedavi Yöntemleri
+                </a>
+                <a href="/sss" class="inline-flex items-center gap-2 px-6 py-3 bg-secondary-container text-secondary font-bold rounded-full hover:shadow-lg transition-all">
+                    <span class="material-symbols-outlined text-lg">help</span>
+                    Sık Sorulan Sorular
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</BaseLayout>

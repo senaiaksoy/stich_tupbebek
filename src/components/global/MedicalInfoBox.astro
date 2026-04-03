@@ -1,0 +1,113 @@
+---
+// src/components/global/MedicalInfoBox.astro
+// Reusable callout box for highlighting key medical takeaways like BLUF.
+const { title = "Özet", icon = "💡", color = "blue" } = Astro.props;
+---
+
+<aside class={`info-box theme-${color} ai-summary`} role="note" aria-label={title} data-ai-summary="true">
+  <div class="info-content-wrapper">
+    <!-- Icon Container -->
+    <div class="info-icon">
+      {icon}
+    </div>
+    
+    <!-- Content Container -->
+    <div class="info-text">
+      <h3>{title}</h3>
+      <div class="info-body">
+        <slot />
+      </div>
+    </div>
+  </div>
+  
+  <!-- Subtle decorative background element -->
+  <div class="bg-icon" aria-hidden="true">
+    {icon}
+  </div>
+</aside>
+
+<style>
+  .info-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 40px 0;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  }
+  .info-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+  
+  /* Color Themes - Glass & Gradient Enhancements */
+  .theme-blue { background: rgba(59, 130, 246, 0.05); border-left: 6px solid #3b82f6; }
+  .theme-rose { background: rgba(244, 63, 94, 0.05); border-left: 6px solid #f43f5e; }
+  .theme-emerald { background: rgba(16, 185, 129, 0.05); border-left: 6px solid #10b981; }
+  .theme-amber { background: rgba(245, 158, 11, 0.05); border-left: 6px solid #f59e0b; }
+
+  .info-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+    z-index: 10;
+  }
+  .info-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    font-size: 24px;
+  }
+  .info-text {
+    flex: 1;
+  }
+  .info-text h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+    color: #1e293b;
+  }
+  .info-body {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.65;
+  }
+  .info-body :global(p) { 
+    margin: 0; 
+    margin-bottom: 0.5rem;
+  }
+  .info-body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+  .info-body :global(strong) { 
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .info-body :global(a) { 
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: underline;
+  }
+  .bg-icon {
+    position: absolute;
+    bottom: -24px;
+    right: -24px;
+    font-size: 128px;
+    opacity: 0.05;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+  }
+</style>
