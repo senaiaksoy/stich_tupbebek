@@ -11,8 +11,8 @@
 import HeroSearch from '../HeroSearch.astro';
 
 // Get search data from collection
-const { getCollection } = await import('astro:content');
-const articles = await getCollection('articles');
+const { getPublishedArticles } = await import('../../utils/articles');
+const articles = await getPublishedArticles();
 
 const searchData = articles.map(article => ({
   id: article.id,

@@ -1,6 +1,6 @@
 ---
-import { getCollection } from 'astro:content';
-const articles = (await getCollection('articles'))
+import { getPublishedArticles } from '../utils/articles';
+const articles = (await getPublishedArticles())
     .sort((a, b) => {
         const dateA = a.data.publishDate ? new Date(a.data.publishDate).getTime() : 0;
         const dateB = b.data.publishDate ? new Date(b.data.publishDate).getTime() : 0;

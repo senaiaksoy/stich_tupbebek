@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getPublishedArticles } from '../utils/articles';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -10,7 +10,7 @@ import PatientJourney from '../components/PatientJourney.astro';
 import RecentArticlesCarousel from '../components/RecentArticlesCarousel.astro';
 import FAQHighlights from '../components/FAQHighlights.astro';
 
-const recentArticles = (await getCollection('articles')).slice(0, 3);
+const recentArticles = (await getPublishedArticles()).slice(0, 3);
 ---
 
 <BaseLayout title="tupbebek.com | Üreme Sağlığı Bilgisi" description="Tüp bebek (IVF), infertilite nedenleri, tedavi yöntemleri, başarı oranları ve üreme sağlığı hakkında bilimsel ve güncel bilgiler. Yayın kurulu denetiminde.">

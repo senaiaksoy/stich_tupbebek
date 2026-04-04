@@ -3,7 +3,7 @@
  * RelatedArticles — Ayni kategoriden ilgili makaleler
  * Mevcut makaleyle ayni kategorideki diger makaleleri gosterir.
  */
-import { getCollection } from 'astro:content';
+
 
 interface Props {
     currentSlug: string;
@@ -13,7 +13,8 @@ interface Props {
 
 const { currentSlug, category, limit = 3 } = Astro.props;
 
-const allArticles = await getCollection('articles');
+const { getPublishedArticles } = await import('../utils/articles');
+const allArticles = await getPublishedArticles();
 const related = allArticles
     .filter(a => a.slug !== currentSlug && a.data.category === category)
     .sort((a, b) => (b.data.publishDate?.getTime() ?? 0) - (a.data.publishDate?.getTime() ?? 0))
