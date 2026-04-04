@@ -43,6 +43,9 @@ const jsonData = JSON.stringify(searchData);
 <div id="search-modal"
      class="hidden fixed inset-0 z-[1000] bg-black/50 backdrop-blur-sm
             transition-all duration-300 opacity-0 invisible"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Arama"
      onclick="if(event.target === this) document.getElementById('search-modal').classList.add('hidden')">
 
   <div class="relative h-full flex items-start justify-center pt-20">

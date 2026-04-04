@@ -1,7 +1,8 @@
 /**
- * Centralized Navigation Structure
+ * Centralized Navigation Structure — Flat (Yatay) Mimari
+ * SEO dostu, max 2 seviye derinlik, kullanıcı hedefe hızla ulaşır.
+ *
  * Kullanılan: Header.astro, Footer.astro, Mobile Menu
- * Avantaj: Tek kaynak, tutarlı linkler, DRY principle
  */
 
 export interface NavigationItem {
@@ -30,272 +31,168 @@ export interface MegaMenuConfig extends NavigationItem {
   };
 }
 
+// ─────────────────────────────────────────────────────────────
+// ANA MENÜ — Flat Mimari (5 sütun, yatay, max 1 alt seviye)
+// ─────────────────────────────────────────────────────────────
+
 export const navigationMenus: MegaMenuConfig[] = [
   {
-    id: 'infertility-guide',
-    label: 'İnfertilite Nedenleri',
+    id: 'infertilite-101',
+    label: 'İnfertilite 101',
     href: '/sorunlar',
-    icon: 'woman',
+    icon: 'school',
     centerContent: {
-      title: 'Neden Önemli?',
-      description: '"İnfertilite vakalarının 3\'ünde kadın faktörü, 3\'ünde erkek faktörü, 3\'ünde ise birlikte veya açıklanamayan nedenler rol oynar."',
-      stat: { value: '~1/6', label: 'çift infertilite ile karşı karşıya' }
-    },
-    featuredArticle: {
-      title: 'Doğru Merkez Seçimi',
-      description: 'Tüp bebek merkezi seçerken dikkat etmeniz gereken kriterler.',
-      href: '/makaleler/iyi-tup-bebek-merkezi'
-    },
-    submenu: [
-      {
-        label: 'Kadın Faktörleri',
-        href: '/kadin-infertilitesi',
-        description: 'PCOS, tubal, endometriozis'
-      },
-      {
-        label: 'Erkek Faktörleri',
-        href: '/erkek-infertilitesi',
-        description: 'Azospermi, varikosel'
-      },
-      {
-        label: 'Açıklanamayan',
-        href: '/aciklanamayan-infertilite',
-        description: 'Stratejik tanı yolları'
-      },
-      {
-        label: 'Yaş ve Fertilite',
-        href: '/yas-ve-fertilite',
-        description: 'Zamanlama & koruma'
-      }
-    ]
-  },
-
-  {
-    id: 'diagnosis-evaluation',
-    label: 'Tanı ve Değerlendirme',
-    href: '/tani-sureci',
-    icon: 'psychology',
-    centerContent: {
-      title: 'Tanı Neden Kritik?',
-      description: '"Doğru tedavi, titiz ve eksiksiz bir tanı süreciyle başlar. Hormon paneli, genetik tarama ve ultrason değerlendirmesi ilk adımdır."',
-      stat: { value: '3-6 ay', label: 'tanı süreci ortalama süresi' }
-    },
-    featuredArticle: {
-      title: 'Laboratuvar Raporu Yorumlama',
-      description: 'Tahlil sonuçlarınızı nasıl okuyacağınızı öğrenin.',
-      href: '/makaleler/laboratuvar-raporu-yorumlama'
-    },
-    submenu: [
-      {
-        label: 'Genel Tanı Süreci',
-        href: '/tani-sureci',
-        description: 'Kadın & erkek değerlendirmesi'
-      },
-      {
-        label: 'Genetik Testler',
-        href: '/genetik-testler',
-        description: 'Kromozomal tarama'
-      },
-      {
-        label: 'Hormon Paneli',
-        href: '/hormon-paneli',
-        description: 'AMH, FSH, E2 değerleri'
-      },
-      {
-        label: 'Lab Raporu Yorumlama',
-        href: '/makaleler/laboratuvar-raporu-yorumlama',
-        description: 'Hormon & semen analizi'
-      }
-    ]
-  },
-
-  {
-    id: 'treatment-methods',
-    label: 'Tedavi Yöntemleri',
-    href: '/tedavi-yontemleri',
-    icon: 'lab_profile',
-    centerContent: {
-      title: 'Tedavi Seçenekleri',
-      description: '"Infertilite tedavisi bireysel faktörlere dayanır: yaş, tanı, semen analizi ve önceki tedavi sonuçları."',
-      stat: { value: '40-50%', label: 'IVF başarı oranı (yaşa göre değişken)' }
+      title: 'Temel Bilgi',
+      description: '"İnfertilite, dünya genelinde her 6 çiftten birini etkiler. Doğru bilgiyle başlamak, tedavi sürecinin en güçlü ilk adımıdır."',
+      stat: { value: '~1/6', label: 'çift infertilite ile karşılaşır' }
     },
     featuredArticle: {
       title: 'Tüp Bebek Nedir?',
-      description: 'IVF sürecinin adım adım açıklaması.',
+      description: 'IVF sürecinin adım adım bilimsel açıklaması.',
       href: '/makaleler/tup-bebek-nedir'
     },
     submenu: [
-      {
-        label: 'Tüp Bebek (IVF)',
-        href: '/tedavi-yontemleri',
-        description: 'Embriyo transferi süreci'
-      },
-      {
-        label: 'Aşılama (IUI)',
-        href: '/tedavi-yontemleri#iui',
-        description: 'Intrauterin inseminasyon'
-      },
-      {
-        label: 'Cerrahi Tedaviler',
-        href: '/tedavi-yontemleri#cerrahi',
-        description: 'Myom, endometriozis'
-      },
-      {
-        label: 'PGT (Genetik Tarama)',
-        href: '/pgt-merkezi',
-        description: 'Embriyo seçimi ve sağlığı'
-      }
+      { label: 'Kadın İnfertilitesi', href: '/kadin-infertilitesi', description: 'PCOS, tubal faktör, endometriozis' },
+      { label: 'Erkek İnfertilitesi', href: '/erkek-infertilitesi', description: 'Azospermi, varikosel, DNA hasarı' },
+      { label: 'Açıklanamayan İnfertilite', href: '/aciklanamayan-infertilite', description: 'Tanısı konulamayan durumlar' },
+      { label: 'Yaş ve Fertilite', href: '/yas-ve-fertilite', description: 'Over rezervi ve zamanlama' },
+      { label: 'Tanı Süreci', href: '/tani-sureci', description: 'Değerlendirme adımları' },
+      { label: 'Hormon Paneli', href: '/hormon-paneli', description: 'AMH, FSH, E2 değerleri' },
+      { label: 'Genetik Testler', href: '/genetik-testler', description: 'Kromozomal tarama' },
+      { label: 'Tıbbi Sözlük', href: '/tbbi-sozluk', description: 'Terimlerin açıklamaları' },
     ]
   },
 
   {
-    id: 'guides-resources',
-    label: 'Rehberler ve Kaynaklar',
-    href: '/rehberler',
-    icon: 'menu_book',
+    id: 'tedavi-yontemleri',
+    label: 'Tedavi Yöntemleri',
+    href: '/tedavi-yontemleri',
+    icon: 'medical_services',
     centerContent: {
-      title: 'Rehberimizin Amacı',
-      description: '"Bilimsel derinlik ve insan merkezli yaklaşım ile infertilite hakkında kapsamlı, güvenilir bilgi sunmak."',
-      stat: { value: '60+', label: 'makalemiz var' }
-    },
-    featuredArticle: {
-      title: 'Duygusal Destek ve Psikoloji',
-      description: 'İnfertilite yolculuğunun duygusal yönetimi.',
-      href: '/duygusal-destek'
-    },
-    submenu: [
-      {
-        label: 'Tüm Rehberler',
-        href: '/rehberler',
-        description: 'Kategorilere göre içerik'
-      },
-      {
-        label: 'Sıkça Sorulan Sorular',
-        href: '/sss',
-        description: 'Hastalarımızın en çok sorduğu sorular'
-      },
-      {
-        label: 'Tıbbi Sözlük',
-        href: '/tbbi-sozluk',
-        description: 'IVF ve fertilite terimleri'
-      },
-      {
-        label: 'Duygusal Destek',
-        href: '/duygusal-destek',
-        description: 'Psikolojik yardım kaynakları'
-      }
-    ]
-  },
-
-  {
-    id: 'articles-knowledge',
-    label: 'Makaleler',
-    href: '/makaleler',
-    icon: 'article',
-    centerContent: {
-      title: 'Bilim Tabanlı İçerik',
-      description: '"Tüm makalelerimiz en güncel araştırma ve klinik deneyime dayanır."',
-      stat: { value: '60+', label: 'bilimsel makale' }
+      title: 'Tedavi Seçenekleri',
+      description: '"Tedavi planı; yaş, tanı, over rezervi ve önceki deneme sonuçlarına göre kişiye özel belirlenir."',
+      stat: { value: '40-50%', label: 'IVF başarı oranı (yaşa göre)' }
     },
     featuredArticle: {
       title: 'Başarı Oranları',
-      description: 'Yaş ve tedavi yöntemi başarı oranları.',
+      description: 'Yaşa ve tedavi yöntemine göre güncel başarı verileri.',
       href: '/basari-oranlari'
     },
     submenu: [
-      {
-        label: 'Tüm Makaleler',
-        href: '/makaleler',
-        description: 'Tamamını gözat'
-      },
-      {
-        label: 'Kadın Faktörleri',
-        href: '/makaleler?category=kadin',
-        description: 'PCOS, endometriozis, adenomyozis'
-      },
-      {
-        label: 'Erkek Faktörleri',
-        href: '/makaleler?category=erkek',
-        description: 'Sperm, azospermi, DNA fragmentasyonu'
-      },
-      {
-        label: 'Başarı Oranları',
-        href: '/basari-oranlari',
-        description: 'Yaş ve tedaviye göre başarı'
-      }
+      { label: 'Tüp Bebek (IVF/ICSI)', href: '/tedavi-yontemleri', description: 'Yumurta toplama → embriyo transferi' },
+      { label: 'Aşılama (IUI)', href: '/tedavi-yontemleri#iui', description: 'İntrauterin inseminasyon' },
+      { label: 'PGT Genetik Tarama', href: '/pgt-merkezi', description: 'Embriyo genetik seçimi' },
+      { label: 'Transfer Süreci', href: '/transfer-sureci', description: 'Embriyo transfer aşaması' },
+      { label: 'İlaç Rehberi', href: '/ilac-rehberi', description: 'Gonadotropinler, GnRH' },
+      { label: 'Başarı Oranları', href: '/basari-oranlari', description: 'Veri şeffaflığı' },
+      { label: 'Başarısız Denemeler', href: '/basarisiz-denemeler', description: 'Tekrar stratejileri' },
     ]
   },
 
   {
-    id: 'about-contact',
-    label: 'Hakkımızda',
-    href: '/hakkimizda',
-    icon: 'info',
+    id: 'ureme-cerrahisi',
+    label: 'Üreme Cerrahisi',
+    href: '/endometriozis-adenomyozis',
+    icon: 'surgical',
     centerContent: {
-      title: 'Misyonumuz',
-      description: '"1996\'den beri bağımsız, reklamsız, bilimsel bir infertilite rehberi sunuyoruz."',
-      stat: { value: '1996', label: 'kuruluş yılı' }
+      title: 'Cerrahi Yaklaşımlar',
+      description: '"Bazı infertilite nedenleri önce cerrahi müdahale ile düzeltilir, ardından yardımcı üreme teknikleri uygulanır."',
+      stat: { value: '%30-40', label: 'cerrahi sonrası doğal gebelik şansı' }
     },
     featuredArticle: {
-      title: 'Editöryal Politika',
-      description: 'Makalelerimizin bilimsellik standardları.',
-      href: '/editoryal-politika'
+      title: 'Endometriozis ve Adenomyozis',
+      description: 'Tanıdan tedaviye kapsamlı cerrahi rehber.',
+      href: '/endometriozis-adenomyozis'
     },
     submenu: [
-      {
-        label: 'Hakkımızda',
-        href: '/hakkimizda',
-        description: 'Misyon, vizyon, değerler'
-      },
-      {
-        label: 'Yayın Kurulu',
-        href: '/hakkimizda#board',
-        description: 'Danışman doktorlar'
-      },
-      {
-        label: 'Editöryal Politika',
-        href: '/editoryal-politika',
-        description: 'İçerik standartları'
-      },
-      {
-        label: 'İletişim',
-        href: '/hakkimizda#contact',
-        description: 'Soru ve öneriler'
-      }
+      { label: 'Endometriozis & Adenomyozis', href: '/endometriozis-adenomyozis', description: 'Laparoskopi, tıbbi tedavi' },
+      { label: 'Fertilite Koruma', href: '/fertilite-koruma', description: 'Yumurta/sperm dondurma' },
+      { label: 'Erkek Cerrahisi', href: '/erkek-infertilitesi#cerrahi', description: 'Varikosel, TESE, mikro-TESE' },
+      { label: 'Lab Raporu Yorumlama', href: '/makaleler/laboratuvar-raporu-yorumlama', description: 'Cerrahi sonrası takip' },
     ]
-  }
+  },
+
+  {
+    id: 'beden-zihin',
+    label: 'Beden ve Zihin Hazırlığı',
+    href: '/beslenme-yasam',
+    icon: 'spa',
+    centerContent: {
+      title: 'Bütünsel Hazırlık',
+      description: '"Tedavi başarısı sadece tıbbi müdahaleye değil, bedensel ve zihinsel hazırlığa da bağlıdır."',
+      stat: { value: '%25↑', label: 'yaşam tarzı değişikliği ile başarı artışı' }
+    },
+    featuredArticle: {
+      title: 'Duygusal Destek Rehberi',
+      description: 'İnfertilite yolculuğunun psikolojik yönetimi.',
+      href: '/duygusal-destek'
+    },
+    submenu: [
+      { label: 'Beslenme ve Yaşam', href: '/beslenme-yasam', description: 'Diyet, takviye, egzersiz' },
+      { label: 'Duygusal Destek', href: '/duygusal-destek', description: 'Psikolojik yardım kaynakları' },
+      { label: 'Psikolojik Destek', href: '/psikolojik-destek', description: 'Uzman psikolojik danışmanlık' },
+      { label: 'Fertilite Koruma', href: '/fertilite-koruma', description: 'Geleceğe yatırım' },
+    ]
+  },
+
+  {
+    id: 'kanun-maliyet',
+    label: 'Kanun, Maliyet ve Haklar',
+    href: '/sss',
+    icon: 'gavel',
+    centerContent: {
+      title: 'Haklarınızı Bilin',
+      description: '"SGK kapsamında 3 deneme hakkı, devlet desteği ve yasal düzenlemeler hakkında güncel bilgiler."',
+      stat: { value: '3 deneme', label: 'SGK kapsamında hak' }
+    },
+    featuredArticle: {
+      title: 'Sıkça Sorulan Sorular',
+      description: 'Maliyet, SGK, yasal haklar ve süreç hakkında tüm yanıtlar.',
+      href: '/sss'
+    },
+    submenu: [
+      { label: 'SSS — Maliyet & SGK', href: '/sss', description: 'Ücretler, devlet desteği' },
+      { label: 'Başarı Oranları', href: '/basari-oranlari', description: 'Şeffaf veri ve istatistikler' },
+      { label: 'Tıbbi Sorumluluk Reddi', href: '/tibbi-sorumluluk-reddi', description: 'Yasal bilgilendirme' },
+      { label: 'Editöryal Politika', href: '/editoryal-politika', description: 'İçerik standartları' },
+      { label: 'Hakkımızda', href: '/hakkimizda', description: 'Misyon ve yayın kurulu' },
+    ]
+  },
 ];
 
-/**
- * Footer Links - Kategorilere göre organize
- */
+// ─────────────────────────────────────────────────────────────
+// FOOTER LİNKLERİ — Flat kategoriler
+// ─────────────────────────────────────────────────────────────
+
 export const footerLinks = [
   {
-    category: 'İnfertilite & Tedavi',
+    category: 'İnfertilite 101',
     links: [
       { label: 'Kadın İnfertilitesi', href: '/kadin-infertilitesi' },
       { label: 'Erkek İnfertilitesi', href: '/erkek-infertilitesi' },
-      { label: 'Tedavi Yöntemleri', href: '/tedavi-yontemleri' },
-      { label: 'Başarı Oranları', href: '/basari-oranlari' },
-      { label: 'Fertilite Koruma', href: '/fertilite-koruma' }
-    ]
-  },
-  {
-    category: 'Rehberler',
-    links: [
+      { label: 'Yaş ve Fertilite', href: '/yas-ve-fertilite' },
       { label: 'Tanı Süreci', href: '/tani-sureci' },
-      { label: 'Tedavi Seçimi', href: '/tedavi-yontemleri' },
-      { label: 'Beslenme & Yaşam', href: '/beslenme-yasam' },
-      { label: 'Duygusal Destek', href: '/duygusal-destek' },
-      { label: 'Tıbbi Sözlük', href: '/tbbi-sozluk' }
+      { label: 'Tıbbi Sözlük', href: '/tbbi-sozluk' },
     ]
   },
   {
-    category: 'Bilgi Merkezi',
+    category: 'Tedavi & Cerrahi',
     links: [
-      { label: 'Tüm Makaleler', href: '/makaleler' },
-      { label: 'Sıkça Sorulan Sorular', href: '/sss' },
-      { label: 'Başarı Hikayeleri', href: '/basari-oranlari' }
+      { label: 'Tedavi Yöntemleri', href: '/tedavi-yontemleri' },
+      { label: 'IVF Rehberi', href: '/tedavi-yontemleri' },
+      { label: 'İlaç Rehberi', href: '/ilac-rehberi' },
+      { label: 'Beslenme & Yaşam', href: '/beslenme-yasam' },
+      { label: 'Fertilite Koruma', href: '/fertilite-koruma' },
+    ]
+  },
+  {
+    category: 'Kaynaklar',
+    links: [
+      { label: 'Makaleler', href: '/makaleler' },
+      { label: 'Tıbbi Sözlük', href: '/tbbi-sozluk' },
+      { label: 'Sık Sorulan Sorular', href: '/sss' },
+      { label: 'Duygusal Destek', href: '/duygusal-destek' },
+      { label: 'Başarı Oranları', href: '/basari-oranlari' },
     ]
   },
   {
@@ -303,26 +200,135 @@ export const footerLinks = [
     links: [
       { label: 'Hakkımızda', href: '/hakkimizda' },
       { label: 'Editöryal Politika', href: '/editoryal-politika' },
-      { label: 'Gizlilik Politikası', href: '/gizlilik-politikasi' },
-      { label: 'Kullanım Koşulları', href: '/kullanim-kosullari' }
+      { label: 'İletişim', href: '/hakkimizda#contact' },
     ]
   }
 ];
 
-/**
- * Quick Access Bottom Navigation (Mobile)
- */
+// ─────────────────────────────────────────────────────────────
+// MOBİL ALT NAVİGASYON
+// ─────────────────────────────────────────────────────────────
+
 export const quickAccessNav = [
   { label: 'Ana Sayfa', href: '/', icon: 'home' },
-  { label: 'Rehberler', href: '/rehberler', icon: 'menu_book' },
+  { label: 'Tedavi', href: '/tedavi-yontemleri', icon: 'medical_services' },
   { label: 'Makaleler', href: '/makaleler', icon: 'article' },
   { label: 'SSS', href: '/sss', icon: 'help' },
-  { label: 'Hakkımızda', href: '/hakkimizda', icon: 'info' }
 ];
 
-/**
- * Quick Guide Cards (Homepage)
- */
+// ─────────────────────────────────────────────────────────────
+// "DURUMUNUZU SEÇİN" — Dinamik Yönlendirme Modülü
+// ─────────────────────────────────────────────────────────────
+
+export interface SituationOption {
+  id: string;
+  label: string;
+  description: string;
+  icon: string;
+  color: string; // Tailwind bg class suffix (e.g., 'primary', 'mint', 'apricot')
+  modules: SituationModule[];
+}
+
+export interface SituationModule {
+  title: string;
+  description: string;
+  href: string;
+  icon: string;
+  tag?: string; // Optional tag like "Öncelikli", "Yeni"
+}
+
+export const situationOptions: SituationOption[] = [
+  {
+    id: 'yeni-teshis',
+    label: 'Yeni teşhis aldım',
+    description: 'İnfertilite tanısı yeni konuldu, nereden başlamalıyım?',
+    icon: 'explore',
+    color: 'primary',
+    modules: [
+      { title: 'İnfertilite Nedir?', description: 'Temel kavramları öğrenin', href: '/kadin-infertilitesi', icon: 'school', tag: 'Başlangıç' },
+      { title: 'Tanı Süreci', description: 'Hangi testler yapılır?', href: '/tani-sureci', icon: 'psychology' },
+      { title: 'Hormon Paneli', description: 'AMH, FSH, E2 değerleri', href: '/hormon-paneli', icon: 'biotech' },
+      { title: 'Tedavi Yöntemleri', description: 'IVF, IUI, cerrahi seçenekleri', href: '/tedavi-yontemleri', icon: 'medical_services' },
+      { title: 'Duygusal Destek', description: 'Psikolojik yardım kaynakları', href: '/duygusal-destek', icon: 'favorite' },
+      { title: 'SSS — Maliyet & Haklar', description: 'SGK, devlet desteği bilgisi', href: '/sss', icon: 'gavel' },
+    ]
+  },
+  {
+    id: 'ileri-yas',
+    label: 'İleri yaş gebelik',
+    description: '35 yaş üstü fertilite ve tedavi seçenekleri',
+    icon: 'hourglass_top',
+    color: 'apricot',
+    modules: [
+      { title: 'Yaş ve Fertilite', description: 'Over rezervi nasıl değişir?', href: '/yas-ve-fertilite', icon: 'timeline', tag: 'Kritik' },
+      { title: 'Fertilite Koruma', description: 'Yumurta dondurma seçenekleri', href: '/fertilite-koruma', icon: 'ac_unit' },
+      { title: 'PGT Genetik Tarama', description: 'Embriyo genetik sağlığı', href: '/pgt-merkezi', icon: 'genetics' },
+      { title: 'Başarı Oranları', description: 'Yaşa göre IVF başarısı', href: '/basari-oranlari', icon: 'monitoring' },
+      { title: 'Beslenme ve Yaşam', description: 'Over sağlığını destekle', href: '/beslenme-yasam', icon: 'restaurant' },
+    ]
+  },
+  {
+    id: 'tekrarlayan-dusukler',
+    label: 'Tekrarlayan düşükler',
+    description: 'Tekrarlayan gebelik kaybı ve çözüm yolları',
+    icon: 'replay',
+    color: 'mint',
+    modules: [
+      { title: 'Genetik Testler', description: 'Kromozomal tarama ve PGT', href: '/genetik-testler', icon: 'genetics', tag: 'Öncelikli' },
+      { title: 'PGT Merkezi', description: 'Embriyo seçimi ve sağlığı', href: '/pgt-merkezi', icon: 'biotech' },
+      { title: 'Endometriozis', description: 'Rahim içi sorunlar ve cerrahi', href: '/endometriozis-adenomyozis', icon: 'surgical' },
+      { title: 'Hormon Paneli', description: 'Progesteron ve trombofili', href: '/hormon-paneli', icon: 'science' },
+      { title: 'Psikolojik Destek', description: 'Kayıp sonrası toparlanma', href: '/psikolojik-destek', icon: 'psychology' },
+    ]
+  },
+  {
+    id: 'erkek-faktor',
+    label: 'Erkek faktörü araştırıyorum',
+    description: 'Sperm kalitesi, azospermi ve erkek tedavileri',
+    icon: 'male',
+    color: 'primary',
+    modules: [
+      { title: 'Erkek İnfertilitesi', description: 'Nedenler ve tanı yöntemleri', href: '/erkek-infertilitesi', icon: 'male', tag: 'Başlangıç' },
+      { title: 'Tanı Süreci', description: 'Spermiogram ve ileri testler', href: '/tani-sureci', icon: 'psychology' },
+      { title: 'Tedavi Yöntemleri', description: 'ICSI, mikro-TESE seçenekleri', href: '/tedavi-yontemleri', icon: 'medical_services' },
+      { title: 'Genetik Testler', description: 'Y-mikro delesyon, karyotip', href: '/genetik-testler', icon: 'genetics' },
+      { title: 'Beslenme ve Yaşam', description: 'Sperm kalitesini artırma', href: '/beslenme-yasam', icon: 'restaurant' },
+    ]
+  },
+  {
+    id: 'basarisiz-tedavi',
+    label: 'Tedavim başarısız oldu',
+    description: 'Başarısız IVF denemesi sonrası strateji',
+    icon: 'sync_problem',
+    color: 'apricot',
+    modules: [
+      { title: 'Başarısız Denemeler', description: 'Neden başarısız oldu?', href: '/basarisiz-denemeler', icon: 'troubleshoot', tag: 'Öncelikli' },
+      { title: 'PGT Genetik Tarama', description: 'Embriyo kalitesini artır', href: '/pgt-merkezi', icon: 'biotech' },
+      { title: 'Transfer Süreci', description: 'Endometrium hazırlığı', href: '/transfer-sureci', icon: 'event_repeat' },
+      { title: 'Psikolojik Destek', description: 'Hayal kırıklığı yönetimi', href: '/psikolojik-destek', icon: 'psychology' },
+      { title: 'Başarı Oranları', description: 'Gerçekçi beklentiler', href: '/basari-oranlari', icon: 'monitoring' },
+    ]
+  },
+  {
+    id: 'bilgi-ariyorum',
+    label: 'Genel bilgi arıyorum',
+    description: 'Henüz teşhis yok, bilgilenme amaçlı geziniyorum',
+    icon: 'menu_book',
+    color: 'mint',
+    modules: [
+      { title: 'Tüm Makaleler', description: 'Bilimsel makale arşivi', href: '/makaleler', icon: 'article', tag: 'Popüler' },
+      { title: 'Tıbbi Sözlük', description: 'Terimleri öğren', href: '/tbbi-sozluk', icon: 'dictionary' },
+      { title: 'SSS', description: 'En çok sorulan sorular', href: '/sss', icon: 'help' },
+      { title: 'Rehberler', description: 'Konuya göre rehberler', href: '/rehberler', icon: 'menu_book' },
+      { title: 'Hakkımızda', description: 'Misyon ve yayın kurulu', href: '/hakkimizda', icon: 'info' },
+    ]
+  },
+];
+
+// ─────────────────────────────────────────────────────────────
+// HOMEPAGE QUICK GUIDE CARDS
+// ─────────────────────────────────────────────────────────────
+
 export const quickGuideCategories = [
   {
     id: 'erkek-infertilitesi',
@@ -352,7 +358,7 @@ export const quickGuideCategories = [
     id: 'tedavi-yontemleri',
     title: 'Tedavi Yöntemleri',
     description: 'IVF, IUI, cerrahi, PGT seçenekleri',
-    icon: 'lab_profile',
+    icon: 'medical_services',
     href: '/tedavi-yontemleri',
     color: 'green'
   },

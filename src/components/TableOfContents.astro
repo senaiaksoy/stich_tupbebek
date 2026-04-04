@@ -1,0 +1,91 @@
+---
+/**
+ * TableOfContents — Makale icerik haritasi
+ * Client-side JS ile <article> icerisindeki h2/h3'lerden otomatik TOC olusturur.
+ * Scroll spy ile aktif baslik vurgulanir.
+ */
+---
+
+<nav id="toc-nav" class="hidden xl:block fixed top-32 right-8 w-56 max-h-[calc(100vh-10rem)] overflow-y-auto" aria-label="Icerik haritasi">
+    <div class="border-l-2 border-gray-200 pl-4">
+        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Icerik</p>
+        <ul id="toc-list" class="space-y-2">
+            <!-- JS ile doldurulur -->
+        </ul>
+    </div>
+</nav>
+
+<script is:inline>
+(function() {
+    var nav = document.getElementById('toc-nav');
+    var list = document.getElementById('toc-list');
+    var article = document.querySelector('article .prose');
+    if (!nav || !list || !article) return;
+
+    // Collect h2 and h3 headings
+    var headings = article.querySelectorAll('h2, h3');
+    if (headings.length < 2) { nav.style.display = 'none'; return; }
+
+    // Build TOC items
+    var items = [];
+    headings.forEach(function(h, i) {
+        // Ensure heading has an id
+        if (!h.id) {
+            h.id = 'heading-' + i;
+        }
+        var isH3 = h.tagName === 'H3';
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        a.className = 'block text-xs leading-relaxed transition-colors duration-200 hover:text-primary-600 ' +
+            (isH3 ? 'pl-3 text-gray-400' : 'text-gray-500 font-semibold');
+        a.dataset.tocTarget = h.id;
+
+        // Smooth scroll
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.getElementById(h.id);
+            if (target) {
+                var offset = 100; // header height
+                var top = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+                history.replaceState(null, '', '#' + h.id);
+            }
+        });
+
+        li.appendChild(a);
+        list.appendChild(li);
+        items.push({ el: h, link: a, isH3: isH3 });
+    });
+
+    // Scroll spy
+    var ticking = false;
+    function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function() {
+            var scrollY = window.scrollY + 120;
+            var active = null;
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].el.getBoundingClientRect().top + window.scrollY <= scrollY) {
+                    active = items[i];
+                }
+            }
+            items.forEach(function(item) {
+                if (item === active) {
+                    item.link.classList.remove('text-gray-500', 'text-gray-400');
+                    item.link.classList.add('text-primary-600');
+                } else {
+                    item.link.classList.remove('text-primary-600');
+                    item.link.classList.add(item.isH3 ? 'text-gray-400' : 'text-gray-500');
+                }
+            });
+            ticking = false;
+        });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+</script>

@@ -8,10 +8,10 @@ interface Props {
 const { menu } = Astro.props;
 ---
 
-<div class="group h-full flex items-center">
+<div class="mega-menu-group group h-full flex items-center">
   <!-- Menu Button -->
   <button
-    class="px-4 py-3 min-h-[48px] text-sm font-bold text-gray-800 hover:text-primary-600 transition-colors flex items-center gap-1 group-hover:bg-primary-50 rounded-lg"
+    class="mega-menu-btn px-4 py-3 min-h-[48px] text-sm font-bold text-gray-800 hover:text-primary-600 transition-colors flex items-center gap-1 group-hover:bg-primary-50 rounded-lg"
     aria-haspopup="true"
     aria-expanded="false"
   >
@@ -22,7 +22,7 @@ const { menu } = Astro.props;
   </button>
 
   <!-- Mega Menu Panel -->
-  <div class="absolute top-[100%] left-0 w-full bg-white shadow-2xl border-b border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50">
+  <div class="mega-menu-panel absolute top-[100%] left-0 w-full bg-white shadow-2xl border-b border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50" role="menu">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-10 grid grid-cols-3 gap-8">
       <!-- LEFT: Menu Items -->
       <div class="border-r border-gray-100 pr-8">
@@ -109,3 +109,50 @@ const { menu } = Astro.props;
     </div>
   </div>
 </div>
+
+<script is:inline>
+(function() {
+  document.querySelectorAll('.mega-menu-group').forEach(function(group) {
+    var btn = group.querySelector('.mega-menu-btn');
+    var panel = group.querySelector('.mega-menu-panel');
+    if (!btn || !panel) return;
+
+    function openMenu() {
+      panel.classList.add('opacity-100', 'visible', 'translate-y-0');
+      panel.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      panel.classList.remove('opacity-100', 'visible', 'translate-y-0');
+      panel.classList.add('opacity-0', 'invisible', 'translate-y-2');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    btn.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        openMenu();
+        var firstLink = panel.querySelector('a');
+        if (firstLink) firstLink.focus();
+      }
+    });
+
+    panel.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeMenu();
+        btn.focus();
+      }
+    });
+
+    // Update aria-expanded on hover
+    group.addEventListener('mouseenter', function() {
+      btn.setAttribute('aria-expanded', 'true');
+    });
+    group.addEventListener('mouseleave', function() {
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>

@@ -1,0 +1,191 @@
+---
+/**
+ * "Durumunuzu Seçin" — Dinamik Yönlendirme Modülü
+ *
+ * Kullanıcı durumunu seçer → ilgili modüller filtrelenip gösterilir.
+ * Client-side JS ile çalışır, sayfa yenilenmez.
+ */
+import { situationOptions } from '../../data/navigation';
+---
+
+<section class="py-20 bg-gray-50" id="durum-secin">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <span class="text-apricot-300 font-label uppercase tracking-ultra text-xs font-bold mb-4 block">KİŞİSEL REHBERLİK</span>
+      <h2 class="text-heading-lg font-headline text-gray-900 mb-4">Durumunuzu Seçin</h2>
+      <p class="text-body-md text-gray-600 max-w-2xl mx-auto">Size en uygun içeriklere hızla ulaşın. Aşağıdan durumunuzu seçin, ilgili rehberler otomatik listelensin.</p>
+    </div>
+
+    <!-- Situation Pills -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12" role="tablist" aria-label="Durumunuzu seçin">
+      {situationOptions.map((option, index) => (
+        <button
+          role="tab"
+          aria-selected={index === 0 ? "true" : "false"}
+          aria-controls={`panel-${option.id}`}
+          id={`tab-${option.id}`}
+          data-situation={option.id}
+          data-color={option.color}
+          class:list={[
+            "situation-tab flex items-center gap-2 px-5 py-3 min-h-[44px] rounded-full text-sm font-semibold transition-all duration-300 border-2 cursor-pointer",
+            index === 0
+              ? "bg-primary-600 text-white border-primary-600 shadow-md"
+              : "bg-white text-gray-700 border-gray-200 hover:border-primary-300 hover:bg-primary-50"
+          ]}
+        >
+          <span class="material-symbols-outlined text-lg">{option.icon}</span>
+          <span class="hidden sm:inline">{option.label}</span>
+          <span class="sm:hidden">{option.label.split(' ')[0]}</span>
+        </button>
+      ))}
+    </div>
+
+    <!-- Module Panels -->
+    {situationOptions.map((option, index) => (
+      <div
+        role="tabpanel"
+        id={`panel-${option.id}`}
+        aria-labelledby={`tab-${option.id}`}
+        data-panel={option.id}
+        class:list={[
+          "situation-panel transition-all duration-500",
+          index === 0 ? "" : "hidden"
+        ]}
+      >
+        <!-- Panel Header -->
+        <div class="flex items-center gap-4 mb-8 p-4 bg-white rounded-xl border border-gray-200">
+          <div class:list={[
+            "w-12 h-12 rounded-xl flex items-center justify-center shrink-0",
+            option.color === 'primary' ? "bg-primary-50 text-primary-600" :
+            option.color === 'mint' ? "bg-mint-50 text-mint-600" :
+            "bg-apricot-50 text-apricot-500"
+          ]}>
+            <span class="material-symbols-outlined text-2xl">{option.icon}</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900">{option.label}</h3>
+            <p class="text-sm text-gray-600">{option.description}</p>
+          </div>
+        </div>
+
+        <!-- Module Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {option.modules.map((mod, modIndex) => (
+            <a
+              href={mod.href}
+              class="group flex items-start gap-4 p-5 bg-white rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[44px]"
+              style={`animation-delay: ${modIndex * 60}ms`}
+            >
+              <div class:list={[
+                "w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors",
+                option.color === 'primary' ? "bg-primary-50 text-primary-600 group-hover:bg-primary-100" :
+                option.color === 'mint' ? "bg-mint-50 text-mint-600 group-hover:bg-mint-100" :
+                "bg-apricot-50 text-apricot-500 group-hover:bg-apricot-100"
+              ]}>
+                <span class="material-symbols-outlined text-xl">{mod.icon}</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                  <h4 class="text-sm font-bold text-gray-900 group-hover:text-primary-600 transition-colors">{mod.title}</h4>
+                  {mod.tag && (
+                    <span class:list={[
+                      "text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full",
+                      option.color === 'primary' ? "bg-primary-50 text-primary-600" :
+                      option.color === 'mint' ? "bg-mint-50 text-mint-600" :
+                      "bg-apricot-50 text-apricot-600"
+                    ]}>{mod.tag}</span>
+                  )}
+                </div>
+                <p class="text-xs text-gray-500 leading-relaxed">{mod.description}</p>
+              </div>
+              <span class="material-symbols-outlined text-gray-300 group-hover:text-primary-600 group-hover:translate-x-1 transition-all mt-1 shrink-0">arrow_forward</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script is:inline>
+(function() {
+  const tabs = document.querySelectorAll('.situation-tab');
+  const panels = document.querySelectorAll('.situation-panel');
+
+  // Color map for active tab styling
+  const colorMap = {
+    primary: { bg: 'bg-primary-600', border: 'border-primary-600', text: 'text-white' },
+    mint:    { bg: 'bg-mint-600',    border: 'border-mint-600',    text: 'text-white' },
+    apricot: { bg: 'bg-apricot-500', border: 'border-apricot-500', text: 'text-white' },
+  };
+
+  const inactiveClasses = ['bg-white', 'text-gray-700', 'border-gray-200'];
+  const hoverClasses = ['hover:border-primary-300', 'hover:bg-primary-50'];
+
+  function activateTab(selectedTab) {
+    const situationId = selectedTab.dataset.situation;
+    const color = selectedTab.dataset.color || 'primary';
+    const active = colorMap[color] || colorMap.primary;
+
+    // Reset all tabs
+    tabs.forEach(function(tab) {
+      tab.setAttribute('aria-selected', 'false');
+      // Remove any active color classes
+      Object.values(colorMap).forEach(function(c) {
+        tab.classList.remove(c.bg, c.border, c.text, 'shadow-md');
+      });
+      // Add inactive classes
+      inactiveClasses.forEach(function(cls) { tab.classList.add(cls); });
+      hoverClasses.forEach(function(cls) { tab.classList.add(cls); });
+    });
+
+    // Activate selected tab
+    selectedTab.setAttribute('aria-selected', 'true');
+    inactiveClasses.forEach(function(cls) { selectedTab.classList.remove(cls); });
+    hoverClasses.forEach(function(cls) { selectedTab.classList.remove(cls); });
+    selectedTab.classList.add(active.bg, active.border, active.text, 'shadow-md');
+
+    // Show/hide panels with animation
+    panels.forEach(function(panel) {
+      if (panel.dataset.panel === situationId) {
+        panel.classList.remove('hidden');
+        panel.style.opacity = '0';
+        panel.style.transform = 'translateY(12px)';
+        requestAnimationFrame(function() {
+          panel.style.transition = 'opacity 400ms ease-out, transform 400ms ease-out';
+          panel.style.opacity = '1';
+          panel.style.transform = 'translateY(0)';
+        });
+      } else {
+        panel.classList.add('hidden');
+      }
+    });
+  }
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      activateTab(tab);
+    });
+
+    // Keyboard navigation
+    tab.addEventListener('keydown', function(e) {
+      var tabsArray = Array.from(tabs);
+      var index = tabsArray.indexOf(tab);
+      var next = -1;
+
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        next = (index + 1) % tabsArray.length;
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        next = (index - 1 + tabsArray.length) % tabsArray.length;
+      }
+
+      if (next >= 0) {
+        e.preventDefault();
+        tabsArray[next].focus();
+        activateTab(tabsArray[next]);
+      }
+    });
+  });
+})();
+</script>
