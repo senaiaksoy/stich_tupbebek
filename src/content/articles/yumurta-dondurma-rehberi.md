@@ -2,7 +2,7 @@
 title: "Yumurta Dondurma: Süreç, Başarı Oranları ve Sık Sorulan Sorular"
 description: "Yumurta dondurma (oosit kriyoprezervasyon) süreci nasıl işler? Hormonal stimülasyon, OPU, vitrifikasyon adımları, yaşa göre başarı oranları ve sık sorulan soruların yanıtları."
 publishDate: 2026-04-01
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Tedavi"
 image: "/images/articles/yumurta-dondurma-rehberi.webp"
 imageAlt: "yumurta dondurma süreci vitrifikasyon laboratuvarı"

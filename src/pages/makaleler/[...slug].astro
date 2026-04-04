@@ -35,12 +35,12 @@ const { Content } = await entry.render();
                 <div class="flex items-center gap-4 py-6 border-y border-surface-container">
                     {entry.data.image && (
                         <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
-                             <img src="/images/senai-aksoy.webp" alt={entry.data.author} class="w-full h-full object-cover" width="512" height="512" />
+                             <span class="material-symbols-outlined text-primary text-2xl">verified</span>
                         </div>
                     )}
                     <div>
-                        <p class="text-sm font-bold text-on-surface">{entry.data.author}</p>
-                        <p class="text-xs text-on-surface-variant uppercase tracking-tighter">Tıbbi İnceleme & Onay</p>
+                        <p class="text-sm font-bold text-on-surface">tupbebek.com Yayın Kurulu</p>
+                        <p class="text-xs text-on-surface-variant uppercase tracking-tighter">Yayın Kurulu Onayı</p>
                     </div>
                     <div class="ml-auto text-right">
                         <p class="text-xs text-on-surface-variant uppercase tracking-widest leading-none mb-1">Yayınlanma</p>
@@ -74,12 +74,12 @@ const { Content } = await entry.render();
             <footer class="mt-20 pt-12 border-t border-surface-container">
                 <div class="bg-surface-container-low p-8 rounded-2xl flex flex-col md:flex-row items-center gap-8 border border-outline-variant/10">
                     <div class="w-20 h-20 rounded-full bg-surface-container-highest overflow-hidden shrink-0 border-4 border-white">
-                        <img alt="Dr. Senai Aksoy" class="w-full h-full object-cover" src="/images/senai-aksoy.webp" width="512" height="512" />
+                        <span class="material-symbols-outlined text-primary text-2xl">verified</span>
                     </div>
                     <div>
                         <h4 class="text-xl font-headline font-bold text-on-surface mb-2 italic">Tıbbi Bilgi Notu</h4>
                         <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Bu makale, Doç. Dr. Senai Aksoy tarafından tıbbi doğruluk ve güncel klinik protokoller açısından incelenmiş ve onaylanmıştır. Sunulan bilgiler genel bilgilendirme amaçlıdır.
+                            Bu makale, tupbebek.com yayın kurulu tarafından tıbbi doğruluk ve güncel klinik protokoller açısından incelenmiş ve onaylanmıştır. Sunulan bilgiler genel bilgilendirme amaçlıdır.
                         </p>
                     </div>
                 </div>

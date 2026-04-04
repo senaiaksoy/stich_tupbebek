@@ -6,7 +6,7 @@ const articlesCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     publishDate: z.date().optional(),
-    author: z.string().default('Doç. Dr. Senai Aksoy'),
+    author: z.string().default('tupbebek.com Yayın Kurulu'),
     category: z.string(),
     image: z.string().optional(),
     imageAlt: z.string().optional(),

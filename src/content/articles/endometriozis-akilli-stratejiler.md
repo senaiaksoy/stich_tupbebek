@@ -1,8 +1,8 @@
 ---
-title: "Kısırlık ve Endometriozis, Dr. Senai Aksoy'dan 2025 Vizyonuyla Umut Dolu Bir Rehber"
-description: "Kısırlık ve Endometriozis arasındaki ilişki, tanı, tedavi seçenekleri ve tüp bebek stratejileri hakkında kapsamlı bir rehber. Dr. Senai Aksoy'un klinik deneyimleri ve bilimsel araştırmaların ışığında umut dolu çözümler."
+title: "Kısırlık ve Endometriozis, tupbebek.com'dan 2025 Vizyonuyla Umut Dolu Bir Rehber"
+description: "Kısırlık ve Endometriozis arasındaki ilişki, tanı, tedavi seçenekleri ve tüp bebek stratejileri hakkında kapsamlı bir rehber. tupbebek.com yayın kurulunun klinik deneyimleri ve bilimsel araştırmaların ışığında umut dolu çözümler."
 publishDate: 2025-10-21
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"
@@ -45,7 +45,7 @@ Endometriozis, rahmin iç yüzeyine ait dokuların karın boşluğu ve diğer or
 
 Bu hastalık, yumurtalıklar üzerinde **çikolata kistleri** oluşturabilir, [kronik inflamasyonun](https://ovarianresearch.biomedcentral.com/articles/10.1186/s13048-023-01095-4) etkileriyle ve bağışıklık düzensizlikleri nedeniyle sperm‑yumurta etkileşimini bozarak gebeliği zorlaştırır.
 
-Ancak moralinizi bozmadan önce şunu unutmayın: endometriozis her zaman kısırlık demek değildir. [Dr. Senai Aksoy'un kliniğinde](https://tupbebek.com/) elde edilen deneyimler ve [en yeni bilimsel çalışmalar](https://pubmed.ncbi.nlm.nih.gov/32972732/), doğru teşhis ve kişiselleştirilmiş tedavi ile bebek hayalinin gerçekleşebileceğini gösteriyor. Gelin, bu zorlu yolculuğu adım adım ele alalım.
+Ancak moralinizi bozmadan önce şunu unutmayın: endometriozis her zaman kısırlık demek değildir. [tupbebek.com kliniğinde](https://tupbebek.com/) elde edilen deneyimler ve [en yeni bilimsel çalışmalar](https://pubmed.ncbi.nlm.nih.gov/32972732/), doğru teşhis ve kişiselleştirilmiş tedavi ile bebek hayalinin gerçekleşebileceğini gösteriyor. Gelin, bu zorlu yolculuğu adım adım ele alalım.
 
 [![Endometriozis Teşhisi Neden Yıllar Sürüyor Doğurganlığa Etkileri Neler ](https://img.youtube.com/vi/ciH_IHqVrxw/0.jpg)](https://youtu.be/ciH_IHqVrxw)
 
@@ -172,9 +172,9 @@ Endometriozis zorlu bir yolculuk olabilir, ancak **yalnız değilsiniz**. [Erken
 - **Ekip çalışması iyidir:** Cerrah, tüp bebek uzmanı, ağrı uzmanı ve diyetisyen bir araya gelirse, işler yolunda gidebilir.
 - **Moral bozmayın:** Endometriozis sadece tüpleri tıkamaz, kontrol edilebilir bir sorun olabilir. Bilim durmadan ilerliyor, bu da demek oluyor ki her geçen gün yeni çözümler bulma şansımız artıyor.
 
-[Dr. Senai Aksoy ve ekibi olarak, İstanbul'daki kliniğimizde](https://tupbebek.com/) bu zorlu yolculuğta size rehberlik etmekten mutluluk duyarız. Sorularınız varsa bize ulaşın, bir kahve eşliğinde kişisel yol haritanızı birlikte çizelim. Siz yeter ki umudunuzu kaybetmeyin!
+[tupbebek.com olarak, İstanbul'daki kliniğimizde](https://tupbebek.com/) bu zorlu yolculuğta size rehberlik etmekten mutluluk duyarız. Sorularınız varsa bize ulaşın, bir kahve eşliğinde kişisel yol haritanızı birlikte çizelim. Siz yeter ki umudunuzu kaybetmeyin!
 
 **Yasal Uyarı**: Bu web sitesindeki içerikler, yalnızca bilgilendirme amacıyla hazırlanmıştır ve profesyonel tıbbi tavsiye, teşhis veya tedavinin yerini almaz. Herhangi bir tıbbi durumla ilgili sorularınız için daima doktorunuzun veya diğer nitelikli sağlık uzmanlarının tavsiyelerine başvurun.
 
-Yazar: Doç. Dr. Senai Aksoy
+Yazar: tupbebek.com Yayın Kurulu
 Yayın Tarihi: 21 Ekim 2025

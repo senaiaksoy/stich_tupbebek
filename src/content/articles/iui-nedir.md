@@ -1,8 +1,8 @@
 ---
 title: "İntrauterin İnseminasyon (IUI). Kapsamlı Bir Rehber"
-description: "İntrauterin inseminasyon (IUI) nedir? Dr. Senai Aksoy, aşılama yöntemini, kimler için uygun olduğunu ve başarı oranlarını açıklıyor. Detaylı rehber!"
+description: "İntrauterin inseminasyon (IUI) nedir? Aşılama yöntemini, kimler için uygun olduğunu ve başarı oranlarını açıklıyor. Detaylı rehber!"
 publishDate: 2025-03-17
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tedavi Yöntemleri"
@@ -11,7 +11,7 @@ image: /src/images/blog/iac.jpg
 
 ### İntrauterin İnseminasyon (IUI): Kapsamlı Bir Rehber
 
-Merhaba, ben Dr. Senai Aksoy, infertilite uzmanı olarak uzun yıllardır çiftlerin ebeveynlik hayallerine kavuşmalarına yardımcı oluyorum. Bugün sizlerle infertilite tedavisinde sıkça tercih edilen bir yöntem olan **intrauterin inseminasyon (IUI)** hakkında detaylı bir rehber paylaşacağım. Bu yazıda, IUI'nin ne olduğunu, kimler için uygun olduğunu, nasıl uygulandığını, başarı oranlarını ve bu süreçte dikkat edilmesi gerekenleri anlatacağım. Eğer siz de gebelik planlıyor ve bu yöntemi merak ediyorsanız, doğru yerdesiniz!
+Uzun yıllardır infertilite alanında çiftlerin ebeveynlik hayallerine kavuşmalarına yardımcı oluyorum. Bugün sizlerle infertilite tedavisinde sıkça tercih edilen bir yöntem olan **intrauterin inseminasyon (IUI)** hakkında detaylı bir rehber paylaşacağım. Bu yazıda, IUI'nin ne olduğunu, kimler için uygun olduğunu, nasıl uygulandığını, başarı oranlarını ve bu süreçte dikkat edilmesi gerekenleri anlatacağım. Eğer siz de gebelik planlıyor ve bu yöntemi merak ediyorsanız, doğru yerdesiniz!
 
 [![Sperm Sayısı ve Aşılama Başarısı Arasındaki İlişki](https://img.youtube.com/vi/hZrP4-bD2y0/0.jpg)](https://youtu.be/hZrP4-bD2y0)
 
@@ -79,4 +79,4 @@ IUI ve tüp bebek (IVF), infertilite tedavisinde sık kullanılan iki yöntemdir
 
 #### Sonuç
 
-İntrauterin inseminasyon, infertilite ile mücadele eden çiftler için umut verici ve erişilebilir bir seçenektir. Ben Dr. Senai Aksoy olarak, her hastamın durumuna özel bir tedavi planı oluşturarak bu yolculukta yanlarında oluyorum. Türkiye'de donör sperm kullanımı yasalar gereği mümkün olmadığından, IUI çiftlerin kendi spermleriyle uygulanır. Eğer açıklanamayan infertilite, hafif erkek faktör sorunları veya ovülasyon problemleri gibi durumlarla karşı karşıyaysanız, IUI sizin için doğru bir başlangıç olabilir. Bu süreçte sabırlı olmak ve bir uzmandan destek almak çok önemlidir. Eğer siz de IUI hakkında daha fazla bilgi almak veya kişiselleştirilmiş bir tedavi planı oluşturmak istiyorsanız, bir infertilite uzmanıyla görüşmenizi öneririm. Hayallerinize bir adım daha yaklaşmanız dileğiyle!
+İntrauterin inseminasyon, infertilite ile mücadele eden çiftler için umut verici ve erişilebilir bir seçenektir. Her hastamın durumuna özel bir tedavi planı oluşturarak bu yolculukta yanlarında oluyorum. Türkiye'de donör sperm kullanımı yasalar gereği mümkün olmadığından, IUI çiftlerin kendi spermleriyle uygulanır. Eğer açıklanamayan infertilite, hafif erkek faktör sorunları veya ovülasyon problemleri gibi durumlarla karşı karşıyaysanız, IUI sizin için doğru bir başlangıç olabilir. Bu süreçte sabırlı olmak ve bir uzmandan destek almak çok önemlidir. Eğer siz de IUI hakkında daha fazla bilgi almak veya kişiselleştirilmiş bir tedavi planı oluşturmak istiyorsanız, bir infertilite uzmanıyla görüşmenizi öneririm. Hayallerinize bir adım daha yaklaşmanız dileğiyle!

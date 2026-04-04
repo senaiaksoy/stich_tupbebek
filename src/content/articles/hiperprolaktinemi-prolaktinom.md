@@ -2,7 +2,7 @@
 title: "Hiperprolaktinemi ve Prolaktinomu Anlamak, Hormonal Dengenin Gizemleri"
 description: "Prolaktin her zaman göz önünde olmasa da, vücudunuzun hormonal dengesinde kritik bir rol oynar. Ancak bazen işler kontrolden çıkabilir. İşte bu noktada, hiperprolaktinemi ve prolaktinom gibi durumlar devreye girer ve aşırı aktif bir hipofiz bezinin etkisini ortaya koyar."
 publishDate: 2024-10-29
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"

@@ -2,7 +2,7 @@
 title: "Hidrosalpinx ve Kısırlık"
 description: "Hidrosalpinx, Fallop tüplerinde sıvı birikmesine bağlı olarak oluşan bir blokajdır ve kadınlarda kısırlığın önemli nedenlerinden biridir. Uygun tanı, tedavi ve yardımcı üreme teknikleriyle başarılı gebelik şansı artırılabilir."
 publishDate: 2025-01-06
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"

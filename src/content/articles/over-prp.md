@@ -2,7 +2,7 @@
 title: "Over PRP, Kadın Doğurganlığında Yeni Bir Umut Mu?"
 description: "Overlere Platelet-Rich Plasma (PRP) enjeksiyonu, kadının kendi kanından elde edilen trombositlerin yenileyici gücünü kullanarak yumurtalık fonksiyonunu desteklemeyi hedefleyen yeni bir uygulamadır. Düşük yumurtalık rezervi veya erken over yetmezliği gibi zorlu durumlarda umut vadeden bu yaklaşım, henüz araştırma aşamasındadır ve uzun vadeli sonuçlar için daha fazla veriye ihtiyaç duyulmaktadır."
 publishDate: 2025-01-03
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tedavi Yöntemleri"

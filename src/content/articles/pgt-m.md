@@ -2,7 +2,7 @@
 title: "Genetik Hastalıklarla Mücadelede Yeni Bir Umut, PGT-M (eski adıyla PGD)"
 description: "PGT-M, çiftlerin üreme sağlığıyla ilgili bilinçli kararlar almasında kritik bir role sahiptir. Bu teknoloji sayesinde, genetik hastalıkların gelecek nesillere geçiş riski önemli ölçüde azaltılabilir."
 publishDate: 2024-05-07
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tedavi Yöntemleri"

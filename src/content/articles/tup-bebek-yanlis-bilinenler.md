@@ -1,8 +1,8 @@
 ---
 title: "Tüp Bebek ve Kısırlık Hakkında Yanlış Bilinen Gerçekler"
-description: "Tüp bebek uzmanı Dr. Senai Aksoy tüp bebek ve kısırlık hakkında halk arasında yaygın bazı yanlış inanışlar konusunda bilgi veriyor."
+description: "Tüp bebek uzmanı tupbebek.com yayın kurulu tüp bebek ve kısırlık hakkında halk arasında yaygın bazı yanlış inanışlar konusunda bilgi veriyor."
 publishDate: 2016-11-13
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"

@@ -2,7 +2,7 @@
 title: "İzotretinoin (Zoretanin/Roaccutane) Sperm Kalitesini Etkiler mi?"
 description: "Sivilce tedavisinde kullanılan izotretinoin etken maddeli ilaçların erkek kısırlığı ve sperm üretimi üzerindeki etkileri. NOA hastaları için yeni umut."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Erkek Kısırlığı"
 image: "/images/articles/izotretinoin-sperm.webp"
 imageAlt: "izotretinoin ilaç kutusu ve sperm hücrelerinin mikroskobik görüntüsü"

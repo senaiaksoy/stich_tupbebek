@@ -2,7 +2,7 @@
 title: "Yumurtalık kistleri doğurganlığı etkiler mi?"
 description: "Çocuk sahibi olamamanızın nedeni yumurtalığınızdaki kistler olabilir mi?"
 publishDate: 2018-01-21
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"

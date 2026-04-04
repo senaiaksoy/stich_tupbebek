@@ -1,8 +1,8 @@
 ---
 title: "Endometriozis ve Kısırlık Tedavisinde 2025 Devrimi"
-description: "Endometriozis veya çikolata kisti kısırlık yaparsa 'Önce Ameliyat' mı, 'Önce Tüp Bebek' mi? Dr. Senai Aksoy, 2025'in yeni altın standardını ve SVIDOE çalışmasını açıklıyor."
+description: "Endometriozis veya çikolata kisti kısırlık yaparsa 'Önce Ameliyat' mı, 'Önce Tüp Bebek' mi? tupbebek.com yayın kurulu, 2025'in yeni altın standardını ve SVIDOE çalışmasını açıklıyor."
 publishDate: 2025-11-01
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"

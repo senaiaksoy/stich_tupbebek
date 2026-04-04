@@ -2,7 +2,7 @@
 title: "Beta-HCG Testi: Hamilelik Sonuçlarını Anlamak"
 description: "Tüp bebek (IVF) tedavisi sonrası beta-hCG test sonuçları nasıl yorumlanmalıdır? İdeal değerler ve artış oranları hakkında bilmeniz gerekenler."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Tüp Bebek"
 image: "/images/articles/beta-hcg-testi.webp"
 imageAlt: "kan tahlili raporu ve beta-hcg hamilelik testi sonuçları"

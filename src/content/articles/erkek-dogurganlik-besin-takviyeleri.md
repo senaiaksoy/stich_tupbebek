@@ -2,7 +2,7 @@
 title: "Erkek Doğurganlığını Artıran Besin Takviyeleri. Bilmeniz Gereken Her Şey"
 description: "Erkek doğurganlığı sandığınızdan daha hassas bir konu olabilir; buradaki küçük bir destek ise büyük farklar yaratabilir. CoQ10, çinko ve D vitamini gibi besin takviyeleri, özellikle sperm hareketliliği ve kalitesini iyileştirmeye yardımcı olabilir. Yine de hepsi sihirli değnek değil. Dengeli beslenme, düzenli egzersiz ve stresten uzak bir yaşam tarzı, her zaman takviye kullanımının temelini oluşturmalı. Kendinize en uygun seçeneği belirlemek için mutlaka uzman tavsiyesi alın."
 publishDate: 2025-01-07
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Erkek Sağlığı"

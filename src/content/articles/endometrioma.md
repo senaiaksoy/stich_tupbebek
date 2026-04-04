@@ -2,7 +2,7 @@
 title: "Endometrioma"
 description: "Endometriozis kistleri (endometriomalar), kronik ağrıdan kısırlığa dek yaşam kalitesini etkiler. Belirtiler, nedenler ve tedavi yöntemleri hakkında bilgi edinin."
 publishDate: 2025-01-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"

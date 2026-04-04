@@ -2,7 +2,7 @@
 title: "Adet Düzensizliği ve Polikistik Over Sendromu (PCOS)"
 description: "Adet düzensizliği ve Polikistik Over Sendromu (PCOS) belirtileri, nedenleri ve tedavi yöntemleri hakkında kapsamlı rehber."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Kadın Sağlığı"
 image: "/images/articles/adet-duzensizligi-pcos.webp"
 imageAlt: "adet düzensizliği ve polikistik over sendromu pcos illüstrasyonu"

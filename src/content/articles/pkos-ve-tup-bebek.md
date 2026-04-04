@@ -2,7 +2,7 @@
 title: "PKOS ve Tüp Bebek. Polikistik Over Sendromu ile Anne Olma Yolculuğunuz"
 description: "Polikistik Over Sendromu (PKOS), dünya genelinde birçok kadının hayatını etkileyen yaygın bir hormonal dengesizliktir. Eğer düzensiz adet döngüleriniz, aşırı tüylenme ya da cilt sorunları yaşıyorsanız, yalnız değilsiniz. PKOS, hormonların dengesiz çalışması sonucu yumurtlama süreçlerini aksatabilir ve bu da doğal yolla hamile kalmayı zorlaştırabilir."
 publishDate: 2024-09-05
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"

@@ -2,7 +2,7 @@
 title: "Tüp Bebekte Büyük Birader Dönemi. Yapay Zeka ve EmbryoScope ile En İyi Embriyoyu Nasıl Seçiyoruz?"
 description: "EmbryoScope ve Yapay Zeka teknolojileri ile embriyonun matematiksel dilini keşfedin. Time-lapse izleme, morfokinetik analiz ve iDAScore puanlaması ile gebelik şansınızı artırın."
 publishDate: 2026-01-20
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"
@@ -286,4 +286,4 @@ Bizim görevimiz, en ileri bilimsel araçlarla şansınızı artırmak; sizin ih
 
 **Yayın Tarihi:** 20 Ocak 2026
 
-*Bu makale Doç. [Dr. Senai Aksoy](https://tupbebek.com/dr-senai-aksoy/) tarafından, 2025 yılına ait güncel bilimsel raporlar ve 30+ yıllık klinik tecrübe ışığında bilgilendirme amaçlı yazılmıştır. Her hasta benzersizdir. Tüp bebek sonuçları birçok faktöre göre değişiklik gösterir. Kişisel durumunuz için daima bir uzmana danışın.*
+*Bu makale Doç. tupbebek.com yayın kurulu tarafından, 2025 yılına ait güncel bilimsel raporlar ve 30+ yıllık klinik tecrübe ışığında bilgilendirme amaçlı yazılmıştır. Her hasta benzersizdir. Tüp bebek sonuçları birçok faktöre göre değişiklik gösterir. Kişisel durumunuz için daima bir uzmana danışın.*

@@ -2,7 +2,7 @@
 title: "Tüp bebek nedir, kimlere uygulanır?"
 description: "Hayatımıza son 30 yılda giren ve bizim için hızla sıradan bir yöntem haline gelen tüp bebek nedir ve nasıl yapılır? Sorularınızın cevabını burada bulabilirsiniz."
 publishDate: 2024-09-27
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"

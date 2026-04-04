@@ -1,8 +1,8 @@
 ---
 title: "Tüp Bebekte Kritik Karar. Taze mi, Dondurulmuş Embriyo Transferi mi?"
-description: "Tüp bebekte taze mi, dondurulmuş embriyo transferi mi? Dr. Senai Aksoy, avantajları, riskleri ve başarı oranlarını karşılaştırıyor. Size en uygun yöntemi keşfedin."
+description: "Tüp bebekte taze mi, dondurulmuş embriyo transferi mi? Avantajları, riskleri ve başarı oranlarını karşılaştırıyor. Size en uygun yöntemi keşfedin."
 publishDate: 2025-09-26
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"
@@ -23,7 +23,7 @@ image: /src/images/blog/taze-donmus-transfert.jpg
 > * [Sıkça Sorulan Sorular (SSS)](#sıkça-sorulan-sorular-sss)
 > * [Sonuç ve Kişisel Tavsiyem](#sonuç-ve-kişisel-tavsiyem)
 
-Merhaba, ben Dr. Senai Aksoy. İstanbul'daki kliniğimde uzun yıllardır birçok çiftin anne-baba olma hayallerine ortak oldum. Bu süreçte en çok merak edilen ve biraz da stres yaratan konulardan birinin embriyo transferi olduğuna şahit oldum. Laboratuvarda özenle büyüttüğümüz o küçücük hücrenin anne rahmine yerleşeceği o özel an... İşte burada iki farklı yöntem devreye giriyor: Taze embriyo transferi mi, yoksa dondurulmuş embriyo transferi mi? Bu sorunun net bir cevabı yok. En uygun yöntem, sizin sağlık durumunuza, vücudunuzun tedaviye nasıl cevap verdiğine ve beklentilerinize göre değişen, tamamen size özel bir seçimdir.
+İstanbul'daki kliniğimizde uzun yıllardır birçok çiftin anne-baba olma hayallerine ortak oldum. Bu süreçte en çok merak edilen ve biraz da stres yaratan konulardan birinin embriyo transferi olduğuna şahit oldum. Laboratuvarda özenle büyüttüğümüz o küçücük hücrenin anne rahmine yerleşeceği o özel an... İşte burada iki farklı yöntem devreye giriyor: Taze embriyo transferi mi, yoksa dondurulmuş embriyo transferi mi? Bu sorunun net bir cevabı yok. En uygun yöntem, sizin sağlık durumunuza, vücudunuzun tedaviye nasıl cevap verdiğine ve beklentilerinize göre değişen, tamamen size özel bir seçimdir.
 
 Bu yazıda, bir doktor olarak tecrübelerimi ve en yeni bilimsel bilgileri bir araya getirerek bu iki yöntemi tüm detaylarıyla açıklayacağım. Hedefim, kafanızdaki soru işaretlerini gidermek ve bu önemli kararı doktorunuzla beraber en iyi şekilde vermenize destek olmak.
 

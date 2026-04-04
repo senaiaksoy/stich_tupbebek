@@ -1,8 +1,8 @@
 ---
 title: "Akıntı, Kaşıntı, Koku: Mantar mı? Bakteriyel Vajinoz mu?"
-description: "Vajinal akıntı, koku ve kaşıntı neden olur? Mantar enfeksiyonu ile bakteriyel vajinoz arasındaki farkları Dr. Senai Aksoy anlatıyor."
+description: "Vajinal akıntı, koku ve kaşıntı neden olur? Mantar enfeksiyonu ile bakteriyel vajinoz arasındaki farkları tupbebek.com yayın kurulu anlatıyor."
 publishDate: 2025-01-15
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Kadın Sağlığı"
 image: "/images/articles/akinti-kasinti-koku.webp"
 imageAlt: "akinti kasinti koku mantar mi bakteriyel vajinoz mu"

@@ -2,11 +2,11 @@
 title: "IVF Tedavisinde Kullanılan Protokoller. Uzun, Kısa ve Yeni Yaklaşımlar | İstanbul Tüp Bebek"
 description: "İstanbul'da tüp bebek (IVF) tedavisinde kullanılan uzun, kısa, mini IVF, doğal siklus ve DuoStim protokollerini avantajlarıyla keşfedin. Size en uygun protokolü öğrenin."
 publishDate: 2025-08-14
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tedavi Yöntemleri"
-image: /src/images/blog/dr-senai-aksoy-istanbul-ivf-laboratuvar.jpg
+image: /images/articles/ivf-protokolleri.webp
 ---
 
 

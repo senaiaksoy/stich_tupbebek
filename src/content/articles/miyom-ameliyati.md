@@ -1,8 +1,8 @@
 ---
-title: "Miyom Ne Zaman Ameliyat Edilmeli? | Dr. Senai Aksoy"
-description: "Rahminizdeki miyomlar ne zaman ameliyat gerektirir? Dr. Senai Aksoy'un 'trafik lambası' rehberiyle karar verin. Yeşil, sarı, kırmızı ışık ne anlama geliyor?"
+title: "Miyom Ne Zaman Ameliyat Edilmeli? | tupbebek.com"
+description: "Rahminizdeki miyomlar ne zaman ameliyat gerektirir? tupbebek.com'un 'trafik lambası' rehberiyle karar verin. Yeşil, sarı, kırmızı ışık ne anlama geliyor?"
 publishDate: 2025-09-23
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"

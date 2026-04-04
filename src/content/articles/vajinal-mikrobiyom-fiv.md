@@ -2,7 +2,7 @@
 title: "Vajinal Mikrobiyom ve FIV Başarısı. Sessiz Bir Devrim"
 description: "Vajinal mikrobiyom FIV başarısını %30-40 etkileyebilir. L. crispatus dominasyonu gebelik şansını 6 kat artırır. 2025 verilerine dayalı bilimsel rehber."
 publishDate: 2025-11-12
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"
@@ -25,7 +25,7 @@ Vajinal mikrobiyom (vajinal flora), kadının vajinasında yaşayan yararlı ve 
 
 ## Vajinal Mikrobiyom Nedir?
 
-Merhaba, ben [Dr. Senai Aksoy](https://tupbebek.com/dr-senai-aksoy/). 30+ yıllık süredir, kliniğimde her gün aynı umut dolu gözleri, aynı endişeli soruları görüyorum. Özellikle de tüp bebek tedavisinde o en can sıkıcı soruyu: "Doktor Bey, embriyo pırıl pırıldı, rahim duvarım tam olması gerektiği gibiydi... Peki neden tutmadı?" İşte bu zor soru, bizi çoğu zaman göz ardı edilen ama aslında başarının kilitli kapısını açan bir anahtara götürüyor: Vajinal mikrobiyom. Biliyorum, kulağa çok teknik bir terim gibi geliyor. Ama gelin, bunu sizin "iç bahçeniz" gibi düşünün. Bu bahçenin ne kadar sağlıklı olduğu, toprağın ne kadar verimli olduğu, ektiğimiz o en değerli tohumun (yani embriyonun) kök salıp salmayacağını doğrudan etkiliyor.
+Merhaba, ben tupbebek.com yayın kurulu. 30+ yıllık süredir, kliniğimde her gün aynı umut dolu gözleri, aynı endişeli soruları görüyorum. Özellikle de tüp bebek tedavisinde o en can sıkıcı soruyu: "Doktor Bey, embriyo pırıl pırıldı, rahim duvarım tam olması gerektiği gibiydi... Peki neden tutmadı?" İşte bu zor soru, bizi çoğu zaman göz ardı edilen ama aslında başarının kilitli kapısını açan bir anahtara götürüyor: Vajinal mikrobiyom. Biliyorum, kulağa çok teknik bir terim gibi geliyor. Ama gelin, bunu sizin "iç bahçeniz" gibi düşünün. Bu bahçenin ne kadar sağlıklı olduğu, toprağın ne kadar verimli olduğu, ektiğimiz o en değerli tohumun (yani embriyonun) kök salıp salmayacağını doğrudan etkiliyor.
 
 Bu yazıda size, tüp bebek tedavisinde neden bazen "her şey yolunda" gibi görünürken sonuç alamadığımızı ve o "görünmez" detayı, yani vajinal florayı nasıl lehimize çevirebileceğimizi anlatacağım. Ve en önemlisi, bunun çözümsüz bir sorun olmadığını göreceksiniz.
 

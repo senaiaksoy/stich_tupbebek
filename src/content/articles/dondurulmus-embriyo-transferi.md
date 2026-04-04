@@ -2,7 +2,7 @@
 title: "Dondurulmuş Embriyo Transferi (FET): Hangi Protokol Daha Başarılı?"
 description: "Doğal siklus mu, ilaçlı (yapay) siklus mu? Dondurulmuş embriyo transferi protokollerini ve başarı oranlarını karşılaştırıyoruz."
 publishDate: 2025-11-10
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Tedavi"
 image: "/images/articles/dondurulmus-embriyo-transferi.webp"
 imageAlt: "dondurulmus embriyo transferi protokolleri karsilastirma"

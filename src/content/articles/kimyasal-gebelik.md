@@ -2,7 +2,7 @@
 title: "Kimyasal Gebeliklerin Gölgedeki Yüzü. Anlam, İyileşme ve Umut Peşinde"
 description: "Kimyasal gebelik, adından da anlaşılacağı gibi, kimyasalların sebep olduğu bir gebelik kaybını ifade etmez; erken dönemde, henüz ultrasonda görüntülenemeyecek kadar küçükken sonlanan gebelikleri tanımlar."
 publishDate: 2024-04-14
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Gebelik"

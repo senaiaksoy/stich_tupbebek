@@ -2,7 +2,7 @@
 title: "Preimplantasyon Genetik Testi (PGT) Cinsiyet Seçimi İçin Kullanılabilir mi?"
 description: "Preimplantasyon genetik testi (PGT), embriyoların implantasyondan önce genetik koşullar açısından taranmasını sağlar. PGT'nin cinsiyet seçimi için kullanımı, etik, sosyal ve tıbbi açıdan önemli soruları gündeme getirmektedir."
 publishDate: 2024-06-22
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tedavi Yöntemleri"

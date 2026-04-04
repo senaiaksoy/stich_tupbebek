@@ -2,7 +2,7 @@
 title: "Asherman Sendromu - Rahim İçi Yapışıklık"
 description: "Asherman Sendromu (rahim içi yapışıklık) nedir? Belirtileri, nedenleri ve tedavi yöntemleri hakkında kapsamlı rehber."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Kadın Sağlığı"
 image: "/images/articles/asherman-sendromu.webp"
 imageAlt: "asherman sendromu rahim içi yapışıklık illüstrasyonu"

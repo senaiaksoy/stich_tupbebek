@@ -2,7 +2,7 @@
 title: "Tüp Bebek Başarı Oranları ve Etki Eden Faktörler"
 description: "Endometriyal reseptivite ve genetik tarama teknolojilerindeki son gelişmeler ve güncel başarı veri setlerinin keşfi."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Tıbbi Başarı"
 image: "/images/home/article-1.jpg"
 imageAlt: "bilimsel veri analizi içeren dijital bir ekranı"

@@ -2,7 +2,7 @@
 title: "Tüp Bebek Öncesi Histeroskopi ve Laparoskopi Başarıyı Artırır mı?"
 description: "Tüp bebek tedavisine hazırlık sürecinde histeroskopi ve laparoskopinin rolü. Hangi durumlarda uygulanmalıdır? Başarı oranlarına etkisi."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Tüp Bebek"
 image: "/images/articles/ivf-oncesi-histeroskopi.webp"
 imageAlt: "tüp bebek öncesi histeroskopi ve laparoskopi operasyonu illüstrasyonu"

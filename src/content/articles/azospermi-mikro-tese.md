@@ -2,7 +2,7 @@
 title: "Azospermi ve Mikro-TESE: Baba Olma Hayalinde Yeni Bir Başlangıç"
 description: "Menide hiç sperm bulunmaması (azospermi) durumunda en etkili cerrahi yöntem olan Mikro-TESE nedir? Başarı oranları ve süreç hakkında detaylar."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Erkek Kısırlığı"
 image: "/images/articles/azospermi-mikro-tese.webp"
 imageAlt: "azospermi tedavisi ve mikro-tese yöntemi mikroskop altında inceleme"

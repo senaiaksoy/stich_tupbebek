@@ -2,7 +2,7 @@
 title: "Endoskopik Cerrahi: Histeroskopi Nedir?"
 description: "Modern histeroskopi yöntemiyle rahim içi problemleri güvenli ve minimal invaziv şekilde tanılayıp tedavi edin. Hızlı iyileşme ve etkili sonuçlar için detaylı bilgi edinin."
 publishDate: 2025-03-02
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tedavi Yöntemleri"

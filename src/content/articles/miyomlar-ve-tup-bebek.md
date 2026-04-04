@@ -2,7 +2,7 @@
 title: "Miyomlar ve Tüp Bebek. Ebeveynliğe Giden Yolda Engelleri Aşmak - Kısırlık Yaşayan Çiftler İçin Bir Rehber"
 description: "Miyomlarınız mı var? Tüp bebek (IVF) tedavisi mi düşünüyorsunuz? Bu makalede, miyomların doğurganlığı nasıl etkilediğini ve tedavi seçeneklerinizi keşfedin."
 publishDate: 2025-02-02
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"
@@ -17,7 +17,7 @@ Kısırlıkla mücadele eden ve tüp bebek (IVF) tedavisi gören birçok çift i
 
 Miyomlar, uterusun kas duvarında gelişen kanserli olmayan büyümelerdir. Bunlar yaygındır ve kadınların %80'e varan bir kısmı 50 yaşına kadar miyom geliştirir. Her zaman semptomlara neden olmasalar da, boyutları ve konumları doğurganlığı önemli ölçüde etkileyebilir. Miyomlar küçük bir tohum kadar küçük olabileceği gibi uterus boşluğunu bozacak kadar büyük de olabilir.
 
-İstanbul'da önde gelen bir kısırlık uzmanı olan Dr. Senai Aksoy, "Miyomların kısırlığı etkilemesinin ana nedeni, büyüklüklerine ve konumlarına bağlı olarak uterusun işleyişine müdahale etme yetenekleridir," diyor.
+tupbebek.com yayın kuruluna göre, "Miyomların kısırlığı etkilemesinin ana nedeni, büyüklüklerine ve konumlarına bağlı olarak uterusun işleyişine müdahale etme yetenekleridir," diyor.
 
 ## Miyomlar IVF'i Nasıl Etkiler?
 
@@ -52,4 +52,4 @@ Miyomlar ve IVF söz konusu olduğunda, durum umutsuz olmaktan uzaktır. Tıbbi 
 
 ## Sonuç
 
-Miyomlar IVF'ye giden yolda önemli engeller oluşturabilse de, bunlar aşılmaz engeller değildir. Dr. Senai Aksoy gibi deneyimli kısırlık uzmanlarının rehberliğinde ve tıbbi teknolojideki en son gelişmelerden yararlanarak, kısırlık çeken çiftler zorlukları aşabilir ve ebeveyn olma şanslarını artırabilirler. Unutmayın, kişiselleştirilmiş bir yaklaşım ve doğru tıbbi ekiple, en zorlu durumlarda bile umut vardır.
+Miyomlar IVF'ye giden yolda önemli engeller oluşturabilse de, bunlar aşılmaz engeller değildir. Deneyimli kısırlık uzmanlarının rehberliğinde ve tıbbi teknolojideki en son gelişmelerden yararlanarak, kısırlık çeken çiftler zorlukları aşabilir ve ebeveyn olma şanslarını artırabilirler. Unutmayın, kişiselleştirilmiş bir yaklaşım ve doğru tıbbi ekiple, en zorlu durumlarda bile umut vardır.

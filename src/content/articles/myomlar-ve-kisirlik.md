@@ -1,17 +1,17 @@
 ---
-title: "Myomlar ve Kısırlığa Dair Dr. Senai Aksoy'dan A'dan Z'ye Rehber"
+title: "Myomlar ve Kısırlığa Dair A'dan Z'ye Rehber"
 description: "Myom, ya da bilinen diğer adıyla uterin myom, rahimde veya onun çevresinde gelişebilen iyi huylu bir tümördür. \"Tümör\" kelimesi kulağa korkutucu gelse de, myomlar genellikle kanserli değildir ve kas hücreleri ile lifli dokuların birleşiminden oluşur. Boyutları ve yerleşim yerlerine göre farklılık gösterir ve çeşitli belirtilere yol açabilir."
 publishDate: 2024-04-17
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"
 image: /src/images/blog/myom.jpg
 ---
 
-### Rahim Myomlarına ve Kısırlığa Dair Dr. Senai Aksoy'dan A'dan Z'ye Rehber
+### Rahim Myomlarına ve Kısırlığa Dair A'dan Z'ye Rehber
 
-Merhaba, Dr. Senai Aksoy ben. Jinekoloji ve üreme sağlığı alanlarında uzmanım. Birçok kadının hayatını etkileyen rahim myomları hakkında güvenilir ve doğru bilgiler vermek istiyorum.
+ Birçok kadının hayatını etkileyen rahim myomları hakkında güvenilir ve doğru bilgiler vermek istiyorum.
 
 [![Video Thumbnail](https://img.youtube.com/vi/R0mi5CpAVrM/0.jpg)](https://www.youtube.com/watch?v=R0mi5CpAVrM)
 

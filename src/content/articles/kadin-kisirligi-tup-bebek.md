@@ -2,7 +2,7 @@
 title: "Kadın Kısırlığı ve Tüp Bebek Tedavisinin Önemi. Kapsamlı Bir Rehber"
 description: "Kadın kısırlığının nedenleri, tanı yöntemleri ve tüp bebek tedavisinin bu süreçteki rolü hakkında kapsamlı bir rehber."
 publishDate: 2024-09-09
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"

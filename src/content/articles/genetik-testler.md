@@ -2,7 +2,7 @@
 title: "Preimplantasyon Genetik Testler (PGT-A) ve Klinik Kazanımlar"
 description: "İnvaziv olmayan PGT yöntemlerinin ve bunların geleneksel trofektoderm biyopsi tekniklerine karşı karşılaştırmalı doğruluğunun analizi."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Genetik"
 image: "/images/home/article-2.jpg"
 imageAlt: "biyolojik şemalar ve tıbbi görüntülemeye odaklanarak bir ışıklı panoda bilimsel verileri inceleyen bir doktor"

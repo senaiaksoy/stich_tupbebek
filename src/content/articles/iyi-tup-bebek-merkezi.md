@@ -2,7 +2,7 @@
 title: "İyi Bir Tüp Bebek Merkezi Nasıl Anlaşılır?"
 description: "İstanbul'da en iyi tüp bebek merkezi seçilirken nelere dikkat edilmeli? Başarı oranlarının ötesindeki gerçek kalite standartları."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Rehber"
 image: "/images/articles/iyi-tup-bebek-merkezi.webp"
 imageAlt: "tüp bebek merkezi seçim kriterleri ve kalite standartları"

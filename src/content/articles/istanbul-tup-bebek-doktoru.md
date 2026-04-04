@@ -2,7 +2,7 @@
 title: "İstanbul Tüp Bebek Doktoru ve Merkezi Seçimi Rehberi"
 description: "İstanbul'da en iyi tüp bebek doktorunu ve merkezini nasıl seçersiniz? Başarı oranları, laboratuvar kalitesi ve dikkat edilmesi gerekenler."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Rehber"
 image: "/images/articles/istanbul-tup-bebek-doktoru.webp"
 imageAlt: "istanbul tüp bebek doktoru seçimi ve danışmanlık süreci"

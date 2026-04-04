@@ -2,7 +2,7 @@
 title: "Hormonal Tedavilerle Adenomyozis ve Tüp Bebek Başarısını Artırmak"
 description: "Adenomyozis, hormon dengesizliklerinden etkilenerek şiddetini artırabilen bir rahatsızlık olduğundan, hormonal tedaviler bu durumun kontrol altına alınmasında kilit bir rol oynar. Bu yöntemler, hem rahim ortamını iyileştirmek hem de tüp bebek (IVF) tedavisindeki başarı şansını artırmak için uygulanır."
 publishDate: 2024-11-12
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tedavi Yöntemleri"

@@ -2,7 +2,7 @@
 title: "Yumurtlama Takibi ve İlişki Planlaması Nedir?"
 description: "Yumurtlama takibi, yumurtlama zamanının takip edilerek kadının en doğurgan olduğu günlerin belirlenmesi ve ilişkinin buna göre planlanarak gebelik şansının artırılması amacını taşır."
 publishDate: 2025-01-17
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tanı ve Testler"

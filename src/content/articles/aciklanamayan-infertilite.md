@@ -2,7 +2,7 @@
 title: "Açıklanamayan İnfertilite: Nedenleri ve Tedavisi"
 description: "Açıklanamayan (idiyopatik) infertilite tanısı, nedenleri, gizli faktörler ve tedavi seçenekleri."
 publishDate: 2024-09-27
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tanı ve Testler"
@@ -56,5 +56,5 @@ Laparoskopi tanı amaçlı yapılabilir. Tespit edilen endometriozis cerrahi ola
 
 **Yasal Uyarı:** Bu rehber genel bilgilendirme amaçlıdır. Açıklanamayan infertilite hakkında kişisel kararlar için lütfen bir üreme sağlığı uzmanına danışınız.
 
-**Yazar:** Doç. Dr. Senai Aksoy
+**Yazar:** tupbebek.com Yayın Kurulu
 **Yayın Tarihi:** 27 Eylül 2024
