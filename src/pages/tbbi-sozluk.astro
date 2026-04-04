@@ -2,405 +2,255 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { getCollection } from 'astro:content';
+import { getAllTerms } from '../data/glossary';
 
-const articles = await getCollection('articles');
+const terms = getAllTerms();
+
+// Group terms by first letter
+const grouped: Record<string, typeof terms> = {};
+for (const entry of terms) {
+    const letter = entry.term.charAt(0).toUpperCase();
+    if (!grouped[letter]) grouped[letter] = [];
+    grouped[letter].push(entry);
+}
+const sortedLetters = Object.keys(grouped).sort((a, b) => a.localeCompare(b, 'tr'));
+
+// Icon mapping by category keyword
+function getIcon(term: string): string {
+    const t = term.toLowerCase();
+    if (['amh', 'fsh', 'lh', 'e2', 'progesteron'].some(k => t.includes(k))) return 'science';
+    if (['ivf', 'icsi', 'iui'].some(k => t.includes(k))) return 'biotech';
+    if (['pgt', 'karyotip'].some(k => t.includes(k))) return 'microscope';
+    if (['hsg', 'spermiogram'].some(k => t.includes(k))) return 'assignment';
+    if (['endometriozis', 'adenomyozis', 'pcos', 'varikosel', 'azospermi'].some(k => t.includes(k))) return 'healing';
+    if (['blastosist', 'vitrifikasyon', 'hatching'].some(k => t.includes(k))) return 'egg';
+    if (['endometrium', 'folikul', 'over'].some(k => t.includes(k))) return 'anatomy';
+    return 'menu_book';
+}
 ---
 
-<BaseLayout title="Tıp Terimleri Sözlüğü | IVF ve Üreme Tıbbı Terimleri | tupbebek.com" description="AMH, FSH, ICSI, blastosist, endometrium gibi medikal terimlerin açıklamaları ve ilgili kaynaklara bağlantılar.">
+<BaseLayout title="Tip Terimleri Sozlugu | IVF ve Ureme Tibbi Terimleri | tupbebek.com" description="AMH, FSH, ICSI, blastosist, endometrium gibi medikal terimlerin aciklamalari ve ilgili kaynaklara baglantilar.">
     <Header />
 
-    <main id="main-content" tabindex="-1" class="pb-24">
-        <!-- Hero Section -->
-        <header class="max-w-5xl mx-auto px-6 mb-20">
+    <main id="main-content" tabindex="-1" class="pt-32 pb-24">
+        <!-- Hero -->
+        <header class="max-w-5xl mx-auto px-6 mb-16">
             <div class="flex flex-col md:flex-row gap-12 items-start">
                 <div class="flex-1">
                     <div class="inline-flex items-center gap-2 px-3 py-1 bg-mint-100 text-mint-700 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
                         <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
-                        Tıp Sözlüğü
+                        Tip Sozlugu
                     </div>
-                    <h1 class="font-headline text-5xl md:text-6xl text-gray-900 leading-tight mb-8">
-                        Tıp Terimleri Sözlüğü: <span class="text-primary-600 italic">A'dan Z'ye</span> Üreme Tıbbı Kavramları
+                    <h1 class="font-headline text-4xl md:text-5xl text-gray-900 leading-tight mb-6">
+                        Tip Terimleri Sozlugu
                     </h1>
-                    <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border-l-4 border-primary">
-                        <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                            <span class="material-symbols-outlined text-primary-600 text-2xl">verified</span>
-                        </div>
-                        <div>
-                            <p class="font-headline italic text-gray-900 text-sm">İnceleme:</p>
-                            <p class="font-bold text-primary-600">Yayın Kurulu</p>
-                        </div>
-                    </div>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                        Ureme tibbi ve IVF sureclerinde sikca karsilasilan medikal terimlerin aciklamalari. Her terim klinik baglamda tanimlanmis ve ilgili sayfalara baglanti icermektedir.
+                    </p>
+
+                    <!-- Letter Navigation -->
+                    <nav class="flex flex-wrap gap-1.5" aria-label="Harf navigasyonu">
+                        {sortedLetters.map(letter => (
+                            <a
+                                href={`#letter-${letter}`}
+                                class="w-9 h-9 flex items-center justify-center rounded-lg text-sm font-bold text-gray-600 bg-gray-100 hover:bg-primary-600 hover:text-white transition-colors"
+                            >
+                                {letter}
+                            </a>
+                        ))}
+                    </nav>
                 </div>
-                <div class="hidden md:block w-72 shrink-0 aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-2xl">
-                    <img class="w-full h-full object-cover grayscale opacity-80" src="/images/sorunlar/cell-biology.webp" alt="tıbbi terminler" width="512" height="512" loading="eager" fetchpriority="high"/>
+                <div class="hidden md:block w-64 shrink-0 aspect-square bg-gradient-to-br from-mint-50 to-primary-50 rounded-2xl flex items-center justify-center shadow-lg">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary-300 text-[120px]">dictionary</span>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <!-- Introduction -->
-        <section class="max-w-3xl mx-auto px-6 mb-12">
-            <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-body italic mb-6">
-                Bu sözlük sayfası, üreme tıbbı ve IVF süreçlerinde sıkça karşılaşılan <strong>medikal terimlerin</strong> anlaşılmasını kolaylaştırmak için hazırlandı. Her terim, <strong>klinik bağlamda</strong> tanımlanmış ve <strong>ilgili klinik sayfalara</strong> doğrudan bağlantı sunan açıklamalar içerir. Kullanıcı deneyimi açısından <strong>SEO optimized</strong> terminoloji rehberi oluşturmak için tasarlanmıştır.
-            </p>
-
-            <!-- Search Box -->
-            <div class="flex items-center gap-2 mb-6 px-4">
+        <!-- Search -->
+        <section class="max-w-5xl mx-auto px-6 mb-12">
+            <div class="relative max-w-md">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl">search</span>
                 <input
                     type="text"
                     id="glossary-search"
-                    placeholder="Term ara..."
-                    class="w-[280px] px-4 py-2 bg-gray-50 border border-gray-200/20 rounded-xl text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    placeholder="Terim ara..."
+                    class="w-full pl-12 pr-4 py-3 min-h-[44px] bg-white border border-gray-200 rounded-xl text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600 transition-all"
+                    aria-label="Sozlukte terim ara"
                 />
-                <button
-                    class="bg-primary-600 text-white px-3 py-1.5 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors"
-                    onclick="document.getElementById('glossary-search').focus()"
-                >
-                    <span class="material-symbols-outlined">search</span>
-                </button>
             </div>
+            <p id="search-status" class="text-sm text-gray-500 mt-2 hidden" aria-live="polite"></p>
         </section>
 
         <!-- Glossary Content -->
-        <section id="glossary-content" class="max-w-5xl mx-auto px-6 space-y-10">
+        <section id="glossary-content" class="max-w-5xl mx-auto px-6">
+            {sortedLetters.map(letter => (
+                <div id={`letter-${letter}`} class="glossary-group mb-12 scroll-mt-24">
+                    <h2 class="font-headline text-2xl text-gray-900 mb-6 pb-3 border-b-2 border-primary-200 flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center text-primary-600 font-bold">{letter}</span>
+                        {letter} Harfi
+                    </h2>
 
-            <!-- A Terms -->
-            <div id="A" class="mb-12">
-                <h2 class="font-headline text-2xl text-gray-900 mb-5 border-b-2 border-primary pb-3">A</h2>
-
-                <!-- AMH -->
-                <div class="space-y-5">
-                    <div class="flex">
-                        <span class="material-symbols-outlined text-primary-600 text-xl mr-2">science</span>
-                        <div>
-                            <h3 class="font-bold text-gray-900 text-xl mb-2">AMH (Anti-Müllerian Hormon)</h3>
-                            <p class="text-xs text-gray-600">
-                                Over rezervini değerlendiren biyomarker. Kan testi ile ölçülür, değerler 1.0-4.0 ng/mL (40 yaş> düşük, 1.0-2.0 ng/mL düşük). <strong>IVF planlamasında</strong> ovaryal reservin tahmini için kritik.
-                            </p>
-                            <a href="/makaleler/basari-oranlari" class="inline-flex items-center gap-1 text-gray-600 font-small hover:text-primary-600 transition-colors">
-                                <span class="material-symbols-outlined text-xs">arrange_forward</span>
-                                <span class="text-xs">Öz</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="bg-white border-l-4 border-primary rounded-xl p-5 mrd-container">
-                        <p class="text-gray-600 text-sm mb-3">
-                            <strong>Norma Değerler:</strong> 1.0-4.0 ng/mL (yaşa göre değişir)
-                        </p>
-                        <p class="text-xs text-gray-600"><strong>Düşük:</strong> Ambur rezervi azalar</p>
-                        <p class="text-xs text-gray-600"><strong>Yüksek:</strong> PCOS veya yüksek yanıt riski</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- B Terms -->
-            <div id="B" class="mb-12">
-                <h2 class="font-headline text-2xl text-gray-900 mb-5 border-b-2 border-primary pb-3">B</h2>
-
-                <!-- Blastosist -->
-                <div class="space-y-5">
-                    <div class="flex">
-                        <span class="material-symbols-outlined text-primary-600 text-xl mr-2">biotech</span>
-                        <div>
-                            <h3 class="font-bold text-gray-900 text-xl mb-2">Blastosist</h3>
-                            <p class="text-xs text-gray-600">
-                                Embriyonun 5. gün gelişim aşamasına ulaşması. Blastosist transferi, tek embrion transferi (SET) olasılığını artırır ve çogul gebelik riskini %30-40 düşürür. Gebelik oranı %40-45 aralığında olabilir.
-                            </p>
-                            <a href="/pgt-merkezi" class="inline-flex items-center gap-1 text-gray-600 font-small hover:text-primary-600 transition-colors">
-                                <span class="material-symbols-outlined text-xs">link</span>
-                                <span class="text-xs">Detaylar</span>
-                            </a>
-                        </div>
+                    <div class="space-y-4">
+                        {grouped[letter].map(entry => (
+                            <div class="glossary-term group bg-white border border-gray-200 rounded-xl p-5 hover:border-primary-200 hover:shadow-sm transition-all" data-term={entry.term.toLowerCase()}>
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-mint-50 flex items-center justify-center shrink-0 group-hover:bg-mint-100 transition-colors">
+                                        <span class="material-symbols-outlined text-mint-600 text-xl">{getIcon(entry.term)}</span>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="font-headline text-lg font-bold text-gray-900 mb-1">{entry.term}</h3>
+                                        <p class="text-sm text-gray-600 leading-relaxed">{entry.definition}</p>
+                                        {entry.href && (
+                                            <a
+                                                href={entry.href}
+                                                class="inline-flex items-center gap-1 mt-3 text-xs font-semibold text-primary-600 hover:text-primary-700 transition-colors"
+                                            >
+                                                Detayli bilgi
+                                                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
+            ))}
+
+            <!-- No Results -->
+            <div id="no-results" class="hidden text-center py-16">
+                <span class="material-symbols-outlined text-gray-300 text-6xl mb-4">search_off</span>
+                <p class="text-gray-500 text-lg">Aradiginiz terim bulunamadi.</p>
+                <p class="text-gray-400 text-sm mt-1">Farkli bir anahtar kelime deneyin.</p>
             </div>
-
-            <!-- C Terms -->
-            <div id="C" class="mb-12">
-                <h2 class="font-headline text-2xl text-gray-900 mb-5 border-b-2 border-primary pb-3">C</h2>
-
-                <!-- CNV -->
-                <div class="space-y-5">
-                    <div class="flex">
-                        <span class="material-symbols-outlined text-primary-600 text-xl mr-2">grid</span>
-                        <div>
-                            <h3 class="font-bold text-gray-900 text-xl mb-2">CNV (Copy Number Variation)</h3>
-                            <p class="text-xs text-gray-600">
-                                DNA parçalarının kopyalanması ya da kaybolması sonucu oluşan genetik değişiklik. PGT-SR ile %98-99 doğrulukla tespit edilebilir. Tekrarlayan gebelik kayıplarında klinik açı देते.
-                            </p>
-                            <a href="/pgt-merkezi" class="inline-flex items-center gap-1 text-gray-600 font-small hover:text-primary-600 transition-colors">
-                                <span class="material-symbols-outlined text-xs">link</span>
-                                <span class="text-xs">PGT-SR</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- D Terms -->
-            <div id="D" class="mb-12">
-                <h2 class="font-headline text-2xl text-gray-900 mb-5 border-b-2 border-primary pb-3">D</h2>
-
-                <!-- DFI -->
-                <div class="space-y-5">
-                    <div class="flex">
-                        <span class="material-symbols-outlined text-primary-600 text-xl mr-2">science</span>
-                        <div>
-                            <h3 class="font-bold text-gray-900 text-xl mb-2">DFI (Sperm DNA Fragmentasyonu)</h3>
-                            <p class="text-xs text-gray-600">
-                                Sperm DNA integrity'ini ölçen test. %30 üzeri oran, embriyo kalitesini kogruga düşürür ve IVF başarısını etkiler. Erkek faktör infertilitesinde <strong>vitamin C</strong> ve yaşam tarzı değişikliği önerilir.
-                            </p>
-                            <a href="/erkek-infertilitesi" class="inline-flex items-center gap-1 text-gray-600 font-small hover:text-primary-600 transition-colors">
-                                <span class="material-symbols-outlined text-xs">link</span>
-                                <span class="text-xs">Erkek Infertilitesi</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- E Terms -->
-            <div id="E" class="mb-12">
-                <h2 class="font-headline text-2xl text-gray-900 mb-5 border-b-2 border-primary pb-3">E</h2>
-
-                <!-- Endometrium -->
-                <div class="space-y-5">
-                    <div class="flex">
-                        <span class="material-symbols-outlined text-primary-600 text-xl mr-2">cod</span>
-                        <div>
-                            <h3 class="font-bold text-gray-900 text-xl mb-2">Endometrium</h3>
-                            <p class="text-xs text-gray-600">
-                                Uterusun iç kabuğu. Ideal kalınlık 8-12 mm, <strong>tripl linear (TTT)</strong> görünüm. Progesteron desteği süresini ve implantasyon başarısını doğrudan etkiler. Endometrial receptivite penceresi LH+7 ile LH+9 gün.
-                            </p>
-                            <a href="/ilac-rehberi" class="inline-flex items-center gap-1 text-gray-600 font-small hover:text-primary-600 transition-colors">
-                                <span class="material-symbols-outlined text-xs">link</span>
-                                <span class="text-xs">Progesteron Desteği</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- F Terms -->
-            <div id="F" class="mb-12">
-                <h2 class="font-headline text-2xl text-gray-900 mb-5 border-b-2 border-primary pb-3">F</h2>
-
-                <!-- Folikül -->
-                <div class="space-y-5">
-                    <div class="flex">
-                        <span class="material-symbols-outlined text-primary-600 text-xl mr-2">egg</span>
-                        <div>
-                            <h3 class="font-bold text-gray-900 text-xl mb-2">Folikül</h3>
-                            <p class="text-xs text-gray-600">
-                                Overdeki yumurta gelişintisi. Ideal 18-22 mm büyüklükte ve E2 seviyesi 200-300 pg/mL. Monitoring için günlük ultrason ve kan testi kullanılır. <strong>Overstimülasyon riski</strong> &gt;35 folikülde artar.
-                            </p>
-                            <a href="/ilac-rehberi" class="inline-flex items-center gap-1 text-gray-600 font-small hover:text-primary-600 transition-colors">
-                                <span class="material-symbols-outlined text-xs">link</span>
-                                <span class="text-xs">Estimülasyon Takibi</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- G Terms -->
-            <div id="G" class="mb-12">
-                <h2 class="font-headline text-2xl text-gray-900 mb-5 border-b-2 border-primary pb-3">G</h2>
-
-                <!-- GnRH -->
-                <div class="space-y-5">
-                    <div class="flex">
-                        <span class="material-symbols-outlined text-primary-600 text-xl mr-2">biotech</span>
-                        <div>
-                            <h3 class="font-bold text-gray-900 text-xl mb-2">GnRH (Gonadotropin Releasing Hormon)</h3>
-                            <p class="text-xs text-gray-600">
-                                Hipofiz gonadotropin salgısını düzenleyen peptit hormon. Agonist ve antagonist protollo usarak LH/FSH salgısını kontrol eder. Overestimülasyonu önlemek için <strong>Cetrotide</strong> ve <strong>Leuprolide</strong> kullanılır.
-                            </p>
-                            <a href="/ilac-rehberi" class="inline-flex items-center gap-1 text-gray-600 font-small hover:text-primary-600 transition-colors">
-                                <span class="material-symbols-outlined text-xs">link</span>
-                                <span class="text-xs">Gonadotropin Protocolü</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- H Terms -->
-            <div id="H" class="mb-12">
-                <h2 class="font-headline text-2xl text-gray-900 mb-5 border-b-2 border-primary pb-3">H</h2>
-
-                <!-- OHSS -->
-                <div class="space-y-5">
-                    <div class="flex">
-                        <span class="material-symbols-outlined text-primary-600 text-xl mr-2">alert</span>
-                        <div>
-                            <h3 class="font-bold text-gray-900 text-xl mb-2">OHSS (Overstimulation Syndrome)</h3>
-                            <p class="text-xs text-gray-600">
-                                Basarısız IVF veya yüksek responsiyete bağlı daralarda görülür. Karın ağrısı, kusma, solunum kesmesi gibi semptomlar. <strong>Risk azaltma:</strong> Coasting protokolü, antagonist treatment.
-                            </p>
-                            <a href="/makaleler/alkol-ve-fertilite" class="inline-flex items-center gap-1 text-gray-600 font-small hover:text-primary-600 transition-colors">
-                                <span class="material-symbols-outlined text-xs">link</span>
-                                <span class="text-xs">Önleme Yöntemleri</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- I Terms -->
-            <div id="I" class="mb-12">
-                <h2 class="font-headline text-2xl text-gray-900 mb-5 border-b-2 border-primary pb-3">I</h2>
-
-                <!-- ICSI -->
-                <div class="space-y-5">
-                    <div class="flex">
-                        <span class="material-symbols-outlined text-primary-600 text-xl mr-2">biotech</span>
-                        <div>
-                            <h3 class="font-bold text-gray-900 text-xl mb-2">ICSI (Intracytoplasmic Sperm Injection)</h3>
-                            <p class="text-xs text-gray-600">
-                                Tek sperm célula içine işaretlenerek yerleştirilen teknoloji. Şiddet insemin secunder olguda veya düşük motilite için önerilir. Çoxul situazione içinde %70-80 oranlarda butunma sağlar.
-                            </p>
-                            <a href="/erkek-infertilitesi" class="inline-flex items-center gap-1 text-gray-600 font-small hover:text-primary-600 transition-colors">
-                                <span class="material-symbols-outlined text-xs">link</span>
-                                <span class="text-xs">Erkek Infertilitesi</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- J-Z Terms -->
-            <div id="J-Z" class="mb-12">
-                <h2 class="font-headline text-2xl text-gray-900 mb-5 border-b-2 border-primary pb-10">J-Z</h2>
-                <p class="text-gray-600 text-center text-sm italic">
-                    Terimler_LISTE_ISLENİYEDİR...
-                </p>
-            </div>
-
         </section>
 
-        <!-- Cross-links Summary -->
-        <div class="max-w-3xl mx-auto px-6 mb-12">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
-                <a href="/makaleler/ivf-oncesi-histeroskopi" class="border rounded-lg p-3 text-center hover:border-primary transition-colors">
-                    <span class="material-symbols-outlined">endoscopy</span>
-                    <h3 class="text-gray-500">IVF Öncesi</h3>
-                </a>
-                <a href="/pgt-merkezi" class="border rounded-lg p-3 text-center hover:border-primary transition-colors">
-                    <span class="material-symbols-outlined">microscope</span>
-                    <h3 class="text-gray-500">PGT Merkezi</h3>
-                </a>
-                <a href="/ilac-rehberi" class="border rounded-lg p-3 text-center hover:border-primary transition-colors">
-                    <span class="material-symbols-outlined">medicine</span>
-                    <h3 class="text-gray-500">İlaç Rehberi</h3>
-                </a>
-                <a href="/psikolojik-destek" class="border rounded-lg p-3 text-center hover:border-primary transition-colors">
-                    <span class="material-symbols-outlined">psychology</span>
-                    <h3 class="text-gray-500">Psikolojik Destek</h3>
-                </a>
-                <a href="/makaleler/genetik-testler" class="border rounded-lg p-3 text-center hover:border-primary transition-colors">
-                    <span class="material-symbols-outlined">science</span>
-                    <h3 class="text-gray-500">Genetik Testler</h3>
-                </a>
-                <a href="/makaleler/embryoglue-faydalari" class="border rounded-lg p-3 text-center hover:border-primary transition-colors">
-                    <span class="material-symbols-outlined">life_preserver</span>
-                    <h3 class="text-gray-500">EmbryoGlue</h3>
-                </a>
-            </div>
-        </div>
-
-        <!-- Final Notes -->
-        <section class="max-w-3xl mx-auto px-6 mb-8 space-y-4">
-            <p class="text-sm text-gray-600 text-center italic">
-                <strong>Not:</strong> Bu sözlük, mevcut tıbbi makalelerimizden derlenmiştir. Her terminin detaylı açıklamasını <a href="/makaleler" class="text-primary-600 hover:underline">Bilimsel Makaleler</a> sayfasından bulabilirsiniz. Güncellemeler için <a href="/gizlilik" class="text-primary-600 hover:underline">Gizlilik Politikası</a>'na başvurun.
-            </p>
-        </section>
-
-        <!-- Doctor Approval -->
-        <section class="max-w-3xl mx-auto px-6 mb-16">
-            <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-primary flex flex-col md:flex-row items-center gap-8">
-                <span class="material-symbols-outlined text-primary-600 text-2xl">verified</span>
-                <div>
-                    <p class="font-headline text-lg text-gray-900 mb-1">Doç. Yayın Kurulu</p>
-                    <p class="text-sm text-gray-600">
-                        Bu sözlük, üreme sağlığı alanında uzman <strong class="text-primary-600">tupbebek.com yayın kurulu</strong> tarafından klinik bilgilere dayanıarak hazırlanmıştır. Tüm terimler güncel turizm ve klinik uygulamalara göre gözden geçirilmiştir.
-                    </p>
+        <!-- Stats -->
+        <section class="max-w-5xl mx-auto px-6 mt-16 mb-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-primary-50 rounded-xl p-5 text-center">
+                    <p class="font-headline text-2xl font-bold text-primary-700">{terms.length}</p>
+                    <p class="text-xs text-gray-600 mt-1">Tibbi Terim</p>
+                </div>
+                <div class="bg-mint-50 rounded-xl p-5 text-center">
+                    <p class="font-headline text-2xl font-bold text-mint-700">{sortedLetters.length}</p>
+                    <p class="text-xs text-gray-600 mt-1">Harf Grubu</p>
+                </div>
+                <div class="bg-apricot-50 rounded-xl p-5 text-center">
+                    <p class="font-headline text-2xl font-bold text-apricot-700">{terms.filter(t => t.href).length}</p>
+                    <p class="text-xs text-gray-600 mt-1">Baglantili Sayfa</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-5 text-center">
+                    <p class="font-headline text-2xl font-bold text-gray-700">7</p>
+                    <p class="text-xs text-gray-600 mt-1">Kategori</p>
                 </div>
             </div>
         </section>
 
         <!-- Related Pages -->
-        <section class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 mb-16">
-            <h2 class="font-headline text-2xl text-gray-900 mb-6">İlgili Sayfalar</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="/tani-sureci" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary-600 mb-2">assignment</span>
-                    <h3 class="font-bold text-gray-900 text-sm">Tanı Süreci</h3>
-                    <p class="text-xs text-gray-600 mt-1">İnfertilite değerlendirmesi adımları</p>
-                </a>
-                <a href="/ilac-rehberi" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary-600 mb-2">medication</span>
-                    <h3 class="font-bold text-gray-900 text-sm">İlaç Rehberi</h3>
-                    <p class="text-xs text-gray-600 mt-1">IVF ilaçları, dozajlar ve yan etkiler</p>
-                </a>
-                <a href="/tedavi-yontemleri" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary-600 mb-2">biotech</span>
-                    <h3 class="font-bold text-gray-900 text-sm">Tedavi Yöntemleri</h3>
-                    <p class="text-xs text-gray-600 mt-1">IVF, ICSI, IUI ve diğer teknikler</p>
-                </a>
-                <a href="/pgt-merkezi" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary-600 mb-2">microscope</span>
-                    <h3 class="font-bold text-gray-900 text-sm">PGT Merkezi</h3>
-                    <p class="text-xs text-gray-600 mt-1">Genetik tarama ve embriyo seçimi</p>
-                </a>
-                <a href="/makaleler/genetik-testler" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary-600 mb-2">science</span>
-                    <h3 class="font-bold text-gray-900 text-sm">Genetik Testler Makalesi</h3>
-                    <p class="text-xs text-gray-600 mt-1">Detaylı genetik tarama bilgileri</p>
-                </a>
-                <a href="/hakkimizda" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary-600 mb-2">group</span>
-                    <h3 class="font-bold text-gray-900 text-sm">Hakkımızda</h3>
-                    <p class="text-xs text-gray-600 mt-1">Ekibimiz ve misyonumuz</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- İlgili Kaynaklar -->
         <section class="max-w-5xl mx-auto px-6 mb-16">
-            <h2 class="font-headline text-2xl text-gray-900 mb-6">İlgili Kaynaklar</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="/tani-sureci" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary-600 mb-2">assignment</span>
-                    <h3 class="font-bold text-gray-900 text-sm">Tanı Süreci</h3>
-                    <p class="text-xs text-gray-600 mt-1">Hormon terimleri ve laboratuvar değerleri</p>
+            <h2 class="font-headline text-2xl text-gray-900 mb-6">Ilgili Sayfalar</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="/tani-sureci" class="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary-200 transition-all block group">
+                    <span class="material-symbols-outlined text-primary-600 mb-2 text-2xl">assignment</span>
+                    <h3 class="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">Tani Sureci</h3>
+                    <p class="text-xs text-gray-500 mt-1">Infertilite degerlendirmesi adimlari</p>
                 </a>
-                <a href="/tedavi-yontemleri" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary-600 mb-2">biotech</span>
-                    <h3 class="font-bold text-gray-900 text-sm">Tedavi Yöntemleri</h3>
-                    <p class="text-xs text-gray-600 mt-1">Tedavi terminolojisi ve prosedürler</p>
+                <a href="/ilac-rehberi" class="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary-200 transition-all block group">
+                    <span class="material-symbols-outlined text-primary-600 mb-2 text-2xl">medication</span>
+                    <h3 class="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">Ilac Rehberi</h3>
+                    <p class="text-xs text-gray-500 mt-1">IVF ilaclari, dozajlar ve yan etkiler</p>
                 </a>
-                <a href="/makaleler" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
-                    <span class="material-symbols-outlined text-primary-600 mb-2">library_books</span>
-                    <h3 class="font-bold text-gray-900 text-sm">Makaleler</h3>
-                    <p class="text-xs text-gray-600 mt-1">Terimlerin detaylı açıklandığı makaleler</p>
+                <a href="/tedavi-yontemleri" class="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary-200 transition-all block group">
+                    <span class="material-symbols-outlined text-primary-600 mb-2 text-2xl">biotech</span>
+                    <h3 class="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">Tedavi Yontemleri</h3>
+                    <p class="text-xs text-gray-500 mt-1">IVF, ICSI, IUI ve diger teknikler</p>
+                </a>
+                <a href="/pgt-merkezi" class="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary-200 transition-all block group">
+                    <span class="material-symbols-outlined text-primary-600 mb-2 text-2xl">microscope</span>
+                    <h3 class="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">PGT Merkezi</h3>
+                    <p class="text-xs text-gray-500 mt-1">Genetik tarama ve embriyo secimi</p>
+                </a>
+                <a href="/erkek-infertilitesi" class="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary-200 transition-all block group">
+                    <span class="material-symbols-outlined text-primary-600 mb-2 text-2xl">male</span>
+                    <h3 class="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">Erkek Infertilitesi</h3>
+                    <p class="text-xs text-gray-500 mt-1">Erkek faktor tani ve tedavi</p>
+                </a>
+                <a href="/makaleler" class="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary-200 transition-all block group">
+                    <span class="material-symbols-outlined text-primary-600 mb-2 text-2xl">library_books</span>
+                    <h3 class="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">Makaleler</h3>
+                    <p class="text-xs text-gray-500 mt-1">Terimlerin detayli aciklandigi makaleler</p>
                 </a>
             </div>
         </section>
 
         <!-- Legal Disclaimer -->
         <section class="max-w-3xl mx-auto px-6">
-            <div class="bg-amber-50/50 border border-amber-200/50 rounded-xl p-5 text-sm text-gray-600">
-                <p class="flex">
-                    <span class="font-medium text-amber-800 mr-2">Yasal Uyarı:</span>
-                    Bu içerik, genel bilgilendirme amaçlıdır. Tıbbi tavsiye niteliği taşımaz. Tedavi kararlarınız için mutlaka bir üreme tıbbı uzmanına danışın. tupbebek.com, bu bilgilerin kullanımından kaynaklanan herhangi bir sorumlu tutulamaz.
-                </p>
+            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-amber-600">info</span>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-900 mb-2">Tibbi Bilgi Notu</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Bu sozluk, tupbebek.com yayin kurulu tarafindan tibbi dogruluk acisindan incelenmistir. Sunulan bilgiler genel bilgilendirme amacidir; kisisel tibbi tani veya tedavi yerine gecmez. Saglik kararlari icin mutlaka bir hekime danisiniz.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <Footer />
 </BaseLayout>
-<system_reminder>
-The task tools haven't been used recently. If you're working on tasks that would benefit from tracking progress, consider using TaskCreate to add new tasks and TaskUpdate to update task status (set to in_progress when starting, completed when done). Also consider cleaning up the task list if it has become stale. Only use these if relevant to the current work. This is just a gentle reminder - ignore if not applicable. Make sure that you NEVER mention this reminder to the user
-</system_reminder>
+
+<script is:inline>
+(function() {
+    var input = document.getElementById('glossary-search');
+    var groups = document.querySelectorAll('.glossary-group');
+    var terms = document.querySelectorAll('.glossary-term');
+    var noResults = document.getElementById('no-results');
+    var status = document.getElementById('search-status');
+
+    function normalize(str) {
+        return str.toLowerCase()
+            .replace(/ı/g, 'i').replace(/ğ/g, 'g').replace(/ü/g, 'u')
+            .replace(/ş/g, 's').replace(/ö/g, 'o').replace(/ç/g, 'c');
+    }
+
+    if (input) {
+        input.addEventListener('input', function() {
+            var query = normalize(this.value.trim());
+            var visibleCount = 0;
+
+            terms.forEach(function(term) {
+                var text = normalize(term.getAttribute('data-term') || '');
+                var content = normalize(term.textContent || '');
+                var match = !query || text.indexOf(query) !== -1 || content.indexOf(query) !== -1;
+                term.style.display = match ? '' : 'none';
+                if (match) visibleCount++;
+            });
+
+            groups.forEach(function(group) {
+                var visibleTerms = group.querySelectorAll('.glossary-term:not([style*="display: none"])');
+                group.style.display = visibleTerms.length > 0 ? '' : 'none';
+            });
+
+            if (noResults) {
+                noResults.classList.toggle('hidden', visibleCount > 0 || !query);
+            }
+            if (status) {
+                if (query) {
+                    status.textContent = visibleCount + ' terim bulundu';
+                    status.classList.remove('hidden');
+                } else {
+                    status.classList.add('hidden');
+                }
+            }
+        });
+    }
+})();
+</script>
