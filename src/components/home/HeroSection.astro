@@ -27,7 +27,7 @@ const searchData = articles.map(article => ({
 <section class="pt-28 pb-12 relative overflow-hidden">
   <!-- Background Elements -->
   <div class="absolute inset-0 -z-10">
-    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/15 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-primary-100/50 rounded-full blur-3xl animate-pulse"></div>
     <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-50 rounded-full blur-3xl animate-pulse" style="animation-delay: 1.5s;"></div>
   </div>
 
@@ -53,7 +53,7 @@ const searchData = articles.map(article => ({
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
           <a
             href="/tani-sureci"
-            class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all hover:scale-105 hover-glow gap-3 group shadow-lg shadow-primary-600/20"
+            class="inline-flex items-center justify-center px-8 py-4 bg-primary-600 text-white font-bold rounded-xl hover:bg-primary-700 transition-all hover:scale-105 hover-glow gap-3 group shadow-lg shadow-primary-600/20"
           >
             Tani Sureci
             <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
@@ -62,7 +62,7 @@ const searchData = articles.map(article => ({
           </a>
           <a
             href="/tedavi-yontemleri"
-            class="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-50 transition-all border border-slate-200 hover:border-primary/30 gap-3 group"
+            class="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-50 transition-all border border-slate-200 hover:border-primary-200 gap-3 group"
           >
             Tedavi Yontemleri
             <span class="material-symbols-outlined text-xl group-hover:rotate-12 transition-transform">
@@ -98,7 +98,7 @@ const searchData = articles.map(article => ({
         <!-- Glowing Search Container -->
         <div class="glass-card rounded-[2.5rem] p-8 relative z-10 overflow-hidden hover-glow transition-all duration-500 group">
           <!-- Background decoration in search card -->
-          <div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary-50 transition-colors"></div>
+          <div class="absolute -top-24 -right-24 w-48 h-48 bg-primary-50/50 rounded-full blur-3xl group-hover:bg-primary-50 transition-colors"></div>
 
           <div class="relative z-20">
             <div class="flex items-center justify-between mb-6">
@@ -140,17 +140,17 @@ const searchData = articles.map(article => ({
         </div>
 
         <!-- Decorative background glow for the whole right col -->
-        <div class="absolute -inset-4 bg-primary/5 blur-3xl -z-10 rounded-full animate-pulse-soft"></div>
+        <div class="absolute -inset-4 bg-primary-50/50 blur-3xl -z-10 rounded-full animate-pulse-soft"></div>
       </div>
 
         <!-- Featured Stats Card -->
-        <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 border border-primary/20">
+        <div class="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-2xl p-6 border border-primary-200">
           <div class="space-y-4">
             <div>
               <p class="text-4xl font-bold text-primary">60+</p>
               <p class="text-sm text-slate-600 mt-1">Bilimsel Makale</p>
             </div>
-            <div class="border-t border-primary/20 pt-4">
+            <div class="border-t border-primary-200 pt-4">
               <p class="text-2xl font-bold text-slate-900">40-50%</p>
               <p class="text-sm text-slate-600 mt-1">IVF Basari Orani (35 yas alti)</p>
             </div>
