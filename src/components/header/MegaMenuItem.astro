@@ -11,7 +11,7 @@ const { menu } = Astro.props;
 <div class="group h-full flex items-center">
   <!-- Menu Button -->
   <button
-    class="px-4 py-3 min-h-[48px] text-sm font-bold text-slate-800 hover:text-primary transition-colors flex items-center gap-1 group-hover:bg-primary/5 rounded-lg"
+    class="px-4 py-3 min-h-[48px] text-sm font-bold text-gray-800 hover:text-primary-600 transition-colors flex items-center gap-1 group-hover:bg-primary-50 rounded-lg"
     aria-haspopup="true"
     aria-expanded="false"
   >
@@ -22,12 +22,12 @@ const { menu } = Astro.props;
   </button>
 
   <!-- Mega Menu Panel -->
-  <div class="absolute top-[100%] left-0 w-full bg-white shadow-2xl border-b border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50">
+  <div class="absolute top-[100%] left-0 w-full bg-white shadow-2xl border-b border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-10 grid grid-cols-3 gap-8">
       <!-- LEFT: Menu Items -->
-      <div class="border-r border-slate-100 pr-8">
+      <div class="border-r border-gray-100 pr-8">
         {menu.icon && (
-          <h4 class="text-xs uppercase tracking-widest text-primary font-bold mb-4">
+          <h4 class="text-xs uppercase tracking-widest text-primary-600 font-bold mb-4">
             <span class="material-symbols-outlined text-[14px] align-text-bottom mr-1">
               {menu.icon}
             </span>
@@ -39,19 +39,19 @@ const { menu } = Astro.props;
           {menu.submenu && menu.submenu.map((item) => (
             <a
               href={item.href}
-              class="group/link flex p-3 hover:bg-primary/5 rounded-lg transition-colors"
+              class="group/link flex p-3 min-h-[44px] hover:bg-primary-50 rounded-lg transition-colors"
             >
               <div>
-                <span class="text-sm font-bold text-slate-800 group-hover/link:text-primary">
+                <span class="text-sm font-bold text-gray-800 group-hover/link:text-primary-600">
                   {item.label}
                 </span>
                 {item.description && (
-                  <span class="block text-xs text-slate-500 mt-0.5">
+                  <span class="block text-xs text-gray-500 mt-0.5">
                     {item.description}
                   </span>
                 )}
               </div>
-              <span class="material-symbols-outlined text-xs text-slate-300 group-hover/link:text-primary transition-colors mt-1.5 ml-auto">
+              <span class="material-symbols-outlined text-xs text-gray-300 group-hover/link:text-primary-600 transition-colors mt-1.5 ml-auto">
                 arrow_forward
               </span>
             </a>
@@ -62,18 +62,18 @@ const { menu } = Astro.props;
       <!-- MIDDLE: Content Info -->
       {menu.centerContent && (
         <div class="space-y-4">
-          <h4 class="text-xs uppercase tracking-widest text-slate-400 font-bold">
+          <h4 class="text-xs uppercase tracking-widest text-gray-400 font-bold">
             {menu.centerContent.title}
           </h4>
-          <p class="text-sm text-slate-600 italic">
+          <p class="text-sm text-gray-600 italic">
             {menu.centerContent.description}
           </p>
           {menu.centerContent.stat && (
-            <div class="bg-slate-50 rounded-xl p-4 text-center">
-              <span class="block text-2xl font-bold text-primary">
+            <div class="bg-gray-50 rounded-xl p-4 text-center">
+              <span class="block text-2xl font-bold text-primary-600">
                 {menu.centerContent.stat.value}
               </span>
-              <span class="text-xs text-slate-500">
+              <span class="text-xs text-gray-500">
                 {menu.centerContent.stat.label}
               </span>
             </div>
@@ -83,24 +83,24 @@ const { menu } = Astro.props;
 
       <!-- RIGHT: Featured Article -->
       {menu.featuredArticle && (
-        <div class="bg-primary/5 rounded-2xl p-6 flex flex-col justify-between">
+        <div class="bg-primary-50 rounded-2xl p-6 flex flex-col justify-between">
           <div>
-            <span class="text-xs font-bold text-primary uppercase tracking-widest">
+            <span class="text-xs font-bold text-primary-600 uppercase tracking-widest">
               Öne Çıkan
             </span>
             <a
               href={menu.featuredArticle.href}
-              class="block mt-3 text-sm font-headline font-bold text-slate-800 hover:text-primary transition-colors"
+              class="block mt-3 text-sm font-bold text-gray-800 hover:text-primary-600 transition-colors" style="font-family: var(--font-headline);"
             >
               {menu.featuredArticle.title}
             </a>
-            <p class="text-xs text-slate-500 mt-2">
+            <p class="text-xs text-gray-500 mt-2">
               {menu.featuredArticle.description}
             </p>
           </div>
           <a
             href="/makaleler"
-            class="text-xs font-semibold text-primary hover:underline mt-3 inline-block"
+            class="text-xs font-semibold text-primary-600 hover:underline mt-3 inline-block"
           >
             Tüm Makaleler →
           </a>

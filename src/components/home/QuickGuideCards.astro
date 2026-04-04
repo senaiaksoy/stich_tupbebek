@@ -7,14 +7,14 @@
 import { guideCategories, getColorScheme } from '../../data/guideCategories';
 ---
 
-<section class="py-16 bg-gradient-to-b from-slate-50 to-white">
+<section class="py-16 bg-gradient-to-b from-gray-50 to-white">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <!-- Section Header -->
     <div class="text-center mb-12">
-      <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
         Rehberler & Kaynaklar
       </h2>
-      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
         İnfertilite yolculuğunuzun her aşaması için kapsamlı, bilimsel rehberler
       </p>
     </div>
@@ -39,17 +39,17 @@ import { guideCategories, getColorScheme } from '../../data/guideCategories';
               </div>
 
               <!-- Title -->
-              <h3 class={`text-xl font-bold ${colors.text} group-hover:text-primary transition-colors`}>
+              <h3 class={`text-xl font-bold ${colors.text} group-hover:text-primary-600 transition-colors`}>
                 {guide.title}
               </h3>
 
               <!-- Description -->
-              <p class="text-sm text-slate-600 line-clamp-2">
+              <p class="text-sm text-gray-600 line-clamp-2">
                 {guide.description}
               </p>
 
               <!-- CTA -->
-              <div class="flex items-center gap-2 text-primary font-semibold text-sm pt-2 group-hover:translate-x-1 transition-transform">
+              <div class="flex items-center gap-2 text-primary-600 font-semibold text-sm pt-2 group-hover:translate-x-1 transition-transform">
                 <span>Detaylı Rehber</span>
                 <span class="material-symbols-outlined text-lg">arrow_forward</span>
               </div>
@@ -66,7 +66,7 @@ import { guideCategories, getColorScheme } from '../../data/guideCategories';
     <div class="text-center mt-12">
       <a
         href="/rehberler"
-        class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-slate-200 text-slate-900 font-bold rounded-lg hover:border-primary hover:text-primary transition-colors group"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-gray-200 text-gray-900 font-bold rounded-lg hover:border-primary hover:text-primary-600 transition-colors group"
       >
         <span>Tüm Rehberleri Gözat</span>
         <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>

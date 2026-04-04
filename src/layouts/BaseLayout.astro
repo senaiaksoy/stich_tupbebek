@@ -1,4 +1,10 @@
 ---
+// New design system styles (2026)
+import '../styles/globals.css';
+import '../styles/tokens.css';
+import '../styles/animations.css';
+
+// Legacy styles (compatibility)
 import '../styles/components.css';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CookieConsent from '../components/CookieConsent.astro';
@@ -12,6 +18,50 @@ interface Props {
 
 const { title, description = "tupbebek.com | Üreme Sağlığı Bilgisi", image } = Astro.props;
 const isHome = Astro.url.pathname === '/';
+const canonicalUrl = `https://tupbebek.com${Astro.url.pathname}`;
+
+// MedicalWebPage JSON-LD (E-E-A-T + YMYL compliance)
+const medicalWebPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": title,
+  "description": description,
+  "url": canonicalUrl,
+  "inLanguage": "tr-TR",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "tupbebek.com",
+    "url": "https://tupbebek.com",
+    "publisher": {
+      "@type": "Organization",
+      "name": "tupbebek.com",
+      "url": "https://tupbebek.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tupbebek.com/favicon.svg"
+      }
+    }
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "tupbebek.com Yayın Kurulu",
+    "url": "https://tupbebek.com/hakkimizda"
+  },
+  "reviewedBy": {
+    "@type": "Organization",
+    "name": "tupbebek.com Tıbbi Danışma Kurulu",
+    "url": "https://tupbebek.com/hakkimizda#board"
+  },
+  "lastReviewed": new Date().toISOString().split('T')[0],
+  "medicalAudience": {
+    "@type": "MedicalAudience",
+    "audienceType": "Patient"
+  },
+  "specialty": {
+    "@type": "MedicalSpecialty",
+    "name": "Reproductive Medicine"
+  }
+};
 ---
 
 <!doctype html>
@@ -139,8 +189,11 @@ const isHome = Astro.url.pathname === '/';
 				box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 			}
 		</style>
+
+		<!-- MedicalWebPage JSON-LD (E-E-A-T + YMYL) -->
+		<script type="application/ld+json" is:inline set:html={JSON.stringify(medicalWebPageSchema)} />
 	</head>
-	<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+	<body class="bg-gray-50 text-gray-900 selection:bg-primary-50 selection:text-primary-800">
 			<a href="#main-content" class="skip-link">Ana içeriğe geç</a>
 		{!isHome && <Breadcrumbs />}
 		<slot />

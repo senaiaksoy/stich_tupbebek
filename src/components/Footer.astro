@@ -2,20 +2,20 @@
 import { footerLinks } from '../data/navigation';
 ---
 
-<footer class="w-full bg-slate-900 text-slate-300 pt-16 pb-10 border-t border-slate-800">
+<footer class="w-full bg-gray-900 text-gray-300 pt-16 pb-10 border-t border-gray-800" role="contentinfo">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
         <!-- FOOTER LINKS GRID -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             {footerLinks.map((section) => (
                 <div>
-                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6 border-b border-slate-700 pb-3">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6 border-b border-gray-700 pb-3">
                         {section.category}
                     </h4>
                     <ul class="space-y-4 text-sm leading-relaxed">
                         {section.links.map((link) => (
                             <li>
-                                <a href={link.href} class="hover:text-primary transition-colors">
+                                <a href={link.href} class="hover:text-primary-300 transition-colors min-h-[44px] inline-flex items-center">
                                     {link.label}
                                 </a>
                             </li>
@@ -26,22 +26,22 @@ import { footerLinks } from '../data/navigation';
         </div>
 
         <!-- YASAL ZORUNLU ŞERİT -->
-        <div class="border-t border-slate-700 pt-8 pb-8">
+        <div class="border-t border-gray-700 pt-8 pb-8">
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-[11px] uppercase tracking-widest opacity-70">
-                <a href="/tibbi-sorumluluk-reddi" class="hover:text-primary transition-colors">Tıbbi Sorumluluk Reddi</a>
+                <a href="/tibbi-sorumluluk-reddi" class="hover:text-primary-300 transition-colors min-h-[44px] inline-flex items-center">Tıbbi Sorumluluk Reddi</a>
                 <span class="hidden md:inline">|</span>
-                <a href="/gizlilik-politikasi" class="hover:text-primary transition-colors">Gizlilik Politikası</a>
+                <a href="/gizlilik-politikasi" class="hover:text-primary-300 transition-colors min-h-[44px] inline-flex items-center">Gizlilik Politikası</a>
                 <span class="hidden md:inline">|</span>
-                <a href="/cerez-politikasi" class="hover:text-primary transition-colors">Çerez Politikası</a>
+                <a href="/cerez-politikasi" class="hover:text-primary-300 transition-colors min-h-[44px] inline-flex items-center">Çerez Politikası</a>
                 <span class="hidden md:inline">|</span>
-                <a href="/kullanim-kosullari" class="hover:text-primary transition-colors">Kullanım Koşulları</a>
+                <a href="/kullanim-kosullari" class="hover:text-primary-300 transition-colors min-h-[44px] inline-flex items-center">Kullanım Koşulları</a>
             </div>
         </div>
 
         <!-- ALT BİLGİ ve ÖZ KREDİ -->
-        <div class="border-t border-slate-700 pt-6 text-center">
+        <div class="border-t border-gray-700 pt-6 text-center">
             <p class="text-[11px] leading-relaxed opacity-70 mb-2">
-                © 2026 tupbebek.com — Tüm içerikler <span class="text-primary font-semibold">Yayın Kurulu</span> editöryal denetimindedir.
+                © 2026 tupbebek.com — Tüm içerikler <span class="text-primary-300 font-semibold">Yayın Kurulu</span> editöryal denetimindedir.
             </p>
             <p class="text-[10px] opacity-50 italic">
                 Bu sitedeki bilgiler tıbbi danışmanlık yerine geçmez.
@@ -49,23 +49,23 @@ import { footerLinks } from '../data/navigation';
         </div>
 
         <!-- SOSYAL MEDYA VE BAĞLANTI -->
-        <div class="flex flex-col items-center gap-4 mt-8 pt-6 border-t border-slate-700">
+        <div class="flex flex-col items-center gap-4 mt-8 pt-6 border-t border-gray-700">
             <div class="flex gap-4">
-                <a href="https://www.facebook.com/tupbebek" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" title="Facebook">
+                <a href="https://www.facebook.com/tupbebek" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition-colors" title="Facebook" aria-label="Facebook">
                     <span class="material-symbols-outlined text-white text-xl">facebook</span>
                 </a>
-                <a href="https://www.instagram.com/tupbebek" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" title="Instagram">
+                <a href="https://www.instagram.com/tupbebek" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition-colors" title="Instagram" aria-label="Instagram">
                     <span class="material-symbols-outlined text-white text-xl">instagram</span>
                 </a>
-                <a href="https://www.youtube.com/tupbebek" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" title="YouTube">
+                <a href="https://www.youtube.com/tupbebek" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition-colors" title="YouTube" aria-label="YouTube">
                     <span class="material-symbols-outlined text-white text-xl">youtube</span>
                 </a>
-                <a href="https://www.linkedin.com/company/tupbebek" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" title="LinkedIn">
+                <a href="https://www.linkedin.com/company/tupbebek" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition-colors" title="LinkedIn" aria-label="LinkedIn">
                     <span class="material-symbols-outlined text-white text-xl">linkedin</span>
                 </a>
             </div>
             <p class="text-[10px] opacity-50">
-                İletişim: <a href="mailto:info@tupbebek.com" class="text-primary hover:text-white transition-colors">info@tupbebek.com</a>
+                İletişim: <a href="mailto:info@tupbebek.com" class="text-primary-300 hover:text-white transition-colors">info@tupbebek.com</a>
             </p>
         </div>
     </div>

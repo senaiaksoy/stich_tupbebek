@@ -1,0 +1,134 @@
+---
+/**
+ * Button Component - Accessible, Beautiful, Versatile
+ *
+ * Usage:
+ * <Button variant="primary" size="md">Click me</Button>
+ * <Button variant="secondary" href="/page">Link</Button>
+ * <Button variant="link" external>External</Button>
+ *
+ * WCAG 2.1 AA Compliant:
+ * - Minimum 44x44px touch target
+ * - Focus visible indicators
+ * - Color contrast 4.5:1+
+ * - Proper semantic HTML
+ * - Icon support with accessible labels
+ */
+
+interface Props {
+  /** Button variant style */
+  variant?: "primary" | "secondary" | "link" | "ghost";
+  /** Button size */
+  size?: "sm" | "md" | "lg";
+  /** HTML button type */
+  type?: "button" | "submit" | "reset";
+  /** Make it a link instead */
+  href?: string;
+  /** Open link in new tab */
+  external?: boolean;
+  /** Disabled state */
+  disabled?: boolean;
+  /** Full width button */
+  full?: boolean;
+  /** Icon component (passed as children before text) */
+  icon?: string;
+  /** Loading state */
+  loading?: boolean;
+  /** Accessibility label */
+  "aria-label"?: string;
+  /** Additional CSS classes */
+  class?: string;
+}
+
+const {
+  variant = "primary",
+  size = "md",
+  type = "button",
+  href,
+  external = false,
+  disabled = false,
+  full = false,
+  icon,
+  loading = false,
+  "aria-label": ariaLabel,
+  class: className,
+} = Astro.props;
+
+const baseClasses = "transition-fast active-press focus-ring rounded-lg font-bold text-center no-underline cursor-pointer flex items-center justify-center gap-2";
+
+const variantClasses = {
+  primary:
+    "bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed",
+  secondary:
+    "bg-white border-2 border-primary-300 text-primary-700 hover:bg-primary-50 active:bg-primary-100 disabled:opacity-50 disabled:cursor-not-allowed",
+  link: "text-primary-600 hover:text-primary-700 hover:underline active:text-primary-800 disabled:opacity-50 disabled:cursor-not-allowed",
+  ghost:
+    "text-primary-700 hover:bg-primary-50 active:bg-primary-100 disabled:opacity-50 disabled:cursor-not-allowed",
+};
+
+const sizeClasses = {
+  sm: "px-3 py-2 text-sm min-h-[44px]",
+  md: "px-6 py-3 text-base min-h-[44px]",
+  lg: "px-8 py-4 text-lg min-h-[56px]",
+};
+
+const combinedClass = `
+  ${baseClasses}
+  ${variantClasses[variant]}
+  ${sizeClasses[size]}
+  ${full ? "w-full" : ""}
+  ${loading ? "opacity-75 pointer-events-none" : ""}
+  ${className || ""}
+`;
+
+// Determine if we need to render as link or button
+const isLink = !!href;
+const Tag = isLink ? "a" : "button";
+const attrs = isLink
+  ? {
+      href,
+      target: external ? "_blank" : undefined,
+      rel: external ? "noopener noreferrer" : undefined,
+    }
+  : {
+      type,
+      disabled,
+      "aria-busy": loading,
+    };
+---
+
+<Tag class={combinedClass.trim()} {...attrs} aria-label={ariaLabel}>
+  {loading && (
+    <span class="animate-spin inline-block">
+      <span class="material-symbols-outlined text-lg">hourglass_empty</span>
+    </span>
+  )}
+  {icon && <span class="material-symbols-outlined">{icon}</span>}
+  <slot />
+</Tag>
+
+<style>
+  /* Button base styles - ensures proper sizing */
+  button,
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: 0.5rem;
+  }
+
+  /* Focus visible styling for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--color-primary-600);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  /* Icon sizing */
+  :global(.material-symbols-outlined) {
+    font-size: 1.25rem;
+    display: inline-block;
+  }
+</style>

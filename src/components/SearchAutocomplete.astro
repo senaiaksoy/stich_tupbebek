@@ -33,7 +33,7 @@ const jsonData = JSON.stringify(searchData);
 
 <!-- Search Button (for modal/overlay) -->
 <button id="search-trigger"
-        class="p-2 text-slate-500 hover:text-primary hover:bg-slate-50
+        class="p-2 text-gray-500 hover:text-primary-600 hover:bg-gray-50
                rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary"
         aria-label="Search">
   <span class="material-symbols-outlined">search</span>
@@ -51,17 +51,17 @@ const jsonData = JSON.stringify(searchData);
                 transform transition-all duration-500 scale-95 opacity-0 active-modal:scale-100 active-modal:opacity-100">
 
       <!-- Search Input Wrapper with Focus Glow -->
-      <div class="relative p-6 border-b border-slate-100/50 bg-white/40">
+      <div class="relative p-6 border-b border-gray-100/50 bg-white/40">
         <div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 blur opacity-0 transition-opacity duration-500 group-focus-within:opacity-100"></div>
         <div class="relative flex items-center gap-4">
-          <span class="text-primary animate-pulse-soft">
+          <span class="text-primary-600 animate-pulse-soft">
             <span class="material-symbols-outlined text-3xl">search_spark</span>
           </span>
           <input
             id="search-input"
             type="search"
             placeholder={placeholder}
-            class="w-full bg-transparent text-xl font-bold text-slate-800 placeholder-slate-400 focus:outline-none"
+            class="w-full bg-transparent text-xl font-bold text-gray-800 placeholder-gray-400 focus:outline-none"
             autocomplete="off"
             aria-label="Search articles and guides"
             aria-describedby="search-results-label" />
@@ -69,7 +69,7 @@ const jsonData = JSON.stringify(searchData);
           <!-- Clear button -->
           <button
             id="search-clear"
-            class="text-slate-400 hover:text-primary transition-colors hidden"
+            class="text-gray-400 hover:text-primary-600 transition-colors hidden"
             aria-label="Clear search">
             <span class="material-symbols-outlined">close</span>
           </button>
@@ -85,18 +85,18 @@ const jsonData = JSON.stringify(searchData);
 
         <!-- Loading state -->
         <div id="search-loading"
-             class="p-12 text-center text-slate-500 hidden">
+             class="p-12 text-center text-gray-500 hidden">
           <div class="inline-block w-8 h-8 border-4 border-primary/20 border-t-primary rounded-full animate-spin mb-4"></div>
           <p class="font-bold tracking-tight">Klinik veri taranıyor...</p>
         </div>
 
         <!-- Initial state -->
         <div id="search-initial"
-             class="p-12 text-center text-slate-400">
-           <div class="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6">
+             class="p-12 text-center text-gray-400">
+           <div class="w-20 h-20 bg-primary-50 rounded-full flex items-center justify-center mx-auto mb-6">
               <span class="material-symbols-outlined text-primary/40 text-5xl">manage_search</span>
            </div>
-          <p class="font-extrabold text-slate-900 mb-2">Nasıl yardımcı olabiliriz?</p>
+          <p class="font-extrabold text-gray-900 mb-2">Nasıl yardımcı olabiliriz?</p>
           <p class="text-sm max-w-xs mx-auto">Tanı süreçleri, tedavi protokolleri veya makaleler arasında arama yapın.</p>
         </div>
 
@@ -105,24 +105,24 @@ const jsonData = JSON.stringify(searchData);
 
         <!-- No results -->
         <div id="search-no-results"
-             class="p-12 text-center text-slate-500 hidden">
+             class="p-12 text-center text-gray-500 hidden">
           <span class="material-symbols-outlined text-6xl block mb-4 opacity-20">sentiment_neutral</span>
-          <p class="font-extrabold text-slate-900">Aradığınızı bulamadık</p>
+          <p class="font-extrabold text-gray-900">Aradığınızı bulamadık</p>
           <p class="text-sm mt-2">Daha genel terimler kullanmayı deneyin (örn: "tüp bebek", "rezerv").</p>
         </div>
       </div>
 
       <!-- Footer Help -->
-      <div class="px-6 py-4 bg-slate-50/80 backdrop-blur-sm border-t border-slate-100 flex items-center justify-between">
-        <span id="search-count" class="text-xs font-bold text-slate-400 uppercase tracking-widest hidden">
-          Bulunan: <span class="text-primary">0</span> protokol
+      <div class="px-6 py-4 bg-gray-50/80 backdrop-blur-sm border-t border-gray-100 flex items-center justify-between">
+        <span id="search-count" class="text-xs font-bold text-gray-400 uppercase tracking-widest hidden">
+          Bulunan: <span class="text-primary-600">0</span> protokol
         </span>
         <div class="ml-auto flex items-center gap-3">
-          <div class="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-slate-200 rounded shadow-sm text-[10px] font-bold text-slate-500">
+          <div class="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-gray-200 rounded shadow-sm text-[10px] font-bold text-gray-500">
              <span class="material-symbols-outlined text-[14px]">keyboard_return</span>
              Seç
           </div>
-          <div class="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-slate-200 rounded shadow-sm text-[10px] font-bold text-slate-500">
+          <div class="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-gray-200 rounded shadow-sm text-[10px] font-bold text-gray-500">
              <kbd class="tracking-tighter">ESC</kbd>
              Kapat
           </div>
@@ -285,28 +285,28 @@ const jsonData = JSON.stringify(searchData);
             return `
               <li class="search-result-item" style="animation-delay: ${index * 0.05}s">
                 <a href="${result.url}"
-                   class="block p-4 bg-white/40 border border-slate-100/50 rounded-2xl 
-                          hover:bg-primary hover:border-primary/20 transition-all duration-300
+                   class="block p-4 bg-white/40 border border-gray-100/50 rounded-2xl 
+                          hover:bg-primary-600 hover:border-primary/20 transition-all duration-300
                           focus:outline-none focus:ring-2 focus:ring-primary/20 group/item"
                    onclick="closeModal()">
                   <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center 
+                    <div class="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center 
                                 group-hover/item:bg-white/20 transition-colors">
-                      <span class="material-symbols-outlined text-slate-400 group-hover/item:text-white">
+                      <span class="material-symbols-outlined text-gray-400 group-hover/item:text-white">
                         ${getCategoryIcon(category)}
                       </span>
                     </div>
                     <div class="flex-1 min-w-0">
-                      <h3 class="font-bold text-slate-900 text-sm line-clamp-1 group-hover/item:text-white transition-colors">
+                      <h3 class="font-bold text-gray-900 text-sm line-clamp-1 group-hover/item:text-white transition-colors">
                         ${title}
                       </h3>
                       ${result.description ? `
-                        <p class="text-xs text-slate-500 mt-0.5 line-clamp-1 group-hover/item:text-white/80 transition-colors">
+                        <p class="text-xs text-gray-500 mt-0.5 line-clamp-1 group-hover/item:text-white/80 transition-colors">
                           ${result.description}
                         </p>
                       ` : ''}
                     </div>
-                    <span class="material-symbols-outlined text-slate-300 group-hover/item:text-white group-hover/item:translate-x-1 transition-all">
+                    <span class="material-symbols-outlined text-gray-300 group-hover/item:text-white group-hover/item:translate-x-1 transition-all">
                       arrow_forward_ios
                     </span>
                   </div>

@@ -74,20 +74,20 @@ const finalDescription = description || state.description;
     <!-- Icon -->
     <div class="mb-6 flex justify-center">
       <div class="relative">
-        <div class="absolute inset-0 bg-primary/10 rounded-full blur-2xl"></div>
-        <span class="material-symbols-outlined text-6xl text-primary relative">
+        <div class="absolute inset-0 bg-primary-50 rounded-full blur-2xl"></div>
+        <span class="material-symbols-outlined text-6xl text-primary-600 relative">
           {finalIcon}
         </span>
       </div>
     </div>
 
     <!-- Title -->
-    <h2 class="text-3xl font-headline font-bold text-slate-900 mb-4">
+    <h2 class="text-3xl font-headline font-bold text-gray-900 mb-4">
       {finalTitle}
     </h2>
 
     <!-- Description -->
-    <p class="text-slate-600 text-lg leading-relaxed mb-8">
+    <p class="text-gray-600 text-lg leading-relaxed mb-8">
       {finalDescription}
     </p>
 
@@ -95,27 +95,27 @@ const finalDescription = description || state.description;
     {type === 'error' ? (
       <button
         onclick="location.reload()"
-        class="px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90
+        class="px-8 py-3 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary/90
                transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
         {actionText}
       </button>
     ) : type === 'no-filters' ? (
       <button
         onclick="document.querySelectorAll('[data-filter]').forEach(el => el.checked = false); location.hash = '#';"
-        class="px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90
+        class="px-8 py-3 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary/90
                transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
         {actionText}
       </button>
     ) : type === 'offline' ? (
       <button
         onclick="location.reload()"
-        class="px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90
+        class="px-8 py-3 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary/90
                transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
         {actionText}
       </button>
     ) : (
       <a href={actionUrl}
-         class="inline-block px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90
+         class="inline-block px-8 py-3 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary/90
                 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
         {actionText}
       </a>
@@ -123,10 +123,10 @@ const finalDescription = description || state.description;
 
     <!-- Secondary action for some states -->
     {(type === 'no-results' || type === 'error') && (
-      <div class="mt-6 text-sm text-slate-500">
+      <div class="mt-6 text-sm text-gray-500">
         <p>Yardıma ihtiyacın var mı?</p>
         <a href="/sss"
-           class="text-primary hover:underline font-semibold">
+           class="text-primary-600 hover:underline font-semibold">
           Sıkça Sorulan Sorulara Bak
         </a>
       </div>

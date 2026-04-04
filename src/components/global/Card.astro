@@ -1,0 +1,78 @@
+---
+/**
+ * Card Component - Reusable container with consistent styling
+ *
+ * Usage:
+ * <Card>
+ *   <h3>Title</h3>
+ *   <p>Content</p>
+ * </Card>
+ *
+ * Variants:
+ * - default: Standard white card with subtle border
+ * - elevated: Card with shadow elevation
+ * - outlined: Card with visible border
+ * - interactive: Card that responds to hover
+ */
+
+interface Props {
+  /** Card variant */
+  variant?: "default" | "elevated" | "outlined" | "interactive";
+  /** Add padding inside card */
+  padded?: boolean;
+  /** Card padding size */
+  padding?: "sm" | "md" | "lg";
+  /** Additional CSS classes */
+  class?: string;
+  /** Click handler (makes card clickable) */
+  onClick?: string;
+  /** Link href (converts card to clickable link wrapper) */
+  href?: string;
+}
+
+const {
+  variant = "default",
+  padded = true,
+  padding = "md",
+  href,
+  class: className,
+} = Astro.props;
+
+const baseClasses =
+  "rounded-xl transition-all overflow-hidden bg-white";
+
+const variantClasses = {
+  default: "border border-gray-200 shadow-xs hover:shadow-sm",
+  elevated: "shadow-lg hover:shadow-xl border border-gray-100",
+  outlined: "border-2 border-gray-300 hover:border-primary-300",
+  interactive:
+    "border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 cursor-pointer",
+};
+
+const paddingClasses = {
+  sm: "p-3",
+  md: "p-6",
+  lg: "p-8",
+};
+
+const combinedClass = `
+  ${baseClasses}
+  ${variantClasses[variant]}
+  ${padded ? paddingClasses[padding] : ""}
+  ${className || ""}
+`;
+
+const Tag = href ? "a" : "div";
+const attrs = href ? { href } : {};
+---
+
+<Tag class={combinedClass.trim()} {...attrs}>
+  <slot />
+</Tag>
+
+<style>
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>

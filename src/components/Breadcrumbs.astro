@@ -27,20 +27,20 @@ const jsonLd = {
 ---
 
 <nav aria-label="Breadcrumb" class="py-4 px-6 lg:px-8 max-w-7xl mx-auto mt-24">
-  <ol class="flex items-center space-x-2 text-sm text-slate-500">
+  <ol class="flex items-center space-x-2 text-sm text-gray-500">
     <li>
-      <a href="/" class="hover:text-primary transition-colors flex items-center">
+      <a href="/" class="hover:text-primary-600 transition-colors flex items-center">
         <span class="material-symbols-outlined text-base">home</span>
         <span class="sr-only">Ana Sayfa</span>
       </a>
     </li>
     {breadcrumbs.map((crumb, index) => (
       <li class="flex items-center space-x-2">
-        <span class="material-symbols-outlined text-xs text-slate-300">chevron_right</span>
+        <span class="material-symbols-outlined text-xs text-gray-300">chevron_right</span>
         {index === breadcrumbs.length - 1 ? (
-          <span class="font-bold text-slate-900 truncate max-w-[200px] md:max-w-none" aria-current="page">{crumb.label}</span>
+          <span class="font-bold text-gray-900 truncate max-w-[200px] md:max-w-none" aria-current="page">{crumb.label}</span>
         ) : (
-          <a href={crumb.href} class="hover:text-primary transition-colors whitespace-nowrap">
+          <a href={crumb.href} class="hover:text-primary-600 transition-colors whitespace-nowrap">
             {crumb.label}
           </a>
         )}

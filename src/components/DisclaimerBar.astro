@@ -6,9 +6,9 @@ interface Props {
 const { title = "Yasal Uyarı" } = Astro.props;
 ---
 
-<div class="bg-amber-50/50 border border-amber-200/50 rounded-xl p-6 text-sm text-on-surface-variant">
+<div class="bg-amber-50/50 border border-amber-200/50 rounded-xl p-6 text-sm text-gray-600">
   <p>
-    <strong class="text-on-surface">{title}:</strong>
+    <strong class="text-gray-900">{title}:</strong>
     <slot />
   </p>
 </div>

@@ -1,0 +1,156 @@
+---
+/**
+ * Input Component - Accessible form inputs with consistent styling
+ *
+ * Usage:
+ * <Input label="E-posta" type="email" name="email" required />
+ * <Input label="Mesaj" type="textarea" name="message" rows={4} />
+ * <Input label="Kabul ediyorum" type="checkbox" name="consent" />
+ * <Input label="Seçenek A" type="radio" name="option" value="a" />
+ */
+
+interface Props {
+  /** Input label text */
+  label: string;
+  /** Input type */
+  type?: "text" | "email" | "password" | "search" | "url" | "tel" | "textarea" | "checkbox" | "radio" | "select";
+  /** Input name attribute */
+  name: string;
+  /** Input id (defaults to name) */
+  id?: string;
+  /** Placeholder text */
+  placeholder?: string;
+  /** Current value */
+  value?: string;
+  /** Required field */
+  required?: boolean;
+  /** Disabled state */
+  disabled?: boolean;
+  /** Error message */
+  error?: string;
+  /** Help text below input */
+  hint?: string;
+  /** Textarea rows */
+  rows?: number;
+  /** Additional CSS classes */
+  class?: string;
+  /** Autocomplete attribute */
+  autocomplete?: string;
+}
+
+const {
+  label,
+  type = "text",
+  name,
+  id = name,
+  placeholder,
+  value,
+  required = false,
+  disabled = false,
+  error,
+  hint,
+  rows = 4,
+  autocomplete,
+  class: className,
+} = Astro.props;
+
+const isToggle = type === "checkbox" || type === "radio";
+const isTextarea = type === "textarea";
+const isSelect = type === "select";
+
+const inputClasses = [
+  "w-full px-4 py-3 min-h-[44px]",
+  "border rounded-md",
+  "text-gray-900 placeholder:text-gray-400",
+  "transition-all duration-200",
+  "focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600",
+  "disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:opacity-60",
+  error ? "border-red-500 bg-red-50" : "border-gray-300 bg-white",
+  className || "",
+].join(" ");
+
+const toggleClasses = [
+  "w-6 h-6 min-w-[24px] min-h-[24px]",
+  "border rounded",
+  "text-primary-600 accent-primary-600",
+  "focus:ring-2 focus:ring-primary-300 focus:ring-offset-2",
+  "disabled:opacity-60 disabled:cursor-not-allowed",
+  "cursor-pointer",
+  type === "radio" ? "rounded-full" : "",
+  error ? "border-red-500" : "border-gray-300",
+].join(" ");
+---
+
+<div class:list={["input-group", { "flex items-start gap-3": isToggle }]}>
+  {!isToggle && (
+    <label for={id} class="block text-sm font-semibold text-gray-700 mb-1.5">
+      {label}
+      {required && <span class="text-red-500 ml-0.5" aria-hidden="true">*</span>}
+    </label>
+  )}
+
+  {isTextarea ? (
+    <textarea
+      id={id}
+      name={name}
+      placeholder={placeholder}
+      required={required}
+      disabled={disabled}
+      rows={rows}
+      autocomplete={autocomplete}
+      class={inputClasses}
+      aria-describedby={error ? `${id}-error` : hint ? `${id}-hint` : undefined}
+      aria-invalid={error ? "true" : undefined}
+    >{value}</textarea>
+  ) : isSelect ? (
+    <select
+      id={id}
+      name={name}
+      required={required}
+      disabled={disabled}
+      class={inputClasses}
+      aria-describedby={error ? `${id}-error` : hint ? `${id}-hint` : undefined}
+      aria-invalid={error ? "true" : undefined}
+    >
+      <slot />
+    </select>
+  ) : isToggle ? (
+    <input
+      type={type}
+      id={id}
+      name={name}
+      value={value}
+      required={required}
+      disabled={disabled}
+      class={toggleClasses}
+      aria-describedby={error ? `${id}-error` : hint ? `${id}-hint` : undefined}
+      aria-invalid={error ? "true" : undefined}
+    />
+    <label for={id} class="text-sm text-gray-700 cursor-pointer select-none leading-relaxed pt-0.5">
+      {label}
+      {required && <span class="text-red-500 ml-0.5" aria-hidden="true">*</span>}
+    </label>
+  ) : (
+    <input
+      type={type}
+      id={id}
+      name={name}
+      value={value}
+      placeholder={placeholder}
+      required={required}
+      disabled={disabled}
+      autocomplete={autocomplete}
+      class={inputClasses}
+      aria-describedby={error ? `${id}-error` : hint ? `${id}-hint` : undefined}
+      aria-invalid={error ? "true" : undefined}
+    />
+  )}
+
+  {hint && !error && (
+    <p id={`${id}-hint`} class="mt-1.5 text-xs text-gray-500">{hint}</p>
+  )}
+
+  {error && (
+    <p id={`${id}-error`} class="mt-1.5 text-xs text-red-600 font-medium" role="alert">{error}</p>
+  )}
+</div>

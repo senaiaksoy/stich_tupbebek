@@ -8,8 +8,7 @@
  * - Search bar with filters
  */
 
-import SearchAutocomplete from '../SearchAutocomplete.astro';
-import type { Props as SearchProps } from '../SearchAutocomplete.astro';
+import HeroSearch from '../HeroSearch.astro';
 
 // Get search data from collection
 const { getCollection } = await import('astro:content');
@@ -29,7 +28,7 @@ const searchData = articles.map(article => ({
   <!-- Background Elements -->
   <div class="absolute inset-0 -z-10">
     <div class="absolute top-0 right-0 w-96 h-96 bg-primary/15 rounded-full blur-3xl animate-pulse"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1.5s;"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-50 rounded-full blur-3xl animate-pulse" style="animation-delay: 1.5s;"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -43,10 +42,10 @@ const searchData = articles.map(article => ({
               Bilimsel Derinlik,
             </span>
             <br/>
-            <span class="text-slate-900 drop-shadow-sm">İnsani Hassasiyet</span>
+            <span class="text-slate-900 drop-shadow-sm">Insani Hassasiyet</span>
           </h1>
           <p class="text-xl text-slate-600 leading-relaxed max-w-lg font-medium">
-            1996'dan beri bağımsız, reklamsız, bilimsel bir infertilite rehberi. Her çiftin bir umudu, her sorunun bir cevabı vardır.
+            1996'dan beri bagimsiz, reklamsiz, bilimsel bir infertilite rehberi. Her ciftin bir umudu, her sorunun bir cevabi vardir.
           </p>
         </div>
 
@@ -54,9 +53,9 @@ const searchData = articles.map(article => ({
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
           <a
             href="/tani-sureci"
-            class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all hover:scale-105 hover-glow gap-3 group shadow-lg shadow-primary/20"
+            class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all hover:scale-105 hover-glow gap-3 group shadow-lg shadow-primary-600/20"
           >
-            Tanı Süreci
+            Tani Sureci
             <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
               arrow_forward
             </span>
@@ -65,13 +64,13 @@ const searchData = articles.map(article => ({
             href="/tedavi-yontemleri"
             class="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-50 transition-all border border-slate-200 hover:border-primary/30 gap-3 group"
           >
-            Tedavi Yöntemleri
+            Tedavi Yontemleri
             <span class="material-symbols-outlined text-xl group-hover:rotate-12 transition-transform">
               biotech
             </span>
           </a>
         </div>
-        
+
         <!-- Quick Trust Indicators -->
         <div class="flex items-center gap-6 pt-4 border-t border-slate-100 max-w-sm">
            <div class="flex flex-col">
@@ -91,7 +90,7 @@ const searchData = articles.map(article => ({
         <div class="w-full rounded-2xl overflow-hidden shadow-lg mb-6 hover:shadow-xl transition-shadow duration-500 group">
           <img
             src="/images/home/luxury-embryo.webp"
-            alt="Embryo gelişimi - IVF tedavisi"
+            alt="Embryo gelisimi - IVF tedavisi"
             class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-700"
           />
         </div>
@@ -99,23 +98,16 @@ const searchData = articles.map(article => ({
         <!-- Glowing Search Container -->
         <div class="glass-card rounded-[2.5rem] p-8 relative z-10 overflow-hidden hover-glow transition-all duration-500 group">
           <!-- Background decoration in search card -->
-          <div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
-          
+          <div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary-50 transition-colors"></div>
+
           <div class="relative z-20">
             <div class="flex items-center justify-between mb-6">
               <h2 class="text-xl font-bold text-slate-900">Rehberlerde Ara</h2>
               <span class="material-symbols-outlined text-primary animate-pulse-soft">search_spark</span>
             </div>
 
-            <!-- Integrated Search Autocomplete -->
-            <div id="hero-search-container" class="relative group/input">
-              <div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/0 rounded-2xl blur opacity-0 group-focus-within/input:opacity-100 transition duration-500"></div>
-              <SearchAutocomplete
-                searchData={searchData}
-                placeholder="PCOS, IVF, AMH Testi..."
-                class="max-w-none relative"
-              />
-            </div>
+            <!-- Hero Inline Search -->
+            <HeroSearch searchData={searchData} placeholder="PCOS, IVF, AMH Testi..." />
 
             <!-- Quick Category Filters with Modern Style -->
             <div class="flex flex-wrap gap-2 mt-6" id="category-filters">
@@ -123,22 +115,25 @@ const searchData = articles.map(article => ({
                 type="button"
                 data-category="kadin"
                 class="category-filter px-4 py-2 text-xs font-bold text-slate-600 bg-slate-100/50 rounded-full hover:bg-primary hover:text-white transition-all inline-flex items-center gap-1.5 border border-slate-200/50"
+                onclick="dispatchCategoryFilter('kadin')"
               >
-                <span class="material-symbols-outlined text-[16px]">female</span>Kadın
+                <span class="material-symbols-outlined text-[16px]">female</span>Kadin
               </button>
               <button
                 type="button"
                 data-category="erkek"
                 class="category-filter px-4 py-2 text-xs font-bold text-slate-600 bg-slate-100/50 rounded-full hover:bg-primary hover:text-white transition-all inline-flex items-center gap-1.5 border border-slate-200/50"
+                onclick="dispatchCategoryFilter('erkek')"
               >
-                <span class="material-symbols-outlined text-[16px]">male</span>Erkek
+                <span class="material-symbols-outined text-[16px]">male</span>Erkek
               </button>
               <button
                 type="button"
                 data-category="tedavi"
                 class="category-filter px-4 py-2 text-xs font-bold text-slate-600 bg-slate-100/50 rounded-full hover:bg-primary hover:text-white transition-all inline-flex items-center gap-1.5 border border-slate-200/50"
+                onclick="dispatchCategoryFilter('tedavi')"
               >
-                <span class="material-symbols-outlined text-[16px]">medical_services</span>Tedavi
+                <span class="material-symbols-outined text-[16px]">medical_services</span>Tedavi
               </button>
             </div>
           </div>
@@ -157,7 +152,7 @@ const searchData = articles.map(article => ({
             </div>
             <div class="border-t border-primary/20 pt-4">
               <p class="text-2xl font-bold text-slate-900">40-50%</p>
-              <p class="text-sm text-slate-600 mt-1">IVF Başarı Oranı (35 yaş altı)</p>
+              <p class="text-sm text-slate-600 mt-1">IVF Basari Orani (35 yas alti)</p>
             </div>
           </div>
         </div>
@@ -174,4 +169,17 @@ const searchData = articles.map(article => ({
   }
 </style>
 
+<script is:inline>
+  function dispatchCategoryFilter(category) {
+    // Visual active state
+    document.querySelectorAll('.category-filter').forEach(btn => {
+      btn.classList.remove('bg-primary', 'text-white');
+    });
+    event?.target?.closest('button')?.classList.add('bg-primary', 'text-white');
 
+    // Dispatch event for HeroSearch
+    window.dispatchEvent(new CustomEvent('hero-filter-change', {
+      detail: { category }
+    }));
+  }
+</script>

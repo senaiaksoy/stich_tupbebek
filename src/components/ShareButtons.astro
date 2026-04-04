@@ -13,7 +13,7 @@ const encodedUrl = encodeURIComponent(url);
 ---
 
 <div class="flex items-center gap-3 flex-wrap">
-    <span class="text-xs font-label text-on-surface-variant uppercase tracking-widest">Paylaş</span>
+    <span class="text-xs font-label text-gray-600 uppercase tracking-widest">Paylaş</span>
 
     <!-- WhatsApp -->
     <a href={`https://wa.me/?text=${encodedTitle}%20${encodedUrl}`}
@@ -49,7 +49,7 @@ const encodedUrl = encodeURIComponent(url);
     <button id="copy-link-btn" class="share-btn group" aria-label="Linki kopyala" title="Linki kopyala">
         <span class="material-symbols-outlined text-base">content_copy</span>
     </button>
-    <span id="copy-feedback" class="text-xs text-primary font-semibold opacity-0 transition-opacity duration-300">Kopyalandı!</span>
+    <span id="copy-feedback" class="text-xs text-primary-600 font-semibold opacity-0 transition-opacity duration-300">Kopyalandı!</span>
 </div>
 
 <style>
