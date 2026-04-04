@@ -165,31 +165,42 @@ const searchData = articles.map(article => ({
   }
 </style>
 
-<script>
+<script is:inline>
   // Hero search and filter functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('hero-search');
-    const filterButtons = document.querySelectorAll('.hero-filter');
+  (function initHeroSearch() {
+    function setupEventListeners() {
+      const searchInput = document.getElementById('hero-search');
+      const filterButtons = document.querySelectorAll('.hero-filter');
 
-    // Search functionality
-    if (searchInput) {
-      searchInput.addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-          const query = searchInput.value.trim();
-          if (query) {
-            window.location.href = `/makaleler?search=${encodeURIComponent(query)}`;
+      // Search functionality
+      if (searchInput) {
+        searchInput.addEventListener('keyup', (e) => {
+          if (e.key === 'Enter') {
+            const query = searchInput.value.trim();
+            if (query) {
+              window.location.href = `/makaleler?search=${encodeURIComponent(query)}`;
+            }
           }
-        }
+        });
+      }
+
+      // Category filter functionality
+      filterButtons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const category = btn.dataset.category;
+          if (category) {
+            window.location.href = `/makaleler?category=${category}`;
+          }
+        });
       });
     }
 
-    // Category filter functionality
-    filterButtons.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const category = btn.dataset.category;
-        window.location.href = `/makaleler?category=${category}`;
-      });
-    });
-  });
+    // Run immediately if DOM is ready, otherwise wait
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupEventListeners);
+    } else {
+      setupEventListeners();
+    }
+  })();
 </script>
