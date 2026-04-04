@@ -1,0 +1,236 @@
+---
+/**
+ * LeadMagnet — E-Kitap / Rehber İndirme Formu
+ *
+ * Dijital materyalleri (beslenme planı, rehber vb.) indirmek için
+ * ad, soyad, e-posta/telefon isteyen landing page bloğu.
+ * KVKK + İYS onayları zorunludur.
+ *
+ * Kullanım:
+ *   <LeadMagnet />
+ *   <LeadMagnet
+ *     title="Ücretsiz E-Kitap İndir"
+ *     subtitle="30 Günlük Tüp Bebek Beslenme Planı"
+ *     description="Uzman diyetisyen ve üreme endokrinologları tarafından hazırlanan, bilimsel kaynaklara dayalı beslenme rehberi."
+ *     icon="restaurant"
+ *     downloadLabel="Rehberi İndir"
+ *   />
+ */
+import KVKKConsent from './KVKKConsent.astro';
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    icon?: string;
+    downloadLabel?: string;
+    /** Accent color theme */
+    theme?: 'primary' | 'apricot';
+}
+
+const {
+    title = 'Ücretsiz E-Kitap İndir',
+    subtitle = '30 Günlük Tüp Bebek Beslenme Planı',
+    description = 'Uzman diyetisyen ve üreme endokrinologları tarafından hazırlanan, bilimsel kaynaklara dayalı beslenme rehberi.',
+    icon = 'menu_book',
+    downloadLabel = 'Ücretsiz İndir',
+    theme = 'apricot',
+} = Astro.props;
+
+const themeStyles = {
+    apricot: {
+        headerBg: 'bg-gradient-to-r from-apricot-600 to-apricot-500',
+        iconBg: 'bg-white/20',
+        accentBg: 'bg-apricot-50',
+        accentBorder: 'border-apricot-200',
+        accentText: 'text-apricot-700',
+        buttonBg: 'bg-apricot-600 hover:bg-apricot-700',
+        buttonRing: 'focus:ring-apricot-300',
+        successBg: 'bg-apricot-50',
+        successBorder: 'border-apricot-200',
+        successIcon: 'text-apricot-600',
+        successTitle: 'text-apricot-800',
+        successText: 'text-apricot-700',
+    },
+    primary: {
+        headerBg: 'bg-gradient-to-r from-primary-700 to-primary-600',
+        iconBg: 'bg-white/20',
+        accentBg: 'bg-primary-50',
+        accentBorder: 'border-primary-200',
+        accentText: 'text-primary-700',
+        buttonBg: 'bg-primary-600 hover:bg-primary-700',
+        buttonRing: 'focus:ring-primary-300',
+        successBg: 'bg-primary-50',
+        successBorder: 'border-primary-200',
+        successIcon: 'text-primary-600',
+        successTitle: 'text-primary-800',
+        successText: 'text-primary-700',
+    },
+};
+
+const t = themeStyles[theme];
+---
+
+<section class="lead-magnet-form bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm" id="lead-magnet">
+
+    <!-- Header -->
+    <div class={`px-6 py-5 ${t.headerBg}`}>
+        <div class="flex items-center gap-4">
+            <div class={`w-14 h-14 rounded-2xl ${t.iconBg} flex items-center justify-center shrink-0`}>
+                <span class="material-symbols-outlined text-white text-2xl">{icon}</span>
+            </div>
+            <div>
+                <p class="text-xs text-white/80 font-semibold uppercase tracking-wider">{title}</p>
+                <h3 class="text-lg font-bold text-white mt-0.5">{subtitle}</h3>
+            </div>
+        </div>
+        <p class="text-sm text-white/90 mt-3 leading-relaxed">{description}</p>
+    </div>
+
+    <form id="lead-magnet-form" class="p-6 space-y-5" novalidate>
+
+        <!-- Highlights -->
+        <div class={`flex flex-wrap gap-3 px-4 py-3 ${t.accentBg} border ${t.accentBorder} rounded-xl`}>
+            <span class={`inline-flex items-center gap-1 text-xs font-semibold ${t.accentText}`}>
+                <span class="material-symbols-outlined text-sm">check_circle</span>
+                Bilimsel kaynaklı
+            </span>
+            <span class={`inline-flex items-center gap-1 text-xs font-semibold ${t.accentText}`}>
+                <span class="material-symbols-outlined text-sm">check_circle</span>
+                PDF formatında
+            </span>
+            <span class={`inline-flex items-center gap-1 text-xs font-semibold ${t.accentText}`}>
+                <span class="material-symbols-outlined text-sm">check_circle</span>
+                Anında e-posta ile teslim
+            </span>
+        </div>
+
+        <!-- Name fields -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+                <label for="lm-first-name" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Ad <span class="text-red-500" aria-hidden="true">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="lm-first-name"
+                    name="first_name"
+                    required
+                    autocomplete="given-name"
+                    placeholder="Adınız"
+                    class="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-md bg-white text-gray-900 placeholder:text-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600"
+                />
+            </div>
+            <div>
+                <label for="lm-last-name" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Soyad <span class="text-red-500" aria-hidden="true">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="lm-last-name"
+                    name="last_name"
+                    required
+                    autocomplete="family-name"
+                    placeholder="Soyadınız"
+                    class="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-md bg-white text-gray-900 placeholder:text-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600"
+                />
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div>
+            <label for="lm-email" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                E-posta <span class="text-red-500" aria-hidden="true">*</span>
+            </label>
+            <input
+                type="email"
+                id="lm-email"
+                name="email"
+                required
+                autocomplete="email"
+                placeholder="ornek@email.com"
+                class="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-md bg-white text-gray-900 placeholder:text-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600"
+            />
+            <p class="mt-1.5 text-xs text-gray-500">Rehber bu adrese gönderilecektir.</p>
+        </div>
+
+        <!-- Phone (optional) -->
+        <div>
+            <label for="lm-phone" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                Telefon <span class="text-xs font-normal text-gray-400">(isteğe bağlı)</span>
+            </label>
+            <input
+                type="tel"
+                id="lm-phone"
+                name="phone"
+                autocomplete="tel"
+                placeholder="05XX XXX XX XX"
+                class="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-md bg-white text-gray-900 placeholder:text-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600"
+            />
+        </div>
+
+        <!-- KVKK + İYS Consent -->
+        <KVKKConsent formId="lm" />
+
+        <!-- Submit -->
+        <button
+            type="submit"
+            class={`w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 min-h-[48px] ${t.buttonBg} text-white font-bold rounded-lg shadow-sm hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 ${t.buttonRing} focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed text-base`}
+        >
+            <span class="material-symbols-outlined text-lg">download</span>
+            {downloadLabel}
+        </button>
+
+        <!-- Success message (hidden by default) -->
+        <div class={`lm-success hidden px-5 py-5 ${t.successBg} border ${t.successBorder} rounded-xl text-center`} role="status">
+            <span class={`material-symbols-outlined ${t.successIcon} text-3xl mb-2 block`}>mark_email_read</span>
+            <p class={`text-sm font-bold ${t.successTitle}`}>Rehberiniz yolda!</p>
+            <p class={`text-xs ${t.successText} mt-1.5 leading-relaxed`}>
+                İndirme bağlantısı e-posta adresinize gönderildi. Birkaç dakika içinde gelen kutunuzu kontrol ediniz.
+            </p>
+        </div>
+    </form>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('lead-magnet-form') as HTMLFormElement | null;
+        if (!form) return;
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const kvkk = form.querySelector<HTMLInputElement>('[name="kvkk_consent"]');
+            const iys = form.querySelector<HTMLInputElement>('[name="iys_consent"]');
+            const errorEl = form.querySelector('.kvkk-error');
+
+            // Validate consent checkboxes
+            if (!kvkk?.checked || !iys?.checked) {
+                errorEl?.classList.remove('hidden');
+                kvkk?.closest('fieldset')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+            errorEl?.classList.add('hidden');
+
+            // Validate required fields
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Simulate submission (replace with actual endpoint)
+            const submitBtn = form.querySelector<HTMLButtonElement>('[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">hourglass_empty</span> Gönderiliyor...';
+            }
+
+            setTimeout(() => {
+                // Hide form content, show success
+                const formElements = form.querySelectorAll(':scope > *:not(.lm-success)');
+                formElements.forEach(el => (el as HTMLElement).style.display = 'none');
+                form.querySelector('.lm-success')?.classList.remove('hidden');
+            }, 1500);
+        });
+    });
+</script>

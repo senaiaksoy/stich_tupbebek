@@ -1,0 +1,227 @@
+---
+/**
+ * UzmanaSor — "Uzmana Sor" Anonim Tahlil Değerlendirme Formu
+ *
+ * Hastaların tahlil sonuçlarını (AMH, spermiyogram vb.)
+ * anonim olarak uzman değerlendirmesine sunabilecekleri form.
+ * KVKK + İYS onayları zorunludur.
+ *
+ * Kullanım:
+ *   <UzmanaSor />
+ */
+import KVKKConsent from './KVKKConsent.astro';
+---
+
+<section class="uzmana-sor-form bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm" id="uzmana-sor">
+
+    <!-- Header -->
+    <div class="px-6 py-4 bg-gradient-to-r from-mint-700 to-mint-600 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-white text-xl">stethoscope</span>
+        </div>
+        <div>
+            <h3 class="text-base font-bold text-white">Uzmana Sor</h3>
+            <p class="text-xs text-white/80">Tahlil sonuçlarınızı anonim olarak değerlendirelim</p>
+        </div>
+    </div>
+
+    <form id="uzmana-sor-form" class="p-6 space-y-5" novalidate>
+
+        <!-- Info note -->
+        <div class="flex items-start gap-2.5 px-4 py-3 bg-mint-50 border border-mint-200 rounded-xl">
+            <span class="material-symbols-outlined text-mint-600 text-lg mt-0.5 shrink-0">info</span>
+            <p class="text-xs text-mint-800 leading-relaxed">
+                Kimlik bilgileriniz paylaşılmaz. Yanıt, belirttiğiniz e-posta adresine gönderilir. Bu hizmet tıbbi tanı veya tedavi yerine geçmez.
+            </p>
+        </div>
+
+        <!-- Name -->
+        <div>
+            <label for="uzs-name" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                Ad Soyad <span class="text-red-500" aria-hidden="true">*</span>
+            </label>
+            <input
+                type="text"
+                id="uzs-name"
+                name="name"
+                required
+                autocomplete="name"
+                placeholder="Adınız ve soyadınız"
+                class="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-md bg-white text-gray-900 placeholder:text-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600"
+            />
+        </div>
+
+        <!-- Email -->
+        <div>
+            <label for="uzs-email" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                E-posta <span class="text-red-500" aria-hidden="true">*</span>
+            </label>
+            <input
+                type="email"
+                id="uzs-email"
+                name="email"
+                required
+                autocomplete="email"
+                placeholder="ornek@email.com"
+                class="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-md bg-white text-gray-900 placeholder:text-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600"
+            />
+        </div>
+
+        <!-- Test Type -->
+        <div>
+            <label for="uzs-test-type" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                Tahlil Türü <span class="text-red-500" aria-hidden="true">*</span>
+            </label>
+            <select
+                id="uzs-test-type"
+                name="test_type"
+                required
+                class="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-md bg-white text-gray-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600"
+            >
+                <option value="" disabled selected>Tahlil türünü seçiniz</option>
+                <option value="amh">AMH (Anti-Müllerian Hormon)</option>
+                <option value="fsh">FSH / LH / E2 Hormon Paneli</option>
+                <option value="spermiyogram">Spermiyogram</option>
+                <option value="hsg">HSG (Histerosalpingografi)</option>
+                <option value="ultrason">Ultrason Bulguları</option>
+                <option value="genetik">Genetik Test Sonuçları</option>
+                <option value="diger">Diğer</option>
+            </select>
+        </div>
+
+        <!-- Test Values -->
+        <div>
+            <label for="uzs-values" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                Tahlil Değerleri / Sonuçlar <span class="text-red-500" aria-hidden="true">*</span>
+            </label>
+            <textarea
+                id="uzs-values"
+                name="test_values"
+                required
+                rows="4"
+                placeholder="Örn: AMH: 1.2 ng/mL, FSH: 8.5 mIU/mL, Antral folikül sayısı: 6..."
+                class="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-md bg-white text-gray-900 placeholder:text-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600 resize-y"
+            ></textarea>
+            <p class="mt-1.5 text-xs text-gray-500">Tahlil raporunuzdaki sayısal değerleri ve birimleri yazınız.</p>
+        </div>
+
+        <!-- Age & Duration -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+                <label for="uzs-age" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Yaş
+                </label>
+                <input
+                    type="number"
+                    id="uzs-age"
+                    name="age"
+                    min="18"
+                    max="55"
+                    placeholder="Yaşınız"
+                    class="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-md bg-white text-gray-900 placeholder:text-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600"
+                />
+            </div>
+            <div>
+                <label for="uzs-duration" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                    İnfertilite Süresi
+                </label>
+                <select
+                    id="uzs-duration"
+                    name="duration"
+                    class="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-md bg-white text-gray-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600"
+                >
+                    <option value="" disabled selected>Süre seçiniz</option>
+                    <option value="0-1">0 – 1 yıl</option>
+                    <option value="1-2">1 – 2 yıl</option>
+                    <option value="2-3">2 – 3 yıl</option>
+                    <option value="3-5">3 – 5 yıl</option>
+                    <option value="5+">5 yıldan fazla</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Additional Notes -->
+        <div>
+            <label for="uzs-notes" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                Ek Notlar
+            </label>
+            <textarea
+                id="uzs-notes"
+                name="notes"
+                rows="2"
+                placeholder="Varsa ek bilgi veya sorularınız..."
+                class="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-md bg-white text-gray-900 placeholder:text-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600 resize-y"
+            ></textarea>
+        </div>
+
+        <!-- KVKK + İYS Consent -->
+        <KVKKConsent formId="uzs" />
+
+        <!-- Submit -->
+        <button
+            type="submit"
+            class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] bg-mint-600 hover:bg-mint-700 active:bg-mint-800 text-white font-bold rounded-lg shadow-sm hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-mint-300 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+            <span class="material-symbols-outlined text-lg">send</span>
+            Değerlendirme Talep Et
+        </button>
+
+        <!-- Success message (hidden by default) -->
+        <div class="uzs-success hidden px-4 py-3 bg-mint-50 border border-mint-200 rounded-xl text-center" role="status">
+            <span class="material-symbols-outlined text-mint-600 text-2xl mb-1 block">check_circle</span>
+            <p class="text-sm font-semibold text-mint-800">Talebiniz alındı!</p>
+            <p class="text-xs text-mint-700 mt-1">Değerlendirme sonucu e-posta adresinize gönderilecektir.</p>
+        </div>
+    </form>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('uzmana-sor-form') as HTMLFormElement | null;
+        if (!form) return;
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const kvkk = form.querySelector<HTMLInputElement>('[name="kvkk_consent"]');
+            const iys = form.querySelector<HTMLInputElement>('[name="iys_consent"]');
+            const errorEl = form.querySelector('.kvkk-error');
+
+            // Validate consent checkboxes
+            if (!kvkk?.checked || !iys?.checked) {
+                errorEl?.classList.remove('hidden');
+                kvkk?.closest('fieldset')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+            errorEl?.classList.add('hidden');
+
+            // Validate required fields
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Simulate submission (replace with actual endpoint)
+            const submitBtn = form.querySelector<HTMLButtonElement>('[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">hourglass_empty</span> Gönderiliyor...';
+            }
+
+            setTimeout(() => {
+                // Show success, hide form fields
+                const fields = form.querySelectorAll('.input-group, fieldset, select, textarea, input, label, [type="submit"], .flex.items-start');
+                fields.forEach(el => {
+                    if (!el.closest('.uzs-success')) {
+                        (el as HTMLElement).style.display = 'none';
+                    }
+                });
+                // Hide info note
+                const infoNote = form.querySelector('.flex.items-start.gap-2\\.5');
+                if (infoNote) (infoNote as HTMLElement).style.display = 'none';
+
+                form.querySelector('.uzs-success')?.classList.remove('hidden');
+            }, 1500);
+        });
+    });
+</script>
