@@ -5,8 +5,12 @@ Thumbs.db
 System Volume Information
 $RECYCLE.BIN/
 
+# Build output
+dist/
+
 # Git
 .git
 .idea
 .vscode
-node_modules/ 
+node_modules/
+.astro/ 
