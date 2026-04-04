@@ -24,6 +24,65 @@ const doctor = {
     address: 'Halaskargazi Mah., Halaskargazi Cad. No: 38-66, Kat: 5, Ofis: 92, 34371 Şişli/İstanbul',
     youtube: 'https://www.youtube.com/@DocentDrSenaiAksoy',
 };
+
+// Schema.org JSON-LD — Baş Editör & Tıbbi Onay (E-E-A-T)
+const editorSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": doctor.name,
+    "jobTitle": doctor.title,
+    "description": doctor.subtitle,
+    "url": "https://tupbebek.com/hakkimizda",
+    "sameAs": [
+        doctor.youtube,
+    ],
+    "worksFor": {
+        "@type": "MedicalOrganization",
+        "name": doctor.clinic,
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Halaskargazi Cad. No: 38-66, Kat: 5, Ofis: 92",
+            "addressLocality": "Şişli",
+            "addressRegion": "İstanbul",
+            "postalCode": "34371",
+            "addressCountry": "TR",
+        },
+    },
+    "medicalSpecialty": {
+        "@type": "MedicalSpecialty",
+        "name": "Obstetrics and Gynecology",
+    },
+    "knowsAbout": [
+        { "@type": "MedicalSpecialty", "name": "Reproductive Medicine" },
+        { "@type": "MedicalSpecialty", "name": "Assisted Reproductive Technology" },
+        { "@type": "MedicalSpecialty", "name": "Reproductive Endocrinology" },
+    ],
+    "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Doçent Doktor",
+        "recognizedBy": {
+            "@type": "Organization",
+            "name": "Üniversitelerarası Kurul (ÜAK)",
+        },
+    },
+};
+
+// reviewedBy schema — makale düzeyinde tıbbi onay ilişkisi
+const reviewedBySchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "reviewedBy": {
+        "@type": "Person",
+        "name": doctor.name,
+        "jobTitle": doctor.title,
+        "sameAs": doctor.youtube,
+        "medicalSpecialty": {
+            "@type": "MedicalSpecialty",
+            "name": "Reproductive Medicine",
+        },
+    },
+    "lastReviewed": new Date().toISOString().split('T')[0],
+};
 ---
 
 {variant === 'compact' ? (
@@ -109,5 +168,8 @@ const doctor = {
                 <span class="material-symbols-outlined text-gray-400 group-hover:text-red-500 group-hover:translate-x-1 transition-all duration-300 shrink-0 text-xl">arrow_forward</span>
             </a>
         </div>
+        <!-- Structured Data: Editor Person + reviewedBy (E-E-A-T) -->
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(editorSchema)} />
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(reviewedBySchema)} />
     </aside>
 )}
