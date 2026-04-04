@@ -1,0 +1,31 @@
+---
+interface AccordionItem {
+  title: string;
+  items: Array<{
+    label: string;
+    href: string;
+  }>;
+}
+
+interface Props {
+  items: AccordionItem[];
+}
+
+const { items } = Astro.props;
+---
+
+{items.map((section) => (
+  <div class="mobile-accordion">
+    <button class="w-full flex items-center justify-between p-3 rounded-lg hover:bg-primary/5 text-left font-semibold text-slate-800 group transition-colors">
+      <span>{section.title}</span>
+      <span class="material-symbols-outlined text-sm transition-transform">expand_more</span>
+    </button>
+    <div class="hidden pl-4 space-y-1 border-l-2 border-slate-100">
+      {section.items.map((item) => (
+        <a href={item.href} class="block p-2 text-sm text-slate-600 hover:text-primary hover:bg-primary/5 rounded transition-colors">
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+))}

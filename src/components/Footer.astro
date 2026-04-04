@@ -1,66 +1,28 @@
 ---
+import { footerLinks } from '../data/navigation';
 ---
----
-// Footer.astro — 4 Kolon Yapısı + Yasal Şerit
----
+
 <footer class="w-full bg-slate-900 text-slate-300 pt-16 pb-10 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
-        <!-- 4-KOLON FOOTER BÖLÜMÜ -->
+        <!-- FOOTER LINKS GRID -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-
-            <!-- KOLON 1: İNFERTİLİTE -->
-            <div>
-                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6 border-b border-slate-700 pb-3">
-                    İnfertilite
-                </h4>
-                <ul class="space-y-4 text-sm leading-relaxed">
-                    <li><a href="/kadin-infertilitesi" class="hover:text-primary transition-colors">Kadın Faktörleri</a></li>
-                    <li><a href="/erkek-infertilitesi" class="hover:text-primary transition-colors">Erkek Faktörleri</a></li>
-                    <li><a href="/yas-ve-fertilite" class="hover:text-primary transition-colors">Yaş ve Fertilite</a></li>
-                    <li><a href="/tani-sureci" class="hover:text-primary transition-colors">Tanı Süreci</a></li>
-                </ul>
-            </div>
-
-            <!-- KOLON 2: TEDAVİ -->
-            <div>
-                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6 border-b border-slate-700 pb-3">
-                    Tedavi
-                </h4>
-                <ul class="space-y-4 text-sm leading-relaxed">
-                    <li><a href="/tedavi-yontemleri" class="hover:text-primary transition-colors">Tedavi Yöntemleri</a></li>
-                    <li><a href="/ivf-rehberi" class="hover:text-primary transition-colors">IVF Rehberi</a></li>
-                    <li><a href="/ilac-rehberi" class="hover:text-primary transition-colors">İlaç Rehberi</a></li>
-                    <li><a href="/beslenme-yasam" class="hover:text-primary transition-colors">Beslenme &amp; Yaşam</a></li>
-                    <li><a href="/fertilite-koruma" class="hover:text-primary transition-colors">Fertilite Koruma</a></li>
-                </ul>
-            </div>
-
-            <!-- KOLON 3: KAYNAKLAR -->
-            <div>
-                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6 border-b border-slate-700 pb-3">
-                    Kaynaklar
-                </h4>
-                <ul class="space-y-4 text-sm leading-relaxed">
-                    <li><a href="/makaleler" class="hover:text-primary transition-colors">Makaleler</a></li>
-                    <li><a href="/tibbi-sozluk" class="hover:text-primary transition-colors">Tıbbi Sözlük</a></li>
-                    <li><a href="/sss" class="hover:text-primary transition-colors">Sık Sorulan Sorular</a></li>
-                    <li><a href="/duygusal-destek" class="hover:text-primary transition-colors">Duygusal Destek</a></li>
-                    <li><a href="/basarı-oranlari" class="hover:text-primary transition-colors">Başarı Oranları</a></li>
-                </ul>
-            </div>
-
-            <!-- KOLON 4: KURUMSAL -->
-            <div>
-                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6 border-b border-slate-700 pb-3">
-                    Kurumsal
-                </h4>
-                <ul class="space-y-4 text-sm leading-relaxed">
-                    <li><a href="/hakkimizda" class="hover:text-primary transition-colors">Hakkımızda</a></li>
-                    <li><a href="/editoryal-politika" class="hover:text-primary transition-colors">Editöryal Politika</a></li>
-                    <li><a href="/iletisim" class="hover:text-primary transition-colors">İletişim</a></li>
-                </ul>
-            </div>
+            {footerLinks.map((section) => (
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6 border-b border-slate-700 pb-3">
+                        {section.category}
+                    </h4>
+                    <ul class="space-y-4 text-sm leading-relaxed">
+                        {section.links.map((link) => (
+                            <li>
+                                <a href={link.href} class="hover:text-primary transition-colors">
+                                    {link.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
         </div>
 
         <!-- YASAL ZORUNLU ŞERİT -->
