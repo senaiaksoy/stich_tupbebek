@@ -6,7 +6,7 @@ import Footer from '../../components/Footer.astro';
 
 const articles = await getCollection('articles');
 const featuredArticles = articles.filter(a => a.data.featured).slice(0, 2);
-const recentArticles = articles.filter(a => !a.data.featured).sort((a, b) => 
+const recentArticles = articles.filter(a => !a.data.featured).sort((a, b) =>
     (b.data.publishDate?.getTime() ?? 0) - (a.data.publishDate?.getTime() ?? 0)
 );
 ---
@@ -25,6 +25,17 @@ const recentArticles = articles.filter(a => !a.data.featured).sort((a, b) =>
                 </nav>
                 <h1 class="font-headline text-5xl font-bold text-on-surface leading-tight mb-6">Bilimsel Yaklaşımlar ve <br/><span class="italic text-primary">Güncel Literatür</span></h1>
                 <p class="font-body text-lg text-on-surface-variant leading-relaxed">Üreme sağlığı ve tüp bebek teknolojilerindeki en son gelişmeleri, klinik araştırmaları ve uzman görüşlerini içeren akademik arşivimiz.</p>
+                <!-- Client-side filter banner (shown by JS when ?q= or ?category= present) -->
+                <div id="filter-banner" class="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-xl items-center justify-between" style="display:none;">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary">filter_alt</span>
+                    <span id="filter-text" class="text-sm text-on-surface"></span>
+                  </div>
+                  <a href="/makaleler" class="text-xs text-primary font-bold hover:underline flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">close</span>
+                    Filtreyi Temizle
+                  </a>
+                </div>
             </div>
         </header>
 
@@ -126,7 +137,7 @@ const recentArticles = articles.filter(a => !a.data.featured).sort((a, b) =>
                     <h2 class="font-headline text-3xl font-bold mb-12">Güncel Makaleler</h2>
                     <div class="space-y-16">
                         {recentArticles.map(article => (
-                            <article class="group cursor-pointer">
+                            <article class="group cursor-pointer article-item" data-title={article.data.title.toLowerCase()} data-desc={(article.data.description || '').toLowerCase()} data-category={(article.data.category || '').toLowerCase()}>
                                 <a href={`/makaleler/${article.slug}`}>
                                     <div class="flex items-center gap-4 text-xs font-label text-on-surface-variant mb-4">
                                         <span class="text-primary font-bold uppercase">{article.data.category}</span>
@@ -177,4 +188,66 @@ const recentArticles = articles.filter(a => !a.data.featured).sort((a, b) =>
     </main>
 
     <Footer />
+
+    <script is:inline>
+      // Client-side article filtering based on URL query params
+      (function() {
+        // Turkish character normalization for search matching
+        function normalize(str) {
+          return str.replace(/ı/g,'i').replace(/İ/g,'i')
+                    .replace(/ö/g,'o').replace(/Ö/g,'o')
+                    .replace(/ü/g,'u').replace(/Ü/g,'u')
+                    .replace(/ş/g,'s').replace(/Ş/g,'s')
+                    .replace(/ç/g,'c').replace(/Ç/g,'c')
+                    .replace(/ğ/g,'g').replace(/Ğ/g,'g')
+                    .toLowerCase();
+        }
+
+        // Category display labels
+        var catLabels = { kadin: 'Kadın', erkek: 'Erkek', tedavi: 'Tedavi' };
+
+        var params = new URLSearchParams(window.location.search);
+        var q = (params.get('q') || '').trim().toLowerCase();
+        var cat = (params.get('category') || '').trim().toLowerCase();
+        var qNorm = normalize(q);
+        var catNorm = normalize(cat);
+
+        if (!q && !cat) return; // No filters, show everything
+
+        var banner = document.getElementById('filter-banner');
+        var filterText = document.getElementById('filter-text');
+        if (!banner || !filterText) return;
+
+        var label = '';
+        if (q) label += '<strong>Arama:</strong> "' + q + '"';
+        if (cat) label += '<strong>Kategori:</strong> ' + (catLabels[cat] || cat);
+
+        var articles = document.querySelectorAll('.article-item');
+        var matchCount = 0;
+        articles.forEach(function(article) {
+          var title = normalize(article.getAttribute('data-title') || '');
+          var desc = normalize(article.getAttribute('data-desc') || '');
+          var articleCat = normalize(article.getAttribute('data-category') || '');
+
+          var matches = true;
+          if (qNorm && title.indexOf(qNorm) === -1 && desc.indexOf(qNorm) === -1 && articleCat.indexOf(qNorm) === -1) {
+            matches = false;
+          }
+          if (catNorm && articleCat.indexOf(catNorm) === -1) {
+            matches = false;
+          }
+
+          if (matches) {
+            matchCount++;
+            article.style.display = '';
+          } else {
+            article.style.display = 'none';
+          }
+        });
+
+        label += ' <span style="opacity:0.6">(' + matchCount + ' sonuç)</span>';
+        filterText.innerHTML = label;
+        banner.style.display = 'flex';
+      })();
+    </script>
 </BaseLayout>

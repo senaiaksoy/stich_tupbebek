@@ -110,20 +110,30 @@ const searchData = articles.map(article => ({
         <div class="bg-white/50 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl">
           <h2 class="text-lg font-bold text-slate-900 mb-4">Hızlı Rehber Bul</h2>
 
-            <!-- Search Bar (Decorative) -->
+          <!-- Search Bar -->
           <div class="relative mb-4">
-            <div class="relative">
-              <span class="material-symbols-outlined absolute left-4 top-3.5 text-slate-400">
-                search
-              </span>
-              <input
-                type="text"
-                placeholder="PCOS, Endometriozis, IVF..."
-                disabled
-                class="w-full pl-12 pr-4 py-3 rounded-lg border border-slate-200 bg-gray-50 text-slate-600 cursor-not-allowed"
-              />
+            <div class="relative flex gap-2">
+              <div class="relative flex-1">
+                <span class="material-symbols-outlined absolute left-4 top-3.5 text-slate-400">
+                  search
+                </span>
+                <input
+                  id="hero-search-input"
+                  type="text"
+                  placeholder="PCOS, Endometriozis, IVF..."
+                  class="w-full pl-12 pr-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                />
+              </div>
+              <a
+                id="hero-search-btn"
+                href="/makaleler"
+                onclick="return heroSearch()"
+                class="px-5 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-1 whitespace-nowrap"
+              >
+                <span class="material-symbols-outlined text-lg">search</span>
+                Keşfet
+              </a>
             </div>
-            <p class="text-xs text-slate-500 mt-2">Makaleler sayfasında arama yapabilirsiniz</p>
           </div>
 
           <!-- Quick Category Filter -->
@@ -165,4 +175,32 @@ const searchData = articles.map(article => ({
     backdrop-filter: blur(12px);
   }
 </style>
+
+<script is:inline>
+  // Hero search: onclick handler for the Keşfet button
+  // Returns false to prevent default <a> navigation when JS works,
+  // falls back to /makaleler if JS is disabled (since it's an <a>).
+  function heroSearch() {
+    var input = document.getElementById('hero-search-input');
+    var query = input && input.value.trim();
+    if (query) {
+      document.getElementById('hero-search-btn').href = '/makaleler?q=' + encodeURIComponent(query);
+    }
+    // Return true so the <a> follows the (possibly updated) href
+    return true;
+  }
+
+  // Enter key support
+  var searchInput = document.getElementById('hero-search-input');
+  if (searchInput) {
+    searchInput.onkeydown = function(e) {
+      if (e.key === 'Enter' || e.keyCode === 13) {
+        e.preventDefault();
+        heroSearch();
+        var btn = document.getElementById('hero-search-btn');
+        if (btn) btn.click();
+      }
+    };
+  }
+</script>
 
