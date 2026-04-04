@@ -174,31 +174,4 @@ const searchData = articles.map(article => ({
   }
 </style>
 
-<script is:inline>
-  // Hero search: onclick handler for the Keşfet button
-  // Returns false to prevent default <a> navigation when JS works,
-  // falls back to /makaleler if JS is disabled (since it's an <a>).
-  function heroSearch() {
-    var input = document.getElementById('hero-search-input');
-    var query = input && input.value.trim();
-    if (query) {
-      document.getElementById('hero-search-btn').href = '/makaleler?q=' + encodeURIComponent(query);
-    }
-    // Return true so the <a> follows the (possibly updated) href
-    return true;
-  }
-
-  // Enter key support
-  var searchInput = document.getElementById('hero-search-input');
-  if (searchInput) {
-    searchInput.onkeydown = function(e) {
-      if (e.key === 'Enter' || e.keyCode === 13) {
-        e.preventDefault();
-        heroSearch();
-        var btn = document.getElementById('hero-search-btn');
-        if (btn) btn.click();
-      }
-    };
-  }
-</script>
 
