@@ -3,9 +3,29 @@ title: "Açıklanamayan İnfertilite: Nedenleri ve Tedavisi"
 description: "Açıklanamayan (idiyopatik) infertilite tanısı, nedenleri, gizli faktörler ve tedavi seçenekleri."
 publishDate: 2024-09-27
 author: "tupbebek.com Yayın Kurulu"
-medicalReviewer: "Yayın Kurulu"
+authorTitle: "Editoryal Ekip"
+medicalReviewer: "tupbebek.com Tibbi Danisma Kurulu"
+reviewerTitle: "Ureme Tibbi Uzmanlari"
+reviewDate: 2026-04-01
 lastModified: 2026-04-03
 category: "Tanı ve Testler"
+status: "published"
+references:
+  - title: "Unexplained infertility: a reappraisal"
+    authors: "Ray A, Shah A, Gudi A, Homburg R"
+    journal: "Reproductive BioMedicine Online"
+    year: 2012
+    doi: "10.1016/j.rbmo.2012.02.020"
+  - title: "ESHRE guideline: management of women with endometriosis"
+    authors: "Becker CM, Bokor A, Heikinheimo O et al."
+    journal: "Human Reproduction"
+    year: 2022
+    doi: "10.1093/humrep/deac196"
+  - title: "Sperm DNA fragmentation and its role in IVF outcome"
+    authors: "Agarwal A, Majzoub A, Esteves SC"
+    journal: "Fertility and Sterility"
+    year: 2020
+    doi: "10.1016/j.fertnstert.2020.03.002"
 ---
 
 Açıklanamayan infertilite, standart tanı testlerinde herhangi bir belirgin neden bulunamamasına rağmen gebelik oluşmamasıdır. İnfertilite vakalarının **%10-15**'i bu kategoriye girer. Ancak bu, problemin olmadığı anlamına gelmez; gözardı edilen veya saptanmayan faktörler vardır.
