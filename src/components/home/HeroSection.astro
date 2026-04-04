@@ -28,8 +28,8 @@ const searchData = articles.map(article => ({
 <section class="pt-28 pb-12 relative overflow-hidden">
   <!-- Background Elements -->
   <div class="absolute inset-0 -z-10">
-    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/15 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1.5s;"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -81,27 +81,6 @@ const searchData = articles.map(article => ({
           </a>
         </div>
 
-        <!-- Trust Badges -->
-        <div class="flex flex-col gap-3 pt-4 border-t border-slate-200">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-              <span class="material-symbols-outlined text-primary text-xl">verified</span>
-            </div>
-            <div class="text-sm">
-              <p class="font-bold text-slate-900">1996'dan Beri</p>
-              <p class="text-slate-600">Güvenilir bilimsel rehberlik</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-              <span class="material-symbols-outlined text-primary text-xl">school</span>
-            </div>
-            <div class="text-sm">
-              <p class="font-bold text-slate-900">Akademik Danışmanlar</p>
-              <p class="text-slate-600">Yayın kurulu tarafından denetlenmiş</p>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- Right: Search & Visual -->
@@ -110,43 +89,38 @@ const searchData = articles.map(article => ({
         <div class="bg-white/50 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl">
           <h2 class="text-lg font-bold text-slate-900 mb-4">Hızlı Rehber Bul</h2>
 
-          <!-- Search Bar -->
-          <div class="relative mb-4">
-            <div class="relative flex gap-2">
-              <div class="relative flex-1">
-                <span class="material-symbols-outlined absolute left-4 top-3.5 text-slate-400">
-                  search
-                </span>
-                <input
-                  id="hero-search-input"
-                  type="text"
-                  placeholder="PCOS, Endometriozis, IVF..."
-                  class="w-full pl-12 pr-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                />
-              </div>
-              <a
-                id="hero-search-btn"
-                href="/makaleler"
-                onclick="return heroSearch()"
-                class="px-5 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-1 whitespace-nowrap"
-              >
-                <span class="material-symbols-outlined text-lg">search</span>
-                Keşfet
-              </a>
-            </div>
+          <!-- Integrated Search Autocomplete -->
+          <div id="hero-search-container" class="relative">
+            <SearchAutocomplete
+              searchData={searchData}
+              placeholder="PCOS, Endometriozis, IVF..."
+              class="max-w-none"
+            />
           </div>
 
           <!-- Quick Category Filter -->
-          <div class="grid grid-cols-3 gap-2">
-            <a href="/makaleler?category=kadin" class="px-3 py-2 text-xs font-semibold text-slate-600 bg-slate-100 rounded-lg hover:bg-primary hover:text-white transition-colors inline-flex items-center justify-center gap-1">
+          <div class="grid grid-cols-3 gap-2 mt-4" id="category-filters">
+            <button
+              type="button"
+              data-category="kadin"
+              class="category-filter px-3 py-2 text-xs font-semibold text-slate-600 bg-slate-100 rounded-lg hover:bg-primary hover:text-white transition-all inline-flex items-center justify-center gap-1"
+            >
               <span class="material-symbols-outlined text-[16px]">female</span>Kadın
-            </a>
-            <a href="/makaleler?category=erkek" class="px-3 py-2 text-xs font-semibold text-slate-600 bg-slate-100 rounded-lg hover:bg-primary hover:text-white transition-colors inline-flex items-center justify-center gap-1">
+            </button>
+            <button
+              type="button"
+              data-category="erkek"
+              class="category-filter px-3 py-2 text-xs font-semibold text-slate-600 bg-slate-100 rounded-lg hover:bg-primary hover:text-white transition-all inline-flex items-center justify-center gap-1"
+            >
               <span class="material-symbols-outlined text-[16px]">male</span>Erkek
-            </a>
-            <a href="/makaleler?category=tedavi" class="px-3 py-2 text-xs font-semibold text-slate-600 bg-slate-100 rounded-lg hover:bg-primary hover:text-white transition-colors inline-flex items-center justify-center gap-1">
+            </button>
+            <button
+              type="button"
+              data-category="tedavi"
+              class="category-filter px-3 py-2 text-xs font-semibold text-slate-600 bg-slate-100 rounded-lg hover:bg-primary hover:text-white transition-all inline-flex items-center justify-center gap-1"
+            >
               <span class="material-symbols-outlined text-[16px]">medical_services</span>Tedavi
-            </a>
+            </button>
           </div>
         </div>
 
