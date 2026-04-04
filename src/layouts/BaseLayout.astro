@@ -199,8 +199,8 @@ const medicalWebPageSchema = {
 		<slot />
 		<CookieConsent />
 
-		<!-- Floating Prestige Badge -->
-		<div class="fixed left-8 top-32 z-[100] pointer-events-none md:pointer-events-auto group">
+		<!-- Floating Prestige Badge (only on homepage) -->
+		<div class:list={["fixed left-8 top-32 z-[100] pointer-events-none md:pointer-events-auto group", !isHome && "hidden"]}>
 			<div class="relative w-24 h-24 sm:w-32 sm:h-32 -rotate-12 group-hover:rotate-0 group-hover:scale-110 transition-all duration-500">
 				<img 
 					src="/images/home/prestige_seal_1996.webp" 
