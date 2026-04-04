@@ -1,0 +1,111 @@
+---
+import type { MegaMenuConfig } from '../../data/navigation';
+
+interface Props {
+  menu: MegaMenuConfig;
+}
+
+const { menu } = Astro.props;
+---
+
+<div class="group h-full flex items-center">
+  <!-- Menu Button -->
+  <button
+    class="px-4 py-3 min-h-[48px] text-sm font-bold text-slate-800 hover:text-primary transition-colors flex items-center gap-1 group-hover:bg-primary/5 rounded-lg"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    {menu.label}
+    <span class="material-symbols-outlined text-xs group-hover:rotate-180 transition-transform">
+      expand_more
+    </span>
+  </button>
+
+  <!-- Mega Menu Panel -->
+  <div class="absolute top-[100%] left-0 w-full bg-white shadow-2xl border-b border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-10 grid grid-cols-3 gap-8">
+      <!-- LEFT: Menu Items -->
+      <div class="border-r border-slate-100 pr-8">
+        {menu.icon && (
+          <h4 class="text-xs uppercase tracking-widest text-primary font-bold mb-4">
+            <span class="material-symbols-outlined text-[14px] align-text-bottom mr-1">
+              {menu.icon}
+            </span>
+            {menu.label}
+          </h4>
+        )}
+
+        <div class="space-y-1">
+          {menu.submenu && menu.submenu.map((item) => (
+            <a
+              href={item.href}
+              class="group/link flex p-3 hover:bg-primary/5 rounded-lg transition-colors"
+            >
+              <div>
+                <span class="text-sm font-bold text-slate-800 group-hover/link:text-primary">
+                  {item.label}
+                </span>
+                {item.description && (
+                  <span class="block text-xs text-slate-500 mt-0.5">
+                    {item.description}
+                  </span>
+                )}
+              </div>
+              <span class="material-symbols-outlined text-xs text-slate-300 group-hover/link:text-primary transition-colors mt-1.5 ml-auto">
+                arrow_forward
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- MIDDLE: Content Info -->
+      {menu.centerContent && (
+        <div class="space-y-4">
+          <h4 class="text-xs uppercase tracking-widest text-slate-400 font-bold">
+            {menu.centerContent.title}
+          </h4>
+          <p class="text-sm text-slate-600 italic">
+            {menu.centerContent.description}
+          </p>
+          {menu.centerContent.stat && (
+            <div class="bg-slate-50 rounded-xl p-4 text-center">
+              <span class="block text-2xl font-bold text-primary">
+                {menu.centerContent.stat.value}
+              </span>
+              <span class="text-xs text-slate-500">
+                {menu.centerContent.stat.label}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
+
+      <!-- RIGHT: Featured Article -->
+      {menu.featuredArticle && (
+        <div class="bg-primary/5 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-primary uppercase tracking-widest">
+              Öne Çıkan
+            </span>
+            <a
+              href={menu.featuredArticle.href}
+              class="block mt-3 text-sm font-headline font-bold text-slate-800 hover:text-primary transition-colors"
+            >
+              {menu.featuredArticle.title}
+            </a>
+            <p class="text-xs text-slate-500 mt-2">
+              {menu.featuredArticle.description}
+            </p>
+          </div>
+          <a
+            href="/makaleler"
+            class="text-xs font-semibold text-primary hover:underline mt-3 inline-block"
+          >
+            Tüm Makaleler →
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</div>

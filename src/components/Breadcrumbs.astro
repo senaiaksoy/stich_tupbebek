@@ -1,41 +1,9 @@
 ---
-// Breadcrumbs.astro
+// Breadcrumbs.astro - Enhanced with utility function
+import { generateBreadcrumbs } from '../utils/breadcrumbs';
+
 const { pathname } = Astro.url;
-const paths = pathname.split('/').filter(Boolean);
-
-const labelMap: Record<string, string> = {
-  'sorunlar': 'İnfertilite Rehberi',
-  'tedavi-yontemleri': 'Tedavi Yöntemleri',
-  'tani-sureci': 'Tanı Süreci',
-  'rehberler': 'Tedavi Rehberi',
-  'sss': 'Sıkça Sorulan Sorular',
-  'makaleler': 'Makaleler',
-  'hakkimizda': 'Hakkımızda',
-  'erkek-infertilitesi': 'Erkek İnfertilitesi',
-  'kadin-infertilitesi': 'Kadın İnfertilitesi',
-  'fertilite-koruma': 'Fertilite Koruma',
-  'aciklanamayan-infertilite': 'Açıklanamayan İnfertilite',
-  'yas-ve-fertilite': 'Yaş ve Fertilitе',
-  'duygusal-destek': 'Duygusal Destek',
-  'beslenme-yasam': 'Beslenme ve Yaşam',
-  'psikolojik-destek': 'Psikolojik Destek',
-  'hormon-paneli': 'Hormon Paneli',
-  'genetik-testler': 'Genetik Testler',
-  'pgt-merkezi': 'PGT Merkezi',
-  'basari-oranlari': 'Başarı Oranları',
-  'ilac-rehberi': 'İlaç Rehberi',
-  'tbbi-sozluk': 'Teknik Sözlük',
-  'editoryal-politika': 'Editoryal Politika',
-  'yayin-sureci': 'Yayın Süreci'
-};
-
-const breadcrumbs = paths.map((path, index) => {
-  const href = `/${paths.slice(0, index + 1).join('/')}`;
-  return {
-    label: labelMap[path] || path.charAt(0).toUpperCase() + path.slice(1).replace(/-/g, ' '),
-    href
-  };
-});
+const breadcrumbs = generateBreadcrumbs(pathname);
 
 // JSON-LD for SEO
 const jsonLd = {

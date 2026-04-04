@@ -3,8 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import PatientJourney from '../components/PatientJourney.astro';
-import RecentArticlesCarousel from '../components/RecentArticlesCarousel.astro';
+import HeroSection from '../components/home/HeroSection.astro';
+import QuickGuideCards from '../components/home/QuickGuideCards.astro';
 import FAQHighlights from '../components/FAQHighlights.astro';
 
 const recentArticles = (await getCollection('articles')).slice(0, 3);
@@ -12,71 +12,14 @@ const recentArticles = (await getCollection('articles')).slice(0, 3);
 
 <BaseLayout title="tupbebek.com | Üreme Sağlığı Bilgisi" description="Tüp bebek (IVF), infertilite nedenleri, tedavi yöntemleri, başarı oranları ve üreme sağlığı hakkında bilimsel ve güncel bilgiler. Yayın kurulu denetiminde.">
     <Header />
-    
+
     <main id="main-content" tabindex="-1" class="pt-24">
 
-        <!-- Hero Section: Intent-Based & Informative -->
-        <section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-16 relative">
-            <div class="flex flex-col items-center text-center py-20 lg:py-28">
-                <span class="text-primary font-label uppercase tracking-[0.3em] text-xs font-bold mb-6 block animate-fade-in">BAĞIMSIZ BİLİMSEL REHBER</span>
-                <h1 class="text-hero font-headline text-on-surface leading-tight mb-12 max-w-4xl">
-                    Bilimsel Derinlik, <br/><span class="italic text-primary">İnsani Hassasiyet</span>
-                </h1>
-                
-                <!-- Mega Search Bar (FertilityIQ Style) -->
-                <div class="w-full max-w-3xl relative mb-12 group">
-                    <div class="absolute inset-0 bg-primary/10 blur-3xl rounded-full opacity-0 group-focus-within:opacity-100 transition-opacity"></div>
-                    <div class="relative bg-white shadow-2xl shadow-primary/5 rounded-[2rem] p-2 flex items-center border border-outline-variant/30 focus-within:border-primary transition-all">
-                        <span class="material-symbols-outlined ml-6 text-slate-400">search</span>
-                        <input 
-                            type="text" 
-                            placeholder="Ne arıyorsunuz? Örn: PCOS, Sperm Analizi, IVF Başarı Oranları" 
-                            class="flex-1 bg-transparent border-none focus:ring-0 px-6 py-4 text-lg text-on-surface placeholder:text-slate-400"
-                        />
-                        <button class="bg-primary text-on-primary px-8 py-4 rounded-[1.5rem] font-bold hover:bg-primary-dim transition-all shadow-lg shadow-primary/20">
-                            KEŞFET
-                        </button>
-                    </div>
-                </div>
+        <!-- NEW: Modern Hero Section -->
+        <HeroSection />
 
-                <!-- Quick Navigation Points -->
-                <div class="flex flex-wrap justify-center gap-6 mb-16">
-                    <a href="/kadin-infertilitesi" class="flex items-center gap-4 px-6 py-4 bg-surface-container rounded-2xl hover:bg-surface-container-high transition-all border border-outline-variant/10">
-                        <span class="material-symbols-outlined text-primary">psychiatry</span>
-                        <span class="font-bold text-sm">İnfertiliteyi Anla</span>
-                    </a>
-                    <a href="/rehberler" class="flex items-center gap-4 px-6 py-4 bg-surface-container rounded-2xl hover:bg-surface-container-high transition-all border border-outline-variant/10">
-                        <span class="material-symbols-outlined text-primary">biotech</span>
-                        <span class="font-bold text-sm">Tedavi Rehberine Git</span>
-                    </a>
-                    <a href="/makaleler" class="flex items-center gap-4 px-6 py-4 bg-surface-container rounded-2xl hover:bg-surface-container-high transition-all border border-outline-variant/10">
-                        <span class="material-symbols-outlined text-primary">library_books</span>
-                        <span class="font-bold text-sm">Tüm Makaleleri Keşfet</span>
-                    </a>
-                </div>
-
-                <!-- Trust Badges Strip -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-outline-variant/10 w-full max-w-5xl">
-                    <div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
-                        <span class="text-xs font-bold uppercase tracking-widest text-[#C5A059]">1996'dan Beri</span>
-                        <p class="text-[10px] text-secondary">Sektörün Öncüsü</p>
-                    </div>
-                    <div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
-                        <span class="text-xs font-bold uppercase tracking-widest text-[#C5A059]">Kanıta Dayalı Tıp</span>
-                        <p class="text-[10px] text-secondary">Bilimsel Literatür</p>
-                    </div>
-                    <div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
-                        <span class="text-xs font-bold uppercase tracking-widest text-[#C5A059]">Ticari Reklamsız</span>
-                        <p class="text-[10px] text-secondary">Bağımsız Yayıncılık</p>
-                    </div>
-                    <div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
-                        <span class="text-xs font-bold uppercase tracking-widest text-[#C5A059]">Tıbbi Denetim</span>
-                        <p class="text-[10px] text-secondary">Yayın Kurulu Onaylı</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <!-- NEW: Quick Guide Cards Section (User Priority) -->
+        <QuickGuideCards />
 
         <!-- Key Information: Decision-Making Section -->
         <section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-16">
