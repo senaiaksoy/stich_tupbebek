@@ -5,6 +5,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import HeroSection from '../components/home/HeroSection.astro';
 import QuickGuideCards from '../components/home/QuickGuideCards.astro';
+import PatientJourney from '../components/PatientJourney.astro';
+import RecentArticlesCarousel from '../components/RecentArticlesCarousel.astro';
 import FAQHighlights from '../components/FAQHighlights.astro';
 
 const recentArticles = (await getCollection('articles')).slice(0, 3);
