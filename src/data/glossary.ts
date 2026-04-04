@@ -10,6 +10,8 @@ export interface GlossaryEntry {
   term: string;
   definition: string;
   href?: string;
+  /** YouTube video ID (Shorts veya standart) — varsa sözlükte video ikonu gösterilir */
+  videoId?: string;
 }
 
 export const glossary: Record<string, GlossaryEntry> = {
@@ -18,6 +20,7 @@ export const glossary: Record<string, GlossaryEntry> = {
     term: 'AMH',
     definition: 'Anti-Mullerian Hormon. Over rezervinin (yumurta sayisi) degerlendirilmesinde kullanilan kan testi. Dusuk AMH azalmis rezervi isaret edebilir.',
     href: '/hormon-paneli',
+    videoId: 'PLACEHOLDER_AMH',
   },
   FSH: {
     term: 'FSH',
@@ -44,11 +47,13 @@ export const glossary: Record<string, GlossaryEntry> = {
     term: 'IVF',
     definition: 'In Vitro Fertilizasyon (Tup Bebek). Yumurta ve spermin laboratuvar ortaminda birlestirilerek embriyo olusturulmasi ve rahme transfer edilmesi islemi.',
     href: '/tedavi-yontemleri',
+    videoId: 'PLACEHOLDER_IVF',
   },
   ICSI: {
     term: 'ICSI',
     definition: 'Intrasitoplazmik Sperm Enjeksiyonu. Tek bir spermin mikro-igne ile dogrudan yumurtanin icine enjekte edildigi ileri duzey dollenme teknigi.',
     href: '/tedavi-yontemleri',
+    videoId: 'PLACEHOLDER_ICSI',
   },
   IUI: {
     term: 'IUI',
@@ -95,6 +100,7 @@ export const glossary: Record<string, GlossaryEntry> = {
     term: 'Endometriozis',
     definition: 'Rahim ic tabakasina benzer dokunun rahim disinda (yumurtaliklar, tupler, periton) buyumesi. Agri ve infertiliteye yol acabilir.',
     href: '/endometriozis-adenomyozis',
+    videoId: 'PLACEHOLDER_ENDO',
   },
   Adenomyozis: {
     term: 'Adenomyozis',
@@ -156,4 +162,11 @@ export function getTerm(key: string): GlossaryEntry | undefined {
 /** Tum terimleri alfabetik sirali dizi olarak dondurur */
 export function getAllTerms(): GlossaryEntry[] {
   return Object.values(glossary).sort((a, b) => a.term.localeCompare(b.term, 'tr'));
+}
+
+/** Sadece videosu olan terimleri dondurur */
+export function getVideoTerms(): GlossaryEntry[] {
+  return Object.values(glossary)
+    .filter(e => e.videoId)
+    .sort((a, b) => a.term.localeCompare(b.term, 'tr'));
 }
