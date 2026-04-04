@@ -11,6 +11,7 @@ import ArticleSchema from '../../components/ArticleSchema.astro';
 import EEATBadge from '../../components/EEATBadge.astro';
 import ReferenceList from '../../components/ReferenceList.astro';
 import MedicalDisclaimer from '../../components/MedicalDisclaimer.astro';
+import EditorKunyesi from '../../components/EditorKunyesi.astro';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
@@ -93,6 +94,11 @@ const referenceCount = entry.data.references?.length || 0;
                     status={entry.data.status || 'published'}
                     referenceCount={referenceCount}
                 />
+
+                <!-- Editor Kunyesi (compact - makale basi) -->
+                <div class="mt-6">
+                    <EditorKunyesi variant="compact" />
+                </div>
             </header>
 
             <!-- Hero Image -->
@@ -124,8 +130,13 @@ const referenceCount = entry.data.references?.length || 0;
                 <ShareButtons title={entry.data.title} url={articleUrl} />
             </div>
 
-            <!-- Medical Disclaimer (auto-injected) -->
+            <!-- Editor Kunyesi (full - makale sonu) -->
             <div class="mt-12">
+                <EditorKunyesi variant="full" />
+            </div>
+
+            <!-- Medical Disclaimer (auto-injected) -->
+            <div class="mt-8">
                 <MedicalDisclaimer />
             </div>
 
