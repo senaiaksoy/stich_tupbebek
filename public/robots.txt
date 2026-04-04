@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tupbebek.com/sitemap-index.xml
+
+# Crawl-delay (onerilen)
+Crawl-delay: 1
+
+# Disallow admin/draft paths
+Disallow: /api/
+Disallow: /_astro/

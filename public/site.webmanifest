@@ -1,0 +1,17 @@
+{
+  "name": "tupbebek.com — Ureme Sagligi Bilgi Portali",
+  "short_name": "tupbebek",
+  "description": "Turkiye'nin ilk bagimsiz, reklamsiz, bilimsel ureme sagligi ve infertilite referans portali.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#2563a8",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
