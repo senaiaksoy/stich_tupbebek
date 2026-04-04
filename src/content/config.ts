@@ -58,6 +58,10 @@ const articlesCollection = defineCollection({
     // --- Bilimsel Referanslar ---
     references: z.array(referenceSchema).optional(),
 
+    // --- Video Embed ---
+    videoId: z.string().optional(),
+    videoTitle: z.string().optional(),
+
     // --- SEO ---
     canonical: z.string().url().optional(),
     noindex: z.boolean().default(false),

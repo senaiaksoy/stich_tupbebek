@@ -14,6 +14,7 @@ import MedicalDisclaimer from '../../components/MedicalDisclaimer.astro';
 import EditorKunyesi from '../../components/EditorKunyesi.astro';
 import UzmanaSor from '../../components/forms/UzmanaSor.astro';
 import LeadMagnet from '../../components/forms/LeadMagnet.astro';
+import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
@@ -115,6 +116,14 @@ const referenceCount = entry.data.references?.length || 0;
                         fetchpriority="high"
                     />
                 </div>
+            )}
+
+            <!-- Video Embed (if article has videoId) -->
+            {entry.data.videoId && (
+                <YouTubeEmbed
+                    id={entry.data.videoId}
+                    title={entry.data.videoTitle || entry.data.title}
+                />
             )}
 
             <!-- Article Content — AI-skimmable prose -->
