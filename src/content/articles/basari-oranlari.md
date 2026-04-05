@@ -6,8 +6,8 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Doç. Dr. Senai Aksoy"
 lastModified: 2026-04-05
 category: "Tüp Bebek"
-image: "/images/home/article-1.jpg"
-imageAlt: "tüp bebek başarı oranları yaşa göre ivf istatistikleri"
+image: "/images/home/basari-oranlari-hero.webp"
+imageAlt: "Tüp bebek başarı oranları - doktor danışmanlığı ve istatistik verileri"
 featured: true
 ---
 
