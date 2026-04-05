@@ -1,85 +1,53 @@
 ---
 /**
- * Quick Guide Cards Section
- * 6 main guide categories in 2x3 grid
+ * Quick Guide Cards — Healthline-inspired clean editorial cards
+ * White backgrounds, subtle borders, generous whitespace
  */
-
-import { guideCategories, getColorScheme } from '../../data/guideCategories';
+import { guideCategories } from '../../data/guideCategories';
 ---
 
-<section class="py-16 bg-gradient-to-b from-gray-50 to-white">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
     <!-- Section Header -->
-    <div class="text-center mb-12">
-      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+    <div class="mb-10 lg:mb-14">
+      <h2 class="text-2xl lg:text-3xl font-headline font-bold text-gray-900 mb-3">
         Rehberler & Kaynaklar
       </h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        İnfertilite yolculuğunuzun her aşaması için kapsamlı, bilimsel rehberler
+      <p class="text-base text-gray-500 max-w-xl">
+        İnfertilite yolculuğunuzun her aşaması için kapsamlı, bilimsel rehberler.
       </p>
     </div>
 
     <!-- Guide Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {guideCategories.map((guide) => {
-        const colors = getColorScheme(guide.color);
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+      {guideCategories.map((guide) => (
+        <a
+          href={guide.href}
+          class="group flex flex-col gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-primary-200 hover:shadow-md transition-all duration-300"
+        >
+          <!-- Icon -->
+          <div class="w-11 h-11 rounded-lg bg-primary-50 flex items-center justify-center group-hover:bg-primary-100 transition-colors">
+            <span class="material-symbols-outlined text-primary-600 text-xl">{guide.icon}</span>
+          </div>
 
-        return (
-          <a
-            href={guide.href}
-            class={`group relative rounded-2xl p-6 border-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${colors.bg} ${colors.border}`}
-          >
-            <!-- Card Content -->
-            <div class="space-y-4">
-              <!-- Icon -->
-              <div class={`w-12 h-12 rounded-xl flex items-center justify-center ${colors.bg} group-hover:scale-110 transition-transform`}>
-                <span class={`material-symbols-outlined text-2xl ${colors.icon}`}>
-                  {guide.icon}
-                </span>
-              </div>
+          <!-- Title -->
+          <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary-700 transition-colors leading-snug">
+            {guide.title}
+          </h3>
 
-              <!-- Title -->
-              <h3 class={`text-xl font-bold ${colors.text} group-hover:text-primary-600 transition-colors`}>
-                {guide.title}
-              </h3>
+          <!-- Description -->
+          <p class="text-sm text-gray-500 leading-relaxed line-clamp-2 flex-1">
+            {guide.description}
+          </p>
 
-              <!-- Description -->
-              <p class="text-sm text-gray-600 line-clamp-2">
-                {guide.description}
-              </p>
-
-              <!-- CTA -->
-              <div class="flex items-center gap-2 text-primary-600 font-semibold text-sm pt-2 group-hover:translate-x-1 transition-transform">
-                <span>Detaylı Rehber</span>
-                <span class="material-symbols-outlined text-lg">arrow_forward</span>
-              </div>
-            </div>
-
-            <!-- Gradient Overlay on Hover -->
-            <div class={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity bg-gradient-to-br from-primary to-transparent pointer-events-none`}></div>
-          </a>
-        );
-      })}
-    </div>
-
-    <!-- CTA Below Cards -->
-    <div class="text-center mt-12">
-      <a
-        href="/rehberler"
-        class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-gray-200 text-gray-900 font-bold rounded-lg hover:border-primary hover:text-primary-600 transition-colors group"
-      >
-        <span>Tüm Rehberleri Gözat</span>
-        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
-      </a>
+          <!-- Arrow -->
+          <span class="inline-flex items-center gap-1.5 text-primary-600 text-sm font-semibold group-hover:gap-2.5 transition-all duration-300">
+            Detaylı Rehber
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </span>
+        </a>
+      ))}
     </div>
   </div>
 </section>
-
-<style>
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-</style>

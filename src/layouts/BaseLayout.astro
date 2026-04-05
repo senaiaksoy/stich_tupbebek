@@ -201,17 +201,6 @@ const medicalWebPageSchema = {
 		<slot />
 		<CookieConsent />
 
-		<!-- Floating Prestige Badge (only on homepage) -->
-		<div class:list={["fixed left-8 top-32 z-[100] pointer-events-none md:pointer-events-auto group", !isHome && "hidden"]}>
-			<div class="relative w-24 h-24 sm:w-32 sm:h-32 -rotate-12 group-hover:rotate-0 group-hover:scale-110 transition-all duration-500">
-				<img 
-					src="/images/home/prestige_seal_1996.webp" 
-					alt="Türkiye'nin İlk Üreme Sağlığı Platformu - 1996" 
-					class="w-full h-full object-contain pointer-events-auto rounded-full drop-shadow-2xl"
-					style="clip-path: circle(50%); mix-blend-mode: multiply;"
-				/>
-				<div class="absolute inset-0 rounded-full border-2 border-[#c5a059]/20 pointer-events-none"></div>
-			</div>
-		</div>
+		<!-- Prestige Badge removed — trust indicators now in HeroSection trust bar -->
 	</body>
 </html>

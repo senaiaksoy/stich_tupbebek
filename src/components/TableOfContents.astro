@@ -1,14 +1,15 @@
 ---
 /**
- * TableOfContents — Makale icerik haritasi
+ * TableOfContents — Healthline-style sticky sidebar TOC
  * Client-side JS ile <article> icerisindeki h2/h3'lerden otomatik TOC olusturur.
  * Scroll spy ile aktif baslik vurgulanir.
+ * Artık fixed değil, sticky sidebar içinde çalışır.
  */
 ---
 
-<nav id="toc-nav" class="hidden xl:block fixed top-32 right-8 w-56 max-h-[calc(100vh-10rem)] overflow-y-auto" aria-label="Icerik haritasi">
+<nav id="toc-nav" class="hidden lg:block" aria-label="İçerik haritası">
     <div class="border-l-2 border-gray-200 pl-4">
-        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Icerik</p>
+        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">İçindekiler</p>
         <ul id="toc-list" class="space-y-2">
             <!-- JS ile doldurulur -->
         </ul>
@@ -19,7 +20,7 @@
 (function() {
     var nav = document.getElementById('toc-nav');
     var list = document.getElementById('toc-list');
-    var article = document.querySelector('article .prose');
+    var article = document.querySelector('article .prose-medical');
     if (!nav || !list || !article) return;
 
     // Collect h2 and h3 headings
@@ -29,7 +30,6 @@
     // Build TOC items
     var items = [];
     headings.forEach(function(h, i) {
-        // Ensure heading has an id
         if (!h.id) {
             h.id = 'heading-' + i;
         }
@@ -47,7 +47,7 @@
             e.preventDefault();
             var target = document.getElementById(h.id);
             if (target) {
-                var offset = 100; // header height
+                var offset = 100;
                 var top = target.getBoundingClientRect().top + window.scrollY - offset;
                 window.scrollTo({ top: top, behavior: 'smooth' });
                 history.replaceState(null, '', '#' + h.id);

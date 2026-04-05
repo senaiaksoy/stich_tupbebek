@@ -44,8 +44,8 @@ const {
 
 const statusConfig = {
     draft: { label: 'Taslak', icon: 'edit_note', color: 'text-gray-500 bg-gray-100' },
-    in_review: { label: 'Incelemede', icon: 'pending', color: 'text-amber-700 bg-amber-50' },
-    published: { label: 'Yayinda', icon: 'check_circle', color: 'text-mint-700 bg-mint-50' },
+    in_review: { label: 'İncelemede', icon: 'pending', color: 'text-amber-700 bg-amber-50' },
+    published: { label: 'Yayında', icon: 'check_circle', color: 'text-mint-700 bg-mint-50' },
 };
 
 const sc = statusConfig[status];
@@ -85,7 +85,7 @@ const sc = statusConfig[status];
                     <span class="material-symbols-outlined text-mint-600 text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
                 </div>
                 <div class="min-w-0">
-                    <p class="text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-0.5">Tibbi Inceleme</p>
+                    <p class="text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-0.5">Tıbbi İnceleme</p>
                     {medicalReviewer ? (
                         <>
                             <p class="text-sm font-bold text-gray-900 truncate">{medicalReviewer}</p>
@@ -93,7 +93,7 @@ const sc = statusConfig[status];
                             {reviewDate && <p class="text-[11px] text-gray-400 mt-0.5">{reviewDate}</p>}
                         </>
                     ) : (
-                        <p class="text-xs text-gray-400 italic">Inceleme bekleniyor</p>
+                        <p class="text-xs text-gray-400 italic">İnceleme bekleniyor</p>
                     )}
                 </div>
             </div>
@@ -112,7 +112,7 @@ const sc = statusConfig[status];
         {lastModified && (
             <span class="inline-flex items-center gap-1 text-gray-500">
                 <span class="material-symbols-outlined text-[14px]">update</span>
-                Guncelleme: {lastModified}
+                Güncelleme: {lastModified}
             </span>
         )}
 
