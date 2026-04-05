@@ -12,7 +12,7 @@ const featuredDate = featured?.data.lastModified || featured?.data.publishDate;
 const formattedDate = featuredDate ? new Date(featuredDate).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
 ---
 
-<section class="pt-28 pb-8 lg:pb-12">
+<section class="pt-8 pb-8 lg:pt-12 lg:pb-12">
   <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
     <!-- Featured Article Hero -->
@@ -69,19 +69,5 @@ const formattedDate = featuredDate ? new Date(featuredDate).toLocaleDateString('
       </a>
     )}
 
-    <!-- Trust Bar -->
-    <div class="mt-10 lg:mt-14 pt-8 border-t border-gray-100">
-      <div class="flex flex-wrap items-center justify-between gap-6">
-        <p class="text-sm text-gray-500 max-w-md">
-          1996'dan beri bağımsız, reklamsız, bilimsel bir üreme sağlığı rehberi.
-        </p>
-        <div class="flex items-center gap-4">
-          <span class="text-xs font-bold text-gray-400 border border-gray-200 px-2.5 py-1 rounded-md">ESHRE</span>
-          <span class="text-xs font-bold text-gray-400 border border-gray-200 px-2.5 py-1 rounded-md">ASRM</span>
-          <span class="text-xs font-bold text-gray-400 border border-gray-200 px-2.5 py-1 rounded-md">WHO</span>
-          <span class="text-xs font-bold text-gray-400 border border-gray-200 px-2.5 py-1 rounded-md">0 Reklam</span>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
