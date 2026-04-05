@@ -1,92 +1,100 @@
 ---
-title: "Preimplantasyon Genetik Testi (PGT) Cinsiyet Seçimi İçin Kullanılabilir mi?"
-description: "Preimplantasyon genetik testi (PGT), embriyoların implantasyondan önce genetik koşullar açısından taranmasını sağlar. PGT'nin cinsiyet seçimi için kullanımı, etik, sosyal ve tıbbi açıdan önemli soruları gündeme getirmektedir."
+title: "PGT ile Cinsiyet Seçimi: Türkiye'de Yasal mı?"
+description: "Tüp bebek tedavisinde PGT ile cinsiyet belirleme mümkün mü? Türkiye'deki yasal düzenlemeler, tıbbi endikasyon istisnaları ve sık sorulan sorular."
 publishDate: 2024-06-22
 author: "tupbebek.com Yayın Kurulu"
-medicalReviewer: "Yayın Kurulu"
-lastModified: 2026-04-03
-category: "Tedavi Yöntemleri"
+medicalReviewer: "Doç. Dr. Senai Aksoy"
+lastModified: 2026-04-05
+category: "Genetik"
 image: /src/images/blog/pgt_sex.jpg
 ---
 
-## Preimplantasyon Genetik Testi (PGT) Cinsiyet Seçimi İçin Kullanılabilir mi?
+## PGT ile Cinsiyet Belirlenebilir mi?
 
-## Giriş
+[PGT (Preimplantasyon Genetik Test)](/makaleler/genetik-testler), tüp bebek tedavisinde embriyoların genetik yapısını transfer öncesinde inceleyen bir testtir. Bu test sırasında embriyonun cinsiyet kromozomları da (XX = kız, XY = erkek) tespit edilebilir. Ancak **tespit edebilmek ile cinsiyet seçimi yapabilmek aynı şey değildir.**
 
-Preimplantasyon genetik testi (PGT), embriyoları implantasyondan önce genetik koşullar açısından taramak için in vitro fertilizasyon (IVF) ile birlikte kullanılan sofistike bir tekniktir. PGT, kromozomal anormallikleri ve spesifik genetik mutasyonları tespit ederek sağlıklı bir gebelik şansını artırabilir. PGT'nin en tartışmalı uygulamalarından biri cinsiyet seçimi için kullanılmasıdır. Bu uygulama, derinlemesine araştırılması gereken etik, sosyal ve tıbbi sorunları gündeme getirmektedir.
+---
 
-## PGT'nin Arkasındaki Bilim
+## Türkiye'de Cinsiyet Seçimi Yasaktır
 
-PGT, IVF ile oluşturulan bir embriyodan az sayıda hücrenin alınmasını içerir. Bu hücreler daha sonra genetik kusurlar veya kromozomal anormallikler açısından incelenir. En önemli PGT türleri şunlardır:
+Türkiye'de cinsiyet seçimi, **T.C. Sağlık Bakanlığı ÜYTE (Üremeye Yardımcı Tedavi Uygulamaları) Yönetmeliği** ile açıkça yasaklanmıştır. Bu yasak hem tıbbi olmayan (sosyal) nedenlerle hem de "aile dengesi" gibi gerekçelerle cinsiyet seçimini kapsar.
 
-- **PGT-A (anöploidi için preimplantasyon genetik testi):** Anormal sayıda kromozom tespit eder.
-- **PGT-M (Monogenik Bozukluklar için Preimplantasyon Genetik Testi):** Spesifik genetik mutasyonları tanımlar.
-- **PGT-SR (Yapısal Yeniden Düzenlemeler için Preimplantasyon Genetik Testi):** Kromozomlardaki yapısal değişiklikleri tespit eder.
+### Yasal Çerçeve
 
-Süreç, yumurtalıkların birden fazla yumurta üretmesi için uyarılmasıyla başlar ve bunlar daha sonra laboratuvarda döllenir. Üç ila beş günlük gelişimden sonra, her embriyodan birkaç hücre biyopsi ile alınır. Bu hücreler genetik analize tabi tutulur ve yalnızca tespit edilen anormalliklere sahip olmayan embriyolar rahme transfer edilmek üzere değerlendirilir.
+- Tüp bebek tedavisinde embriyo seçimi yalnızca **tıbbi endikasyonlarla** yapılabilir
+- Cinsiyet belirleme amacıyla PGT uygulanması **yasaktır**
+- Yönetmeliğe aykırı davranan sağlık kuruluşları hakkında idari ve cezai yaptırımlar uygulanır
 
-## PGT Kullanılarak Cinsiyet Seçimi
+### Tek İstisna: Cinsiyete Bağlı Genetik Hastalıklar
 
-PGT kullanılarak cinsiyet seçimi, embriyoların cinsiyet kromozomlarının belirlenmesini içerir. Erkek embriyolar bir X ve bir Y kromozomuna (XY) sahipken, dişi embriyolar iki X kromozomuna (XX) sahiptir. Genetik analiz, Y kromozomunun varlığını veya yokluğunu belirler, böylece doktorlar her embriyonun cinsiyetini belirleyebilir.
+Bazı genetik hastalıklar yalnızca belirli bir cinsiyeti etkiler. Bu hastalıklara **"X'e bağlı hastalıklar"** denir ve genellikle erkek çocuklarda ortaya çıkar. Örnekler:
 
-Cinsiyet seçiminin iki ana nedeni vardır:
+- **Hemofili (Kan durdurulamama hastalığı):** Kanın pıhtılaşmasını sağlayan faktörlerin eksikliği
+- **Duchenne Kas Distrofisi (DMD):** Kasların ilerleyici şekilde güçsüzleşmesi
+- **Fragile X Sendromu:** Zihinsel gelişim geriliğine yol açabilen genetik bozukluk
 
-- **Tıbbi nedenler:** Cinsiyete bağlı genetik bozuklukları önlemek için. Hemofili ve Duchenne kas distrofisi gibi bazı genetik bozukluklar X kromozomuna bağlıdır ve ağırlıklı olarak erkekleri etkiler. Dişi embriyolar seçilerek bu hastalıklardan kaçınılabilir.
-- **Tıbbi olmayan (sosyal) nedenler:** Bazı ebeveynler aile dengesi veya kişisel tercih nedenleriyle cinsiyet seçimini istemektedir. PGT'nin cinsiyet seçimi için tıbbi olmayan bu kullanımı oldukça tartışmalıdır.
+Bu hastalıkların taşıyıcısı olan çiftlerde, **hastalığın embriyoya geçişini önlemek amacıyla** [PGT-M](/pgt-merkezi) uygulanabilir. Bu durumda cinsiyet bilgisi hastalık taramasının doğal bir sonucu olarak ortaya çıkar — amaç cinsiyet seçimi değil, **hastalıktan korunmadır.**
 
-## Etik Hususlar
+> **Önemli:** Bu istisna yalnızca genetik testlerle doğrulanmış taşıyıcılık durumunda ve tıbbi gerekçeyle uygulanır. Sosyal nedenlerle cinsiyet seçimi hiçbir koşulda yapılmaz.
 
-PGT'nin cinsiyet seçimi için, özellikle de tıbbi olmayan nedenlerle kullanılması önemli etik sorunları gündeme getirmektedir:
+---
 
-- **Cinsiyet önyargısı ve ayrımcılık:** Cinsiyete dayalı bir embriyo seçimi, toplumsal cinsiyet önyargılarını ve stereotiplerini güçlendirebilir. Erkek çocukların tercih edildiği kültürlerde, bu uygulama cinsiyet dengesizliğini daha da kötüleştirebilir.
-- **Çocuklar üzerindeki psikolojik etki:** Cinsiyet seçimi sonucu doğan çocuklar, ebeveynlerinin cinsiyetlerine ilişkin beklentileriyle ilgili psikolojik baskıya maruz kalabilir.
-- **Tasarım bebeklere giden yol:** Cinsiyet seçimi, görünüş, zeka ve yetenekler gibi diğer özelliklerin seçimine doğru bir adımdır ve "tasarım bebekler" etik bataklığına yol açar.
+## PGT'nin Asıl Amacı Nedir?
 
-## Yasal ve Düzenleyici Yönler
+PGT, cinsiyet seçimi için değil, embriyoların genetik sağlığını değerlendirmek için kullanılan bir araçtır:
 
-Cinsiyet seçimi için PGT'nin yasallığı dünya çapında büyük farklılıklar göstermektedir. Amerika Birleşik Devletleri gibi bazı ülkelerde, bazı kliniklerin kendi politikaları olmasına rağmen, cinsiyet seçimini açıkça yasaklayan federal yasalar yoktur. Buna karşılık, Birleşik Krallık da dahil olmak üzere birçok Avrupa ülkesi, tıbbi nedenler olmadıkça bu uygulamayı kısıtlamakta veya yasaklamaktadır. Bu düzenlemeler daha geniş toplumsal değerleri ve etik hususları yansıtmaktadır.
+### [PGT-A (Anöploidi Taraması)](/makaleler/genetik-testler)
+- Kromozom sayısı anomalilerini tespit eder
+- [İleri yaş](/yas-ve-fertilite), tekrarlayan düşükler ve başarısız transferlerde önerilir
+- Amacı: genetik olarak normal embriyoyu seçerek başarı oranını artırmak
 
-## Tıbbi Etkiler
+### [PGT-M (Monogenik Hastalık Taraması)](/makaleler/genetik-testler)
+- Bilinen tek gen hastalıklarını embriyoda tarar
+- Taşıyıcı çiftlerde hastalığın çocuğa geçmesini önler
+- Kistik fibrozis, talasemi, SMA gibi hastalıklar için uygulanır
 
-Tıbbi açıdan bakıldığında PGT'nin temel amacı genetik hastalıkları önlemek ve sağlıklı bir hamilelik şansını artırmaktır. Cinsiyet seçimi için kullanıldığında, özellikle tıbbi olmayan nedenlerle, potansiyel faydalar risklere ve etik kaygılara karşı tartılmalıdır.
+### PGT-SR (Yapısal Yeniden Düzenleme)
+- Kromozomlardaki yapısal bozuklukları (translokasyon vb.) tarar
+- Anne veya babada yapısal kromozom anomalisi saptanmışsa önerilir
 
-- **Embriyo sağlığı ve yaşayabilirliği:** Embriyo biyopsisi ve genetik test süreci genellikle güvenlidir, ancak risksiz değildir. Biyopsinin embriyoya zarar vermesi veya implantasyon potansiyelini etkilemesi gibi küçük bir risk vardır.
-- **Başarı oranları:** PGT ile kombine edilen IVF'nin başarı oranları, kadının yaşı, embriyoların kalitesi ve kullanılan PGT teknikleri dahil olmak üzere bir dizi faktöre bağlıdır. PGT, canlı embriyoların seçimini iyileştirebilse de, başarılı bir gebeliğin garantisi değildir.
+---
 
-## Sosyal ve Kültürel Perspektifler
+## Neden Cinsiyet Seçimi Etik Açıdan Sorunludur?
 
-Cinsiyet seçiminin kabulü farklı toplumlarda ve kültürlerde büyük farklılıklar göstermektedir. Bazı kültürlerde, erkek çocuklara yönelik güçlü bir tercih, cinsiyet seçimine yönelik talebi artırarak potansiyel olarak önemli sosyal sonuçlara yol açabilir. Ancak diğer toplumlarda cinsiyet seçimi etik dışı ve tıbbi olmayan nedenlerle gereksiz görülmektedir.
+Dünya genelinde cinsiyet seçimi tartışmalı bir konudur. Uluslararası tıp otoriteleri (ESHRE, ASRM) bu konuda çeşitli kaygılara dikkat çekmektedir:
 
-- **Kültürel normlar:** Erkek çocuk tercihinin güçlü olduğu kültürlerde, cinsiyet seçimi mevcut cinsiyet dengesizliğini daha da kötüleştirebilir ve uzun vadeli demografik sorunlara katkıda bulunabilir.
-- **Aileler arasında denge:** Diğer bağlamlarda, aileler dengeli bir aile kompozisyonu elde etmek için cinsiyet seçimi için çaba gösterebilir, bu da etik açıdan daha az sorunlu olarak görülebilir.
+- **Cinsiyet ayrımcılığı riski:** Sosyal nedenlerle cinsiyet seçimi, toplumsal cinsiyet eşitsizliğini derinleştirebilir
+- **Demografik dengesizlik:** Bazı toplumlarda belirli bir cinsiyetin tercih edilmesi nüfus dengesini bozabilir
+- **Tıbbi kaynakların amacı dışında kullanımı:** PGT gibi değerli tıbbi araçların sosyal tercihler için kullanılması, asıl ihtiyacı olan hastaların erişimini zorlaştırabilir
+- **Etik sınırların belirsizleşmesi:** Cinsiyet seçimi, gelecekte diğer fiziksel özellik seçimlerine kapı açabilir
 
-## Gelecek Yollar ve Alternatifler
+---
 
-Üreme teknolojileri ilerlemeye devam ettikçe, PGT'nin uygulamaları ve etkileri de genişleyecektir. Gelecekteki gelişmeler, daha sofistike genetik tarama tekniklerini ve cinsiyet seçimiyle ilgili karmaşık konuların ele alınması için yeni etik çerçeveleri içerebilir.
+## Sık Sorulan Sorular
 
-- **Genetik taramadaki gelişmeler:** Tüm genom dizilimi gibi yeni teknolojiler embriyolar hakkında daha da ayrıntılı genetik bilgi sağlayabilir. Ancak bu gelişmeler yeni etik ve pratik sorunları da beraberinde getirecektir.
-- **Alternatif yaklaşımlar:** Embriyo biyopsisi ihtiyacını azaltabilecek non-invaziv prenatal test (NIPT) ve diğer daha az invaziv genetik tarama yöntemleri geliştirilmektedir.
+**PGT yaptırdığımda embriyomun cinsiyetini öğrenebilir miyim?**
+PGT-A veya PGT-M sonuçlarında cinsiyet bilgisi teknik olarak ortaya çıkar. Ancak Türkiye'de bu bilgi hastalara **cinsiyet seçimi amacıyla** paylaşılmaz. Yasalar gereği, cinsiyet bilgisi yalnızca cinsiyete bağlı genetik hastalık riski olan çiftlere ve tıbbi gerekçeyle iletilir.
+
+**Yurt dışında cinsiyet seçimi yaptırmak yasal mıdır?**
+Bazı ülkelerde cinsiyet seçimi serbesttir, bazılarında yasaktır. Ancak Türkiye'de faaliyet gösteren sağlık kuruluşlarının hastaları bu amaçla yurt dışına yönlendirmesi de yönetmeliğe aykırıdır.
+
+**Cinsiyete bağlı hastalık taşıyıcısıyız, ne yapmalıyız?**
+Doktorunuz sizi genetik danışmanlık birimine yönlendirecektir. Taşıyıcılığınız genetik testlerle doğrulandıktan sonra PGT-M ile hastalığın embriyoya geçip geçmediği taranabilir. Bu işlem tamamen yasal ve tıbbi endikasyona dayalıdır.
+
+**PGT embriyoya zarar verir mi?**
+Modern biyopsi tekniklerinde embriyonun bebeğe dönüşecek kısmına dokunulmaz. Dış tabakadan (trofektoderm) birkaç hücre alınır. Embriyo hasar riski %1'in altındadır.
+
+---
 
 ## Sonuç
 
-Preimplantasyon genetik tanı (PGT), genetik hastalıkların önlenmesinde ve IVF sonuçlarının iyileştirilmesinde önemli faydalar sunmaktadır. Bununla birlikte, özellikle tıbbi olmayan nedenlerle cinsiyet seçimi için kullanımı oldukça tartışmalı olmaya devam etmektedir. Bu uygulama, doktorlar, hastalar ve politika yapıcılar tarafından dikkatle değerlendirilmesi gereken etik, sosyal ve tıbbi kaygıları gündeme getirmektedir. Üreme teknolojileri gelişmeye devam ettikçe, bu güçlü araçların sorumlu bir şekilde ve toplumun yararına kullanılmasını sağlamak için sürekli diyalog ve etik inceleme şarttır.
+PGT, tüp bebek tedavisinde genetik hastalıkları önlemek ve sağlıklı embriyo seçimini sağlamak amacıyla kullanılan bilimsel bir araçtır. **Cinsiyet seçimi amacıyla kullanılması Türkiye'de yasaktır.** Tek istisna, cinsiyete bağlı genetik hastalıkların önlenmesi gibi tıbbi gerekçelerdir.
 
-## Sıkça Sorulan Sorular
+Genetik hastalık taşıyıcılığı konusunda endişeniz varsa, doktorunuz ve genetik danışmanınız size en uygun yaklaşımı belirleyecektir. PGT hakkında detaylı bilgi için [Genetik Testler rehberimizi](/makaleler/genetik-testler) inceleyebilirsiniz.
 
-**Preimplantasyon genetik testi (PGT) nedir?**
-PGT, embriyoları genetik koşullar açısından taramak için kullanılan bir tekniktir. Bu test, IVF ile birlikte uygulanır ve embriyoları implantasyondan önce kromozomal anormallikler veya genetik mutasyonlar açısından değerlendirir.
+---
 
-**PGT nasıl çalışır?**
-PGT, IVF sürecinde oluşturulan embriyolardan az sayıda hücrenin biyopsi ile alınmasını ve bu hücrelerin genetik analizini içerir. Analiz sonucunda, sağlıklı embriyolar rahme transfer edilmek üzere seçilir.
-
-**PGT kullanılarak cinsiyet seçimi yapılabilir mi?**
-Evet, PGT kullanılarak embriyoların cinsiyeti belirlenebilir. Bu işlem, cinsiyet kromozomlarının analiz edilmesiyle gerçekleştirilir.
-
-**Cinsiyet seçimi için PGT'nin etik sorunları nelerdir?**
-Cinsiyet seçimi, toplumsal cinsiyet önyargılarını güçlendirebilir, çocuklar üzerinde psikolojik baskıya neden olabilir ve "tasarım bebekler" gibi etik sorunlara yol açabilir.
-
-**Cinsiyet seçimi için PGT yasal mı?**
-Cinsiyet seçimi için PGT'nin yasallığı ülkelere göre değişir. Bazı ülkelerde serbestken, diğerlerinde tıbbi nedenler dışında kullanımı yasaktır. Türkiye'de cinsiyet seçimi yasaktır.
-
-**PGT'nin başarı oranları nedir?**
-PGT'nin başarı oranları, birçok faktöre bağlıdır ve genellikle IVF'nin genel başarı oranlarıyla paraleldir. Ancak PGT, sağlıklı embriyoların seçimini iyileştirerek başarı şansını artırabilir.
+**Kaynaklar:**
+1. T.C. Sağlık Bakanlığı. Üremeye Yardımcı Tedavi Uygulamaları ve Üremeye Yardımcı Tedavi Merkezleri Hakkında Yönetmelik. *Resmî Gazete*. 2014; Sayı: 29217.
+2. ESHRE Task Force on Ethics and Law. The welfare of the child in medically assisted reproduction. *Hum Reprod*. 2007;22(10):2585-2588. [doi:10.1093/humrep/dem237](https://doi.org/10.1093/humrep/dem237)
+3. Practice Committee of ASRM. Use of preimplantation genetic testing for monogenic defects (PGT-M) for adult-onset conditions: an Ethics Committee opinion. *Fertil Steril*. 2018;109(6):989-992. [doi:10.1016/j.fertnstert.2018.01.028](https://doi.org/10.1016/j.fertnstert.2018.01.028)

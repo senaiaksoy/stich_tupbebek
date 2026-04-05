@@ -77,13 +77,53 @@ export const glossary: Record<string, GlossaryEntry> = {
     definition: 'Preimplantasyon Genetik Test - Monogenik. Tek gen hastaliklari (kistik fibrozis, orak hucre anemisi vb.) tasiyiciligini embriyoda saptayan test.',
     href: '/pgt-merkezi',
   },
+  'PGT-SR': {
+    term: 'PGT-SR',
+    definition: 'Preimplantasyon Genetik Test - Yapısal Yeniden Düzenleme. Kromozomlardaki yapısal bozuklukları (translokasyon, inversiyon) taşıyan çiftlerde sağlıklı embriyo seçimi için uygulanan genetik test.',
+    href: '/makaleler/genetik-testler',
+  },
   Karyotip: {
     term: 'Karyotip',
     definition: 'Bir bireyin tum kromozom yapisini gosteren genetik analiz. Kromozom sayisi ve yapisal anomalilerin tespitinde kullanilir.',
     href: '/genetik-testler',
   },
+  Anöploidi: {
+    term: 'Anöploidi',
+    definition: 'Hücrede kromozom sayısının normalden fazla veya eksik olması durumu. Örneğin trizomi 21 (Down sendromu) bir anöploidi türüdür. PGT-A testi embriyolardaki anöploidiyi tespit eder.',
+    href: '/makaleler/genetik-testler',
+  },
+  Öploidi: {
+    term: 'Öploidi (Euploid)',
+    definition: 'Hücrede tüm kromozomların doğru sayıda (46 kromozom, 23 çift) bulunması durumu. Öploid embriyolar genetik olarak normal kabul edilir ve transfer için uygundur.',
+    href: '/makaleler/genetik-testler',
+  },
+  Mozaik: {
+    term: 'Mozaik Embriyo',
+    definition: 'Bir embriyoda bazı hücrelerin normal (öploid), bazılarının ise anormal (anöploid) kromozom yapısına sahip olması durumu. Mozaik embriyoların transferi doktorun değerlendirmesine bağlıdır.',
+    href: '/makaleler/genetik-testler',
+  },
+  Translokasyon: {
+    term: 'Translokasyon',
+    definition: 'Bir kromozomun bir parçasının koparak başka bir kromozoma yapışması. Dengeli translokasyon taşıyıcıları sağlıklıdır ancak embriyolarında kromozom anomalisi riski yüksektir. PGT-SR ile taranır.',
+    href: '/makaleler/genetik-testler',
+  },
 
-  // ── Tani Yontemleri ──
+  // ── Tani ve Cerrahi Yontemler ──
+  Histeroskopi: {
+    term: 'Histeroskopi',
+    definition: 'İnce bir kamera (histeroskop) ile rahim iç boşluğunun doğrudan görüntülenmesi işlemi. Vajinadan girilerek yapılır, kesi gerektirmez. Polip, miyom, septum ve yapışıklık gibi sorunların hem tanısında hem tedavisinde kullanılır.',
+    href: '/makaleler/ivf-oncesi-histeroskopi',
+  },
+  Laparoskopi: {
+    term: 'Laparoskopi',
+    definition: 'Karın boşluğunun küçük kesilerden girilen kamera ile incelenmesi ve tedavi edilmesi işlemi. Genel anestezi altında yapılır. Endometriozis, hidrosalpinks ve büyük miyomların değerlendirilmesinde kullanılır.',
+    href: '/makaleler/ivf-oncesi-histeroskopi',
+  },
+  Hidrosalpinks: {
+    term: 'Hidrosalpinks',
+    definition: 'Fallop tüplerinin içinde sıvı birikmesi durumu. Bu sıvı embriyoya toksik etki yapabilir ve IVF başarısını düşürür. Tedavide etkilenen tüpün laparoskopik olarak alınması veya bağlanması önerilir.',
+    href: '/makaleler/ivf-oncesi-histeroskopi',
+  },
   HSG: {
     term: 'HSG',
     definition: 'Histerosalpingografi. Rahmin ve tuplarin acikligini degerlendirmek icin kontrast madde kullanilarak yapilan rontgen goruntulemesi.',
@@ -163,6 +203,11 @@ export const glossary: Record<string, GlossaryEntry> = {
   },
 
   // ── Embriyoloji ──
+  Morfokinetik: {
+    term: 'Morfokinetik Değerlendirme',
+    definition: 'Embriyonun hem şeklini (morfoloji) hem de hücre bölünme hızını (kinetik) birlikte değerlendiren modern yaklaşım. Time-lapse teknolojisi ile kesintisiz izleme yapılarak embriyonun gelişim davranışı analiz edilir. ESHRE 2025 İstanbul Konsensüsünde önerilen bir yöntemdir.',
+    href: '/makaleler/laboratuvar-raporu-yorumlama',
+  },
   Gardner: {
     term: 'Gardner Sistemi',
     definition: 'Blastosist aşamasındaki embriyoları değerlendiren uluslararası standart derecelendirme sistemi. Genişleme derecesi (1-6 sayı) + İç Hücre Kitlesi (A/B/C) + Trofektoderm (A/B/C) olmak üzere üç bileşenden oluşur.',
@@ -182,6 +227,16 @@ export const glossary: Record<string, GlossaryEntry> = {
     term: 'Blastosist',
     definition: 'Dollenme sonrasi 5-6. gunde ulasilan ileri evre embriyo. Ic hucre kutlesi (bebek olacak kisim) ve trofoblast (plasenta) katmanindan olusur.',
   },
+  KumulatifBasari: {
+    term: 'Kümülatif Başarı Oranı',
+    definition: 'Tek bir yumurta toplama işleminden elde edilen tüm embriyolarla (taze + dondurulmuş transferler dahil) ulaşılan toplam canlı doğum oranı. Tek transfer başarısından daha yüksek olup tedavinin gerçek potansiyelini gösterir.',
+    href: '/makaleler/basari-oranlari',
+  },
+  CanliDogumOrani: {
+    term: 'Canlı Doğum Oranı (Live Birth Rate)',
+    definition: 'Tüp bebek tedavisinde gerçek başarı ölçütü. Tedavi sonucunda sağlıklı bir bebeğin dünyaya gelmesi oranıdır. Klinik gebelik oranından farklı olarak erken kayıpları da hesaba katar.',
+    href: '/makaleler/basari-oranlari',
+  },
   Vitrifikasyon: {
     term: 'Vitrifikasyon',
     definition: 'Ultra hizli dondurma teknigi. Yumurta veya embriyolarin buz kristali olusumu olmadan cam benzeri bir yapiyla dondurulmasi.',
@@ -190,6 +245,45 @@ export const glossary: Record<string, GlossaryEntry> = {
   Hatching: {
     term: 'Assisted Hatching',
     definition: 'Embriyonun dis zarinin (zona pellucida) lazer veya kimyasal yontemle inceltilmesi. Implantasyonu kolaylastirmak amacli uygulanir.',
+  },
+
+  // ── Genetik Hastalıklar ──
+  SMA: {
+    term: 'SMA (Spinal Müsküler Atrofi)',
+    definition: 'Motor sinirlerin ilerleyici kaybına yol açan genetik hastalık. Otozomal resesif kalıtılır; Türkiye\'de her 40-50 kişiden biri taşıyıcıdır. PGT-M ile embriyoda taranabilir.',
+    href: '/makaleler/pgt-m',
+  },
+  Talasemi: {
+    term: 'Talasemi (Akdeniz Anemisi)',
+    definition: 'Hemoglobin yapısını etkileyen kalıtsal kan hastalığı. Türkiye\'de özellikle Akdeniz ve Güneydoğu bölgelerinde taşıyıcılık oranı yüksektir. PGT-M ile embriyoda taranabilir.',
+    href: '/makaleler/pgt-m',
+  },
+
+  // ── Enfeksiyonlar / Vajinal Sağlık ──
+  BakteryelVajinoz: {
+    term: 'Bakteriyel Vajinoz (BV)',
+    definition: 'Vajinal floradaki denge bozukluğu sonucu Laktobasil bakterilerinin azalıp anaerobik bakterilerin (özellikle Gardnerella) çoğalması. Gri-beyaz akıntı ve balık kokusu ile karakterizedir. Tedavi edilmezse fertiliteyi olumsuz etkileyebilir.',
+    href: '/makaleler/akinti-kasinti-koku',
+  },
+  Kandidiyazis: {
+    term: 'Kandidiyazis (Mantar Enfeksiyonu)',
+    definition: 'Candida albicans mantarının vajinada aşırı çoğalması ile oluşan enfeksiyon. Beyaz, parça parça akıntı ve şiddetli kaşıntı ile kendini gösterir. Kadınların %75\'i yaşamlarında en az bir kez mantar enfeksiyonu geçirir.',
+    href: '/makaleler/akinti-kasinti-koku',
+  },
+  VajinalFlora: {
+    term: 'Vajinal Flora',
+    definition: 'Vajinada doğal olarak bulunan mikroorganizma topluluğu. Sağlıklı florada Laktobasil bakterileri baskındır ve asidik ortam sağlayarak enfeksiyonlara karşı koruma oluşturur.',
+  },
+
+  // ── Erkek İnfertilitesi ──
+  NOA: {
+    term: 'NOA (Non-Obstrüktif Azospermi)',
+    definition: 'Meni örneğinde hiç sperm bulunmaması durumu. Tıkanıklıktan değil, testislerdeki sperm üretim bozukluğundan kaynaklanır. Erkek infertilitesinin en ağır formlarından biridir.',
+    href: '/makaleler/izotretinoin-sperm',
+  },
+  Spermatogenez: {
+    term: 'Spermatogenez',
+    definition: 'Testislerde sperm hücrelerinin üretilme süreci. Yaklaşık 74 gün sürer. Hormonal denge, sıcaklık ve beslenme gibi faktörlerden etkilenir.',
   },
 
   // ── Anatomi ──
