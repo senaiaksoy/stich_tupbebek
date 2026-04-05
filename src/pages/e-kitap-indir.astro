@@ -305,7 +305,7 @@ import Footer from '../components/Footer.astro';
         document.getElementById('download-btn').disabled = true;
 
         try {
-            // Email'i sunucuya gönder (opsiyonel)
+            // İndirme işlemini kaydet ve e-posta gönder (arka planda)
             try {
                 await fetch('/api/ebook-subscribe', {
                     method: 'POST',
@@ -313,32 +313,17 @@ import Footer from '../components/Footer.astro';
                     body: JSON.stringify({ fullname, email, phone, status })
                 });
             } catch (err) {
-                console.log('Email kaydedilemedi, indirme devam ediyor');
+                console.log('Sunucuya kaydedilemedi, ancak indirme devam ediyor.');
             }
 
-            // Server-side PDF oluştur ve indir
-            const pdfResponse = await fetch('/api/generate-ebook-pdf', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ fullname, email })
-            });
-
-            if (!pdfResponse.ok) {
-                throw new Error('PDF oluşturulamadı');
-            }
-
-            // PDF'i blob olarak al
-            const pdfBlob = await pdfResponse.blob();
-
-            // Download linkini oluştur ve indir
-            const url = window.URL.createObjectURL(pdfBlob);
+            // Statik PDF i doğrudan indir (yüksek kaliteli, formatı ve Türkce karakterleri korunan versiyon)
+            const pdfUrl = '/e-kitap/tup-bebek-beslenme-plani.pdf';
             const link = document.createElement('a');
-            link.href = url;
-            link.download = 'Tup-Bebek-Beslenme-Plani-30-Gun.pdf';
+            link.href = pdfUrl;
+            link.download = '30_Gunluk_Tup_Bebek_Beslenme_Plani.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            window.URL.revokeObjectURL(url);
 
             // Success mesajı göster
             document.getElementById('loading-message').style.display = 'none';
@@ -355,7 +340,7 @@ import Footer from '../components/Footer.astro';
 
         } catch (error) {
             console.error('Hata:', error);
-            alert('PDF oluşturulurken hata oluştu. Lütfen tekrar deneyiniz.');
+            alert('İndirme işlemi sırasında hata oluştu. Lütfen tekrar deneyiniz.');
             document.getElementById('loading-message').style.display = 'none';
             document.getElementById('download-btn').disabled = false;
         }
