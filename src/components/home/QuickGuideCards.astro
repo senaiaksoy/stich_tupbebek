@@ -31,6 +31,8 @@ const compactCards = [
   {
     ...guideCategories.find(g => g.id === 'tani-sureci')!,
     subtitle: 'Hormon paneli, genetik testler ve ultrason',
+    image: '/images/home/tani-sureci.webp',
+    imageAlt: 'Tanı süreci - doğurganlık yolculuğu adımları',
   },
   {
     ...guideCategories.find(g => g.id === 'tedavi-yontemleri')!,
@@ -104,12 +106,18 @@ const compactCards = [
               `hover:${colors.bg}`,
             ]}
           >
-            <div class:list={[
-              "w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors",
-              colors.bg,
-            ]}>
-              <span class:list={["material-symbols-outlined text-lg", colors.icon]}>{card.icon}</span>
-            </div>
+            {card.image ? (
+              <div class="w-10 h-10 rounded-lg overflow-hidden shrink-0">
+                <img src={card.image} alt={card.imageAlt || card.title} class="w-full h-full object-cover" width="40" height="40" loading="lazy" />
+              </div>
+            ) : (
+              <div class:list={[
+                "w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors",
+                colors.bg,
+              ]}>
+                <span class:list={["material-symbols-outlined text-lg", colors.icon]}>{card.icon}</span>
+              </div>
+            )}
             <div class="min-w-0 flex-1">
               <h3 class="text-sm font-bold text-gray-900 group-hover:text-primary-700 transition-colors leading-snug mb-1">
                 {card.title}
