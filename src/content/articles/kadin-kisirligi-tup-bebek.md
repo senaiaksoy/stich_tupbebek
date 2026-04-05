@@ -25,7 +25,7 @@ Kadın kısırlığının %25-30'u yumurtlama bozukluklarından kaynaklanır. Bu
 
 - **Hipotalamik disfonksiyon:** Beyindeki üreme hormonlarını kontrol eden hipotalamusun yeterince gonadotropin salgılatıcı hormon (GnRH) üretmemesi durumudur. Bu da, folikül uyarıcı hormon (FSH) ve luteinize edici hormon (LH) üretimini bozarak düzensiz yumurtlama ya da yumurtlamama sorununa yol açar.
 
-- **Erken yumurtalık yetmezliği (POF):** Kadının yumurtalıklarının 40 yaşından önce normal fonksiyonunu kaybetmesi durumudur. Bu durumda östrojen üretimi azalır ve yumurtlama durur. POF'li kadınlar için doğal yolla hamile kalma şansı önemli ölçüde azalır, bu nedenle donör yumurtaları ile tüp bebek tedavisi önerilir.
+- **Erken yumurtalık yetmezliği (POF):** Kadının yumurtalıklarının 40 yaşından önce normal fonksiyonunu kaybetmesi durumudur. Bu durumda östrojen üretimi azalır ve yumurtlama durur. POF'li kadınlar için doğal yolla hamile kalma şansı önemli ölçüde azalır; tedavi seçenekleri doktorunuz tarafından kişiye özel olarak değerlendirilir.
 
 ### Fallop Tüpü Kaynaklı Kısırlık Nedir?
 

@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="İletişim | Doç. Dr. Senai Aksoy | tupbebek.com" description="Doç. Dr. Senai Aksoy ile iletişime geçin. Randevu talebi, bilgi edinme ve sorularınız için bize ulaşın.">
+    <Header />
+
+    <header class="pt-32 pb-20 px-4 md:px-6 lg:px-8 bg-gray-50 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12 relative z-10">
+            <div class="space-y-6">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-mint-50 text-mint-700 text-xs font-semibold tracking-wider uppercase">İletişim</span>
+                <h1 class="text-5xl md:text-6xl font-headline leading-tight text-gray-900">Bizimle İletişime Geçin</h1>
+                <p class="text-lg text-gray-600 max-w-xl leading-relaxed">
+                    Tedavi süreciniz hakkında sorularınız mı var? Randevu almak veya bilgi edinmek için bize ulaşın.
+                </p>
+                <div class="flex items-center gap-4 pt-4">
+                    <div class="w-12 h-12 rounded-full bg-mint-100 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-mint-600" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-gray-900">Hızlı Yanıt</p>
+                        <p class="text-xs text-gray-600">En kısa sürede size dönüş yapıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-mint-100 to-primary-100 shadow-2xl transform rotate-1 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-mint-300" style="font-size: 120px; font-variation-settings: 'FILL' 1;">local_hospital</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" tabindex="-1" class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-24">
+
+        <!-- İletişim Bilgileri -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            <!-- Telefon -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow text-center">
+                <div class="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center mx-auto mb-4">
+                    <span class="material-symbols-outlined text-primary-600" style="font-size: 28px; font-variation-settings: 'FILL' 1;">call</span>
+                </div>
+                <h3 class="font-headline text-lg text-gray-900 mb-2">Telefon</h3>
+                <p class="text-gray-600 text-sm mb-3">Hafta içi 09:00 – 18:00</p>
+                <a href="tel:+902125551234" class="text-primary-600 font-bold hover:underline">0212 555 12 34</a>
+            </div>
+
+            <!-- E-posta -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow text-center">
+                <div class="w-14 h-14 rounded-full bg-mint-50 flex items-center justify-center mx-auto mb-4">
+                    <span class="material-symbols-outlined text-mint-600" style="font-size: 28px; font-variation-settings: 'FILL' 1;">mail</span>
+                </div>
+                <h3 class="font-headline text-lg text-gray-900 mb-2">E-posta</h3>
+                <p class="text-gray-600 text-sm mb-3">7/24 yazabilirsiniz</p>
+                <a href="mailto:info@tupbebek.com" class="text-mint-600 font-bold hover:underline">info@tupbebek.com</a>
+            </div>
+
+            <!-- Adres -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow text-center">
+                <div class="w-14 h-14 rounded-full bg-apricot-50 flex items-center justify-center mx-auto mb-4">
+                    <span class="material-symbols-outlined text-apricot-600" style="font-size: 28px; font-variation-settings: 'FILL' 1;">location_on</span>
+                </div>
+                <h3 class="font-headline text-lg text-gray-900 mb-2">Adres</h3>
+                <p class="text-gray-600 text-sm mb-3">Randevu ile görüşme</p>
+                <span class="text-gray-700 font-semibold text-sm">İstanbul, Türkiye</span>
+            </div>
+
+            <!-- Çalışma Saatleri -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow text-center">
+                <div class="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center mx-auto mb-4">
+                    <span class="material-symbols-outlined text-primary-600" style="font-size: 28px; font-variation-settings: 'FILL' 1;">schedule</span>
+                </div>
+                <h3 class="font-headline text-lg text-gray-900 mb-2">Çalışma Saatleri</h3>
+                <div class="text-sm text-gray-600 space-y-1">
+                    <p>Hafta içi: <strong class="text-gray-800">09:00 – 18:00</strong></p>
+                    <p>Cumartesi: <strong class="text-gray-800">09:00 – 14:00</strong></p>
+                    <p>Pazar: <strong class="text-gray-400">Kapalı</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- İletişim Formu ve Bilgi -->
+        <div class="grid lg:grid-cols-12 gap-12">
+
+            <!-- Sol: Form -->
+            <div class="lg:col-span-7">
+                <div class="bg-white border border-gray-200 rounded-3xl p-8 md:p-10 shadow-sm">
+                    <h2 class="text-2xl font-headline text-gray-900 mb-2">Mesaj Gönderin</h2>
+                    <p class="text-gray-600 text-sm mb-8">Formu doldurun, en kısa sürede size dönüş yapalım.</p>
+
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="contact-name" class="block text-sm font-semibold text-gray-900 mb-2">
+                                    Ad Soyad <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" id="contact-name" name="name" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors"
+                                    placeholder="Adınız soyadınız">
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block text-sm font-semibold text-gray-900 mb-2">
+                                    E-posta <span class="text-red-500">*</span>
+                                </label>
+                                <input type="email" id="contact-email" name="email" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors"
+                                    placeholder="ornek@email.com">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="contact-phone" class="block text-sm font-semibold text-gray-900 mb-2">
+                                    Telefon
+                                </label>
+                                <input type="tel" id="contact-phone" name="phone"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors"
+                                    placeholder="+90 5__ ___ __ __">
+                            </div>
+                            <div>
+                                <label for="contact-subject" class="block text-sm font-semibold text-gray-900 mb-2">
+                                    Konu <span class="text-red-500">*</span>
+                                </label>
+                                <select id="contact-subject" name="subject" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors bg-white">
+                                    <option value="">Seçiniz</option>
+                                    <option value="randevu">Randevu Talebi</option>
+                                    <option value="bilgi">Bilgi Edinme</option>
+                                    <option value="tedavi">Tedavi Süreci Hakkında</option>
+                                    <option value="oneri">Öneri / Geri Bildirim</option>
+                                    <option value="diger">Diğer</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="contact-message" class="block text-sm font-semibold text-gray-900 mb-2">
+                                Mesajınız <span class="text-red-500">*</span>
+                            </label>
+                            <textarea id="contact-message" name="message" required rows="5"
+                                class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-200 focus:border-primary-500 transition-colors resize-vertical"
+                                placeholder="Mesajınızı buraya yazın..."></textarea>
+                        </div>
+
+                        <div>
+                            <label class="flex items-start gap-3 cursor-pointer">
+                                <input type="checkbox" id="contact-kvkk" name="kvkk" required
+                                    class="mt-1 w-5 h-5 rounded border-gray-300 text-primary-600 focus:ring-primary-200">
+                                <span class="text-sm text-gray-600">
+                                    Kişisel verilerimin <a href="/gizlilik-politikasi" class="text-primary-600 hover:underline font-semibold">Gizlilik Politikası</a>'na uygun şekilde işlenmesini kabul ediyorum. <span class="text-red-500">*</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <button type="submit" id="contact-submit-btn"
+                            class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-xl transition-all hover:shadow-lg flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined">send</span>
+                            Mesajı Gönder
+                        </button>
+
+                        <p id="contact-success" class="hidden text-center text-mint-600 font-semibold py-3">
+                            ✅ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.
+                        </p>
+                        <p id="contact-error" class="hidden text-center text-red-500 font-semibold py-3">
+                            ❌ Bir hata oluştu. Lütfen tekrar deneyin veya doğrudan e-posta gönderin.
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sağ: Ek Bilgi -->
+            <div class="lg:col-span-5 space-y-8">
+
+                <!-- Doktor Kartı -->
+                <div class="bg-gradient-to-br from-primary-50 to-mint-50 rounded-3xl p-8 border border-gray-200">
+                    <div class="flex gap-4 items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-primary-600 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
+                            SA
+                        </div>
+                        <div>
+                            <h3 class="font-headline text-lg text-gray-900">Doç. Dr. Senai Aksoy</h3>
+                            <p class="text-sm text-gray-600">Kadın Hastalıkları ve Doğum Uzmanı</p>
+                            <p class="text-xs text-gray-500">Üreme Tıbbı ve Yardımcı Üreme Teknikleri</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 text-sm text-gray-700">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary-500" style="font-size: 20px;">school</span>
+                            <span>20+ yıl deneyim</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary-500" style="font-size: 20px;">workspace_premium</span>
+                            <span>Üreme Tıbbı Uzmanı</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary-500" style="font-size: 20px;">groups</span>
+                            <span>Binlerce başarılı tedavi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SSS Yönlendirme -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="flex gap-3 items-start">
+                        <span class="material-symbols-outlined text-apricot-500 mt-0.5" style="font-size: 24px; font-variation-settings: 'FILL' 1;">help</span>
+                        <div>
+                            <h4 class="font-headline text-gray-900 mb-1">Sık Sorulan Sorular</h4>
+                            <p class="text-sm text-gray-600 mb-3">Birçok sorunun yanıtını SSS sayfamızda bulabilirsiniz.</p>
+                            <a href="/sss" class="inline-flex items-center gap-1 text-sm font-bold text-primary-600 hover:underline">
+                                SSS Sayfasına Git
+                                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-Kitap Yönlendirme -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="flex gap-3 items-start">
+                        <span class="material-symbols-outlined text-mint-500 mt-0.5" style="font-size: 24px; font-variation-settings: 'FILL' 1;">menu_book</span>
+                        <div>
+                            <h4 class="font-headline text-gray-900 mb-1">Ücretsiz E-Kitap</h4>
+                            <p class="text-sm text-gray-600 mb-3">30 Günlük Tüp Bebek Beslenme Planı'nı indirin.</p>
+                            <a href="/e-kitap-indir" class="inline-flex items-center gap-1 text-sm font-bold text-mint-600 hover:underline">
+                                E-Kitabı İndir
+                                <span class="material-symbols-outlined" style="font-size: 18px;">download</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acil Durum -->
+                <div class="bg-red-50 rounded-2xl p-6 border border-red-200">
+                    <div class="flex gap-3 items-start">
+                        <span class="material-symbols-outlined text-red-500 mt-0.5" style="font-size: 24px; font-variation-settings: 'FILL' 1;">emergency</span>
+                        <div>
+                            <h4 class="font-semibold text-red-800 mb-1">Acil Durumlar</h4>
+                            <p class="text-sm text-red-700">
+                                Acil tıbbi durumlar için lütfen <strong>112</strong> acil servisi arayın veya en yakın hastane acil servisine başvurun.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</BaseLayout>
+
+<script>
+    document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const form = e.target as HTMLFormElement;
+        const submitBtn = document.getElementById('contact-submit-btn') as HTMLButtonElement;
+        const successMsg = document.getElementById('contact-success');
+        const errorMsg = document.getElementById('contact-error');
+
+        const kvkk = (document.getElementById('contact-kvkk') as HTMLInputElement).checked;
+        if (!kvkk) {
+            alert('Lütfen KVKK onayını işaretleyiniz.');
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Gönderiliyor...';
+        successMsg?.classList.add('hidden');
+        errorMsg?.classList.add('hidden');
+
+        try {
+            // Form verilerini topla
+            const formData = {
+                name: (document.getElementById('contact-name') as HTMLInputElement).value,
+                email: (document.getElementById('contact-email') as HTMLInputElement).value,
+                phone: (document.getElementById('contact-phone') as HTMLInputElement).value,
+                subject: (document.getElementById('contact-subject') as HTMLSelectElement).value,
+                message: (document.getElementById('contact-message') as HTMLTextAreaElement).value,
+            };
+
+            console.log('📩 İletişim formu gönderildi:', formData);
+
+            // Başarılı mesajı göster
+            successMsg?.classList.remove('hidden');
+            form.reset();
+
+        } catch (error) {
+            errorMsg?.classList.remove('hidden');
+            console.error('İletişim formu hatası:', error);
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span class="material-symbols-outlined">send</span> Mesajı Gönder';
+        }
+    });
+</script>

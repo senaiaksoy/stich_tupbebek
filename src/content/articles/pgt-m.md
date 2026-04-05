@@ -65,7 +65,7 @@ Bu titiz laboratuvar hazırlık süreci, PGT-M'nin başarısı ve güvenilirliğ
 
 3. **Psikolojik ve Duygusal Rahatlama**: Genetik hastalık taşıyıcısı olan veya yüksek aktarma riski bulunan çiftler için PGT-M, psikolojik ve duygusal açıdan büyük bir rahatlama sağlar. Sağlıklı embriyoların seçilmesi, çiftlerin gelecekteki çocuklarının sağlığı hakkındaki endişelerini azaltır ve onlara daha huzurlu bir gebelik süreci sunar.
 
-4. **Diğer Seçeneklere Göre Avantajlar**: PGT-M, prenatal testler veya doğum sonrası müdahaleler gibi diğer yöntemlere göre daha erken bir aşamada müdahale şansı sunar. Bu, olası bir gebelik sonlandırma durumundaki fiziksel ve duygusal zorlukları en aza indirir. Ayrıca, donör gamet kullanımı veya evlat edinme gibi diğer alternatiflere göre, çiftlerin kendi biyolojik çocuklarına sahip olmalarını sağlar.
+4. **Diğer Seçeneklere Göre Avantajlar**: PGT-M, prenatal testler veya doğum sonrası müdahaleler gibi diğer yöntemlere göre daha erken bir aşamada müdahale şansı sunar. Bu, olası bir gebelik sonlandırma durumundaki fiziksel ve duygusal zorlukları en aza indirir. Bu sayede çiftlerin kendi biyolojik çocuklarına sahip olma olasılığı artmaktadır.
 
 Sonuç olarak, PGT-M, genetik hastalıkların taşıyıcısı olan veya bu hastalıkları aktarma riski yüksek olan çiftler için umut verici bir çözüm sunmaktadır. Bu teknik, genetik hastalıkların riskini azaltma, bilinçli üreme kararları alma, psikolojik rahatlama sağlama gibi pek çok önemli avantajı beraberinde getirir. Aynı zamanda, diğer alternatiflere kıyasla daha erken müdahale imkanı sunarak, çiftlerin kendi biyolojik çocuklarına sahip olma olasılığını artırır. PGT-M'nin sağladığı fırsatlar, çiftlerin üreme sürecinde daha güvenli ve bilinçli adımlar atmalarına olanak tanır.
 

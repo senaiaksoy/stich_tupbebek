@@ -139,7 +139,7 @@ Hayır. Başarı oranları hasta profili, yaş dağılımı ve hesaplama yöntem
 İkisinin de avantajı olabilir. Büyük merkezler genellikle daha geniş teknolojik altyapıya sahipken, küçük merkezlerde daha kişisel bir ilgi görebilirsiniz. Önemli olan laboratuvar kalitesi, ekip deneyimi ve etik yaklaşımdır.
 
 **Yurt dışında tedavi yaptırmak daha mı başarılı?**
-Türkiye'deki birçok merkez, Avrupa standartlarında hizmet sunmaktadır. Yurt dışı tedavi bazı durumlarda yasal düzenlemeler (örneğin donör kullanımı) nedeniyle tercih edilebilir, ancak tıbbi başarı açısından ülke içi merkezler de oldukça yetkindir.
+Türkiye'deki birçok merkez, Avrupa standartlarında hizmet sunmaktadır. Tıbbi başarı açısından ülke içi merkezler oldukça yetkindir. Yurt dışı tedavi ancak çok özel durumlar için düşünülebilir; bu konuyu doktorunuzla değerlendirebilirsiniz.
 
 **İlk görüşmede ne yapılır?**
 İlk görüşmede genellikle [tıbbi öykünüz alınır](/tani-sureci), önceki tetkikleriniz değerlendirilir ve gerekli ek testler planlanır. Bu görüşmede tedavi stratejisi hakkında ön bilgi alırsınız. Sorularınızı önceden hazırlayarak gitmenizi öneririz.

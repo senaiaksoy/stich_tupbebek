@@ -50,7 +50,7 @@ En yaygın ve güvenilir yöntemlerden biridir. Yumurtalıklar hormonal ilaçlar
 
 **Embriyo Dondurma**
 
-Partneri olan veya donör sperm kullanmayı kabul eden kadınlar için en yerleşik yöntemdir. Yumurtalar toplandıktan sonra spermle döllenerek embriyo elde edilir ve dondurulur. Gebelik başarı oranları yüksektir.
+Partneri olan kadınlar için en yerleşik yöntemdir. Yumurtalar toplandıktan sonra spermle döllenerek embriyo elde edilir ve dondurulur. Gebelik başarı oranları yüksektir.
 
 **Over Doku Dondurma**
 
