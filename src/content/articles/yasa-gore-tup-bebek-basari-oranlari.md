@@ -13,8 +13,8 @@ medicalReviewer: "Doç. Dr. Senai Aksoy"
 reviewerTitle: "Baş Editör"
 reviewDate: 2026-04-04
 category: "Tüp Bebek"
-image: "/images/home/article-1.jpg"
-imageAlt: "Yaşa göre tüp bebek başarı oranlarını gösteren eğri grafiği"
+image: "/images/articles/yasa-gore-tup-bebek-basari-oranlari.jpg"
+imageAlt: "Yaşa göre tüp bebek başarı oranlarını temsil eden, farklı yaş dönemlerini simgeleyen kadın görseli"
 featured: true
 status: published
 videoId: "LyLGywUUipg"
