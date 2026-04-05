@@ -60,6 +60,10 @@ export const navigationMenus: MegaMenuConfig[] = [
       { label: 'Hormon Paneli', href: '/hormon-paneli', description: 'AMH, FSH, E2 değerleri' },
       { label: 'Genetik Testler', href: '/genetik-testler', description: 'Kromozomal tarama' },
       { label: 'Tıbbi Sözlük', href: '/tbbi-sozluk', description: 'Terimlerin açıklamaları' },
+      { label: 'PKOS ve Tüp Bebek', href: '/makaleler/opk-ve-ivf', description: 'Polikistik over ve IVF' },
+      { label: 'Hiperprolaktinemi', href: '/makaleler/hiperprolaktinemi-ve-kisirlik', description: 'Prolaktin yüksekliği ve kısırlık' },
+      { label: 'Asherman Sendromu', href: '/makaleler/asherman-sendromu', description: 'Rahim içi yapışıklıklar' },
+      { label: 'Akraba Evliliği ve Genetik', href: '/makaleler/akraba-evliligi', description: 'Genetik risk değerlendirmesi' },
     ]
   },
 
@@ -80,12 +84,22 @@ export const navigationMenus: MegaMenuConfig[] = [
     },
     submenu: [
       { label: 'Tüp Bebek (IVF/ICSI)', href: '/tedavi-yontemleri', description: 'Yumurta toplama → embriyo transferi' },
+      { label: 'Mikroenjeksiyon (ICSI)', href: '/makaleler/mikroenjeksiyon-icsi-nedir', description: 'ICSI tekniği detayları' },
+      { label: 'IVF Protokolleri', href: '/makaleler/ivf-protokolleri', description: 'Uzun, kısa ve yeni yaklaşımlar' },
       { label: 'Aşılama (IUI)', href: '/tedavi-yontemleri#iui', description: 'İntrauterin inseminasyon' },
       { label: 'PGT Genetik Tarama', href: '/pgt-merkezi', description: 'Embriyo genetik seçimi' },
+      { label: 'PGT-M Tek Gen', href: '/makaleler/pgt-m', description: 'Tek gen hastalıkları tarama' },
       { label: 'Transfer Süreci', href: '/transfer-sureci', description: 'Embriyo transfer aşaması' },
+      { label: 'Transfer Sonrası Bakım', href: '/makaleler/embriyo-transferi-sonrasi-bakim', description: 'Transfer sonrası dikkat edilecekler' },
+      { label: 'Taze vs Dondurulmuş Transfer', href: '/makaleler/taze-dondurulmus-transfer', description: 'Hangi yöntem daha başarılı?' },
+      { label: 'Kaç Yumurta Gerekir?', href: '/makaleler/kac-yumurta-gerekir', description: 'Optimum yumurta sayısı' },
       { label: 'İlaç Rehberi', href: '/ilac-rehberi', description: 'Gonadotropinler, GnRH' },
       { label: 'Başarı Oranları', href: '/basari-oranlari', description: 'Veri şeffaflığı' },
+      { label: 'Yaşa Göre Başarı Oranları', href: '/makaleler/yasa-gore-tup-bebek-basari-oranlari', description: 'Yaş gruplarına göre IVF başarısı' },
       { label: 'Başarısız Denemeler', href: '/basarisiz-denemeler', description: 'Tekrar stratejileri' },
+      { label: 'Kimyasal Gebelik', href: '/makaleler/kimyasal-gebelik', description: 'Erken gebelik kaybı' },
+      { label: 'EmbryoScope ve Yapay Zeka', href: '/makaleler/embryoscope-yapay-zeka', description: 'Time-lapse embriyo izleme' },
+      { label: 'Over PRP', href: '/makaleler/over-prp', description: 'Yumurtalık gençleştirme' },
     ]
   },
 
@@ -100,12 +114,21 @@ export const navigationMenus: MegaMenuConfig[] = [
       stat: { value: '%30-40', label: 'cerrahi sonrası doğal gebelik şansı' }
     },
     featuredArticle: {
-      title: 'Endometriozis ve Adenomyozis',
-      description: 'Tanıdan tedaviye kapsamlı cerrahi rehber.',
-      href: '/endometriozis-adenomyozis'
+      title: 'Endometriyal Scratching',
+      description: 'İmplantasyon başarısını artırır mı? Bilimsel kanıtlar.',
+      href: '/makaleler/endometriyal-scratching'
     },
     submenu: [
       { label: 'Endometriozis & Adenomyozis', href: '/endometriozis-adenomyozis', description: 'Laparoskopi, tıbbi tedavi' },
+      { label: 'Endometriozis ve Tüp Bebek', href: '/makaleler/endometriozis-tup-bebek', description: 'IVF\'de endometriozis yönetimi' },
+      { label: 'Endometrioma', href: '/makaleler/endometrioma', description: 'Çikolata kisti ve fertilite' },
+      { label: 'Miyomlar ve Kısırlık', href: '/makaleler/miyomlar-ve-tup-bebek', description: 'Miyom tipine göre tedavi' },
+      { label: 'Miyom Ameliyatı', href: '/makaleler/miyom-ameliyati', description: 'Miyomektomi süreci' },
+      { label: 'Hidrosalpinks', href: '/makaleler/hidrosalpinx-ve-kisirlik', description: 'Tüp tıkanıklığı ve tedavisi' },
+      { label: 'Histeroskopi', href: '/makaleler/ivf-oncesi-histeroskopi', description: 'IVF öncesi rahim değerlendirmesi' },
+      { label: 'Endoskopik Cerrahi', href: '/makaleler/endoskopik-cerrahi-histeroskopi', description: 'Minimal invaziv cerrahi' },
+      { label: 'Endometriyal Scratching', href: '/makaleler/endometriyal-scratching', description: 'Rahim çizme ve implantasyon' },
+      { label: 'Hormonal Tedavi (Adenomyozis)', href: '/makaleler/hormonal-tedavi-adenomyozis', description: 'Adenomyozis yönetimi' },
       { label: 'Fertilite Koruma', href: '/fertilite-koruma', description: 'Yumurta/sperm dondurma' },
       { label: 'Erkek Cerrahisi', href: '/erkek-infertilitesi#cerrahi', description: 'Varikosel, TESE, mikro-TESE' },
       { label: 'Lab Raporu Yorumlama', href: '/makaleler/laboratuvar-raporu-yorumlama', description: 'Cerrahi sonrası takip' },
@@ -129,9 +152,15 @@ export const navigationMenus: MegaMenuConfig[] = [
     },
     submenu: [
       { label: 'Beslenme ve Yaşam', href: '/beslenme-yasam', description: 'Diyet, takviye, egzersiz' },
+      { label: 'Erkek Besin Takviyeleri', href: '/makaleler/erkek-kisirligi-besin-takviyeleri', description: 'Sperm kalitesi için takviyeler' },
+      { label: 'Erkek Doğurganlık Besinleri', href: '/makaleler/erkek-dogurganlik-besin-takviyeleri', description: 'Erkek fertilitesi ve beslenme' },
+      { label: 'Vajinal Mikrobiyom', href: '/makaleler/vajinal-mikrobiyom-fiv', description: 'Mikrobiyom ve IVF başarısı' },
+      { label: 'Cep Telefonu ve Sperm', href: '/makaleler/cep-telefonu-sperm-kalitesi', description: 'Radyasyon ve sperm kalitesi' },
       { label: 'Duygusal Destek', href: '/duygusal-destek', description: 'Psikolojik yardım kaynakları' },
       { label: 'Psikolojik Destek', href: '/psikolojik-destek', description: 'Uzman psikolojik danışmanlık' },
       { label: 'Fertilite Koruma', href: '/fertilite-koruma', description: 'Geleceğe yatırım' },
+      { label: 'Tüp Bebek Yanlış Bilinenler', href: '/makaleler/tup-bebek-yanlis-bilinenler', description: 'Mitler vs gerçekler' },
+      { label: 'E-Kitap İndir', href: '/e-kitap-indir', description: '30 günlük beslenme planı' },
     ]
   },
 
@@ -172,6 +201,7 @@ export const footerLinks = [
       { label: 'Erkek İnfertilitesi', href: '/erkek-infertilitesi' },
       { label: 'Yaş ve Fertilite', href: '/yas-ve-fertilite' },
       { label: 'Tanı Süreci', href: '/tani-sureci' },
+      { label: 'PKOS ve Tüp Bebek', href: '/makaleler/opk-ve-ivf' },
       { label: 'Tıbbi Sözlük', href: '/tbbi-sozluk' },
     ]
   },
@@ -179,9 +209,10 @@ export const footerLinks = [
     category: 'Tedavi & Cerrahi',
     links: [
       { label: 'Tedavi Yöntemleri', href: '/tedavi-yontemleri' },
-      { label: 'IVF Rehberi', href: '/tedavi-yontemleri' },
+      { label: 'IVF Protokolleri', href: '/makaleler/ivf-protokolleri' },
+      { label: 'Transfer Süreci', href: '/transfer-sureci' },
       { label: 'İlaç Rehberi', href: '/ilac-rehberi' },
-      { label: 'Beslenme & Yaşam', href: '/beslenme-yasam' },
+      { label: 'Başarı Oranları', href: '/basari-oranlari' },
       { label: 'Fertilite Koruma', href: '/fertilite-koruma' },
     ]
   },
@@ -191,8 +222,9 @@ export const footerLinks = [
       { label: 'Makaleler', href: '/makaleler' },
       { label: 'Tıbbi Sözlük', href: '/tbbi-sozluk' },
       { label: 'Sık Sorulan Sorular', href: '/sss' },
+      { label: 'Beslenme & Yaşam', href: '/beslenme-yasam' },
       { label: 'Duygusal Destek', href: '/duygusal-destek' },
-      { label: 'Başarı Oranları', href: '/basari-oranlari' },
+      { label: 'E-Kitap İndir', href: '/e-kitap-indir' },
     ]
   },
   {
@@ -200,7 +232,7 @@ export const footerLinks = [
     links: [
       { label: 'Hakkımızda', href: '/hakkimizda' },
       { label: 'Editöryal Politika', href: '/editoryal-politika' },
-      { label: 'İletişim', href: '/hakkimizda#contact' },
+      { label: 'İletişim', href: '/iletisim' },
     ]
   }
 ];

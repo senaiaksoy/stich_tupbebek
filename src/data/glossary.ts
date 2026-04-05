@@ -110,7 +110,7 @@ export const glossary: Record<string, GlossaryEntry> = {
   PCOS: {
     term: 'PCOS',
     definition: 'Polikistik Over Sendromu. Hormonal dengesizlik, duzensiz adet ve yumurtaliklarda cok sayida kucuk kist ile karakterize yaygin bir durum.',
-    href: '/makaleler/pcos-polikistik-over-sendromu',
+    href: '/makaleler/adet-duzensizligi-pcos',
   },
   Varikosel: {
     term: 'Varikosel',
@@ -123,7 +123,61 @@ export const glossary: Record<string, GlossaryEntry> = {
     href: '/erkek-infertilitesi',
   },
 
+  // ── Tedavi Ek Uygulamaları ──
+  EmbryoGlue: {
+    term: 'EmbryoGlue',
+    definition: 'Hyaluronan (hyaluronik asit) ile zenginlestirilmis embriyo transfer medyumu. Embriyonun rahme tutunma sansini artirmak icin kullanilir. ESHRE 2023 kilavuzunda taze transferlerde tavsiye edilmistir.',
+    href: '/makaleler/embryoglue-faydalari',
+  },
+  Hyaluronan: {
+    term: 'Hyaluronan',
+    definition: 'Hyaluronik asit olarak da bilinen, vucutta dogal olarak bulunan bir polisakkarit. Rahim, implantasyon penceresinde bu maddeyi yogun sekilde salgilar. EmbryoGlue gibi transfer medyumlarinin temel bilesenidir.',
+    href: '/makaleler/embryoglue-faydalari',
+  },
+  RIF: {
+    term: 'RIF',
+    definition: 'Tekrarlayan Implantasyon Basarisizligi (Recurrent Implantation Failure). Iyi kalitede embriyo transferine ragmen iki veya daha fazla denemede implantasyon gerceklesmemesi durumu.',
+    href: '/makaleler/embryoglue-faydalari',
+  },
+
+  // ── Transfer ve Protokoller ──
+  FET: {
+    term: 'FET',
+    definition: 'Dondurulmus Embriyo Transferi (Frozen Embryo Transfer). Daha once dondurulmus embriyolarin cozulerek rahme transfer edilmesi islemi. Dogal siklus veya ilacli siklus protokolleriyle uygulanabilir.',
+    href: '/makaleler/taze-dondurulmus-transfer',
+  },
+  OHSS: {
+    term: 'OHSS',
+    definition: 'Yumurtaliklarin Asiri Uyarilmasi Sendromu (Ovarian Hyperstimulation Syndrome). Tup bebek tedavisinde kullanilan hormon ilaclarinin yumurtaliklari asiri uyarmasiyla ortaya cikan, nadir fakat ciddi bir komplikasyon.',
+    href: '/tedavi-yontemleri',
+  },
+
+  // ── Bilimsel Terminoloji ──
+  ESHRE: {
+    term: 'ESHRE',
+    definition: 'Avrupa Insan Ureme ve Embriyoloji Dernegi (European Society of Human Reproduction and Embryology). Ureme tibbi alaninda klinik kilavuzlar yayimlayan en yetkili Avrupa kurulusu.',
+  },
+  Implantasyon: {
+    term: 'Implantasyon',
+    definition: 'Embriyonun rahim ic duvaruna (endometrium) tutunmasi ve gomulmesi sureci. Genellikle dollenme sonrasi 6-10. gunler arasinda gerceklesir. IVF basarisinin en kritik asamalarindan biridir.',
+  },
+
   // ── Embriyoloji ──
+  Gardner: {
+    term: 'Gardner Sistemi',
+    definition: 'Blastosist aşamasındaki embriyoları değerlendiren uluslararası standart derecelendirme sistemi. Genişleme derecesi (1-6 sayı) + İç Hücre Kitlesi (A/B/C) + Trofektoderm (A/B/C) olmak üzere üç bileşenden oluşur.',
+    href: '/makaleler/laboratuvar-raporu-yorumlama',
+  },
+  ICM: {
+    term: 'ICM (İç Hücre Kitlesi)',
+    definition: 'Inner Cell Mass. Blastosist embriyonun içindeki, ileride bebeğe dönüşecek hücre grubu. Gardner sisteminde ilk harf (A/B/C) ile derecelendirilir.',
+    href: '/makaleler/laboratuvar-raporu-yorumlama',
+  },
+  Trofektoderm: {
+    term: 'Trofektoderm',
+    definition: 'Blastosist embriyonun dış tabakasını oluşturan ve ileride plasentaya dönüşecek hücreler. Gardner sisteminde ikinci harf (A/B/C) ile derecelendirilir. Araştırmalar, implantasyon başarısında trofektoderm kalitesinin çok belirleyici olduğunu göstermiştir.',
+    href: '/makaleler/laboratuvar-raporu-yorumlama',
+  },
   Blastosist: {
     term: 'Blastosist',
     definition: 'Dollenme sonrasi 5-6. gunde ulasilan ileri evre embriyo. Ic hucre kutlesi (bebek olacak kisim) ve trofoblast (plasenta) katmanindan olusur.',
@@ -131,7 +185,7 @@ export const glossary: Record<string, GlossaryEntry> = {
   Vitrifikasyon: {
     term: 'Vitrifikasyon',
     definition: 'Ultra hizli dondurma teknigi. Yumurta veya embriyolarin buz kristali olusumu olmadan cam benzeri bir yapiyla dondurulmasi.',
-    href: '/makaleler/yumurta-dondurma',
+    href: '/makaleler/yumurta-dondurma-rehberi',
   },
   Hatching: {
     term: 'Assisted Hatching',

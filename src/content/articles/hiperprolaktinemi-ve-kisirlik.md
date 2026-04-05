@@ -25,7 +25,12 @@ Ancak, yalnızca tümörler suçlu değildir. Antipsikotik ve antidepresan gibi 
 
 ### Tümörler ve Prolaktinoma
 
-Prolaktinoma, prolaktin üretimini doğrudan artıran iyi huylu bir tümördür. Genellikle belirgin belirtiler göstermeden fark edilmez ve bu belirtiler arasında kısırlık da bulunur.
+Prolaktinoma, hipofiz bezinde aşırı prolaktin üreten iyi huylu bir tümördür ve hiperprolaktineminin en önemli nedenlerinden biridir. Boyutuna göre iki gruba ayrılır:
+
+* **Mikroprolaktinoma:** 10 mm'den küçük tümörler. Daha yaygındır ve genellikle ilaç tedavisine iyi yanıt verir.
+* **Makroprolaktinoma:** 10 mm'den büyük tümörler. Çevreleyen beyin yapıları üzerindeki baskıları nedeniyle baş ağrısı ve görme sorunlarına da yol açabilir.
+
+Prolaktinomların kesin nedenleri genellikle bilinmez, ancak **Multipl Endokrin Neoplazi Tip 1 (MEN1)** gibi genetik faktörler rol oynayabilir. Bu tümörler genellikle belirgin bir tetikleyici olmaksızın ortaya çıkar.
 
 ### Hiperprolaktinemi yapan İlaçlar
 
@@ -137,7 +142,7 @@ Bromokriptin ve kabergolin gibi dopamin agonistleri, prolaktin seviyelerini dü�
 
 #### Cerrahi Müdahale
 
-Eğer hiperprolaktineminin nedeni prolaktinoma veya diğer tümörler ise, cerrahi olarak çıkarılması gerekebilir. Cerrahi müdahale, prolaktin seviyelerini etkili bir şekilde azaltabilir ve belirtileri hafifletebilir.
+Eğer hiperprolaktineminin nedeni prolaktinoma veya diğer tümörler ise ve ilaç tedavisine yanıt alınamıyorsa, cerrahi müdahale gerekebilir. Özellikle makroprolaktinomalarda veya dopamin agonistlerine direnç gösteren vakalarda cerrahi değerlendirilir. Bazı durumlarda radyoterapi de tedavi seçenekleri arasında yer alabilir.
 
 #### Yaşam Tarzı Değişiklikleri
 

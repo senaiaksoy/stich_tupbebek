@@ -109,6 +109,28 @@ Tüm bu bilgileri bir araya getirdiğimizde, kararınızı kolaylaştıracak bir
 | **Zamanlama ve Psikoloji** | Tıbbi bir engel yoksa ve hızlı sonuç isteniyorsa | Tedaviyi aşamalara bölmek, stresi azaltmak ve rahmi dinlendirmek öncelikliyse |
 | **Önceki Deneyimler** | - | Önceki taze transfer denemelerinde rahim kaynaklı bir sorun şüphesi varsa |
 
+## FET Protokolleri: Doğal Siklus mu, Yapay Siklus mu?
+
+Dondurulmuş embriyo transferine karar verildiğinde, bir sonraki adım rahmi hazırlamak için hangi protokolün kullanılacağıdır. FET başarısında en kritik aşama, rahmin embriyoyu kabul edeceği "implantasyon penceresini" doğru yakalamaktır. Günümüzde iki temel yaklaşım kullanılmaktadır:
+
+### 1. Doğal Siklus FET (Natural Cycle)
+
+Vücudun kendi hormonal dengesi kullanılarak yapılır. Ultrason ve kan testleriyle yumurtlama takibi yapılır ve yumurtlamadan belirli bir süre sonra transfer gerçekleştirilir.
+
+* **Avantajları:** Daha az ilaç kullanımı, daha düşük maliyet, daha fizyolojik bir süreç.
+* **Dezavantajları:** Yakın takip gerektirir, düzensiz adet döngüsü olan hastalarda uygulanamayabilir, yumurtlama olmazsa döngü iptal edilebilir.
+
+### 2. İlaçlı (Yapay/Programlanmış) Siklus FET (HRT Cycle)
+
+Östrojen ve progesteron hormonları dışarıdan verilerek rahim hazırlanır. Yumurtlama beklenmez; hormon takviyeleriyle endometrium istenilen kalınlığa getirilir.
+
+* **Avantajları:** Transfer günü önceden planlanabilir, düzensiz adet döngüsü olan hastalarda idealdir, randevu planlaması daha kolaydır.
+* **Dezavantajları:** Daha fazla ilaç kullanımı, uzun süreli hormon desteği gerektirir.
+
+### Hangisi Daha Başarılı?
+
+Bilimsel çalışmalar, her iki yöntemin de **gebelik oranları açısından benzer** sonuçlar verdiğini göstermektedir. Seçim, hastanın adet düzenine, yaşam tarzına ve klinik durumuna göre kişiselleştirilmelidir. Düzenli adet gören kadınlarda doğal siklus tercih edilebilirken, düzensiz adet döngüsü olan hastalarda yapay siklus daha güvenilir bir seçenektir.
+
 ## Sıkça Sorulan Sorular (SSS)
 
 **Dondurulmuş embriyoların sağlığı taze embriyolarla aynı mıdır?**
