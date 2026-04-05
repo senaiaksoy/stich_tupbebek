@@ -26,3 +26,4 @@ Vücudun kendi hormonal dengesi kullanılarak yapılır. Yumurtlama takibi yapı
 
 ## Hangisi Daha İyi?
 Bilimsel çalışmalar, her iki yöntemin de **gebelik oranları açısından benzer** sonuçlar verdiğini göstermektedir. Seçim, hastanın adet düzenine ve yaşam tarzına göre kişiselleştirilmelidir.
+

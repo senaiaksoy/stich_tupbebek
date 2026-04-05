@@ -75,16 +75,16 @@ Her hastada hedeflenen yumurta sayısı farklıdır.
 15 üzeri sayılarda başarı plato çizerken, 20'nin üzerinde riskler devreye girer.
 
 Daha fazla bilgi için:
-🔗 **[Tüp Bebek Tedavisinin Aşamaları](https://tupbebek.com/tup-bebek-asamalari/)**
-🔗 **[Tüp Bebek Tedavisinde Yumurta Toplamanın Gecikmesi](https://tupbebek.com/blog/tup-bebek-tedavisinde-yumurta-toplamanin-gecikmesi/)**
-🔗 **[Tüp Bebek'te Çatlatma İğnesi](https://tupbebek.com/tup-bebek-tedavisinde-catlatma-ignesi/)**
+🔗 **[Tüp Bebek Tedavisinin Aşamaları](/tup-bebek-asamalari/)**
+🔗 **[Tüp Bebek Tedavisinde Yumurta Toplamanın Gecikmesi](/blog/tup-bebek-tedavisinde-yumurta-toplamanin-gecikmesi/)**
+🔗 **[Tüp Bebek'te Çatlatma İğnesi](/tup-bebek-tedavisinde-catlatma-ignesi/)**
 
 ---
 
 ## Rezerv Düşükse Ne Yapmalı?
 
 Düşük yumurtalık rezervi olanlarda her yumurta altın değerindedir.
-👉 **[Tüp Bebek Tedavisinde Nelere Dikkat Etmelisiniz](https://tupbebek.com/tup-bebek-tedavisinde-nelere-dikkat-etmelisiniz/)** yazısında da anlattığım gibi, beslenme, stres yönetimi ve vitamin desteği büyük fark yaratabilir.
+👉 **[Tüp Bebek Tedavisinde Nelere Dikkat Etmelisiniz](/tup-bebek-tedavisinde-nelere-dikkat-etmelisiniz/)** yazısında da anlattığım gibi, beslenme, stres yönetimi ve vitamin desteği büyük fark yaratabilir.
 Ayrıca DHEA gibi takviyeler düşük rezervli hastalarda faydalı olabilir.
 
 ---
@@ -93,11 +93,11 @@ Ayrıca DHEA gibi takviyeler düşük rezervli hastalarda faydalı olabilir.
 
 **Soru:** Tüp bebekte genellikle kaç yumurta toplanır?
 **Cevap:** Ortalama 8–15 arasıdır. Daha az da olabilir; önemli olan kalitedir.
-Daha fazla bilgi için 👉 [IVF Tedavisinde Kullanılan Protokoller](https://tupbebek.com/blog/ivf-protokolleri-istanbul/).
+Daha fazla bilgi için 👉 [IVF Tedavisinde Kullanılan Protokoller](/blog/ivf-protokolleri-istanbul/).
 
 **Soru:** Çok fazla yumurta toplanırsa zararı olur mu?
 **Cevap:** 20 üzeri yumurta toplandığında **OHSS riski** artabilir ([ESHRE Guideline](https://www.eshre.eu/Guidelines-and-Legal/Guidelines/Ovarian-Stimulation-in-IVF-ICSI)).
-Detaylı bilgi için 👉 [Yumurtalıkların Aşırı Uyarılması (OHSS)](https://tupbebek.com/yumurtaliklarin-asiri-uyarilmasi/)
+Detaylı bilgi için 👉 [Yumurtalıkların Aşırı Uyarılması (OHSS)](/yumurtaliklarin-asiri-uyarilmasi/)
 
 ---
 
@@ -108,8 +108,8 @@ Bir yumurta bile mucizeye dönüşebilir; ben bu mucizelere her gün tanıklık 
 
 Eğer tedaviye yeni başlıyorsanız veya sürecin ortasındaysanız, detaylı bilgi için şu sayfalara mutlaka göz atın:
 
-- 🔗 **[Embriyo Tutunması ve İmplantasyon](https://tupbebek.com/blog/embriyo-tutunmasi-implantasyon-3-tup-bebek-asamalarinda-yapilabilecekler/)**
-- 🔗 **[Tüp Bebek Tedavisinde Nelere Dikkat Etmelisiniz](https://tupbebek.com/tup-bebek-tedavisinde-nelere-dikkat-etmelisiniz/)**
+- 🔗 **[Embriyo Tutunması ve İmplantasyon](/blog/embriyo-tutunmasi-implantasyon-3-tup-bebek-asamalarinda-yapilabilecekler/)**
+- 🔗 **[Tüp Bebek Tedavisinde Nelere Dikkat Etmelisiniz](/tup-bebek-tedavisinde-nelere-dikkat-etmelisiniz/)**
 
 Ve unutmayın:
 > "Az yumurta, çok yumurta fark etmez; **doğru stratejiyle her yumurta bir umuttur.**"
@@ -121,3 +121,4 @@ Ve unutmayın:
 
 **Yazar:** tupbebek.com Yayın Kurulu
 **Yayın Tarihi:** 8 Ekim 2025
+

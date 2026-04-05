@@ -13,7 +13,7 @@ image: /images/articles/ivf-protokolleri.webp
 
 ### Tüp Bebek Tedavisindeki Yol Haritanız: Sizin İçin Doğru Protokol Hangisi?
 
-[Tüp bebek tedavisi](https://tupbebek.com/tup-bebek-ve-mikroenjeksiyon/), anne ve baba adayları için umut dolu bir yolculuğun başlangıcıdır. Bu yolculuğun temel adımlarından biri, yumurtalıklarınızı nazikçe uyararak sağlıklı ve kaliteli yumurtalar elde etmektir. Tıpkı her insanın parmak izinin farklı olması gibi, her kadının vücudu da tedaviye farklı yanıt verir. Bu nedenle doktorunuz, size özel bir "yol haritası" çizer. Bu haritaya **tedavi protokolü** diyoruz.
+[Tüp bebek tedavisi](/tup-bebek-ve-mikroenjeksiyon/), anne ve baba adayları için umut dolu bir yolculuğun başlangıcıdır. Bu yolculuğun temel adımlarından biri, yumurtalıklarınızı nazikçe uyararak sağlıklı ve kaliteli yumurtalar elde etmektir. Tıpkı her insanın parmak izinin farklı olması gibi, her kadının vücudu da tedaviye farklı yanıt verir. Bu nedenle doktorunuz, size özel bir "yol haritası" çizer. Bu haritaya **tedavi protokolü** diyoruz.
 
 Peki, bu protokoller ne anlama geliyor ve hangisi sizin için uygun olabilir? Gelin, bu yol haritalarını birlikte daha yakından tanıyalım.
 
@@ -26,8 +26,8 @@ Bu protokol, adından da anlaşılacağı gibi biraz daha uzun soluklu ama bir o
 **Yolculuk Nasıl İlerler?**
 
 1. **Hazırlık ve "Sıfırlama" Aşaması:** Tedavinin bu ilk adımı, vücudunuzun doğal hormon döngüsünü bir süreliğine "duraklatmak" gibidir. Genellikle bir önceki adet döngünüzün sonlarına doğru başlanan ilaçlarla, hormonlarınızın kontrolü tamamen doktorunuza geçer. Bu sayede, yumurtalarınızın gelişimini en başından itibaren yönetmek ve hepsinin aynı anda büyümesini sağlamak mümkün olur.
-2. **[Yumurtaları Uyarma Aşaması](https://tupbebek.com/yumurtlama-takibi/):** Adet kanamanızla birlikte, yumurtalıklarınızı nazikçe "uyandırmaya" başlarız. Yaklaşık 10-12 gün süren iğnelerle, birden fazla yumurtanın olgunlaşması hedeflenir. Doktorunuz bu süreci ultrason ve kan testleriyle yakından takip ederek her şeyin yolunda gittiğinden emin olur.
-3. **Hasat Zamanı:** Yumurtalarınız (foliküller) istenen olgunluğa ulaştığında, "[çatlatma iğnesi](https://tupbebek.com/tup-bebek-tedavisinde-catlatma-ignesi/)" olarak bilinen son bir dokunuş yapılır. Bu iğneden yaklaşık 34-36 saat sonra, yumurtalarınız nazikçe toplanmaya hazır hale gelir.
+2. **[Yumurtaları Uyarma Aşaması](/yumurtlama-takibi/):** Adet kanamanızla birlikte, yumurtalıklarınızı nazikçe "uyandırmaya" başlarız. Yaklaşık 10-12 gün süren iğnelerle, birden fazla yumurtanın olgunlaşması hedeflenir. Doktorunuz bu süreci ultrason ve kan testleriyle yakından takip ederek her şeyin yolunda gittiğinden emin olur.
+3. **Hasat Zamanı:** Yumurtalarınız (foliküller) istenen olgunluğa ulaştığında, "[çatlatma iğnesi](/tup-bebek-tedavisinde-catlatma-ignesi/)" olarak bilinen son bir dokunuş yapılır. Bu iğneden yaklaşık 34-36 saat sonra, yumurtalarınız nazikçe toplanmaya hazır hale gelir.
 
 | Avantajları | Dezavantajları |
 | :--- | :--- |
@@ -57,7 +57,7 @@ Her zaman "daha fazla" hormon, "daha iyi" sonuç demek değildir. Bazı durumlar
 
 * **Mikrodoz (Flare) Protokolü:** Bu yaklaşım, vücudun kendi hormon üretiminden kısa bir süreliğine "destek alarak" yumurtalıkları uyarmayı hedefler. Özellikle yumurta rezervi azalmış kadınlarda, mevcut potansiyeli en iyi şekilde kullanmak için tasarlanmıştır.
 
-* **Mini IVF (Hafif Uyarım):** "Az ama öz" felsefesine dayanır. Amaç, onlarca yumurta yerine, daha az sayıda ama en kaliteli yumurtaları elde etmektir. Daha az ilaç kullanımı, daha düşük maliyet ve neredeyse sıfır yan etki riski sunar. [Polikistik Over Sendromu (PCOS)](https://tupbebek.com/blog/adet-duzensizligi-ve-polikistik-over-sendromu-pkos/) olan veya ileri yaştaki kadınlar için ideal bir seçenek olabilir.
+* **Mini IVF (Hafif Uyarım):** "Az ama öz" felsefesine dayanır. Amaç, onlarca yumurta yerine, daha az sayıda ama en kaliteli yumurtaları elde etmektir. Daha az ilaç kullanımı, daha düşük maliyet ve neredeyse sıfır yan etki riski sunar. [Polikistik Over Sendromu (PCOS)](/blog/adet-duzensizligi-ve-polikistik-over-sendromu-pkos/) olan veya ileri yaştaki kadınlar için ideal bir seçenek olabilir.
 
 * **Doğal Siklus (İlaçsız Tüp Bebek):** Bu, tedavinin en "doğal" halidir. Vücudunuzun o ay kendi kendine büyüttüğü o tek ve değerli yumurtayı takip ederek çalışır. Hiçbir uyarıcı hormon kullanılmadığı için yan etkileri ve maliyeti en düşük yöntemdir. Ancak tek bir yumurtaya bağlı olduğu için başarı şansı daha düşüktür ve genellikle birkaç deneme gerektirebilir.
 
@@ -72,3 +72,4 @@ Tüp bebek tedavisi, her adımı özenle planlanması gereken, kişiye özel bir
 Bu süreçteki en önemli rehberiniz doktorunuzdur. Aklınızdaki tüm soruları sormaktan, endişelerinizi paylaşmaktan çekinmeyin. Sizin için en doğru ve en güvenli yol haritasını birlikte çizeceksiniz. Unutmayın, doğru yaklaşımla bu yolculuğun sonunda hayallerinize kavuşma şansınız her zaman vardır.
 
 *Bu yazı Doç.Dr.Senai AKSOY tarafından yazılmış ve tıbbi yönden onaylanmıştır*
+

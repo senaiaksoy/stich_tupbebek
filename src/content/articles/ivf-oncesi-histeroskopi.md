@@ -35,3 +35,4 @@ Laparoskopi, karın boşluğunun kamera ile incelenmesidir. Tüp bebek öncesi �
 ## Sonuç
 
 Histeroskopi ve laparoskopi rutin her hastaya uygulanmaz. En doğru yaklaşım, hekiminiz tarafından yapılan detaylı kontroller sonrası size özel bir yol haritası çizilmesidir. Unutmayın, doğru hazırlık tedavinin yarısını oluşturur.
+

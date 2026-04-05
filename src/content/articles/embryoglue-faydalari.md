@@ -22,3 +22,4 @@ EmbryoGlue aslında bir "yapıştırıcı" değil, hyaluronan (hyaluronik asit) 
 - Tekrarlayan implantasyon başarısızlığı (RIF) olanlar.
 - İleri yaş anne adayları.
 - Kalitesi orta düzey olan embriyoların transferinde.
+

@@ -98,3 +98,4 @@ Tıbbi açıdan belirlenmiş bir üst sınır yoktur; ancak pratikte over rezerv
 Türkiye mevzuatı kapsamında yumurta dondurma işlemi için genel bir üst yaş sınırı belirlenmemiştir; ancak merkezlerin kendi klinik değerlendirme kriterleri olabilir. Pratikte **43 yaşın üzerinde** kalan over rezerviyle oosit kalitesi önemli ölçüde düştüğünden, bu yaş grubunda başarı oranları belirgin biçimde azalmaktadır. En uygun sonuçlar için **35 yaşından önce** başvurulması önerilmektedir.
 
 Yumurta dondurma, doğurganlığınızı koruma altına almanın bugün elimizde olan en etkili yollarından biridir. Kendi öykünüze ve planlarınıza göre doğru adımı atmak için uzman görüşü almayı geciktirmeyin.
+

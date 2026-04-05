@@ -38,3 +38,4 @@ Merkezi değerlendirirken şu soruları sormaktan çekinmeyin:
 ## Sonuç
 
 Tüp bebek tedavisi sadece tıbbi bir işlem değil, aynı zamanda duygusal bir yolculuktur. En ucuz tedavi değil, en doğru planlanmış tedavi hedefinize ulaşmanızı sağlar. Doğru merkez ve uzmanla, hayallerinize bir adım daha yakınsınız.
+

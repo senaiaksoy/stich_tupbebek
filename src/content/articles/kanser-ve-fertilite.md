@@ -122,3 +122,4 @@ Kanser tanısı aldıktan sonra fertilitenizi korumak için şu adımları izley
 3. **Zaman kaybetmeyin.** Tedaviye kadar geçen süre değerlidir. Oosit veya sperm dondurma işlemleri günler-haftalar içinde tamamlanabilir. Ne kadar erken başvurursanız, seçenekleriniz o kadar genişler.
 
 Kanser tanısı almak ağırdır; ancak bu dönemde alınacak küçük ama kararlı adımlar, ileride yaşamak istediğiniz hayatı şekillendirme gücü taşır. Fertilite koruma, hastalıkla mücadelenizden taviz vermeden geleceğe bir kapı aralamaktır. Yalnız değilsiniz — doğru ekip ve doğru bilgiyle bu yolu birlikte yürüyebiliriz.
+

@@ -35,3 +35,4 @@ Akraba evliliği yapmış veya yapmayı planlayan çiftler için modern tıbbın
 - **Eğitim ve Bilinçlendirme:** Toplumda genetik farkındalığın artırılması, riskli evlilik kararlarının önüne geçilmesine yardımcı olur.
 
 İnfertil çiftler ve risk grubundaki aileler, sağlıklı nesiller planlamak için mutlaka uzman bir hekimden genetik danışmanlık hizmeti almalıdır.
+

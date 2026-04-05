@@ -36,3 +36,4 @@ Tüp bebek merkezlerinde sunulan hizmet, yüksek kalitede bir tıbbi hizmettir.
 ## Sonuç
 
 İyi bir tüp bebek merkezi, size duymak istediklerinizi değil, bilmeniz gereken bilimsel gerçekleri söyleyen merkezdir. Size özel bir strateji geliştiren, etik değerlere bağlı ve teknolojiyi empatiyle harmanlayan bir ekip, hayalinize giden yoldaki en güvenilir limandır.
+

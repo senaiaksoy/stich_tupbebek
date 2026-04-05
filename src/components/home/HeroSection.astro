@@ -5,23 +5,11 @@
  * - Glassmorphism design
  * - Gradient text
  * - CTA buttons
- * - Search bar with filters
+ * - Simplified visual layout (Search removed as requested)
  */
 
-import HeroSearch from '../HeroSearch.astro';
-
-// Get search data from collection
-const { getPublishedArticles } = await import('../../utils/articles');
-const articles = await getPublishedArticles();
-
-const searchData = articles.map(article => ({
-  id: article.id,
-  title: article.data.title,
-  description: article.data.description,
-  url: `/makaleler/${article.slug}`,
-  category: article.data.category || 'makale',
-  type: 'article' as const
-}));
+// Get published articles (for stats or featured if needed - keeping it for future use or removing if completely unused)
+// const { getPublishedArticles } = await import('../../utils/articles');
 ---
 
 <section class="pt-28 pb-12 relative overflow-hidden">
@@ -84,78 +72,37 @@ const searchData = articles.map(article => ({
         </div>
       </div>
 
-      <!-- Right: Search & Visual -->
+      <!-- Right: Visual -->
       <div class="relative lg:ml-auto w-full max-w-lg animate-fade-in-up" style="animation-delay: 0.2s;">
-        <!-- Hero Image Card -->
-        <div class="w-full rounded-2xl overflow-hidden shadow-lg mb-6 hover:shadow-xl transition-shadow duration-500 group">
+        <!-- Hero Image Card - Enlarged since search is removed -->
+        <div class="w-full rounded-[2.5rem] overflow-hidden shadow-2xl mb-8 hover:shadow-primary-600/10 transition-shadow duration-700 group relative">
           <img
             src="/images/home/luxury-embryo.webp"
             alt="Embryo gelisimi - IVF tedavisi"
-            class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-700"
+            class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-1000"
           />
+          <!-- Decorative Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </div>
-
-        <!-- Glowing Search Container -->
-        <div class="glass-card rounded-[2.5rem] p-8 relative z-10 overflow-hidden hover-glow transition-all duration-500 group">
-          <!-- Background decoration in search card -->
-          <div class="absolute -top-24 -right-24 w-48 h-48 bg-primary-50/50 rounded-full blur-3xl group-hover:bg-primary-50 transition-colors"></div>
-
-          <div class="relative z-20">
-            <div class="flex items-center justify-between mb-6">
-              <h2 class="text-xl font-bold text-gray-900">Rehberlerde Ara</h2>
-              <span class="material-symbols-outlined text-primary animate-pulse-soft">search_spark</span>
-            </div>
-
-            <!-- Hero Inline Search -->
-            <HeroSearch searchData={searchData} placeholder="PCOS, IVF, AMH Testi..." />
-
-            <!-- Quick Category Filters with Modern Style -->
-            <div class="flex flex-wrap gap-2 mt-6" id="category-filters">
-              <button
-                type="button"
-                data-category="kadin"
-                class="category-filter px-4 py-2 text-xs font-bold text-gray-600 bg-gray-100/50 rounded-full hover:bg-primary hover:text-white transition-all inline-flex items-center gap-1.5 border border-gray-200/50"
-                onclick="dispatchCategoryFilter('kadin')"
-              >
-                <span class="material-symbols-outlined text-[16px]">female</span>Kadin
-              </button>
-              <button
-                type="button"
-                data-category="erkek"
-                class="category-filter px-4 py-2 text-xs font-bold text-gray-600 bg-gray-100/50 rounded-full hover:bg-primary hover:text-white transition-all inline-flex items-center gap-1.5 border border-gray-200/50"
-                onclick="dispatchCategoryFilter('erkek')"
-              >
-                <span class="material-symbols-outined text-[16px]">male</span>Erkek
-              </button>
-              <button
-                type="button"
-                data-category="tedavi"
-                class="category-filter px-4 py-2 text-xs font-bold text-gray-600 bg-gray-100/50 rounded-full hover:bg-primary hover:text-white transition-all inline-flex items-center gap-1.5 border border-gray-200/50"
-                onclick="dispatchCategoryFilter('tedavi')"
-              >
-                <span class="material-symbols-outined text-[16px]">medical_services</span>Tedavi
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Decorative background glow for the whole right col -->
-        <div class="absolute -inset-4 bg-primary-50/50 blur-3xl -z-10 rounded-full animate-pulse-soft"></div>
-      </div>
 
         <!-- Featured Stats Card -->
-        <div class="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-2xl p-6 border border-primary-200">
-          <div class="space-y-4">
+        <div class="bg-white/70 backdrop-blur-md rounded-[2rem] p-10 border border-white shadow-xl relative z-10 overflow-hidden group hover:border-primary-200 transition-all duration-500">
+          <div class="absolute -top-12 -right-12 w-24 h-24 bg-primary-50 rounded-full blur-2xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="grid grid-cols-2 gap-8 relative z-20">
             <div>
-              <p class="text-4xl font-bold text-primary">60+</p>
-              <p class="text-sm text-gray-600 mt-1">Bilimsel Makale</p>
+              <p class="text-4xl lg:text-5xl font-extrabold text-primary-600 mb-2">30+</p>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Yıllık Tecrübe</p>
             </div>
-            <div class="border-t border-primary-200 pt-4">
-              <p class="text-2xl font-bold text-gray-900">40-50%</p>
-              <p class="text-sm text-gray-600 mt-1">IVF Basari Orani (35 yas alti)</p>
+            <div class="border-l border-gray-100 pl-8">
+              <p class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-2">40-50%</p>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Başarı Oranı</p>
             </div>
           </div>
         </div>
+
+        <!-- Decorative background glow -->
+        <div class="absolute -inset-10 bg-primary-50/30 blur-3xl -z-10 rounded-full animate-pulse-soft"></div>
       </div>
     </div>
   </div>
@@ -168,18 +115,3 @@ const searchData = articles.map(article => ({
     backdrop-filter: blur(12px);
   }
 </style>
-
-<script is:inline>
-  function dispatchCategoryFilter(category) {
-    // Visual active state
-    document.querySelectorAll('.category-filter').forEach(btn => {
-      btn.classList.remove('bg-primary', 'text-white');
-    });
-    event?.target?.closest('button')?.classList.add('bg-primary', 'text-white');
-
-    // Dispatch event for HeroSearch
-    window.dispatchEvent(new CustomEvent('hero-filter-change', {
-      detail: { category }
-    }));
-  }
-</script>

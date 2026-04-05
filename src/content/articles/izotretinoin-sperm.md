@@ -36,3 +36,4 @@ Sperm üretimi (spermatogenez) yaklaşık 74 gün sürdüğünden, tedavinin etk
 ## Sonuç
 
 İzotretinoin, obstrüktif olmayan azospermi (NOA) teşhisi konmuş ve cerrahi yöntemlerle sonuç alamamış erkekler için "çaresiz" denilen noktada yeni bir kapı açmaktadır. Ancak bu tedavi mutlaka bir uzman kontrolünde ve düzenli kan takibiyle yürütülmelidir.
+

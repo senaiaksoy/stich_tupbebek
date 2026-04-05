@@ -104,3 +104,4 @@ Türkiye'deki Sağlık Bakanlığı **ÜYTE (Üreme Yardımcı Tedavi Merkezleri
 ---
 
 Unutmayın, istatistikler ve yüzdeler genel kalabalıkları ifade eder. **Siz bir istatistik değilsiniz, benzersiz bir bireysiniz.** Kapsamlı bir değerlendirme ve size özel tedavi planı için kliniğimizle her zaman iletişime geçebilirsiniz.
+

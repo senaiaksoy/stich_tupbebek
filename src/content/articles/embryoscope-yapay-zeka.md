@@ -228,7 +228,7 @@ Hastalarımın bana en sık yönelttiği soru şu oluyor:
 Bugüne kadar yapılan bilimsel çalışmalar ve uluslararası otoritelerin verileri ışığında şunları net bir şekilde söyleyebilirim:
 
 **Gebelik oranları**
-Geniş hasta gruplarını içeren çalışmalarda, **time-lapse teknolojisi kullanılan vakalarda [gebelik oranlarının](https://tupbebek.com/tup-bebek-basari-oranlari/) %20’ye varan oranlarda arttığı** gösterilmiştir. Bunun temel nedeni, embriyoların çok daha doğru ve objektif şekilde seçilebilmesidir.
+Geniş hasta gruplarını içeren çalışmalarda, **time-lapse teknolojisi kullanılan vakalarda [gebelik oranlarının](/tup-bebek-basari-oranlari/) %20’ye varan oranlarda arttığı** gösterilmiştir. Bunun temel nedeni, embriyoların çok daha doğru ve objektif şekilde seçilebilmesidir.
 
 **Düşük oranları**
 Morfokinetik değerlendirme sayesinde genetik açıdan sorunlu olma ihtimali yüksek embriyoları baştan eleyebiliyoruz. Bu da elde edilen klinik gebeliklerin **düşükle sonuçlanma riskini azaltıyor**.
@@ -287,3 +287,4 @@ Bizim görevimiz, en ileri bilimsel araçlarla şansınızı artırmak; sizin ih
 **Yayın Tarihi:** 20 Ocak 2026
 
 *Bu makale Doç. tupbebek.com yayın kurulu tarafından, 2025 yılına ait güncel bilimsel raporlar ve 30+ yıllık klinik tecrübe ışığında bilgilendirme amaçlı yazılmıştır. Her hasta benzersizdir. Tüp bebek sonuçları birçok faktöre göre değişiklik gösterir. Kişisel durumunuz için daima bir uzmana danışın.*
+

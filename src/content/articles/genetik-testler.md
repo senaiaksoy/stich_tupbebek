@@ -30,3 +30,4 @@ PGT-A, embriyoların rahme transfer edilmeden önce kromozomal olarak taranması
 - **Çoğul Gebelik Riskinin Azaltılması**: Tek embriyo transferi ile sağlıklı sonuç alma olasılığının artması.
 
 Modern laboratuvar teknikleri, biyopsi işleminin embriyo üzerindeki etkisini minimize ederek güvenliği en üst düzeye çıkarmıştır.
+

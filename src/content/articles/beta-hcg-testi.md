@@ -29,3 +29,4 @@ IVF tedavisi sonrası ilk test genellikle transferden **10-12 gün sonra** yapı
 - **Zirve Noktası:** hCG seviyeleri gebeliğin 8-11. haftalarında zirveye ulaşır ve sonrasında kademeli olarak stabilizese olur.
 
 Beta-hCG değerleri kişiden kişiye ve gebelikten gebeliğe büyük farklılıklar gösterebilir. Bu nedenle sonuçları tek başına değerlendirmek yerine, mutlaka doktorunuzun yorumu ve ilerleyen süreçte yapılacak ultrason kontrolleri ile birleştirmek en sağlıklı yaklaşımdır.
+

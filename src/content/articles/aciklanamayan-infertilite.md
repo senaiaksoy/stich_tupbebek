@@ -78,3 +78,4 @@ Laparoskopi tanı amaçlı yapılabilir. Tespit edilen endometriozis cerrahi ola
 
 **Yazar:** tupbebek.com Yayın Kurulu
 **Yayın Tarihi:** 27 Eylül 2024
+

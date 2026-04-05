@@ -26,3 +26,4 @@ Başarısızlık sonrası biz ne yapıyoruz?
 - **Yaşam Tarzı Optimizasyonu:** Beslenmeden stres yönetimine kadar 3 aylık bir hazırlık dönemi.
 
 Unutmayın; bilim, her "olmadı" dediğinde bir sonraki "olacak" için yeni bir kapı aralar.
+

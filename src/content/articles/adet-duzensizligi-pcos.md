@@ -52,3 +52,4 @@ Teşhis genellikle tıbbi öykü, fizik muayene, kan testleri ve ultrasonografi 
 4. **Yumurtlama Uyarıcılar:** Gebe kalmak isteyen kadınlar için özel tedaviler.
 
 Sağlıklı bir yaşam tarzı benimsemek, belirtileri hafifletmeye ve genel sağlığı iyileştirmeye yardımcı olabilir. Adet düzensizliği veya PCOS belirtileri yaşıyorsanız, bir sağlık uzmanına danışmanız önemlidir.
+

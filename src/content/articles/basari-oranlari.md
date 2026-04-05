@@ -29,3 +29,4 @@ Son yıllarda başarı oranlarını artıran başlıca teknolojiler:
 - **Yapay Zeka (AI) Destekli Seleksiyon**: En yüksek gelişim potansiyeli olan embriyonun objektif verilerle seçilmesi.
 
 Sonuç olarak, başarı oranları kişiselleştirilmiş bir tedavi planı ve ileri laboratuvar tekniklerinin birleşimiyle optimize edilmektedir.
+

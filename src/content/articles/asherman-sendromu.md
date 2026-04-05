@@ -39,3 +39,4 @@ Teşhis aşamasında altın standart **Histeroskopi**dir. Bu yöntemle rahim iç
 3. **Bariyer Yöntemleri:** Yapışıklıkların tekrar oluşmasını önlemek için rahim içine geçici balon veya kateter yerleştirilebilir.
 
 Doğru teşhis ve uzman ellerde yapılan histeroskopi ile Asherman Sendromu başarıyla tedavi edilebilir ve sağlıklı bir gebelik şansı tekrar kazanılabilir.
+

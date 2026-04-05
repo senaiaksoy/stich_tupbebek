@@ -204,13 +204,13 @@ Günümüzdeki yaklaşımımız aslında çok basit ve tek bir soruya odaklanıy
 
 Bizim kliniğimizde sadece tüp bebek yapıp geçmiyoruz. PPOS gibi hastalarımızı düşünen yöntemlerle, mikrop analizleriyle, en yeni bilimsel bilgileri kullanarak bu olasılığı artırmaya çalışıyoruz. Unutmayın, endometriozis başınıza gelmiş kötü bir şey değil. Doğru yöntemlerle kontrol altına alınabilir bir durum.
 
-Daha detaylı bilgi almak ve kişisel durumunuzu değerlendirmek için [tüp bebek aşamaları](https://tupbebek.com/tup-bebek-asamalari/) sayfamızı inceleyebilir veya bizimle iletişime geçebilirsiniz.
+Daha detaylı bilgi almak ve kişisel durumunuzu değerlendirmek için [tüp bebek aşamaları](/tup-bebek-asamalari/) sayfamızı inceleyebilir veya bizimle iletişime geçebilirsiniz.
 
 ---
 
 ## Endometriozis ve Kısırlık Hakkında Sıkça Sorulan Sorular (SSS)
 
-**Soru 1: [Çikolata kisti](https://tupbebek.com/blog/endometrioma/) (endometrioma)  olan herkes kısır olur mu?**
+**Soru 1: [Çikolata kisti](/blog/endometrioma/) (endometrioma)  olan herkes kısır olur mu?**
 
 **Cevap 1:** Hayır. Endometriozis gebe kalmayı zorlaştırsa da, kısırlık anlamına gelmez. Hastalığın evresi, konumu ve hastanın yaşına bağlı olarak birçok kadın doğal yollarla hamile kalabilir. Ancak zorluk yaşayanlarda, 2025 verilerine göre en etkili yol "Önce Tüp Bebek" tedavisidir.
 
@@ -222,7 +222,7 @@ Daha detaylı bilgi almak ve kişisel durumunuzu değerlendirmek için [tüp beb
 
 **Cevap 3:** Bu, sık duyulan bir endişedir. Tüp bebek stimülasyonu kısa süreli (10-12 gün) bir östrojen artışına neden olsa da, hastalığın ilerlemesi veya ağrının kalıcı olarak kötüleşmesi üzerinde anlamlı bir etkisi olduğuna dair güçlü bir kanıt yoktur. PPOS gibi modern protokoller, bu etkiyi en aza indirerek ve "dondur-aktar" (freeze-all) stratejisiyle başarıyı artırır.
 
-**Soru 4: [Dondurulmuş embriyo transferi](https://tupbebek.com/embriyo-dondurma/) endometriozis hastalarında neden daha başarılıdır?**
+**Soru 4: [Dondurulmuş embriyo transferi](/embriyo-dondurma/) endometriozis hastalarında neden daha başarılıdır?**
 
 **Cevap 4:** Kesinlikle, çoğu zaman daha iyi sonuç veriyor. Şöyle ki, endometriozis rahmin içini iltihaplandırıyor ve östrojen seviyesini artırıyor. Bu durum da embriyonun yerleşmesini zorlaştırabiliyor. Biz de tümünü dondur yöntemi ve PPOS protokolleri sayesinde embriyoyu o anki sıkıntılı ortama yerleştirmek yerine, bir sonraki ay, vücut dinlenip rahim kendini toparladıktan sonra transfer ediyoruz. Böylece tutunma ve hamilelik olasılığı yükseliyor.
 
@@ -231,3 +231,4 @@ Daha detaylı bilgi almak ve kişisel durumunuzu değerlendirmek için [tüp beb
 *Bu makalede yer alan bilgiler, genel bilgilendirme amaçlıdır ve kişisel tıbbi tavsiye yerine geçmez. Sağlık durumunuzla ilgili her türlü soru ve endişeniz için lütfen doktorunuza danışınız.*
 
 - *Son Güncelleme Tarihi: 31 Ekim 2025*
+

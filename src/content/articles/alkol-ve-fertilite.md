@@ -38,3 +38,4 @@ Alkol sadece kadınları değil, erkek üreme sağlığını da doğrudan etkile
 4. **Alternatifler:** Sosyal ortamlarda alkolsüz kokteyller veya bitki çayları gibi sağlıklı alternatifleri tercih edin.
 
 Bebek sahibi olma yolculuğu özveri gerektirebilir, ancak o küçük mucizeye kavuşmak için bu yaşam tarzı değişikliklerine kesinlikle değer.
+

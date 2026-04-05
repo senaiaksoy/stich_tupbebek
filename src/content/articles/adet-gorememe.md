@@ -52,3 +52,4 @@ Tedavi edilmeyen amenore; kısırlık, östrojen eksikliğine bağlı osteoporoz
 Amenore tedavisi tamamen altta yatan nedene yöneliktir. Yaşam tarzı değişiklikleri (stres yönetimi, sağlıklı kilo), hormonal tedaviler veya nadiren cerrahi müdahale gerekebilir. Sağlıklı beslenme, düzenli (ancak aşırı olmayan) egzersiz ve yeterli uyku, hormon dengesini korumada kritik rol oynar.
 
 Amenore belirtileri yaşıyorsanız, altta yatan nedeni belirlemek ve uygun tedaviyi almak için mutlaka bir hekime danışmalısınız.
+
