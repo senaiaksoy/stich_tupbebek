@@ -179,7 +179,7 @@ Remote'ta donör ihlali **kalmadı** (önceki session'larda düzeltilmiş). Tek 
 | 1 | **tbbi-sozluk URL typo** | ✅ TAMAMLANDI — Sayfa yeniden adlandırıldı, 15 dosya güncellendi. |
 | 2 | **İletişim formu backend** | ✅ TAMAMLANDI — Cloudflare Pages adapter + D1 veritabanı + Resend e-posta entegrasyonu. `src/pages/api/contact.ts` endpoint, rate limiting, HTML e-posta şablonu. |
 | 3 | **7 makale görseli migrasyonu** | ✅ TAMAMLANDI — Eski `/images/home/` ve `/images/articles/` görselleri kütüphane formatına (`/images/library/`) geçirildi. |
-| 4 | **Analytics** | GA4 Measurement ID ve Search Console verification kodu kullanıcıdan alınacak |
+| 4 | **Analytics** | ✅ GA4 eklendi (G-K3VE72CSDJ). Search Console doğrulama kodu deploy sonrası eklenecek. |
 
 ### Orta Öncelik
 | # | Konu | Detay |
