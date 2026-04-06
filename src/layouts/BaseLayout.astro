@@ -97,6 +97,15 @@ const medicalWebPageSchema = {
 		<meta name="twitter:image" content={image ? `https://tupbebek.com${image}` : "https://tupbebek.com/images/home/luxury-embryo.webp"} />
 		<meta name="twitter:site" content="@tupbebek" />
 
+		<!-- Google Analytics (GA4) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-K3VE72CSDJ"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-K3VE72CSDJ');
+		</script>
+
 		<!-- Material Symbols -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
