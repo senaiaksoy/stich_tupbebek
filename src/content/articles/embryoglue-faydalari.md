@@ -6,8 +6,8 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Doç. Dr. Senai Aksoy"
 lastModified: 2026-04-05
 category: "Tedavi Yöntemleri"
-image: "/images/articles/embryoglue-faydalari.webp"
-imageAlt: "embryoglue embriyo yapistiricisi faydalari"
+image: "/images/library/embriyo/embryoglue.webp"
+imageAlt: "EmbryoGlue embriyo yapıştırıcısı ve implantasyon desteği"
 ---
 
 ## EmbryoGlue Nedir?

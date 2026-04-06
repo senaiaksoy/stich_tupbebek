@@ -6,8 +6,8 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Doç. Dr. Senai Aksoy"
 lastModified: 2026-04-05
 category: "Tanı"
-image: "/images/articles/laboratuvar-raporu-yorumlama.webp"
-imageAlt: "embriyo tup bebek laboratuvar raporu yorumlama"
+image: "/images/library/laboratuvar/oocytes-prior-to-a-f-and-k-and-after-insemination.webp"
+imageAlt: "Embriyo laboratuvar raporu ve oosit değerlendirmesi"
 ---
 
 ## Laboratuvar Raporu Elinize Geçtiğinde

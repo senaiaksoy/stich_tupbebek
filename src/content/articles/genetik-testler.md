@@ -6,8 +6,8 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Doç. Dr. Senai Aksoy"
 lastModified: 2026-04-05
 category: "Genetik"
-image: "/images/home/article-2.jpg"
-imageAlt: "tüp bebek genetik test pgt embriyo tarama"
+image: "/images/library/embriyo/pgt.webp"
+imageAlt: "PGT preimplantasyon genetik test embriyo tarama"
 featured: false
 ---
 

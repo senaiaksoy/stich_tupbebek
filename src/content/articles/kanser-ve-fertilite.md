@@ -4,8 +4,8 @@ description: "Kanser tanısı sonrası fertilite koruma seçenekleri nelerdir? O
 publishDate: 2026-04-01
 author: "tupbebek.com Yayın Kurulu"
 category: "Tedavi"
-image: "/images/articles/kanser-ve-fertilite.webp"
-imageAlt: "onkolojik fertilite koruma oncofertility danışmanlık"
+image: "/images/library/laboratuvar/dr-senai-aksoy-istanbul-ivf-laboratuvar.webp"
+imageAlt: "Onkofertilite danışmanlığı ve fertilite koruma laboratuvar ortamı"
 ---
 
 Kanser tanısı almak, hayatın en zorlu anlarından biridir. Bu süreçte tedaviye odaklanmak ne kadar doğalsa, gelecekteki aile planları hakkında düşünmek de o kadar önemlidir. Neyse ki modern tıp, kanser tedavisi görecek hastalara fertilitelerini koruma imkânı sunmaktadır. **Onkofertilite** olarak adlandırılan bu alan, onkoloji ve üreme tıbbını bir araya getirerek hastalara hem sağlıklarını kazanma hem de gelecekte çocuk sahibi olabilme fırsatı tanımaktadır. Tanı aldığınız anda doğru adımları atmanız, bu fırsatı en üst düzeyde kullanmanızı sağlar.

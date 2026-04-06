@@ -4,7 +4,8 @@ description: "Bu içerik taze ve dondurulmuş embriyo transferi karşılaştırm
 publishDate: 2025-11-10
 author: "tupbebek.com Yayın Kurulu"
 category: "Tedavi"
-image: "/images/articles/dondurulmus-embriyo-transferi.webp"
+image: "/images/library/tedavi/taze-donmus-transfert.webp"
+imageAlt: "Taze ve dondurulmuş embriyo transferi karşılaştırması"
 ---
 
 Bu makale, daha kapsamlı rehberimizle birleştirilmiştir.
