@@ -22,7 +22,7 @@ const accordionItems = navigationMenus.map((menu) => ({
             <!-- Logo Section -->
             <div class="flex-shrink-0">
                 <a href="/" class="text-2xl font-bold text-gray-900 tracking-tight flex items-center gap-2 group/logo transition-all" style="font-family: var(--font-headline);">
-                    <span id="logo-icon" class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center text-white text-base transition-all group-hover/logo:rotate-12">tb</span>
+                    <img id="logo-icon" src="/images/logo-tupbebek-sm.webp" alt="tupbebek.com logosu" class="h-8 w-auto transition-all" />
                     <span id="logo-text" class="transition-all origin-left">tupbebek.com</span>
                 </a>
             </div>
@@ -114,8 +114,8 @@ const accordionItems = navigationMenus.map((menu) => ({
                 header.classList.add('bg-white/95');
                 headerInner.classList.remove('h-20');
                 headerInner.classList.add('h-16');
-                logoIcon.classList.remove('w-8', 'h-8');
-                logoIcon.classList.add('w-6', 'h-6', 'text-xs');
+                logoIcon.classList.remove('h-8');
+                logoIcon.classList.add('h-6');
                 logoText.classList.add('scale-90');
             } else {
                 header.classList.remove('py-0', 'shadow-lg');
@@ -123,8 +123,8 @@ const accordionItems = navigationMenus.map((menu) => ({
                 header.classList.remove('bg-white/95');
                 headerInner.classList.add('h-20');
                 headerInner.classList.remove('h-16');
-                logoIcon.classList.add('w-8', 'h-8');
-                logoIcon.classList.remove('w-6', 'h-6', 'text-xs');
+                logoIcon.classList.add('h-8');
+                logoIcon.classList.remove('h-6');
                 logoText.classList.remove('scale-90');
             }
         });
