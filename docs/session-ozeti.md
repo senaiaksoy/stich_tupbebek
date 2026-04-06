@@ -125,13 +125,68 @@ Branch: `senai2026.04.01` — pushed to origin.
 
 ---
 
-## Devam Eden / Gelecek İşler
+## Devam Eden / Gelecek İşler (Session 1-2)
 
-- [ ] Psikolojik-destek iç bölüm görselleri (5 adet hala tıbbi görsel kullanıyor: `tup_bebek_muayene`, `kisirlik_endometriozis`, `dusuk-amh`, `kimyasal-gebelik`, `dr-aksoy-lab`)
-- [ ] Duygusal-destek iç bölüm görselleri (2 adet: `dogurganlik`, `ivf_tedavi_sureci`)
+- [ ] Psikolojik-destek iç bölüm görselleri (5 adet hala tıbbi görsel kullanıyor)
+- [ ] Duygusal-destek iç bölüm görselleri (2 adet)
 - [ ] Önerilen ek psikoloji görselleri: mindfulness/meditasyon, umut/iyileşme
-- [ ] Lighthouse performans audit
-- [ ] `docs/session-ozeti.md` dosyasını git'e commit etme
+
+---
+
+## Session 3 — 2026-04-06 (Gece) — Migrasyon Hazırlık
+
+### Genel Bakış
+Migrasyon öncesi kritik düzeltmeler: e-posta güncellemesi, donör yasağı auditi, git sync, duplicate klasör temizliği.
+
+**Son commit:** `021d8055` — pushed to `origin/senai2026.04.01`
+
+### 1. E-posta Güncellemesi: info@tupbebek.com → dr@senaiaksoy.net
+
+| Dosya | Satır | Değişiklik |
+|---|---|---|
+| `src/components/Footer.astro` | 68 | mailto + görünen metin |
+| `src/pages/iletisim.astro` | 57 | mailto + görünen metin |
+| `src/pages/api/ebook-subscribe.ts` | 85 | mailto link |
+
+### 2. Yeni Sayfa: /ivf-rehberi
+- `src/pages/ivf-rehberi.astro` oluşturuldu
+- Adım adım IVF tedavi rehberi, başarı oranları, SSS bölümü
+
+### 3. Donör Yasağı Auditi
+Remote'ta donör ihlali **kalmadı** (önceki session'larda düzeltilmiş). Tek istisna `iui-nedir.md` — yasal uyarı bağlamında kullanım, kabul edilebilir.
+
+### 4. Git Sync
+- Branch 57 commit gerideydi, `git pull` ile `061ab7f6`'ya güncellendi
+- Stash pop massive conflict verdi (dist/ + tüm dosyalar) — stash drop edilip değişiklikler manuel uygulandı
+- astro.config.mjs'de sitemap entegrasyonu remote'ta zaten mevcuttu
+
+### 5. Duplicate Klasör Temizliği
+
+| Klasör | Durum |
+|---|---|
+| `D:\Claude_Code\1web\stitch_tupbebek` | TEK GEÇERLİ KOPYA |
+| `D:\1web\stitch_tupbebek` | İçi boşaltıldı, Windows kilit nedeniyle iskelet kaldı (restart'ta gider) |
+| `D:\tmp\stich_tupbebek` | Silindi |
+| `D:\Claude_Code\tupbebek` | Eski klon, güncel değil |
+
+---
+
+## Sonraki Session İçin Yapılacaklar
+
+### Yüksek Öncelik
+| # | Konu | Detay |
+|---|------|-------|
+| 1 | **tbbi-sozluk URL typo** | ✅ TAMAMLANDI — Sayfa yeniden adlandırıldı, 15 dosya güncellendi. |
+| 2 | **İletişim formu backend yok** | `iletisim.astro` formu sadece `console.log` yapıyor. Cloudflare Functions veya 3rd party servis (Formspree, Resend vb.) entegrasyonu gerekli. |
+| 3 | **7 eksik makale görseli** | `basari-oranlari`, `basarisiz-denemeler`, `dondurulmus-embriyo-transferi`, `embryoglue-faydalari`, `genetik-testler`, `kanser-ve-fertilite`, `laboratuvar-raporu-yorumlama` |
+| 4 | **Analytics** | GA4 Measurement ID ve Search Console verification kodu kullanıcıdan alınacak |
+
+### Orta Öncelik
+| # | Konu | Detay |
+|---|------|-------|
+| 5 | **fix-*.cjs dosyaları temizliği** | Repo kökünde `fix-final.cjs`, `fix-remaining2.cjs`, `fix-reviewer.cjs` — geçici script'ler, sil veya .gitignore'a ekle |
+| 6 | **Psikoloji görselleri** | psikolojik-destek ve duygusal-destek iç bölüm görselleri hâlâ tıbbi |
+| 7 | **Lighthouse audit** | Performance >90, SEO >90 hedefi |
 
 ---
 
@@ -139,8 +194,14 @@ Branch: `senai2026.04.01` — pushed to origin.
 
 - **Port:** 4321
 - **Preview server adı:** "Stich Tupbebek Dev"
-- **Proje dizini:** `D:\1web\stitch_tupbebek`
-- **Eski repo:** `D:\1web\tupbebek`
+- **Proje dizini:** `D:\Claude_Code\1web\stitch_tupbebek` (TEK GEÇERLİ)
+- **launch.json:** `D:\Claude_Code\.claude\launch.json` — cwd göreceli path, doğru dizinden başlatıldığına emin ol
+
+## Yasal Uyarılar (Her Zaman Geçerli)
+
+- **Donör/donasyon:** Kesinlikle yasak (ÜYTE Yönetmeliği). Tek istisna: yasağı bildiren resmi metin.
+- **TTB kuralları:** Fiyat tablosu, before/after, hasta yorumu, "en iyi/garantili" ifadeleri yasak.
+- **Zorunlu:** Her tıbbi sayfada MedicalDisclaimer bileşeni, yazar kimliği, son güncelleme tarihi.
 
 ## Stil Standartları (Referans)
 
@@ -148,3 +209,7 @@ Branch: `senai2026.04.01` — pushed to origin.
 - **Shadow:** `shadow-md` (kartlar, görseller), `shadow-sm` (iç elemanlar)
 - **Hero layout pattern:** `grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-12 items-start` + `md:sticky md:top-24`
 - **Görsel format:** WebP, `loading="lazy"` (hero hariç — hero `loading="eager"` + `fetchpriority="high"`)
+
+## Detaylı Migrasyon Planı
+
+Bkz: `C:\Users\fatboy\.claude\plans\melodic-hatching-kurzweil.md` (Aşama 1 tamamlandı, Aşama 2-5 devam ediyor)

@@ -30,7 +30,7 @@ const labelMap: Record<string, string> = {
   'psikolojik-destek': 'Psikolojik Destek',
   'basari-oranlari': 'Başarı Oranları',
   'rehberler': 'Rehberler',
-  'tbbi-sozluk': 'Tıbbi Sözlük',
+  'tibbi-sozluk': 'Tıbbi Sözlük',
   'hakkimizda': 'Hakkımızda',
   'editoryal-politika': 'Editöryal Politika',
   'gizlilik-politikasi': 'Gizlilik Politikası',

@@ -59,7 +59,7 @@ export const navigationMenus: MegaMenuConfig[] = [
       { label: 'Tanı Süreci', href: '/tani-sureci', description: 'Değerlendirme adımları' },
       { label: 'Hormon Paneli', href: '/hormon-paneli', description: 'AMH, FSH, E2 değerleri' },
       { label: 'Genetik Testler', href: '/genetik-testler', description: 'Kromozomal tarama' },
-      { label: 'Tıbbi Sözlük', href: '/tbbi-sozluk', description: 'Terimlerin açıklamaları' },
+      { label: 'Tıbbi Sözlük', href: '/tibbi-sozluk', description: 'Terimlerin açıklamaları' },
       { label: 'PKOS ve Tüp Bebek', href: '/makaleler/opk-ve-ivf', description: 'Polikistik over ve IVF' },
       { label: 'Hiperprolaktinemi', href: '/makaleler/hiperprolaktinemi-ve-kisirlik', description: 'Prolaktin yüksekliği ve kısırlık' },
       { label: 'Asherman Sendromu', href: '/makaleler/asherman-sendromu', description: 'Rahim içi yapışıklıklar' },
@@ -202,7 +202,7 @@ export const footerLinks = [
       { label: 'Yaş ve Fertilite', href: '/yas-ve-fertilite' },
       { label: 'Tanı Süreci', href: '/tani-sureci' },
       { label: 'PKOS ve Tüp Bebek', href: '/makaleler/opk-ve-ivf' },
-      { label: 'Tıbbi Sözlük', href: '/tbbi-sozluk' },
+      { label: 'Tıbbi Sözlük', href: '/tibbi-sozluk' },
     ]
   },
   {
@@ -220,7 +220,7 @@ export const footerLinks = [
     category: 'Kaynaklar',
     links: [
       { label: 'Makaleler', href: '/makaleler' },
-      { label: 'Tıbbi Sözlük', href: '/tbbi-sozluk' },
+      { label: 'Tıbbi Sözlük', href: '/tibbi-sozluk' },
       { label: 'Sık Sorulan Sorular', href: '/sss' },
       { label: 'Beslenme & Yaşam', href: '/beslenme-yasam' },
       { label: 'Duygusal Destek', href: '/duygusal-destek' },
@@ -349,7 +349,7 @@ export const situationOptions: SituationOption[] = [
     color: 'mint',
     modules: [
       { title: 'Tüm Makaleler', description: 'Bilimsel makale arşivi', href: '/makaleler', icon: 'article', tag: 'Popüler' },
-      { title: 'Tıbbi Sözlük', description: 'Terimleri öğren', href: '/tbbi-sozluk', icon: 'dictionary' },
+      { title: 'Tıbbi Sözlük', description: 'Terimleri öğren', href: '/tibbi-sozluk', icon: 'dictionary' },
       { title: 'SSS', description: 'En çok sorulan sorular', href: '/sss', icon: 'help' },
       { title: 'Rehberler', description: 'Konuya göre rehberler', href: '/rehberler', icon: 'menu_book' },
       { title: 'Hakkımızda', description: 'Misyon ve yayın kurulu', href: '/hakkimizda', icon: 'info' },
