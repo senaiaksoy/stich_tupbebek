@@ -11,7 +11,22 @@ export default defineConfig({
     platformProxy: { enabled: true },
   }),
   integrations: [
-    tailwind(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     sitemap(),
   ],
+  vite: {
+    build: {
+      minify: true,
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['@astrojs/tailwind'],
+          },
+        },
+      },
+    },
+  },
 });
