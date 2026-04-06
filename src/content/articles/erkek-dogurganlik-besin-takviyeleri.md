@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Erkek Sağlığı"
-image: /src/images/blog/erkekinfertilite.jpg
+image: /images/library/hastalik/erkekinfertilite.webp
 ---
 
 ## Erkek Doğurganlığını Artıran Besin Takviyeleri: Bilmeniz Gereken Her Şey

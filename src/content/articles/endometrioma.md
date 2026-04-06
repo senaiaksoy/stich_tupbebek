@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"
-image: /src/images/blog/65.jpg
+image: /images/library/klinik/65.webp
 ---
 
 ## Endometriozis Kistleri (Endometriomalar): Belirtiler, Nedenleri ve Tedavi Yöntemleri

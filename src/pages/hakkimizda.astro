@@ -95,37 +95,54 @@ import Footer from '../components/Footer.astro';
             </div>
         </section>
 
-        <!-- Medical Reviewer: Yayın Kurulu -->
+        <!-- Tıbbi Yayın Kurulu -->
         <section class="py-32">
             <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <span class="text-primary-600 font-bold tracking-widest uppercase text-sm mb-4 block">TIBBİ İNCELEME KURULU</span>
+                    <span class="text-primary-600 font-bold tracking-widest uppercase text-sm mb-4 block">TIBBİ YAYIN KURULU</span>
                     <h2 class="font-headline text-4xl font-bold">Uzman Denetimi</h2>
                 </div>
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm flex flex-col lg:flex-row border border-gray-200">
-                    <div class="lg:w-1/3 h-[500px]">
-                        <span class="material-symbols-outlined text-primary-600 text-2xl">verified</span>
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-200 p-8 md:p-12">
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8 max-w-3xl mx-auto text-center">
+                        Tüm içeriklerimiz; tıp doktoru, embriyolog ve sağlık hukuku uzmanından oluşan yayın kurulumuz tarafından bilimsel doğruluk, güncellik ve yasal uyumluluk açısından denetlenmektedir.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+                        <div class="text-center p-4 bg-white rounded-xl border border-gray-200">
+                            <span class="material-symbols-outlined text-primary-600 text-2xl mb-2" style="font-variation-settings: 'FILL' 1;">clinical_notes</span>
+                            <p class="text-sm font-bold text-gray-900">Doç. Dr. Senai Aksoy</p>
+                            <p class="text-xs text-gray-500">Kurul Editörü</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-xl border border-gray-200">
+                            <span class="material-symbols-outlined text-mint-600 text-2xl mb-2" style="font-variation-settings: 'FILL' 1;">science</span>
+                            <p class="text-sm font-bold text-gray-900">Dr. Alper Mumcu</p>
+                            <p class="text-xs text-gray-500">Üreme Endokrinolojisi</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-xl border border-gray-200">
+                            <span class="material-symbols-outlined text-purple-600 text-2xl mb-2" style="font-variation-settings: 'FILL' 1;">biotech</span>
+                            <p class="text-sm font-bold text-gray-900">Emb. Hasan Benli</p>
+                            <p class="text-xs text-gray-500">Kıdemli Embriyolog</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-xl border border-gray-200">
+                            <span class="material-symbols-outlined text-red-600 text-2xl mb-2" style="font-variation-settings: 'FILL' 1;">cardiology</span>
+                            <p class="text-sm font-bold text-gray-900">Dr. Alp Aslan Eryılmaz</p>
+                            <p class="text-xs text-gray-500">Kardiyoloji</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-xl border border-gray-200">
+                            <span class="material-symbols-outlined text-teal-600 text-2xl mb-2" style="font-variation-settings: 'FILL' 1;">endocrinology</span>
+                            <p class="text-sm font-bold text-gray-900">Dr. Metin Alış</p>
+                            <p class="text-xs text-gray-500">Endokrinoloji</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-xl border border-gray-200">
+                            <span class="material-symbols-outlined text-amber-600 text-2xl mb-2" style="font-variation-settings: 'FILL' 1;">gavel</span>
+                            <p class="text-sm font-bold text-gray-900">Av. Bahar Özeray</p>
+                            <p class="text-xs text-gray-500">Sağlık Hukuku</p>
+                        </div>
                     </div>
-                    <div class="lg:w-2/3 p-12 lg:p-20 flex flex-col justify-center">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-mint-100 text-mint-700 rounded-full text-xs font-bold w-fit mb-6">
-                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
-                            MEDİKAL DİREKTÖR
-                        </div>
-                        <h3 class="font-headline text-4xl font-bold mb-2 text-gray-900">Yayın Kurulu</h3>
-                        <p class="text-primary-600 text-xl font-medium mb-8">Tıbbi İnceleme ve Onay</p>
-                        <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                            tupbebek.com bünyesindeki tüm tıbbi içeriklerin bilimsel doğruluğunu ve güncelliğini yayın kurulumuz denetlemektedir. Yayınlanan her rehber, hastaların en doğru ve güncel tedavi protokollerine erişebilmesi için yayın kurulunun onayından geçer.
-                        </p>
-                        <div class="flex flex-wrap gap-4">
-                            <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray-200/20">
-                                <span class="material-symbols-outlined text-primary-600">school</span>
-                                <span class="text-sm font-semibold">Akademik Doğrulama</span>
-                            </div>
-                            <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray-200/20">
-                                <span class="material-symbols-outlined text-primary-600">fact_check</span>
-                                <span class="text-sm font-semibold">Güncel Protokoller</span>
-                            </div>
-                        </div>
+                    <div class="text-center">
+                        <a href="/yayin-kurulu" class="inline-flex items-center gap-2 text-primary-600 font-semibold text-sm hover:text-primary-700 transition-colors">
+                            Yayın Kurulunu Tanıyın
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        </a>
                     </div>
                 </div>
             </div>

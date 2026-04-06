@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Doç. Dr. Senai Aksoy"
 lastModified: 2026-04-05
 category: "Genetik"
-image: /src/images/blog/pgt_sex.jpg
+image: /images/library/embriyo/pgt_sex.webp
 ---
 
 ## PGT ile Cinsiyet Belirlenebilir mi?

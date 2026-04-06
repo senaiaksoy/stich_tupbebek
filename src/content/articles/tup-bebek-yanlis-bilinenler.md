@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"
-image: /src/images/blog/41.jpg
+image: /images/library/klinik/41.webp
 ---
 
 Tüp bebek tedavisi ile kesin çocuğum olur mu? Çocuğum olmuyorsa tek çözüm tüp bebek tedavisi midir?  Tüp bebek ve kısırlık hakkında doğru bildiğiniz bazı şeyler gerçek olmayabilir.

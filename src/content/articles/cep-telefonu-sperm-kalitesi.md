@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Erkek Sağlığı"
-image: /src/images/blog/ceptel.jpg
+image: /images/library/klinik/ceptel.webp
 ---
 
 ## Cep Telefonlarının Sperm Kalitesi Üzerindeki Gizli Etkileri: Bilimsel Gerçekler ve Korunma Yolları

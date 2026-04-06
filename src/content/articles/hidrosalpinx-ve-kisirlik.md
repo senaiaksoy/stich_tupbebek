@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"
-image: /src/images/blog/hidrosalpinks.jpg
+image: /images/library/hastalik/hidrosalpinks.webp
 ---
 
 ## Hidrosalpinx ve Kısırlık

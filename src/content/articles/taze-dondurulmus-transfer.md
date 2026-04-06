@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"
-image: /src/images/blog/taze-donmus-transfert.jpg
+image: /images/library/tedavi/taze-donmus-transfert.webp
 ---
 
 

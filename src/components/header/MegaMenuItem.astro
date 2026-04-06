@@ -112,96 +112,106 @@ const { menu } = Astro.props;
 
 <script is:inline>
 (function() {
-  var allGroups = document.querySelectorAll('.mega-menu-group');
+  if (window.__megaMenuInit) return;
+  window.__megaMenuInit = true;
 
-  function closeAllMenus(except) {
-    allGroups.forEach(function(g) {
-      if (g === except) return;
-      var p = g.querySelector('.mega-menu-panel');
-      var b = g.querySelector('.mega-menu-btn');
-      var chevron = g.querySelector('.mega-menu-chevron');
-      if (p) {
-        p.classList.remove('opacity-100', 'visible', 'translate-y-0');
-        p.classList.add('opacity-0', 'invisible', 'translate-y-2');
+  function initMegaMenus() {
+    var allGroups = document.querySelectorAll('.mega-menu-group');
+
+    function closeAllMenus(except) {
+      allGroups.forEach(function(g) {
+        if (g === except) return;
+        var p = g.querySelector('.mega-menu-panel');
+        var b = g.querySelector('.mega-menu-btn');
+        var chevron = g.querySelector('.mega-menu-chevron');
+        if (p) {
+          p.classList.remove('opacity-100', 'visible', 'translate-y-0');
+          p.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        }
+        if (b) {
+          b.setAttribute('aria-expanded', 'false');
+          b.classList.remove('bg-primary-50');
+        }
+        if (chevron) chevron.classList.remove('rotate-180');
+      });
+    }
+
+    allGroups.forEach(function(group) {
+      if (group.dataset.menuInit) return;
+      group.dataset.menuInit = 'true';
+
+      var btn = group.querySelector('.mega-menu-btn');
+      var panel = group.querySelector('.mega-menu-panel');
+      var chevron = group.querySelector('.mega-menu-chevron');
+      if (!btn || !panel) return;
+
+      function openMenu() {
+        panel.classList.add('opacity-100', 'visible', 'translate-y-0');
+        panel.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.classList.add('bg-primary-50');
+        if (chevron) chevron.classList.add('rotate-180');
       }
-      if (b) {
-        b.setAttribute('aria-expanded', 'false');
-        b.classList.remove('bg-primary-50');
+
+      function closeMenu() {
+        panel.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        panel.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.classList.remove('bg-primary-50');
+        if (chevron) chevron.classList.remove('rotate-180');
       }
-      if (chevron) chevron.classList.remove('rotate-180');
+
+      function isOpen() {
+        return btn.getAttribute('aria-expanded') === 'true';
+      }
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (isOpen()) {
+          closeMenu();
+        } else {
+          closeAllMenus(group);
+          openMenu();
+        }
+      });
+
+      btn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          closeAllMenus(group);
+          openMenu();
+          var firstLink = panel.querySelector('a');
+          if (firstLink) firstLink.focus();
+        }
+      });
+
+      panel.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          closeMenu();
+          btn.focus();
+        }
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      var clickedInside = false;
+      allGroups.forEach(function(g) {
+        if (g.contains(e.target)) clickedInside = true;
+      });
+      if (!clickedInside) closeAllMenus();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeAllMenus();
     });
   }
 
-  allGroups.forEach(function(group) {
-    var btn = group.querySelector('.mega-menu-btn');
-    var panel = group.querySelector('.mega-menu-panel');
-    var chevron = group.querySelector('.mega-menu-chevron');
-    if (!btn || !panel) return;
-
-    function openMenu() {
-      panel.classList.add('opacity-100', 'visible', 'translate-y-0');
-      panel.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-      btn.setAttribute('aria-expanded', 'true');
-      btn.classList.add('bg-primary-50');
-      if (chevron) chevron.classList.add('rotate-180');
-    }
-
-    function closeMenu() {
-      panel.classList.remove('opacity-100', 'visible', 'translate-y-0');
-      panel.classList.add('opacity-0', 'invisible', 'translate-y-2');
-      btn.setAttribute('aria-expanded', 'false');
-      btn.classList.remove('bg-primary-50');
-      if (chevron) chevron.classList.remove('rotate-180');
-    }
-
-    function isOpen() {
-      return btn.getAttribute('aria-expanded') === 'true';
-    }
-
-    // Click to toggle
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      if (isOpen()) {
-        closeMenu();
-      } else {
-        closeAllMenus(group);
-        openMenu();
-      }
-    });
-
-    // Keyboard support
-    btn.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
-        e.preventDefault();
-        closeAllMenus(group);
-        openMenu();
-        var firstLink = panel.querySelector('a');
-        if (firstLink) firstLink.focus();
-      }
-    });
-
-    panel.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        closeMenu();
-        btn.focus();
-      }
-    });
-  });
-
-  // Click outside to close all
-  document.addEventListener('click', function(e) {
-    var clickedInside = false;
-    allGroups.forEach(function(g) {
-      if (g.contains(e.target)) clickedInside = true;
-    });
-    if (!clickedInside) closeAllMenus();
-  });
-
-  // Escape to close all
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeAllMenus();
-  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMegaMenus);
+  } else {
+    initMegaMenus();
+  }
 })();
 </script>

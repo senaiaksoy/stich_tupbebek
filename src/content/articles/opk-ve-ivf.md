@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"
-image: /src/images/blog/opkveivf.jpg
+image: /images/library/hastalik/opkveivf.webp
 ---
 
 ## Polikistik Over Sendromu (PCOS): IVF Yolculuğunuzun Gizli Başrolü mü?

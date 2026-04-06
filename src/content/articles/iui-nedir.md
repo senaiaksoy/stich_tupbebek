@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tedavi Yöntemleri"
-image: /src/images/blog/iac.jpg
+image: /images/library/tedavi/iac.webp
 ---
 
 ### İntrauterin İnseminasyon (IUI): Kapsamlı Bir Rehber

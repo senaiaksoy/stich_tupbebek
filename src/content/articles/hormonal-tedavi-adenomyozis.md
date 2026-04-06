@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tedavi Yöntemleri"
-image: /src/images/blog/prolakktin.jpg
+image: /images/library/hastalik/prolakktin.webp
 ---
 
 ### Hormonal Tedavilerle Adenomyozis ve Tüp Bebek Başarısını Artırmak

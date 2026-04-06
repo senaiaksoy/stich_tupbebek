@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"
-image: /src/images/blog/237.jpg
+image: /images/library/klinik/237.webp
 ---
 
 Yumurtalıklar kadında pelvik bölgede, rahimin iki yanında bulunan üreme bezleridir. Kadında yumurtalıklar iki tanedir ve normal büyüklükleri birer ceviz kadardır. Yumurtalıklar, yumurtayı ve östrojen ile progesteron adı verilen kadınlık hormonlarını üretirler. Adet döngüsünün düzenlenmesi ve hamileliğin oluşmasından sorumludurlar.

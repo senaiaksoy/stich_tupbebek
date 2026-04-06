@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"
-image: /src/images/blog/icsicizim.jpg
+image: /images/library/laboratuvar/icsicizim.webp
 ---
 
 ## Kadın Kısırlığı ve Tüp Bebek Tedavisindeki Rolü: Detaylı Bir Kılavuz

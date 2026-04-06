@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"
-image: /src/images/blog/post_transfert.jpg
+image: /images/library/tedavi/post_transfert.webp
 ---
 
 ## Tüp Bebek ve Embriyo Transferi Sonrası Bakım: Başarıya Giden Yol

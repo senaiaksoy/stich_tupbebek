@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"
-image: /src/images/blog/endometriosis_tedavi.jpg
+image: /images/library/hastalik/endometriosis_tedavi.webp
 ---
 
 ## Endometriozis ve Kısırlık Tedavisinde 2025 Devrimi: Neden Artık "Önce Tüp Bebek" Diyoruz?

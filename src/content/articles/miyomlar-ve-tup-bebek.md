@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"
-image: /src/images/blog/miyom_ivf.jpg
+image: /images/library/hastalik/miyom_ivf.webp
 ---
 
 # Miyomlar ve Tüp Bebek: Ebeveynliğe Giden Yolda Engelleri Aşmak - Kısırlık Yaşayan Çiftler İçin Bir Rehber

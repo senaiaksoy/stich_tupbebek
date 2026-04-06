@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"
-image: /src/images/blog/embryoscop.jpg
+image: /images/library/laboratuvar/embryoscop.webp
 ---
 
 # Tüp Bebekte "Büyük Birader" Dönemi: Yapay Zeka ve EmbryoScope ile En İyi Embriyoyu Nasıl Seçiyoruz?

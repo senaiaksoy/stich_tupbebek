@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Gebelik"
-image: /src/images/blog/kimyasal-gebelik.jpg
+image: /images/library/embriyo/kimyasal-gebelik.webp
 ---
 
 ## Kimyasal Gebeliklerin Gölgedeki Yüzü: Anlam, İyileşme ve Umut Peşinde

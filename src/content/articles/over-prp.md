@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tedavi Yöntemleri"
-image: /src/images/blog/prp.jpg
+image: /images/library/tedavi/prp.webp
 ---
 
 ## Over PRP: Kadın Doğurganlığında Yeni Bir Umut Mu?

@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Erkek Sağlığı"
-image: /src/images/blog/sperm_supp.jpg
+image: /images/library/tedavi/sperm_supp.webp
 ---
 
 ## Erkek Kısırlığında Besin Takviyeleri Üzerine Sohbet: Bilmeniz Gerekenler

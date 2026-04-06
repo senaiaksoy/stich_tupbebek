@@ -1,44 +1,81 @@
 ---
 /**
- * "Durumunuzu Seçin" — Dinamik Yönlendirme Modülü
+ * "Durumunuzu Seçin" — Empati Kartları Modülü
  *
  * Kullanıcı durumunu seçer → ilgili modüller filtrelenip gösterilir.
  * Client-side JS ile çalışır, sayfa yenilenmez.
  */
 import { situationOptions } from '../../data/navigation';
+
+const empathySubtitles: Record<string, string> = {
+  'yeni-teshis': 'Adım adım birlikte ilerleyelim.',
+  'ileri-yas': 'Zamanlama önemli, seçenekleriniz var.',
+  'tekrarlayan-dusukler': 'Yanınızdayız, birlikte çözüm bulalım.',
+  'erkek-faktor': 'Doğru bilgi, doğru adımın başlangıcıdır.',
+  'basarisiz-tedavi': 'Yeniden başlamak cesaret ister.',
+  'bilgi-ariyorum': 'Bilgi güçtür, araştırmaya devam edin.',
+};
+
+const cardColors: Record<string, { bg: string; iconBg: string; icon: string; border: string; activeBorder: string }> = {
+  'yeni-teshis':        { bg: 'bg-sky-50',     iconBg: 'bg-sky-100',     icon: 'text-sky-600',     border: 'border-sky-100',     activeBorder: 'border-sky-500' },
+  'ileri-yas':           { bg: 'bg-amber-50',   iconBg: 'bg-amber-100',   icon: 'text-amber-600',   border: 'border-amber-100',   activeBorder: 'border-amber-500' },
+  'tekrarlayan-dusukler':{ bg: 'bg-emerald-50', iconBg: 'bg-emerald-100', icon: 'text-emerald-600', border: 'border-emerald-100', activeBorder: 'border-emerald-500' },
+  'erkek-faktor':        { bg: 'bg-indigo-50',  iconBg: 'bg-indigo-100',  icon: 'text-indigo-600',  border: 'border-indigo-100',  activeBorder: 'border-indigo-500' },
+  'basarisiz-tedavi':    { bg: 'bg-rose-50',    iconBg: 'bg-rose-100',    icon: 'text-rose-600',    border: 'border-rose-100',    activeBorder: 'border-rose-500' },
+  'bilgi-ariyorum':      { bg: 'bg-violet-50',  iconBg: 'bg-violet-100',  icon: 'text-violet-600',  border: 'border-violet-100',  activeBorder: 'border-violet-500' },
+};
 ---
 
 <section class="py-20 bg-gray-50" id="durum-secin">
   <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
     <!-- Section Header -->
     <div class="text-center mb-12">
-      <span class="text-apricot-300 font-label uppercase tracking-ultra text-xs font-bold mb-4 block">KİŞİSEL REHBERLİK</span>
+      <span class="text-primary-600 font-label uppercase tracking-ultra text-xs font-bold mb-4 block">KİŞİSEL REHBERLİK</span>
       <h2 class="text-heading-lg font-headline text-gray-900 mb-4">Durumunuzu Seçin</h2>
-      <p class="text-body-md text-gray-600 max-w-2xl mx-auto">Size en uygun içeriklere hızla ulaşın. Aşağıdan durumunuzu seçin, ilgili rehberler otomatik listelensin.</p>
+      <p class="text-body-md text-gray-600 max-w-2xl mx-auto">Size en uygun içeriklere hızla ulaşın. Durumunuzu seçin, size özel rehberler listelensin.</p>
     </div>
 
-    <!-- Situation Pills -->
-    <div class="flex flex-wrap justify-center gap-3 mb-12" role="tablist" aria-label="Durumunuzu seçin">
-      {situationOptions.map((option, index) => (
-        <button
-          role="tab"
-          aria-selected={index === 0 ? "true" : "false"}
-          aria-controls={`panel-${option.id}`}
-          id={`tab-${option.id}`}
-          data-situation={option.id}
-          data-color={option.color}
-          class:list={[
-            "situation-tab flex items-center gap-2 px-5 py-3 min-h-[44px] rounded-full text-sm font-semibold transition-all duration-300 border-2 cursor-pointer",
-            index === 0
-              ? "bg-primary-600 text-white border-primary-600 shadow-md"
-              : "bg-white text-gray-700 border-gray-200 hover:border-primary-300 hover:bg-primary-50"
-          ]}
-        >
-          <span class="material-symbols-outlined text-lg">{option.icon}</span>
-          <span class="hidden sm:inline">{option.label}</span>
-          <span class="sm:hidden">{option.label.split(' ')[0]}</span>
-        </button>
-      ))}
+    <!-- Empathy Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12" role="tablist" aria-label="Durumunuzu seçin">
+      {situationOptions.map((option, index) => {
+        const colors = cardColors[option.id] || cardColors['yeni-teshis'];
+        const subtitle = empathySubtitles[option.id] || '';
+        return (
+          <button
+            role="tab"
+            aria-selected={index === 0 ? "true" : "false"}
+            aria-controls={`panel-${option.id}`}
+            id={`tab-${option.id}`}
+            data-situation={option.id}
+            data-color={option.color}
+            class:list={[
+              "empathy-card group relative flex items-start gap-4 p-5 rounded-xl border-2 text-left transition-all duration-300 cursor-pointer",
+              index === 0
+                ? `${colors.bg} ${colors.activeBorder} shadow-md`
+                : `bg-white ${colors.border} hover:${colors.bg} hover:shadow-md`
+            ]}
+            data-active-bg={colors.bg}
+            data-active-border={colors.activeBorder}
+            data-inactive-border={colors.border}
+            data-hover-bg={colors.bg}
+          >
+            <div class:list={[
+              "w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-colors",
+              colors.iconBg
+            ]}>
+              <span class:list={["material-symbols-outlined text-xl", colors.icon]}>{option.icon}</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-sm font-bold text-gray-900 mb-0.5 leading-snug">{option.label}</h3>
+              <p class="text-xs text-gray-500 leading-relaxed">{subtitle}</p>
+            </div>
+            <span class:list={[
+              "absolute top-3 right-3 w-2 h-2 rounded-full transition-opacity",
+              index === 0 ? `${colors.icon.replace('text-', 'bg-')} opacity-100` : 'opacity-0'
+            ]} data-dot></span>
+          </button>
+        );
+      })}
     </div>
 
     <!-- Module Panels -->
@@ -74,7 +111,7 @@ import { situationOptions } from '../../data/navigation';
           {option.modules.map((mod, modIndex) => (
             <a
               href={mod.href}
-              class="group flex items-start gap-4 p-5 bg-white rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-md transition-all duration-300 min-h-[44px]"
+              class="group flex items-start gap-4 p-5 bg-white rounded-xl border border-gray-200 hover:border-primary-200 hover:shadow-md transition-all duration-300 min-h-[44px]"
               style={`animation-delay: ${modIndex * 60}ms`}
             >
               <div class:list={[
@@ -110,43 +147,45 @@ import { situationOptions } from '../../data/navigation';
 
 <script is:inline>
 (function() {
-  const tabs = document.querySelectorAll('.situation-tab');
-  const panels = document.querySelectorAll('.situation-panel');
+  var cards = document.querySelectorAll('.empathy-card');
+  var panels = document.querySelectorAll('.situation-panel');
 
-  // Color map for active tab styling
-  const colorMap = {
-    primary: { bg: 'bg-primary-600', border: 'border-primary-600', text: 'text-white' },
-    mint:    { bg: 'bg-mint-600',    border: 'border-mint-600',    text: 'text-white' },
-    apricot: { bg: 'bg-apricot-500', border: 'border-apricot-500', text: 'text-white' },
-  };
+  function activateCard(selectedCard) {
+    var situationId = selectedCard.dataset.situation;
 
-  const inactiveClasses = ['bg-white', 'text-gray-700', 'border-gray-200'];
-  const hoverClasses = ['hover:border-primary-300', 'hover:bg-primary-50'];
-
-  function activateTab(selectedTab) {
-    const situationId = selectedTab.dataset.situation;
-    const color = selectedTab.dataset.color || 'primary';
-    const active = colorMap[color] || colorMap.primary;
-
-    // Reset all tabs
-    tabs.forEach(function(tab) {
-      tab.setAttribute('aria-selected', 'false');
-      // Remove any active color classes
-      Object.values(colorMap).forEach(function(c) {
-        tab.classList.remove(c.bg, c.border, c.text, 'shadow-md');
-      });
-      // Add inactive classes
-      inactiveClasses.forEach(function(cls) { tab.classList.add(cls); });
-      hoverClasses.forEach(function(cls) { tab.classList.add(cls); });
+    // Reset all cards
+    cards.forEach(function(card) {
+      card.setAttribute('aria-selected', 'false');
+      // Remove active styles
+      card.classList.remove('shadow-md');
+      var activeBorder = card.dataset.activeBorder;
+      var activeBg = card.dataset.activeBg;
+      if (activeBorder) card.classList.remove(activeBorder);
+      if (activeBg) card.classList.remove(activeBg);
+      // Add inactive styles
+      var inactiveBorder = card.dataset.inactiveBorder;
+      if (inactiveBorder) card.classList.add(inactiveBorder);
+      card.classList.add('bg-white');
+      // Hide dot
+      var dot = card.querySelector('[data-dot]');
+      if (dot) dot.classList.replace('opacity-100', 'opacity-0');
     });
 
-    // Activate selected tab
-    selectedTab.setAttribute('aria-selected', 'true');
-    inactiveClasses.forEach(function(cls) { selectedTab.classList.remove(cls); });
-    hoverClasses.forEach(function(cls) { selectedTab.classList.remove(cls); });
-    selectedTab.classList.add(active.bg, active.border, active.text, 'shadow-md');
+    // Activate selected card
+    selectedCard.setAttribute('aria-selected', 'true');
+    var activeBorder = selectedCard.dataset.activeBorder;
+    var activeBg = selectedCard.dataset.activeBg;
+    var inactiveBorder = selectedCard.dataset.inactiveBorder;
+    if (inactiveBorder) selectedCard.classList.remove(inactiveBorder);
+    selectedCard.classList.remove('bg-white');
+    if (activeBorder) selectedCard.classList.add(activeBorder);
+    if (activeBg) selectedCard.classList.add(activeBg);
+    selectedCard.classList.add('shadow-md');
+    // Show dot
+    var dot = selectedCard.querySelector('[data-dot]');
+    if (dot) dot.classList.replace('opacity-0', 'opacity-100');
 
-    // Show/hide panels with animation
+    // Show/hide panels
     panels.forEach(function(panel) {
       if (panel.dataset.panel === situationId) {
         panel.classList.remove('hidden');
@@ -163,28 +202,18 @@ import { situationOptions } from '../../data/navigation';
     });
   }
 
-  tabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      activateTab(tab);
+  cards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      activateCard(card);
     });
 
-    // Keyboard navigation
-    tab.addEventListener('keydown', function(e) {
-      var tabsArray = Array.from(tabs);
-      var index = tabsArray.indexOf(tab);
+    card.addEventListener('keydown', function(e) {
+      var arr = Array.from(cards);
+      var idx = arr.indexOf(card);
       var next = -1;
-
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        next = (index + 1) % tabsArray.length;
-      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        next = (index - 1 + tabsArray.length) % tabsArray.length;
-      }
-
-      if (next >= 0) {
-        e.preventDefault();
-        tabsArray[next].focus();
-        activateTab(tabsArray[next]);
-      }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (idx + 1) % arr.length;
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = (idx - 1 + arr.length) % arr.length;
+      if (next >= 0) { e.preventDefault(); arr[next].focus(); activateCard(arr[next]); }
     });
   });
 })();

@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tüp Bebek"
-image: /src/images/blog/yumurta-sayisi.jpg
+image: /images/library/embriyo/yumurta-sayisi.webp
 ---
 
 ## Tüp Bebek Tedavisinde Başarı İçin **Gerçekten** Kaç Yumurta Gerekir?

@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Tanı ve Testler"
-image: /src/images/blog/54.jpg
+image: /images/library/klinik/54.webp
 ---
 
 ## Yumurtlama (Ovülasyon) Takibi: Gebelik Şansınızı Artıran Önemli Bir Yöntem

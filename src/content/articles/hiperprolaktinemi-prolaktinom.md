@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-05
 category: "Kadın Sağlığı"
-image: /src/images/blog/70.jpg
+image: /images/library/klinik/70.webp
 ---
 
 Bu makale, daha kapsamlı rehberimizle birleştirilmiştir.

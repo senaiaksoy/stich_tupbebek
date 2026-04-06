@@ -6,7 +6,7 @@ author: "tupbebek.com Yayın Kurulu"
 medicalReviewer: "Yayın Kurulu"
 lastModified: 2026-04-03
 category: "Kadın Sağlığı"
-image: /src/images/blog/kisirlik_endometriozis.jpg
+image: /images/library/hastalik/kisirlik_endometriozis.webp
 ---
 
 
