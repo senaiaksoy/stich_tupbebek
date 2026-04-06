@@ -13,4 +13,6 @@ dist/
 .idea
 .vscode
 node_modules/
-.astro/ 
+.astro/
+.wrangler/
+lighthouse-report.json
