@@ -177,7 +177,7 @@ Remote'ta donör ihlali **kalmadı** (önceki session'larda düzeltilmiş). Tek 
 | # | Konu | Detay |
 |---|------|-------|
 | 1 | **tbbi-sozluk URL typo** | ✅ TAMAMLANDI — Sayfa yeniden adlandırıldı, 15 dosya güncellendi. |
-| 2 | **İletişim formu backend yok** | `iletisim.astro` formu sadece `console.log` yapıyor. Cloudflare Functions veya 3rd party servis (Formspree, Resend vb.) entegrasyonu gerekli. |
+| 2 | **İletişim formu backend** | ✅ TAMAMLANDI — Cloudflare Pages adapter + D1 veritabanı + Resend e-posta entegrasyonu. `src/pages/api/contact.ts` endpoint, rate limiting, HTML e-posta şablonu. |
 | 3 | **7 eksik makale görseli** | `basari-oranlari`, `basarisiz-denemeler`, `dondurulmus-embriyo-transferi`, `embryoglue-faydalari`, `genetik-testler`, `kanser-ve-fertilite`, `laboratuvar-raporu-yorumlama` |
 | 4 | **Analytics** | GA4 Measurement ID ve Search Console verification kodu kullanıcıdan alınacak |
 

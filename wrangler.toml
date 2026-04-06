@@ -1,0 +1,9 @@
+name = "tupbebek-com"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "./dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "tupbebek-contact"
+database_id = "placeholder-create-with-wrangler-d1-create"

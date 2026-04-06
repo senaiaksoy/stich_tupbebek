@@ -272,7 +272,6 @@ import Footer from '../components/Footer.astro';
         errorMsg?.classList.add('hidden');
 
         try {
-            // Form verilerini topla
             const formData = {
                 name: (document.getElementById('contact-name') as HTMLInputElement).value,
                 email: (document.getElementById('contact-email') as HTMLInputElement).value,
@@ -281,13 +280,26 @@ import Footer from '../components/Footer.astro';
                 message: (document.getElementById('contact-message') as HTMLTextAreaElement).value,
             };
 
-            console.log('📩 İletişim formu gönderildi:', formData);
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
 
-            // Başarılı mesajı göster
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || 'Bir hata oluştu.');
+            }
+
             successMsg?.classList.remove('hidden');
             form.reset();
 
-        } catch (error) {
+        } catch (error: any) {
+            const errorText = errorMsg?.querySelector('p');
+            if (errorText && error.message) {
+                errorText.textContent = error.message;
+            }
             errorMsg?.classList.remove('hidden');
             console.error('İletişim formu hatası:', error);
         } finally {
