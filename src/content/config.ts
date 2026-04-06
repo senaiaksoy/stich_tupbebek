@@ -1,16 +1,70 @@
 import { defineCollection, z } from 'astro:content';
 
+/**
+ * Editoryal Is Akisi Statusleri
+ * draft      → Taslak (yayinlanmaz)
+ * in_review  → Tibbi Danisma Kurulu incelemesinde
+ * published  → Onaylanmis ve yayinda
+ */
+const statusEnum = z.enum(['draft', 'in_review', 'published']).default('published');
+
+/**
+ * Bilimsel Referans Semasi
+ */
+const referenceSchema = z.object({
+  title: z.string(),
+  authors: z.string().optional(),
+  journal: z.string().optional(),
+  year: z.number().optional(),
+  url: z.string().url().optional(),
+  doi: z.string().optional(),
+});
+
+/**
+ * Yazar Kimlik Semasi (E-E-A-T)
+ */
+const authorSchema = z.object({
+  name: z.string(),
+  title: z.string().optional(),
+  credentials: z.string().optional(),
+  url: z.string().optional(),
+}).or(z.string());
+
 const articlesCollection = defineCollection({
   type: 'content',
   schema: z.object({
+    // --- Temel Icerik ---
     title: z.string(),
     description: z.string(),
-    publishDate: z.date().optional(),
-    author: z.string().default('Doç. Dr. Senai Aksoy'),
     category: z.string(),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     featured: z.boolean().default(false),
+
+    // --- Editoryal Is Akisi ---
+    status: statusEnum,
+    publishDate: z.date().optional(),
+    lastModified: z.date().optional(),
+
+    // --- E-E-A-T Seffaflik ---
+    author: authorSchema.default('tupbebek.com Yayin Kurulu'),
+    authorTitle: z.string().optional(),
+    authorCredentials: z.string().optional(),
+    medicalReviewer: z.string().default('tupbebek.com Yayin Kurulu'),
+    reviewerTitle: z.string().optional(),
+    reviewDate: z.date().optional(),
+    approvedBy: z.string().optional(),
+
+    // --- Bilimsel Referanslar ---
+    references: z.array(referenceSchema).optional(),
+
+    // --- Video Embed ---
+    videoId: z.string().optional(),
+    videoTitle: z.string().optional(),
+
+    // --- SEO ---
+    canonical: z.string().url().optional(),
+    noindex: z.boolean().default(false),
   }),
 });
 

@@ -3,89 +3,179 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import OptimizedImage from '../../components/OptimizedImage.astro';
+import ReadingProgress from '../../components/ReadingProgress.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import ShareButtons from '../../components/ShareButtons.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import EEATBadge from '../../components/EEATBadge.astro';
+import ReferenceList from '../../components/ReferenceList.astro';
+import MedicalDisclaimer from '../../components/MedicalDisclaimer.astro';
+import EditorKunyesi from '../../components/EditorKunyesi.astro';
+import UzmanaSor from '../../components/forms/UzmanaSor.astro';
+import LeadMagnet from '../../components/forms/LeadMagnet.astro';
+import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
-  return articles.map(entry => ({
+  const publishable = articles.filter(entry => {
+    const status = entry.data.status;
+    return !status || status === 'published';
+  });
+  return publishable.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// Resolve author name
+const authorName = typeof entry.data.author === 'string'
+    ? entry.data.author
+    : entry.data.author.name;
+const authorTitle = typeof entry.data.author === 'string'
+    ? entry.data.authorTitle
+    : entry.data.author.title;
+const authorCredentials = typeof entry.data.author === 'string'
+    ? entry.data.authorCredentials
+    : entry.data.author.credentials;
+
+const publishDateStr = entry.data.publishDate
+    ? entry.data.publishDate.toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })
+    : null;
+const lastModifiedStr = entry.data.lastModified
+    ? entry.data.lastModified.toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })
+    : null;
+const reviewDateStr = entry.data.reviewDate
+    ? entry.data.reviewDate.toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })
+    : null;
+const articleUrl = `https://tupbebek.com/makaleler/${entry.slug}`;
+const referenceCount = entry.data.references?.length || 0;
 ---
 
-<BaseLayout title={`${entry.data.title} | tupbebek.com`}>
+<BaseLayout title={`${entry.data.title} | tupbebek.com`} description={entry.data.description} image={entry.data.image}>
     <Header />
-    
-    <main class="pt-32 pb-24">
-        <article class="max-w-4xl mx-auto px-6">
-            <header class="mb-12">
-                <nav class="flex items-center gap-2 text-xs font-label text-on-surface-variant mb-6 uppercase tracking-widest">
-                    <a href="/">Ana Sayfa</a>
-                    <span class="material-symbols-outlined text-[10px]">chevron_right</span>
-                    <a href="/makaleler">Makaleler</a>
-                    <span class="material-symbols-outlined text-[10px]">chevron_right</span>
-                    <span class="text-primary font-semibold">{entry.data.category}</span>
-                </nav>
-                <h1 class="font-headline text-4xl md:text-5xl font-bold text-on-surface leading-tight mb-8">
+    <ReadingProgress />
+
+    <!-- Article-specific JSON-LD -->
+    <ArticleSchema entry={entry} url={articleUrl} />
+
+    <main id="main-content" tabindex="-1" class="pt-32 pb-24">
+        <!-- Full-width article header -->
+        <div class="max-w-3xl mx-auto px-4 md:px-6">
+            <header class="mb-10">
+                <!-- Title -->
+                <h1 class="font-headline text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-gray-900 leading-tight mb-5">
                     {entry.data.title}
                 </h1>
-                
-                <div class="flex items-center gap-4 py-6 border-y border-surface-container">
-                    {entry.data.image && (
-                        <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
-                             <OptimizedImage src="/images/senai-aksoy.jpg" type="avatar" alt={entry.data.author} className="w-full h-full object-cover" />
-                        </div>
-                    )}
-                    <div>
-                        <p class="text-sm font-bold text-on-surface">{entry.data.author}</p>
-                        <p class="text-xs text-on-surface-variant uppercase tracking-tighter">Tıbbi İnceleme & Onay</p>
-                    </div>
-                    <div class="ml-auto text-right">
-                        <p class="text-xs text-on-surface-variant uppercase tracking-widest leading-none mb-1">Yayınlanma</p>
-                        <p class="text-sm font-bold text-primary">Mart 2024</p>
-                    </div>
+
+                <!-- Description -->
+                {entry.data.description && (
+                    <p class="text-lg text-gray-500 leading-relaxed mb-8">{entry.data.description}</p>
+                )}
+
+                <!-- E-E-A-T Transparency Badge -->
+                <EEATBadge
+                    author={authorName}
+                    authorTitle={authorTitle}
+                    authorCredentials={authorCredentials}
+                    medicalReviewer={entry.data.medicalReviewer}
+                    reviewerTitle={entry.data.reviewerTitle}
+                    reviewDate={reviewDateStr}
+                    lastModified={lastModifiedStr}
+                    publishDate={publishDateStr}
+                    status={entry.data.status || 'published'}
+                    referenceCount={referenceCount}
+                />
+
+                <!-- Editor Kunyesi (compact - makale başı) -->
+                <div class="mt-5">
+                    <EditorKunyesi variant="compact" />
                 </div>
             </header>
 
+            <!-- Hero Image -->
             {entry.data.image && (
-                <div class="aspect-video rounded-3xl overflow-hidden mb-16 shadow-2xl">
-                    <img 
-                        src={entry.data.image} 
-                        alt={entry.data.imageAlt || entry.data.title} 
+                <div class="aspect-video rounded-xl overflow-hidden mb-10 border border-gray-100">
+                    <img
+                        src={entry.data.image}
+                        alt={entry.data.imageAlt || entry.data.title}
                         class="w-full h-full object-cover"
-                        width="512"
-                        height="512"
+                        width="896" height="504"
                         loading="eager"
                         fetchpriority="high"
                     />
                 </div>
             )}
 
-            <div class="prose prose-lg max-w-none prose-slate dark:prose-invert 
-                prose-headings:font-headline prose-headings:text-on-surface 
-                prose-p:text-on-surface-variant prose-p:leading-relaxed
-                prose-li:text-on-surface-variant
-                prose-strong:text-on-surface prose-strong:font-bold">
-                <Content />
-            </div>
+            <!-- Video Embed (if article has videoId) -->
+            {entry.data.videoId && (
+                <YouTubeEmbed
+                    id={entry.data.videoId}
+                    title={entry.data.videoTitle || entry.data.title}
+                />
+            )}
+        </div>
 
-            <footer class="mt-20 pt-12 border-t border-surface-container">
-                <div class="bg-surface-container-low p-8 rounded-2xl flex flex-col md:flex-row items-center gap-8 border border-outline-variant/10">
-                    <div class="w-20 h-20 rounded-full bg-surface-container-highest overflow-hidden shrink-0 border-4 border-white">
-                        <OptimizedImage src="/images/senai-aksoy.jpg" type="avatar" alt="Dr. Senai Aksoy" className="w-full h-full object-cover" />
+        <!-- Two-column layout: Content + Sidebar -->
+        <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-[minmax(0,_3fr)_minmax(220px,_1fr)] lg:gap-12 xl:gap-16">
+
+                <!-- Main Content Column -->
+                <article class="max-w-3xl">
+                    <!-- Article Content — prose -->
+                    <div class="prose-medical">
+                        <Content />
                     </div>
-                    <div>
-                        <h4 class="text-xl font-headline font-bold text-on-surface mb-2 italic">Tıbbi Bilgi Notu</h4>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Bu makale, Doç. Dr. Senai Aksoy tarafından tıbbi doğruluk ve güncel klinik protokoller açısından incelenmiş ve onaylanmıştır. Sunulan bilgiler genel bilgilendirme amaçlıdır.
-                        </p>
+
+                    <!-- Scientific References -->
+                    {entry.data.references && (
+                        <ReferenceList references={entry.data.references} />
+                    )}
+
+                    <!-- Share Buttons -->
+                    <div class="mt-10 pt-8 border-t border-gray-200">
+                        <ShareButtons title={entry.data.title} url={articleUrl} />
                     </div>
-                </div>
-            </footer>
-        </article>
+
+                    <!-- Editor Kunyesi (full - makale sonu) -->
+                    <div class="mt-10">
+                        <EditorKunyesi variant="full" />
+                    </div>
+
+                    <!-- Medical Disclaimer -->
+                    <div class="mt-8">
+                        <MedicalDisclaimer />
+                    </div>
+
+                    <!-- Lead Forms -->
+                    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <UzmanaSor />
+                        <LeadMagnet />
+                    </div>
+                </article>
+
+                <!-- Sidebar Column (sticky) -->
+                <aside class="hidden lg:block">
+                    <div class="sticky top-28 space-y-8 max-h-[calc(100vh-8rem)] overflow-y-auto">
+                        <!-- Table of Contents -->
+                        <TableOfContents />
+
+                        <!-- Sidebar Related Articles -->
+                        <div class="pt-6 border-t border-gray-200">
+                            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">İlgili Makaleler</p>
+                            <RelatedArticles currentSlug={entry.slug} category={entry.data.category} variant="sidebar" />
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Mobile Related Articles (below content) -->
+        <div class="lg:hidden max-w-3xl mx-auto px-4 md:px-6 mt-14">
+            <RelatedArticles currentSlug={entry.slug} category={entry.data.category} />
+        </div>
     </main>
 
     <Footer />

@@ -2,13 +2,15 @@
 title: "Yumurta Dondurma: Süreç, Başarı Oranları ve Sık Sorulan Sorular"
 description: "Yumurta dondurma (oosit kriyoprezervasyon) süreci nasıl işler? Hormonal stimülasyon, OPU, vitrifikasyon adımları, yaşa göre başarı oranları ve sık sorulan soruların yanıtları."
 publishDate: 2026-04-01
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Tedavi"
 image: "/images/articles/yumurta-dondurma-rehberi.webp"
 imageAlt: "yumurta dondurma süreci vitrifikasyon laboratuvarı"
 ---
 
 Yumurta dondurma, yani **oosit kriyoprezervasyonu**, bir kadının yumurtalarını gelecekte kullanmak üzere dondurarak saklamasına olanak tanıyan modern bir tıp uygulamasıdır. Geçmişte yalnızca kanser tedavisi görecek kadınlar için uygulanan bu yöntem, **vitrifikasyon** teknolojisinin gelişmesiyle birlikte hem medikal hem de sosyal endikasyonlarda yaygın bir tercih haline gelmiştir.
+
+![Yumurta dondurma süreci ve vitrifikasyon laboratuvarı](/images/articles/yumurta-dondurma-rehberi.webp)
 
 ## Yumurta Dondurma Nedir?
 
@@ -96,3 +98,4 @@ Tıbbi açıdan belirlenmiş bir üst sınır yoktur; ancak pratikte over rezerv
 Türkiye mevzuatı kapsamında yumurta dondurma işlemi için genel bir üst yaş sınırı belirlenmemiştir; ancak merkezlerin kendi klinik değerlendirme kriterleri olabilir. Pratikte **43 yaşın üzerinde** kalan over rezerviyle oosit kalitesi önemli ölçüde düştüğünden, bu yaş grubunda başarı oranları belirgin biçimde azalmaktadır. En uygun sonuçlar için **35 yaşından önce** başvurulması önerilmektedir.
 
 Yumurta dondurma, doğurganlığınızı koruma altına almanın bugün elimizde olan en etkili yollarından biridir. Kendi öykünüze ve planlarınıza göre doğru adımı atmak için uzman görüşü almayı geciktirmeyin.
+

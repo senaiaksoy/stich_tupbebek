@@ -1,0 +1,109 @@
+---
+/**
+ * EvidenceCallout — Bilimsel kanit vurgulama bileseni
+ *
+ * Makale icerisinde bilimsel arastirma, klinik veri veya
+ * ESHRE/ASRM gibi otorite kaynaklarina atif yapan bilgi kutulari.
+ *
+ * Kullanim:
+ *   <EvidenceCallout
+ *     title="Bilimsel Kanit"
+ *     source="ESHRE Guidelines 2024"
+ *     href="https://..."
+ *   >
+ *     PGT-A uygulamasi, tekrarlayan basarisiz IVF denemelerinde
+ *     canli dogum oranini %15-20 artirabilir.
+ *   </EvidenceCallout>
+ *
+ * Variants:
+ *   - evidence (default): Bilimsel kanit (mint)
+ *   - guideline: Klinik rehber (primary)
+ *   - statistic: Istatistiksel veri (apricot)
+ *   - warning: Dikkat gerektiren bilgi (amber)
+ */
+interface Props {
+    title?: string;
+    source?: string;
+    href?: string;
+    variant?: 'evidence' | 'guideline' | 'statistic' | 'warning';
+}
+
+const {
+    title,
+    source,
+    href,
+    variant = 'evidence',
+} = Astro.props;
+
+const variantConfig = {
+    evidence: {
+        icon: 'science',
+        defaultTitle: 'Bilimsel Kanit',
+        borderColor: 'border-mint-400',
+        bgColor: 'bg-mint-50',
+        iconBg: 'bg-white',
+        iconColor: 'text-mint-600',
+        titleColor: 'text-mint-800',
+    },
+    guideline: {
+        icon: 'clinical_notes',
+        defaultTitle: 'Klinik Rehber',
+        borderColor: 'border-primary-400',
+        bgColor: 'bg-primary-50',
+        iconBg: 'bg-white',
+        iconColor: 'text-primary-600',
+        titleColor: 'text-primary-800',
+    },
+    statistic: {
+        icon: 'monitoring',
+        defaultTitle: 'Klinik Veri',
+        borderColor: 'border-apricot-400',
+        bgColor: 'bg-apricot-50',
+        iconBg: 'bg-white',
+        iconColor: 'text-apricot-600',
+        titleColor: 'text-apricot-800',
+    },
+    warning: {
+        icon: 'warning',
+        defaultTitle: 'Onemli Bilgi',
+        borderColor: 'border-amber-400',
+        bgColor: 'bg-amber-50',
+        iconBg: 'bg-white',
+        iconColor: 'text-amber-600',
+        titleColor: 'text-amber-800',
+    },
+};
+
+const config = variantConfig[variant];
+const displayTitle = title || config.defaultTitle;
+---
+
+<aside class:list={["rounded-2xl border-l-4 p-5 md:p-6 my-6", config.borderColor, config.bgColor]} role="note">
+    <div class="flex items-start gap-4">
+        <div class:list={["w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm", config.iconBg]}>
+            <span class:list={["material-symbols-outlined text-xl", config.iconColor]}>{config.icon}</span>
+        </div>
+        <div class="flex-1 min-w-0">
+            <h4 class:list={["text-sm font-bold mb-2", config.titleColor]}>{displayTitle}</h4>
+            <div class="text-sm text-gray-700 leading-relaxed [&>p]:mb-2 [&>p:last-child]:mb-0">
+                <slot />
+            </div>
+            {source && (
+                <div class="mt-3 pt-3 border-t border-black/5">
+                    {href ? (
+                        <a href={href} class="inline-flex items-center gap-1 text-xs font-semibold text-gray-500 hover:text-gray-700 transition-colors" target="_blank" rel="noopener noreferrer">
+                            <span class="material-symbols-outlined text-[12px]">link</span>
+                            Kaynak: {source}
+                            <span class="material-symbols-outlined text-[12px]">open_in_new</span>
+                        </a>
+                    ) : (
+                        <p class="text-xs text-gray-500 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[12px]">link</span>
+                            Kaynak: <span class="font-semibold">{source}</span>
+                        </p>
+                    )}
+                </div>
+            )}
+        </div>
+    </div>
+</aside>

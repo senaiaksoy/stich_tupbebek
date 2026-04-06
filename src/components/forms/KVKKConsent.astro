@@ -1,0 +1,58 @@
+---
+/**
+ * KVKKConsent — KVKK + İYS zorunlu onay kutuları
+ *
+ * Her lead toplama formunun altında kullanılır.
+ * Her iki checkbox işaretlenmeden form gönderilemez.
+ *
+ * Kullanım:
+ *   <KVKKConsent formId="uzmana-sor" />
+ */
+interface Props {
+    formId: string;
+}
+
+const { formId } = Astro.props;
+---
+
+<fieldset class="space-y-3 pt-4 border-t border-gray-200" role="group" aria-label="Yasal onaylar">
+    <legend class="sr-only">KVKK ve İYS onayları</legend>
+
+    <!-- KVKK Aydınlatma Metni -->
+    <div class="flex items-start gap-3">
+        <input
+            type="checkbox"
+            id={`${formId}-kvkk`}
+            name="kvkk_consent"
+            required
+            class="w-5 h-5 min-w-[20px] min-h-[20px] mt-0.5 border-gray-300 rounded text-primary-600 accent-primary-600 focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 cursor-pointer"
+            aria-describedby={`${formId}-kvkk-desc`}
+        />
+        <label for={`${formId}-kvkk`} class="text-xs text-gray-600 leading-relaxed cursor-pointer select-none" id={`${formId}-kvkk-desc`}>
+            <a href="/gizlilik-politikasi" target="_blank" rel="noopener noreferrer" class="font-semibold text-primary-600 underline underline-offset-2 hover:text-primary-700">KVKK Aydınlatma Metni</a>'ni okudum ve kabul ediyorum.
+            <span class="text-red-500 ml-0.5" aria-hidden="true">*</span>
+        </label>
+    </div>
+
+    <!-- İYS Ticari Elektronik İleti -->
+    <div class="flex items-start gap-3">
+        <input
+            type="checkbox"
+            id={`${formId}-iys`}
+            name="iys_consent"
+            required
+            class="w-5 h-5 min-w-[20px] min-h-[20px] mt-0.5 border-gray-300 rounded text-primary-600 accent-primary-600 focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 cursor-pointer"
+            aria-describedby={`${formId}-iys-desc`}
+        />
+        <label for={`${formId}-iys`} class="text-xs text-gray-600 leading-relaxed cursor-pointer select-none" id={`${formId}-iys-desc`}>
+            Tarafıma tıbbi bilgilendirme amaçlı ticari elektronik ileti (<abbr title="İleti Yönetim Sistemi" class="font-semibold no-underline">İYS</abbr>) gönderilmesine onay veriyorum.
+            <span class="text-red-500 ml-0.5" aria-hidden="true">*</span>
+        </label>
+    </div>
+
+    <!-- Validation error (shown via JS) -->
+    <p class="kvkk-error hidden text-xs text-red-600 font-medium mt-2" role="alert">
+        <span class="material-symbols-outlined text-sm align-middle mr-1">error</span>
+        Devam etmek için her iki onay kutucuğunu da işaretlemelisiniz.
+    </p>
+</fieldset>

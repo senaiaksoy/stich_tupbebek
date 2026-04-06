@@ -2,10 +2,10 @@
 title: "Kanser ve Fertilite: Onkolojik Hastalar İçin Rehber"
 description: "Kanser tanısı sonrası fertilite koruma seçenekleri nelerdir? Onkolojik hastalarda yumurta, sperm ve embriyo dondurma süreçleri, acil protokoller ve hasta hakları rehberi."
 publishDate: 2026-04-01
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Tedavi"
-image: "/images/articles/kanser-ve-fertilite.webp"
-imageAlt: "onkolojik fertilite koruma oncofertility danışmanlık"
+image: "/images/library/laboratuvar/dr-senai-aksoy-istanbul-ivf-laboratuvar.webp"
+imageAlt: "Onkofertilite danışmanlığı ve fertilite koruma laboratuvar ortamı"
 ---
 
 Kanser tanısı almak, hayatın en zorlu anlarından biridir. Bu süreçte tedaviye odaklanmak ne kadar doğalsa, gelecekteki aile planları hakkında düşünmek de o kadar önemlidir. Neyse ki modern tıp, kanser tedavisi görecek hastalara fertilitelerini koruma imkânı sunmaktadır. **Onkofertilite** olarak adlandırılan bu alan, onkoloji ve üreme tıbbını bir araya getirerek hastalara hem sağlıklarını kazanma hem de gelecekte çocuk sahibi olabilme fırsatı tanımaktadır. Tanı aldığınız anda doğru adımları atmanız, bu fırsatı en üst düzeyde kullanmanızı sağlar.
@@ -50,7 +50,7 @@ En yaygın ve güvenilir yöntemlerden biridir. Yumurtalıklar hormonal ilaçlar
 
 **Embriyo Dondurma**
 
-Partneri olan veya donör sperm kullanmayı kabul eden kadınlar için en yerleşik yöntemdir. Yumurtalar toplandıktan sonra spermle döllenerek embriyo elde edilir ve dondurulur. Gebelik başarı oranları yüksektir.
+Partneri olan kadınlar için en yerleşik yöntemdir. Yumurtalar toplandıktan sonra spermle döllenerek embriyo elde edilir ve dondurulur. Gebelik başarı oranları yüksektir.
 
 **Over Doku Dondurma**
 
@@ -122,3 +122,4 @@ Kanser tanısı aldıktan sonra fertilitenizi korumak için şu adımları izley
 3. **Zaman kaybetmeyin.** Tedaviye kadar geçen süre değerlidir. Oosit veya sperm dondurma işlemleri günler-haftalar içinde tamamlanabilir. Ne kadar erken başvurursanız, seçenekleriniz o kadar genişler.
 
 Kanser tanısı almak ağırdır; ancak bu dönemde alınacak küçük ama kararlı adımlar, ileride yaşamak istediğiniz hayatı şekillendirme gücü taşır. Fertilite koruma, hastalıkla mücadelenizden taviz vermeden geleceğe bir kapı aralamaktır. Yalnız değilsiniz — doğru ekip ve doğru bilgiyle bu yolu birlikte yürüyebiliriz.
+

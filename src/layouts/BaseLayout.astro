@@ -1,15 +1,67 @@
 ---
+// New design system styles (2026)
+import '../styles/globals.css';
+import '../styles/tokens.css';
+import '../styles/animations.css';
+
+// Legacy styles (compatibility)
+import '../styles/components.css';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import Notifications from '../components/Notifications.astro';
-import OptimizedImage from '../components/OptimizedImage.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 
 interface Props {
 	title: string;
 	description?: string;
+	/** Optional OG/Twitter image URL (absolute or relative to public/) */
+	image?: string;
 }
 
-const { title, description = "tupbebek.com | Üreme Sağlığı Bilgisi" } = Astro.props;
+const { title, description = "tupbebek.com | Üreme Sağlığı Bilgisi", image } = Astro.props;
 const isHome = Astro.url.pathname === '/';
+const canonicalUrl = `https://tupbebek.com${Astro.url.pathname}`;
+
+// MedicalWebPage JSON-LD (E-E-A-T + YMYL compliance)
+const medicalWebPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": title,
+  "description": description,
+  "url": canonicalUrl,
+  "inLanguage": "tr-TR",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "tupbebek.com",
+    "url": "https://tupbebek.com",
+    "publisher": {
+      "@type": "Organization",
+      "name": "tupbebek.com",
+      "url": "https://tupbebek.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tupbebek.com/favicon.svg"
+      }
+    }
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "tupbebek.com Yayın Kurulu",
+    "url": "https://tupbebek.com/hakkimizda"
+  },
+  "reviewedBy": {
+    "@type": "Organization",
+    "name": "tupbebek.com Tıbbi Danışma Kurulu",
+    "url": "https://tupbebek.com/hakkimizda#board"
+  },
+  "lastReviewed": new Date().toISOString().split('T')[0],
+  "medicalAudience": {
+    "@type": "MedicalAudience",
+    "audienceType": "Patient"
+  },
+  "specialty": {
+    "@type": "MedicalSpecialty",
+    "name": "Reproductive Medicine"
+  }
+};
 ---
 
 <!doctype html>
@@ -18,9 +70,41 @@ const isHome = Astro.url.pathname === '/';
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="theme-color" content="#2563a8" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href={`https://tupbebek.com${Astro.url.pathname}`} />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={`https://tupbebek.com${Astro.url.pathname}`} />
+		<meta property="og:image" content={image ? `https://tupbebek.com${image}` : "https://tupbebek.com/images/home/luxury-embryo.webp"} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:site_name" content="tupbebek.com" />
+		<meta property="og:locale" content="tr_TR" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image ? `https://tupbebek.com${image}` : "https://tupbebek.com/images/home/luxury-embryo.webp"} />
+		<meta name="twitter:site" content="@tupbebek" />
+
+		<!-- Google Analytics (GA4) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-K3VE72CSDJ"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-K3VE72CSDJ');
+		</script>
 
 		<!-- Material Symbols -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -28,60 +112,104 @@ const isHome = Astro.url.pathname === '/';
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 		<style is:global>
+			/* Skip Navigation Link (A11y) */
+			.skip-link {
+				position: absolute;
+				top: -100%;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 9999;
+				padding: 0.75rem 1.5rem;
+				background-color: #35618f;
+				color: #f5f7ff;
+				font-size: 1rem;
+				font-weight: 700;
+				border-radius: 0.5rem;
+				transition: top 0.15s;
+			}
+			.skip-link:focus {
+				top: 1rem;
+			}
+
+			/* Typography reset */
 			html, body {
 				overflow-x: hidden;
 				width: 100%;
 			}
-			.material-symbols-outlined {
-				font-family: 'Material Symbols Outlined';
-				font-weight: normal;
-				font-style: normal;
-				font-size: 24px;
-				line-height: 1;
-				letter-spacing: normal;
-				text-transform: none;
-				display: inline-block;
-				white-space: nowrap;
-				word-wrap: normal;
-				direction: ltr;
+
+			body {
+				font-family: 'Manrope', sans-serif;
+				font-size: 16px;
+				line-height: 1.65;
+				letter-spacing: -0.005em;
 				-webkit-font-smoothing: antialiased;
 				-moz-osx-font-smoothing: grayscale;
-				text-rendering: optimizeLegibility;
-				font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 			}
-			body { font-family: 'Manrope', sans-serif; }
-			h1, h2, h3, .font-headline { font-family: 'Noto Serif', serif; }
+
+			/* Fluid headings with clamp */
+			h1, h2, h3, h4, h5, h6, .font-headline {
+				font-family: 'Inter', sans-serif;
+				letter-spacing: -0.025em;
+				font-weight: 800;
+			}
+			h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; }
+			h2 { font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.2; }
+			h3 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.3; }
+			h4 { font-size: 1.25rem; line-height: 1.4; }
+			h5 { font-size: 1.125rem; line-height: 1.4; }
+			h6 { font-size: 1rem; line-height: 1.4; }
+
+			/* Improved paragraph & link spacing */
+			p, li { line-height: 1.65; color: #4b5563; }
+			a { line-height: 1.6; }
+
+			/* Animations */
+			@keyframes pulse-soft {
+				0%, 100% { opacity: 1; transform: scale(1); }
+				50% { opacity: 0.8; transform: scale(0.98); }
+			}
+
+			@keyframes gradient-move {
+				0% { background-position: 0% 50%; }
+				50% { background-position: 100% 50%; }
+				100% { background-position: 0% 50%; }
+			}
+
+			@keyframes glow {
+				0%, 100% { box-shadow: 0 0 5px rgba(53, 97, 143, 0.2); }
+				50% { box-shadow: 0 0 20px rgba(53, 97, 143, 0.4); }
+			}
+
+			.animate-pulse-soft { animation: pulse-soft 3s infinite ease-in-out; }
+			.animate-gradient { background-size: 200% auto; animation: gradient-move 5s linear infinite; }
+			.hover-glow:hover { animation: glow 2s infinite ease-in-out; }
+
+			/* Glassmorphism */
 			.glass-nav {
 				backdrop-filter: blur(12px);
 				-webkit-backdrop-filter: blur(12px);
 			}
+
+			.glass-card {
+				background: rgba(255, 255, 255, 0.7);
+				backdrop-filter: blur(20px);
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+			}
 		</style>
+
+		<!-- MedicalWebPage JSON-LD (E-E-A-T + YMYL) -->
+		<script type="application/ld+json" is:inline set:html={JSON.stringify(medicalWebPageSchema)} />
 	</head>
-	<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+	<body class="bg-gray-50 text-gray-900 selection:bg-primary-50 selection:text-primary-800">
+			<a href="#main-content" class="skip-link">Ana içeriğe geç</a>
 		{!isHome && <Breadcrumbs />}
 		<slot />
+		<CookieConsent />
 
-		<!-- Global Toast Notifications System -->
-		<Notifications id="global-toast" />
-		
-		<!-- Floating Prestige Badge -->
-		<div class="fixed left-8 top-32 z-[100] pointer-events-none md:pointer-events-auto group">
-			<div class="relative w-24 h-24 sm:w-32 sm:h-32 -rotate-12 group-hover:rotate-0 group-hover:scale-110 transition-all duration-500">
-				<OptimizedImage
-					src="/images/home/prestige_seal_1996.png"
-					type="badge"
-					alt="Türkiye'nin İlk Üreme Sağlığı Platformu - 1996"
-					className="w-full h-full object-contain pointer-events-auto rounded-full drop-shadow-2xl"
-					style={{
-						clipPath: 'circle(50%)',
-						mixBlendMode: 'multiply',
-					}}
-				/>
-				<div class="absolute inset-0 rounded-full border-2 border-[#c5a059]/20 pointer-events-none"></div>
-			</div>
-		</div>
+		<!-- Prestige Badge removed — trust indicators now in HeroSection trust bar -->
 	</body>
 </html>

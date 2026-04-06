@@ -1,0 +1,107 @@
+---
+/**
+ * VideoModal — YouTube Shorts Modal
+ *
+ * Tıbbi Sözlük sayfasında terimlere bağlı kısa videoları
+ * pop-up/modal içinde açar. Shorts formatı (9:16) destekler.
+ *
+ * Bu bileşen sayfa bazında bir kez eklenir, JS ile kontrol edilir.
+ * Açma: window.openVideoModal(videoId, title)
+ * Kapama: ESC, backdrop tıklama, X butonu
+ */
+---
+
+<!-- Video Modal Overlay -->
+<div
+    id="video-modal"
+    class="fixed inset-0 z-[200] hidden items-center justify-center p-4 md:p-8"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Video oynatıcı"
+>
+    <!-- Backdrop -->
+    <div class="video-modal__backdrop absolute inset-0 bg-black/70 backdrop-blur-sm" aria-hidden="true"></div>
+
+    <!-- Modal Content -->
+    <div class="video-modal__content relative z-10 w-full max-w-sm mx-auto animate-scale-in">
+
+        <!-- Close button -->
+        <button
+            class="video-modal__close absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+            aria-label="Videoyu kapat"
+            type="button"
+        >
+            <span class="material-symbols-outlined text-white text-xl">close</span>
+        </button>
+
+        <!-- Video title -->
+        <p class="video-modal__title text-white text-sm font-bold mb-3 truncate"></p>
+
+        <!-- Player container (9:16 Shorts) -->
+        <div class="video-modal__player aspect-[9/16] bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
+            <!-- iframe injected by JS -->
+        </div>
+
+        <!-- Channel CTA -->
+        <a
+            href="https://www.youtube.com/@DocentDrSenaiAksoy"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-4 flex items-center justify-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 rounded-xl text-white text-xs font-semibold transition-colors"
+        >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            Daha fazla video için kanalı ziyaret et
+        </a>
+    </div>
+</div>
+
+<script is:inline>
+(function() {
+    var modal = document.getElementById('video-modal');
+    if (!modal) return;
+
+    var backdrop = modal.querySelector('.video-modal__backdrop');
+    var closeBtn = modal.querySelector('.video-modal__close');
+    var player = modal.querySelector('.video-modal__player');
+    var titleEl = modal.querySelector('.video-modal__title');
+    var previousFocus = null;
+
+    function openModal(videoId, title) {
+        previousFocus = document.activeElement;
+        if (titleEl) titleEl.textContent = title || '';
+        if (player) {
+            player.innerHTML =
+                '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" ' +
+                'title="' + (title || 'YouTube Shorts') + '" ' +
+                'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+                'allowfullscreen class="w-full h-full border-0"></iframe>';
+        }
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+        if (player) player.innerHTML = '';
+        if (previousFocus) previousFocus.focus();
+    }
+
+    // Expose globally
+    window.openVideoModal = openModal;
+
+    // Close handlers
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeModal();
+        }
+    });
+})();
+</script>

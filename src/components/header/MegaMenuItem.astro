@@ -1,0 +1,217 @@
+---
+import type { MegaMenuConfig } from '../../data/navigation';
+
+interface Props {
+  menu: MegaMenuConfig;
+}
+
+const { menu } = Astro.props;
+---
+
+<div class="mega-menu-group h-full flex items-center">
+  <!-- Menu Button -->
+  <button
+    class="mega-menu-btn px-4 py-3 min-h-[48px] text-sm font-bold text-gray-800 hover:text-primary-600 transition-colors flex items-center gap-1 rounded-lg"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    {menu.label}
+    <span class="material-symbols-outlined text-xs transition-transform mega-menu-chevron">
+      expand_more
+    </span>
+  </button>
+
+  <!-- Mega Menu Panel -->
+  <div class="mega-menu-panel absolute top-[100%] left-0 w-full bg-white shadow-2xl border-b border-gray-100 opacity-0 invisible transition-all duration-300 translate-y-2 z-50" role="menu">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-10 grid grid-cols-3 gap-8">
+      <!-- LEFT: Menu Items -->
+      <div class="border-r border-gray-100 pr-8">
+        {menu.icon && (
+          <h4 class="text-xs uppercase tracking-widest text-primary-600 font-bold mb-4">
+            <span class="material-symbols-outlined text-[14px] align-text-bottom mr-1">
+              {menu.icon}
+            </span>
+            {menu.label}
+          </h4>
+        )}
+
+        <div class="space-y-1">
+          {menu.submenu && menu.submenu.map((item) => (
+            <a
+              href={item.href}
+              class="group/link flex p-3 min-h-[44px] hover:bg-primary-50 rounded-lg transition-colors"
+            >
+              <div>
+                <span class="text-sm font-bold text-gray-800 group-hover/link:text-primary-600">
+                  {item.label}
+                </span>
+                {item.description && (
+                  <span class="block text-xs text-gray-500 mt-0.5">
+                    {item.description}
+                  </span>
+                )}
+              </div>
+              <span class="material-symbols-outlined text-xs text-gray-300 group-hover/link:text-primary-600 transition-colors mt-1.5 ml-auto">
+                arrow_forward
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- MIDDLE: Content Info -->
+      {menu.centerContent && (
+        <div class="space-y-4">
+          <h4 class="text-xs uppercase tracking-widest text-gray-400 font-bold">
+            {menu.centerContent.title}
+          </h4>
+          <p class="text-sm text-gray-600 italic">
+            {menu.centerContent.description}
+          </p>
+          {menu.centerContent.stat && (
+            <div class="bg-gray-50 rounded-xl p-4 text-center">
+              <span class="block text-2xl font-bold text-primary-600">
+                {menu.centerContent.stat.value}
+              </span>
+              <span class="text-xs text-gray-500">
+                {menu.centerContent.stat.label}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
+
+      <!-- RIGHT: Featured Article -->
+      {menu.featuredArticle && (
+        <div class="bg-primary-50 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-primary-600 uppercase tracking-widest">
+              Öne Çıkan
+            </span>
+            <a
+              href={menu.featuredArticle.href}
+              class="block mt-3 text-sm font-bold text-gray-800 hover:text-primary-600 transition-colors" style="font-family: var(--font-headline);"
+            >
+              {menu.featuredArticle.title}
+            </a>
+            <p class="text-xs text-gray-500 mt-2">
+              {menu.featuredArticle.description}
+            </p>
+          </div>
+          <a
+            href="/makaleler"
+            class="text-xs font-semibold text-primary-600 hover:underline mt-3 inline-block"
+          >
+            Tüm Makaleler →
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function() {
+  if (window.__megaMenuInit) return;
+  window.__megaMenuInit = true;
+
+  function initMegaMenus() {
+    var allGroups = document.querySelectorAll('.mega-menu-group');
+
+    function closeAllMenus(except) {
+      allGroups.forEach(function(g) {
+        if (g === except) return;
+        var p = g.querySelector('.mega-menu-panel');
+        var b = g.querySelector('.mega-menu-btn');
+        var chevron = g.querySelector('.mega-menu-chevron');
+        if (p) {
+          p.classList.remove('opacity-100', 'visible', 'translate-y-0');
+          p.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        }
+        if (b) {
+          b.setAttribute('aria-expanded', 'false');
+          b.classList.remove('bg-primary-50');
+        }
+        if (chevron) chevron.classList.remove('rotate-180');
+      });
+    }
+
+    allGroups.forEach(function(group) {
+      if (group.dataset.menuInit) return;
+      group.dataset.menuInit = 'true';
+
+      var btn = group.querySelector('.mega-menu-btn');
+      var panel = group.querySelector('.mega-menu-panel');
+      var chevron = group.querySelector('.mega-menu-chevron');
+      if (!btn || !panel) return;
+
+      function openMenu() {
+        panel.classList.add('opacity-100', 'visible', 'translate-y-0');
+        panel.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.classList.add('bg-primary-50');
+        if (chevron) chevron.classList.add('rotate-180');
+      }
+
+      function closeMenu() {
+        panel.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        panel.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.classList.remove('bg-primary-50');
+        if (chevron) chevron.classList.remove('rotate-180');
+      }
+
+      function isOpen() {
+        return btn.getAttribute('aria-expanded') === 'true';
+      }
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (isOpen()) {
+          closeMenu();
+        } else {
+          closeAllMenus(group);
+          openMenu();
+        }
+      });
+
+      btn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          closeAllMenus(group);
+          openMenu();
+          var firstLink = panel.querySelector('a');
+          if (firstLink) firstLink.focus();
+        }
+      });
+
+      panel.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          closeMenu();
+          btn.focus();
+        }
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      var clickedInside = false;
+      allGroups.forEach(function(g) {
+        if (g.contains(e.target)) clickedInside = true;
+      });
+      if (!clickedInside) closeAllMenus();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeAllMenus();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMegaMenus);
+  } else {
+    initMegaMenus();
+  }
+})();
+</script>

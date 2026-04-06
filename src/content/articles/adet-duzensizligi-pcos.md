@@ -2,7 +2,7 @@
 title: "Adet Düzensizliği ve Polikistik Over Sendromu (PCOS)"
 description: "Adet düzensizliği ve Polikistik Over Sendromu (PCOS) belirtileri, nedenleri ve tedavi yöntemleri hakkında kapsamlı rehber."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Kadın Sağlığı"
 image: "/images/articles/adet-duzensizligi-pcos.webp"
 imageAlt: "adet düzensizliği ve polikistik over sendromu pcos illüstrasyonu"
@@ -52,3 +52,4 @@ Teşhis genellikle tıbbi öykü, fizik muayene, kan testleri ve ultrasonografi 
 4. **Yumurtlama Uyarıcılar:** Gebe kalmak isteyen kadınlar için özel tedaviler.
 
 Sağlıklı bir yaşam tarzı benimsemek, belirtileri hafifletmeye ve genel sağlığı iyileştirmeye yardımcı olabilir. Adet düzensizliği veya PCOS belirtileri yaşıyorsanız, bir sağlık uzmanına danışmanız önemlidir.
+

@@ -1,0 +1,35 @@
+---
+interface AccordionItem {
+  title: string;
+  items: Array<{
+    label: string;
+    href: string;
+  }>;
+}
+
+interface Props {
+  items: AccordionItem[];
+}
+
+const { items } = Astro.props;
+---
+
+{items.map((section, index) => (
+  <div class="mobile-accordion">
+    <button
+      class="w-full flex items-center justify-between p-3 min-h-[44px] rounded-lg hover:bg-primary-50 text-left font-semibold text-gray-800 group transition-colors"
+      aria-expanded="false"
+      aria-controls={`mobile-panel-${index}`}
+    >
+      <span>{section.title}</span>
+      <span class="material-symbols-outlined text-sm transition-transform">expand_more</span>
+    </button>
+    <div id={`mobile-panel-${index}`} class="hidden pl-4 space-y-1 border-l-2 border-gray-100" role="region" aria-label={section.title}>
+      {section.items.map((item) => (
+        <a href={item.href} class="block p-2 min-h-[44px] flex items-center text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded transition-colors">
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+))}

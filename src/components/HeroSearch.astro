@@ -1,0 +1,283 @@
+---
+// HeroSearch.astro - Inline search with live autocomplete dropdown
+// Usage: <HeroSearch searchData={searchData} />
+
+export interface SearchItem {
+  id: string;
+  title: string;
+  description?: string;
+  url: string;
+  category?: string;
+  type?: 'article' | 'guide' | 'question';
+}
+
+export interface Props {
+  searchData: SearchItem[];
+  placeholder?: string;
+  maxResults?: number;
+}
+
+const {
+  searchData = [],
+  placeholder = 'PCOS, IVF, AMH Testi...',
+  maxResults = 6
+} = Astro.props;
+---
+
+<div class="hero-search-wrapper relative" id="hero-search-wrapper">
+  <!-- Search Input -->
+  <div class="relative search-input-container group/input">
+    <span class="absolute left-4 top-3.5 text-gray-400 transition-colors group-focus-within/input:text-primary-600">
+      <span class="material-symbols-outlined text-lg">search_spark</span>
+    </span>
+    <input
+      id="hero-search-input"
+      type="text"
+      placeholder={placeholder}
+      class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-200 bg-white/80 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-300/40 transition-all text-sm text-gray-800 placeholder-gray-400"
+      autocomplete="off"
+      aria-label="Makalelerde ara"
+    />
+  </div>
+
+  <!-- Autocomplete Dropdown -->
+  <div
+    id="hero-search-dropdown"
+    class="absolute z-50 top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden hidden"
+    role="listbox"
+    aria-live="polite"
+    aria-label="Arama sonuclari"
+  >
+    <!-- Initial empty -->
+    <div id="hero-search-initial" class="p-8 text-center text-gray-400">
+      <span class="material-symbols-outlined text-4xl block mb-2 opacity-30">manage_search</span>
+      <p class="text-xs">Aramaya başlayın...</p>
+    </div>
+
+    <!-- Results list -->
+    <ul id="hero-search-results" class="divide-y divide-gray-100"></ul>
+
+    <!-- No results -->
+    <div id="hero-search-no-results" class="p-8 text-center text-gray-400 hidden">
+      <span class="material-symbols-outlined text-3xl block mb-2 opacity-20">search_off</span>
+      <p class="text-xs font-medium">Sonuç bulunamadı</p>
+    </div>
+
+    <!-- See all results link -->
+    <a
+      id="hero-search-all"
+      href="/makaleler"
+      class="hidden block text-center py-3 text-xs font-bold text-primary-600 hover:bg-gray-50 transition-colors border-t border-gray-100"
+    >
+      Tüm sonuçları gör →
+    </a>
+  </div>
+</div>
+
+<style>
+  .hero-search-dropdown.show {
+    animation: dropIn 0.2s ease-out forwards;
+  }
+
+  @keyframes dropIn {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .search-result-item {
+    opacity: 0;
+    animation: fadeInItem 0.25s ease-out forwards;
+  }
+
+  @keyframes fadeInItem {
+    to { opacity: 1; }
+  }
+
+  .search-highlight {
+    background-color: rgba(53, 97, 143, 0.12);
+    color: #35618f;
+    font-weight: 700;
+    padding: 0 1px;
+    border-radius: 2px;
+  }
+</style>
+
+<script define:vars={{ searchData, maxResults }}>
+  const input = document.getElementById('hero-search-input');
+  const dropdown = document.getElementById('hero-search-dropdown');
+  const resultsList = document.getElementById('hero-search-results');
+  const initialState = document.getElementById('hero-search-initial');
+  const noResults = document.getElementById('hero-search-no-results');
+  const seeAllLink = document.getElementById('hero-search-all');
+
+  let activeCategory = null;
+  let searchTimeout: ReturnType<typeof setTimeout>;
+
+  // Listen for custom category filter event
+  document.addEventListener('hero-filter-change', ((e: Event) => {
+    activeCategory = (e as CustomEvent).detail?.category ?? null;
+    // Re-search if there's input text
+    if (activeCategory && input?.value.trim()) {
+      performSearch(input.value.trim());
+    }
+  }) as EventListener, { passive: true });
+
+  // Focus handling: Show dropdown when input is focused with text
+  input?.addEventListener('focus', () => {
+    if (input.value.trim()) {
+      showDropdown();
+    }
+  });
+
+  // Click outside closes dropdown
+  document.addEventListener('click', (e) => {
+    const wrapper = document.getElementById('hero-search-wrapper');
+    if (wrapper && !wrapper.contains(e.target as Node)) {
+      hideDropdown();
+    }
+  });
+
+  // Search on input
+  input?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value.trim();
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      if (query.length >= 2) {
+        performSearch(query);
+      } else {
+        resetDropdown();
+      }
+    }, 150);
+  });
+
+  // Enter key: navigate to search results page
+  input?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const query = input.value.trim();
+      if (query) {
+        let url = '/makaleler?q=' + encodeURIComponent(query);
+        if (activeCategory) {
+          url += '&category=' + encodeURIComponent(activeCategory);
+        }
+        window.location.href = url;
+      }
+    }
+
+    // Arrow down to focus first result
+    if (e.key === 'ArrowDown') {
+      const firstItem = resultsList.querySelector('a');
+      if (firstItem) {
+        e.preventDefault();
+        (firstItem as HTMLElement).focus();
+      }
+    }
+  });
+
+  function performSearch(query: string) {
+    const trimmed = query.toLowerCase();
+
+    // Filter results
+    let results = searchData.filter((item) => {
+      const titleMatch = item.title.toLowerCase().includes(trimmed);
+      const descMatch = item.description?.toLowerCase().includes(trimmed);
+      const categoryMatch = item.category?.toLowerCase().includes(trimmed);
+      return titleMatch || descMatch || categoryMatch;
+    });
+
+    // Apply category filter if active
+    if (activeCategory) {
+      results = results.filter(item => {
+        const cat = (item.category || '').toLowerCase();
+        return cat.includes(activeCategory.toLowerCase());
+      });
+    }
+
+    const limited = results.slice(0, maxResults);
+
+    if (results.length === 0) {
+      // No results
+      initialState.classList.add('hidden');
+      noResults.classList.remove('hidden');
+      resultsList.innerHTML = '';
+      seeAllLink.classList.add('hidden');
+      showDropdown();
+      return;
+    }
+
+    // Has results
+    initialState.classList.add('hidden');
+    noResults.classList.add('hidden');
+
+    resultsList.innerHTML = limited.map((result, i) => {
+      const category = result.category || result.type || 'Makale';
+      const icon = getCategoryIcon(category);
+      return `
+        <li class="search-result-item" style="animation-delay: ${i * 0.04}s">
+          <a href="${result.url}"
+             class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors focus:bg-gray-50 focus:outline-none group/item"
+             tabindex="0">
+            <div class="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover/item:bg-primary-50 transition-colors">
+              <span class="material-symbols-outlined text-gray-400 group-hover/item:text-primary-600 text-base">${icon}</span>
+            </div>
+            <div class="min-w-0 flex-1">
+              <p class="text-sm font-semibold text-gray-800 truncate group-hover/item:text-primary-600 transition-colors">${highlightText(result.title, trimmed)}</p>
+              ${result.description ? `<p class="text-xs text-gray-500 truncate mt-0.5">${truncate(result.description, 60)}</p>` : ''}
+            </div>
+          </a>
+        </li>
+      `;
+    }).join('');
+
+    if (results.length > maxResults) {
+      seeAllLink.classList.remove('hidden');
+      seeAllLink.href = '/makaleler?q=' + encodeURIComponent(query) + (activeCategory ? '&category=' + encodeURIComponent(activeCategory) : '');
+    } else {
+      seeAllLink.classList.add('hidden');
+    }
+
+    showDropdown();
+  }
+
+  function showDropdown() {
+    dropdown.classList.remove('hidden');
+    dropdown.classList.add('show');
+  }
+
+  function hideDropdown() {
+    dropdown.classList.add('hidden');
+    dropdown.classList.remove('show');
+  }
+
+  function resetDropdown() {
+    resultsList.innerHTML = '';
+    initialState.classList.remove('hidden');
+    noResults.classList.add('hidden');
+    seeAllLink.classList.add('hidden');
+  }
+
+  function getCategoryIcon(cat: string): string {
+    cat = cat.toLowerCase();
+    if (cat.includes('kadın')) return 'female';
+    if (cat.includes('erkek')) return 'male';
+    if (cat.includes('tedavi')) return 'medical_services';
+    if (cat.includes('tüp')) return 'microbiology';
+    if (cat.includes('embriyo')) return 'biotech';
+    return 'description';
+  }
+
+  function highlightText(text: string, query: string): string {
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<span class="search-highlight">$1</span>');
+  }
+
+  function truncate(text: string, length: number): string {
+    return text.length > length ? text.substring(0, length) + '...' : text;
+  }
+</script>

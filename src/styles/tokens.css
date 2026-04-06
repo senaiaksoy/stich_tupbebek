@@ -1,0 +1,288 @@
+/* ═════════════════════════════════════════════════════════════════════
+   TUPBEBEK.COM - DESIGN TOKENS (CSS VARIABLES)
+
+   Tüm tasarım tokenleri burada tanımlanır.
+   Light mode default, dark mode için @media (prefers-color-scheme) kullanılır.
+
+   ════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* COLORS - PRIMARY (Koyu Lacivert - Güven Rengi) */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #e0f0ff;
+  --color-primary-200: #b8d4e8;
+  --color-primary-300: #7ca8d4;
+  --color-primary-400: #5989c4;
+  --color-primary-500: #3b7bc9;
+  --color-primary-600: #2563a8; /* Ana renk */
+  --color-primary-700: #1a4d7a; /* Başlıklar için */
+  --color-primary-800: #0f2b4b;
+  --color-primary-900: #0a1f35;
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* COLORS - SECONDARY (Nane Yeşili - Terapi Rengi) */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --color-mint-50: #e8faf6;
+  --color-mint-100: #c2e8dc;
+  --color-mint-200: #8bc9b0;
+  --color-mint-300: #5aaa8d;
+  --color-mint-400: #4da878;
+  --color-mint-500: #3a8a66;
+  --color-mint-600: #2d6d52; /* Ana nane rengi */
+  --color-mint-700: #1d4d3d;
+  --color-mint-800: #112f2a;
+  --color-mint-900: #091f1d;
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* COLORS - ACCENT (Yumuşak Kayısı - Sıcaklık) */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --color-apricot-50: #fef7f0;
+  --color-apricot-100: #f9e5b8;
+  --color-apricot-200: #f4c47e;
+  --color-apricot-300: #daa520;
+  --color-apricot-400: #c89812;
+  --color-apricot-500: #b8860b; /* Ana kayısı rengi */
+  --color-apricot-600: #8b5a2b;
+  --color-apricot-700: #5a3a1a;
+  --color-apricot-800: #3a2410;
+  --color-apricot-900: #1f1308;
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* COLORS - NEUTRAL (Gri Skalası - Temiz ve Erişilebilir) */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* COLORS - SEMANTIC (Durum Renkleri) */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --color-success-50: #f0fdf4;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+
+  --color-warning-50: #fffbeb;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+
+  --color-error-50: #fef2f2;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+
+  --color-info-50: #f0f9ff;
+  --color-info-600: #0284c7;
+  --color-info-700: #0369a1;
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* COLORS - MEDICAL CONTEXT */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --color-medical-safe: #10b981;
+  --color-medical-caution: #f59e0b;
+  --color-medical-risk: #ef4444;
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* COLORS - SURFACE & BACKGROUND */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --color-background: #f9fafb;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f3f4f6;
+  --color-surface-hover: #f1f5f9;
+  --color-surface-active: #e2e8f0;
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* TYPOGRAPHY - FONT FAMILIES */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --font-headline: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-label: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Fira Code", "JetBrains Mono", monospace;
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* TYPOGRAPHY - LINE HEIGHTS */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --line-height-tight: 1.2; /* Başlıklar */
+  --line-height-snug: 1.4; /* Alt başlıklar */
+  --line-height-normal: 1.6; /* Body metin */
+  --line-height-relaxed: 1.75; /* Uzun form */
+  --line-height-loose: 2; /* Listeler */
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* TYPOGRAPHY - LETTER SPACING */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --letter-spacing-tight: -0.02em; /* Başlıklar */
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.04em; /* Butonlar, etiketler */
+  --letter-spacing-ultra: 0.15em; /* Uppercase labels */
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* SPACING - 8px BASE UNIT */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --spacing-0: 0;
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px - temel birim */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 2.5rem; /* 40px */
+  --spacing-3xl: 3rem; /* 48px */
+  --spacing-4xl: 4rem; /* 64px */
+  --spacing-5xl: 5rem; /* 80px */
+  --spacing-6xl: 6rem; /* 96px */
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* LAYOUT - CONTAINER & GRID */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --container-max-width: 1280px;
+  --container-gutter-sm: 1rem;
+  --container-gutter-md: 2rem;
+  --container-gutter-lg: 3rem;
+  --grid-gap-compact: 1.5rem;
+  --grid-gap-spacious: 2rem;
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* BORDER RADIUS */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --radius-none: 0;
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-default: 0.5rem; /* 8px */
+  --radius-md: 0.75rem; /* 12px */
+  --radius-lg: 1rem; /* 16px */
+  --radius-xl: 1.5rem; /* 24px */
+  --radius-2xl: 2rem; /* 32px */
+  --radius-full: 9999px;
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* SHADOWS - ELEVATION SYSTEM */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* TRANSITIONS - DURATIONS */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-very-slow: 800ms;
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* TRANSITIONS - EASING FUNCTIONS */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* GLASS MORPHISM & EFFECTS */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-blur: 8px;
+  --glass-backdrop: blur(8px);
+  --overlay-dark: rgba(0, 0, 0, 0.3);
+
+  /* ─────────────────────────────────────────────────────────────────── */
+  /* Z-INDEX SCALE */
+  /* ─────────────────────────────────────────────────────────────────── */
+
+  --z-auto: auto;
+  --z-hide: -1;
+  --z-base: 0;
+  --z-dropdown: 50;
+  --z-sticky: 60;
+  --z-fixed: 70;
+  --z-modal-backdrop: 80;
+  --z-modal: 90;
+  --z-popover: 100;
+  --z-tooltip: 110;
+  --z-skip-link: 9999;
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* SEMANTIC TOKENS - Bağlamsal Renkler */
+/* ─────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Text colors */
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-700);
+  --text-tertiary: var(--color-gray-600);
+  --text-disabled: var(--color-gray-500);
+  --text-inverse: white;
+
+  /* Background colors */
+  --bg-primary: var(--color-surface);
+  --bg-secondary: var(--color-gray-50);
+  --bg-tertiary: var(--color-gray-100);
+
+  /* Border colors */
+  --border-default: var(--color-gray-300);
+  --border-light: var(--color-gray-200);
+  --border-dark: var(--color-gray-400);
+
+  /* Interactive colors */
+  --action-primary: var(--color-primary-600);
+  --action-primary-hover: var(--color-primary-700);
+  --action-primary-active: var(--color-primary-800);
+
+  --action-secondary: var(--color-mint-600);
+  --action-secondary-hover: var(--color-mint-700);
+
+  --action-accent: var(--color-apricot-600);
+  --action-accent-hover: var(--color-apricot-700);
+
+  /* Status colors */
+  --status-success: var(--color-success-600);
+  --status-warning: var(--color-warning-600);
+  --status-error: var(--color-error-600);
+  --status-info: var(--color-info-600);
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* DARK MODE (İsteğe Bağlı - Şu anda devre dışı) */
+/* ─────────────────────────────────────────────────────────────────── */
+
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0f0f0f;
+    --color-surface: #1a1a1a;
+    --color-gray-900: #ffffff;
+    --color-gray-800: #e5e7eb;
+    --text-primary: #ffffff;
+    --text-secondary: #d1d5db;
+  }
+}
+*/

@@ -1,0 +1,84 @@
+---
+/**
+ * LayeredLearning - 3 katmanlı içerik açıklama sistemi
+ * Karmaşık tıbbi bilgiyi kademeli olarak sunar:
+ *   Katman 1: Basit açıklama (her zaman görünür)
+ *   Katman 2: Tıbbi detay (tıkla-aç)
+ *   Katman 3: Araştırma referansları (tıkla-aç)
+ */
+interface Props {
+    simple: string;
+    medical?: string;
+    references?: string;
+    title?: string;
+}
+
+const { simple, medical, references, title } = Astro.props;
+const id = 'll-' + Math.random().toString(36).substring(2, 8);
+---
+
+<div class="layered-learning bg-gray-50 border border-gray-200/15 rounded-2xl overflow-hidden my-8">
+    {/* Layer 1: Simple - Always visible */}
+    <div class="p-6">
+        {title && <h4 class="font-headline text-lg font-bold text-gray-900 mb-3">{title}</h4>}
+        <p class="font-body text-gray-600 leading-relaxed text-sm">{simple}</p>
+    </div>
+
+    {/* Layer 2: Medical Detail */}
+    {medical && (
+        <div class="border-t border-gray-200">
+            <button
+                class="ll-toggle w-full flex items-center justify-between px-6 py-3 text-left hover:bg-gray-100 transition-colors"
+                data-target={`${id}-medical`}
+                aria-expanded="false"
+            >
+                <span class="flex items-center gap-2 text-xs font-label font-bold text-primary-600 uppercase tracking-widest">
+                    <span class="material-symbols-outlined text-sm">science</span>
+                    Tıbbi Detay
+                </span>
+                <span class="material-symbols-outlined text-sm text-gray-400 transition-transform ll-icon">expand_more</span>
+            </button>
+            <div id={`${id}-medical`} class="hidden px-6 pb-5">
+                <p class="font-body text-gray-600 leading-relaxed text-sm border-l-2 border-primary-200 pl-4">{medical}</p>
+            </div>
+        </div>
+    )}
+
+    {/* Layer 3: Research References */}
+    {references && (
+        <div class="border-t border-gray-200">
+            <button
+                class="ll-toggle w-full flex items-center justify-between px-6 py-3 text-left hover:bg-gray-100 transition-colors"
+                data-target={`${id}-refs`}
+                aria-expanded="false"
+            >
+                <span class="flex items-center gap-2 text-xs font-label font-bold text-mint-600 uppercase tracking-widest">
+                    <span class="material-symbols-outlined text-sm">menu_book</span>
+                    Araştırma Kaynakları
+                </span>
+                <span class="material-symbols-outlined text-sm text-gray-400 transition-transform ll-icon">expand_more</span>
+            </button>
+            <div id={`${id}-refs`} class="hidden px-6 pb-5">
+                <p class="font-body text-gray-600 leading-relaxed text-xs italic border-l-2 border-tertiary/30 pl-4">{references}</p>
+            </div>
+        </div>
+    )}
+</div>
+
+<script is:inline>
+(function() {
+    document.querySelectorAll('.ll-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var targetId = btn.getAttribute('data-target');
+            var target = document.getElementById(targetId);
+            var icon = btn.querySelector('.ll-icon');
+            if (!target) return;
+
+            var isHidden = target.classList.contains('hidden');
+            target.classList.toggle('hidden');
+            btn.setAttribute('aria-expanded', String(isHidden));
+            if (icon) icon.classList.toggle('rotate-180');
+        });
+    });
+})();
+</script>

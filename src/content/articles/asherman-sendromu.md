@@ -2,7 +2,7 @@
 title: "Asherman Sendromu - Rahim İçi Yapışıklık"
 description: "Asherman Sendromu (rahim içi yapışıklık) nedir? Belirtileri, nedenleri ve tedavi yöntemleri hakkında kapsamlı rehber."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Kadın Sağlığı"
 image: "/images/articles/asherman-sendromu.webp"
 imageAlt: "asherman sendromu rahim içi yapışıklık illüstrasyonu"
@@ -39,3 +39,4 @@ Teşhis aşamasında altın standart **Histeroskopi**dir. Bu yöntemle rahim iç
 3. **Bariyer Yöntemleri:** Yapışıklıkların tekrar oluşmasını önlemek için rahim içine geçici balon veya kateter yerleştirilebilir.
 
 Doğru teşhis ve uzman ellerde yapılan histeroskopi ile Asherman Sendromu başarıyla tedavi edilebilir ve sağlıklı bir gebelik şansı tekrar kazanılabilir.
+

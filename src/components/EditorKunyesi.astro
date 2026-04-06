@@ -1,0 +1,175 @@
+---
+/**
+ * EditorKunyesi — Bas Editor / Tibbi Onay Kunyesi
+ *
+ * Her makalenin ustunde (compact) ve altinda (full) yer alan
+ * otorite insasi bileseni. YouTube kanal yonlendirmesi ile
+ * egitici pazarlama stratejisine uygun CTA icerir.
+ *
+ * Kullanim:
+ *   <EditorKunyesi variant="compact" />   <!-- makale basi -->
+ *   <EditorKunyesi variant="full" />      <!-- makale sonu -->
+ */
+interface Props {
+    variant?: 'compact' | 'full';
+}
+
+const { variant = 'full' } = Astro.props;
+
+const doctor = {
+    name: 'Doç. Dr. Senai Aksoy',
+    title: 'Kadın Hastalıkları ve Doğum Uzmanı',
+    subtitle: 'Üreme Tıbbı ve Yardımcı Üreme Teknikleri',
+    clinic: 'Lotus Nişantaşı',
+    address: 'Halaskargazi Mah., Halaskargazi Cad. No: 38-66, Kat: 5, Ofis: 92, 34371 Şişli/İstanbul',
+    youtube: 'https://www.youtube.com/@DocentDrSenaiAksoy',
+};
+
+// Schema.org JSON-LD — Baş Editör & Tıbbi Onay (E-E-A-T)
+const editorSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": doctor.name,
+    "jobTitle": doctor.title,
+    "description": doctor.subtitle,
+    "url": "https://tupbebek.com/hakkimizda",
+    "sameAs": [
+        doctor.youtube,
+    ],
+    "worksFor": {
+        "@type": "MedicalOrganization",
+        "name": doctor.clinic,
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Halaskargazi Cad. No: 38-66, Kat: 5, Ofis: 92",
+            "addressLocality": "Şişli",
+            "addressRegion": "İstanbul",
+            "postalCode": "34371",
+            "addressCountry": "TR",
+        },
+    },
+    "medicalSpecialty": {
+        "@type": "MedicalSpecialty",
+        "name": "Obstetrics and Gynecology",
+    },
+    "knowsAbout": [
+        { "@type": "MedicalSpecialty", "name": "Reproductive Medicine" },
+        { "@type": "MedicalSpecialty", "name": "Assisted Reproductive Technology" },
+        { "@type": "MedicalSpecialty", "name": "Reproductive Endocrinology" },
+    ],
+    "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Doçent Doktor",
+        "recognizedBy": {
+            "@type": "Organization",
+            "name": "Üniversitelerarası Kurul (ÜAK)",
+        },
+    },
+};
+
+// reviewedBy schema — makale düzeyinde tıbbi onay ilişkisi
+const reviewedBySchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "reviewedBy": {
+        "@type": "Person",
+        "name": doctor.name,
+        "jobTitle": doctor.title,
+        "sameAs": doctor.youtube,
+        "medicalSpecialty": {
+            "@type": "MedicalSpecialty",
+            "name": "Reproductive Medicine",
+        },
+    },
+    "lastReviewed": new Date().toISOString().split('T')[0],
+};
+---
+
+{variant === 'compact' ? (
+    <!-- COMPACT: Makale basi — tek satir otorite gostergesi -->
+    <div class="editor-kunyesi-compact flex items-center gap-3 px-4 py-3 bg-primary-50/60 border border-primary-100 rounded-xl" role="note" aria-label="Tıbbi onay bilgisi">
+        <div class="w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-white text-base" style="font-variation-settings: 'FILL' 1;">verified</span>
+        </div>
+        <p class="text-sm text-gray-700 leading-snug">
+            <span class="font-bold text-gray-900">Tıbbi Onay:</span>{' '}
+            <span class="font-semibold text-primary-700">{doctor.name}</span>
+            <span class="hidden sm:inline text-gray-500"> — {doctor.title}</span>
+        </p>
+        <a
+            href={doctor.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ml-auto shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-red-600 bg-white border border-red-100 rounded-full hover:bg-red-50 hover:border-red-200 transition-all group"
+            aria-label="Doç. Dr. Senai Aksoy YouTube kanalı"
+        >
+            <svg class="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            <span class="hidden sm:inline">YouTube</span>
+        </a>
+    </div>
+) : (
+    <!-- FULL: Makale sonu — detayli kunye + YouTube CTA -->
+    <aside class="editor-kunyesi-full rounded-2xl border border-gray-200 overflow-hidden bg-white shadow-sm" role="note" aria-label="Baş editör ve tıbbi onay künyesi">
+
+        <!-- Header strip -->
+        <div class="px-5 py-3 bg-gradient-to-r from-primary-700 to-primary-600 flex items-center gap-2">
+            <span class="material-symbols-outlined text-white/90 text-lg" style="font-variation-settings: 'FILL' 1;">verified</span>
+            <h3 class="text-sm font-bold text-white tracking-wide uppercase">Tıbbi Onay & Baş Editör</h3>
+        </div>
+
+        <div class="p-5 md:p-6">
+            <!-- Doctor info row -->
+            <div class="flex flex-col sm:flex-row gap-5">
+
+                <!-- Left: Identity -->
+                <div class="flex items-start gap-4 flex-1 min-w-0">
+                    <div class="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center shrink-0 ring-2 ring-primary-100">
+                        <span class="material-symbols-outlined text-primary-600 text-2xl" style="font-variation-settings: 'FILL' 1;">stethoscope</span>
+                    </div>
+                    <div class="min-w-0">
+                        <p class="font-headline text-lg font-bold text-gray-900">{doctor.name}</p>
+                        <p class="text-sm text-primary-700 font-semibold">{doctor.title}</p>
+                        <p class="text-xs text-gray-500 mt-0.5">{doctor.subtitle}</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-5 border-gray-100" />
+
+            <!-- YouTube CTA -->
+            <a
+                href={doctor.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center gap-4 px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 hover:border-red-200 hover:bg-red-50/50 transition-all duration-300"
+                aria-label="Doç. Dr. Senai Aksoy YouTube kanalını ziyaret et"
+            >
+                <!-- YouTube icon -->
+                <div class="w-12 h-12 rounded-xl bg-red-600 flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300">
+                    <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </div>
+
+                <!-- Text -->
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        İnfertilite hakkında daha fazla görsel ve bilimsel rehber için
+                        <span class="font-bold text-gray-900">{doctor.name}</span>'un
+                        YouTube kanalını inceleyebilirsiniz.
+                    </p>
+                </div>
+
+                <!-- Arrow -->
+                <span class="material-symbols-outlined text-gray-400 group-hover:text-red-500 group-hover:translate-x-1 transition-all duration-300 shrink-0 text-xl">arrow_forward</span>
+            </a>
+        </div>
+        <!-- Structured Data: Editor Person + reviewedBy (E-E-A-T) -->
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(editorSchema)} />
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(reviewedBySchema)} />
+    </aside>
+)}

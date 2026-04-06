@@ -1,0 +1,76 @@
+---
+/**
+ * ReadingProgress - Makale okuma ilerlemesi göstergesi
+ * Sayfanın üstünde ince bir progress bar ve tahmini okuma süresi gösterir.
+ */
+---
+
+<div id="reading-progress-container" class="fixed top-0 left-0 w-full z-[200] pointer-events-none">
+    <div id="reading-progress-bar" class="h-[3px] bg-primary-600 origin-left scale-x-0 transition-transform duration-150 ease-out"></div>
+</div>
+
+<div id="reading-time-badge" class="fixed top-24 right-6 z-[90] bg-white/90 backdrop-blur-md border border-gray-200/20 rounded-xl px-4 py-2 shadow-lg opacity-0 translate-y-2 transition-all duration-300 pointer-events-none hidden md:block">
+    <div class="flex items-center gap-2 text-xs font-label text-gray-600">
+        <span class="material-symbols-outlined text-primary-600 text-sm">timer</span>
+        <span id="reading-time-text">0 dk kaldı</span>
+    </div>
+</div>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+    var bar = document.getElementById('reading-progress-bar');
+    var badge = document.getElementById('reading-time-badge');
+    var timeText = document.getElementById('reading-time-text');
+    var article = document.querySelector('article');
+    if (!bar || !article) return;
+
+    // Calculate estimated reading time (200 words/min for Turkish)
+    const text = article.textContent || '';
+    const wordCount = text.trim().split(/\s+/).length;
+    const totalMinutes = Math.ceil(wordCount / 200);
+
+    let ticking = false;
+    function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            const rect = article.getBoundingClientRect();
+            const articleTop = rect.top + window.scrollY;
+            const articleHeight = rect.height;
+            const scrolled = window.scrollY - articleTop;
+            const viewportHeight = window.innerHeight;
+            const progress = Math.min(Math.max(scrolled / (articleHeight - viewportHeight), 0), 1);
+
+            bar.style.transform = 'scaleX(' + progress + ')';
+
+            // Update remaining time
+            const remaining = Math.max(Math.ceil(totalMinutes * (1 - progress)), 0);
+            if (timeText) {
+                if (progress >= 0.98) {
+                    timeText.textContent = 'Okuma tamamlandı';
+                } else if (progress > 0.02) {
+                    timeText.textContent = remaining + ' dk kaldı';
+                } else {
+                    timeText.textContent = totalMinutes + ' dk okuma';
+                }
+            }
+
+            // Show/hide badge
+            if (badge) {
+                if (progress > 0.02 && progress < 1) {
+                    badge.classList.remove('opacity-0', 'translate-y-2');
+                    badge.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    badge.classList.add('opacity-0', 'translate-y-2');
+                    badge.classList.remove('opacity-100', 'translate-y-0');
+                }
+            }
+
+            ticking = false;
+        });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+});
+</script>

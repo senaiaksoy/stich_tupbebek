@@ -2,7 +2,7 @@
 title: "Akraba Evliliği Neden Tehlikelidir?"
 description: "Akraba evliliklerinin genetik riskleri, artan hastalık olasılıkları ve toplum sağlığı üzerindeki etkileri hakkında detaylı bilgi."
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Genetik"
 image: "/images/articles/akraba-evliligi.webp"
 imageAlt: "akraba evliliği genetik riskler ve dna sarmalı illüstrasyonu"
@@ -35,3 +35,4 @@ Akraba evliliği yapmış veya yapmayı planlayan çiftler için modern tıbbın
 - **Eğitim ve Bilinçlendirme:** Toplumda genetik farkındalığın artırılması, riskli evlilik kararlarının önüne geçilmesine yardımcı olur.
 
 İnfertil çiftler ve risk grubundaki aileler, sağlıklı nesiller planlamak için mutlaka uzman bir hekimden genetik danışmanlık hizmeti almalıdır.
+

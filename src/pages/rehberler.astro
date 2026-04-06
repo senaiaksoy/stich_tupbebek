@@ -5,38 +5,38 @@ import Footer from '../components/Footer.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
 ---
 
-<BaseLayout title="Tedavi Süreci: Adım Adım Rehber | tupbebek.com">
+<BaseLayout title="Tedavi Süreci: Adım Adım Rehber | tupbebek.com" description="IVF sürecinin hazırlık aşamasından embriyo transferine kadar her adım. İlaçlar, prosedürler ve yaşam tarzı önerileri.">
     <Header />
     
-    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+    <main id="main-content" tabindex="-1" class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <!-- Hero Section -->
         <header class="mb-20 text-center max-w-4xl mx-auto">
-            <p class="text-primary font-bold tracking-widest uppercase text-xs mb-4">Klinik Rehber</p>
-            <h1 class="text-4xl md:text-6xl font-headline text-on-surface mb-8 leading-tight">Tedavi Süreci: Hazırlıktan Transfer Sonrasına Adım Adım Rehber</h1>
-            <div class="h-1 w-24 bg-primary mx-auto opacity-30"></div>
+            <p class="text-primary-600 font-bold tracking-widest uppercase text-xs mb-4">Klinik Rehber</p>
+            <h1 class="text-4xl md:text-6xl font-headline text-gray-900 mb-8 leading-tight">Tedavi Süreci: Hazırlıktan Transfer Sonrasına Adım Adım Rehber</h1>
+            <div class="h-1 w-24 bg-primary-600 mx-auto opacity-30"></div>
         </header>
 
         <!-- Bento Grid Layout for the Step-by-Step Guide -->
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
             <!-- Step 1: Preparation -->
-            <section class="md:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl flex flex-col justify-center">
+            <section class="md:col-span-7 bg-gray-50 p-8 md:p-12 rounded-xl flex flex-col justify-center">
                 <div class="flex items-center gap-4 mb-6">
                     <span class="text-4xl font-serif text-primary-dim opacity-40">01</span>
                     <h2 class="text-2xl font-headline font-bold">Hazırlık (Preparation)</h2>
                 </div>
-                <div class="text-on-surface-variant leading-relaxed">
+                <div class="text-gray-600 leading-relaxed">
                     <p class="mb-4">Tüp bebek süreci, fiziksel ve metabolik bir optimizasyon evresi ile başlar. Bu aşamada hastanın bazal vücut kitle indeksi (BMI), tiroid fonksiyonları ve glikoz regülasyonu klinik olarak değerlendirilir.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-600 mt-2 flex-shrink-0"></span>
                             <span>Yaşam Tarzı Modifikasyonu: Sigara ve alkol eliminasyonu, oosit kalitesi için kritiktir.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                        <li class="flex items-start gap-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-600 mt-2 flex-shrink-0"></span>
                             <span>Mikro Besin Takviyesi: Folik asit, D vitamini ve gerekirse CoQ10 desteği protokol altına alınır.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                        <li class="flex items-start gap-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-600 mt-2 flex-shrink-0"></span>
                             <span>Klinik Değerlendirme: Antral folikül sayımı (AFC) ve AMH seviyeleri ile bireysel tedavi planı oluşturulur.</span>
                         </li>
                     </ul>
@@ -45,45 +45,45 @@ import OptimizedImage from '../components/OptimizedImage.astro';
             
             <!-- Visual for Prep -->
             <div class="md:col-span-5 relative overflow-hidden rounded-xl">
-                <OptimizedImage src="/images/rehberler/clinical-prep.jpg" type="hero" alt="Klinik Hazırlık" className="w-full h-full object-cover grayscale-[0.2]" />
-                <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+                <img alt="Klinik Hazırlık" class="w-full h-full object-cover grayscale-[0.2]" src="/images/library/tedavi/tup_bebek_muayene.webp" width="512" height="512" loading="eager" fetchpriority="high"/>
+                <div class="absolute inset-0 bg-primary-50 mix-blend-multiply"></div>
             </div>
 
             <!-- Step 2: Ovulation Induction -->
-            <div class="md:col-span-5 bg-surface-container rounded-xl overflow-hidden flex flex-col">
+            <div class="md:col-span-5 bg-gray-100 rounded-xl overflow-hidden flex flex-col">
                 <div class="h-64 overflow-hidden">
-                    <OptimizedImage src="/images/rehberler/hormone-tracking.jpg" type="medical-illustration" alt="Hormon Takibi" className="w-full h-full object-cover" />
+                    <img alt="Hormon Takibi" class="w-full h-full object-cover" src="/images/rehberler/hormone-tracking.webp" width="512" height="512" loading="lazy"/>
                 </div>
                 <div class="p-8">
                     <div class="flex items-center gap-4 mb-4">
                         <span class="text-3xl font-serif text-primary-dim opacity-40">02</span>
                         <h2 class="text-2xl font-headline font-bold">Yumurta Geliştirme</h2>
                     </div>
-                    <p class="text-on-surface-variant leading-relaxed">Kontrollü overyan stimülasyon aşaması, birden fazla folikül gelişimini sağlamak amacıyla ekzojen gonadotropinlerin uygulandığı evredir. Transvajinal ultrasonografi ve serum E2 seviyeleri ile foliküler büyüme titizlikle takip edilir.</p>
+                    <p class="text-gray-600 leading-relaxed">Kontrollü overyan stimülasyon aşaması, birden fazla folikül gelişimini sağlamak amacıyla ekzojen gonadotropinlerin uygulandığı evredir. Transvajinal ultrasonografi ve serum E2 seviyeleri ile foliküler büyüme titizlikle takip edilir.</p>
                 </div>
             </div>
 
             <!-- Step 3: Egg Retrieval -->
-            <section class="md:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl border border-outline-variant/10">
+            <section class="md:col-span-7 bg-gray-50 p-8 md:p-12 rounded-xl border border-gray-200">
                 <div class="flex items-center gap-4 mb-6">
                     <span class="text-4xl font-serif text-primary-dim opacity-40">03</span>
                     <h2 class="text-2xl font-headline font-bold">Yumurta Toplama (OPU)</h2>
                 </div>
-                <p class="text-on-surface-variant leading-relaxed mb-6">Oosit Pick-Up (OPU) işlemi, foliküllerin hedeflenen büyüklüğe ulaşmasını takip eden 34-36 saat içinde, hCG veya GnRH agonisti tetiklemesi sonrası gerçekleştirilir.</p>
+                <p class="text-gray-600 leading-relaxed mb-6">Oosit Pick-Up (OPU) işlemi, foliküllerin hedeflenen büyüklüğe ulaşmasını takip eden 34-36 saat içinde, hCG veya GnRH agonisti tetiklemesi sonrası gerçekleştirilir.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="bg-surface p-4 rounded-lg">
-                        <p class="text-xs font-bold text-primary mb-2 uppercase tracking-tight">Prosedür</p>
+                    <div class="bg-white p-4 rounded-lg">
+                        <p class="text-xs font-bold text-primary-600 mb-2 uppercase tracking-tight">Prosedür</p>
                         <p class="text-sm">Hafif sedasyon altında transvajinal ultrason eşliğinde ince bir iğne ile foliküler sıvı aspire edilir.</p>
                     </div>
-                    <div class="bg-surface p-4 rounded-lg">
-                        <p class="text-xs font-bold text-primary mb-2 uppercase tracking-tight">Beklenti</p>
+                    <div class="bg-white p-4 rounded-lg">
+                        <p class="text-xs font-bold text-primary-600 mb-2 uppercase tracking-tight">Beklenti</p>
                         <p class="text-sm">Yaklaşık 15-20 dakika sürer. İşlem sonrası hasta 1-2 saat gözlem altında tutulur.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Step 4: Laboratory Phase (ICSI) -->
-            <section class="md:col-span-12 bg-primary text-on-primary p-8 md:p-16 rounded-xl relative overflow-hidden">
+            <section class="md:col-span-12 bg-primary-600 text-white p-8 md:p-16 rounded-xl relative overflow-hidden">
                 <div class="relative z-10 max-w-3xl">
                     <div class="flex items-center gap-4 mb-6">
                         <span class="text-4xl font-serif opacity-50">04</span>
@@ -104,19 +104,19 @@ import OptimizedImage from '../components/OptimizedImage.astro';
             </section>
 
             <!-- Step 5: Transfer -->
-            <section class="md:col-span-8 bg-surface-container-lowest p-8 md:p-12 rounded-xl">
+            <section class="md:col-span-8 bg-gray-50 p-8 md:p-12 rounded-xl">
                 <div class="flex items-center gap-4 mb-6">
                     <span class="text-4xl font-serif text-primary-dim opacity-40">05</span>
                     <h2 class="text-2xl font-headline font-bold">Embriyo Transferi</h2>
                 </div>
                 <div class="flex flex-col lg:flex-row gap-8">
                     <div class="lg:w-2/3">
-                        <p class="text-on-surface-variant leading-relaxed mb-4">Seçilen en kaliteli embriyo veya embriyoların rahim içine yerleştirilmesi işlemidir. Bu işlem ağrısızdır ve anestezi gerektirmez.</p>
-                        <p class="text-on-surface-variant leading-relaxed">Kritik faktör, endometriyum (rahim zarı) kalınlığının ve receptivitesinin embriyo gelişimi ile senkronize olmasıdır.</p>
+                        <p class="text-gray-600 leading-relaxed mb-4">Seçilen en kaliteli embriyo veya embriyoların rahim içine yerleştirilmesi işlemidir. Bu işlem ağrısızdır ve anestezi gerektirmez.</p>
+                        <p class="text-gray-600 leading-relaxed">Kritik faktör, endometriyum (rahim zarı) kalınlığının ve receptivitesinin embriyo gelişimi ile senkronize olmasıdır.</p>
                     </div>
-                    <div class="lg:w-1/3 bg-surface-container-high p-6 rounded-xl text-sm">
+                    <div class="lg:w-1/3 bg-gray-200 p-6 rounded-xl text-sm">
                         <h4 class="font-bold mb-3 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary">schedule</span>
+                            <span class="material-symbols-outlined text-primary-600">schedule</span>
                             Zamanlama
                         </h4>
                         <p>Genellikle yumurta toplama işleminden sonraki 3. veya 5. günde gerçekleştirilir.</p>
@@ -125,7 +125,7 @@ import OptimizedImage from '../components/OptimizedImage.astro';
             </section>
 
             <!-- Step 6: Post-Transfer -->
-            <section class="md:col-span-4 bg-tertiary-container text-on-tertiary-container p-8 rounded-xl flex flex-col justify-between">
+            <section class="md:col-span-4 bg-mint-100 text-mint-700 p-8 rounded-xl flex flex-col justify-between">
                 <div>
                     <div class="flex items-center gap-4 mb-4">
                         <span class="text-3xl font-serif opacity-40">06</span>
@@ -141,17 +141,17 @@ import OptimizedImage from '../components/OptimizedImage.astro';
         </div>
 
         <!-- Medical Reviewer Banner -->
-        <footer class="mt-20 border-t border-outline-variant/20 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <footer class="mt-20 border-t border-gray-200/20 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-4">
-                <div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container-high border-2 border-primary-container">
-                    <OptimizedImage src="/images/senai-aksoy.jpg" type="avatar" alt="Dr. Senai Aksoy" className="w-full h-full object-cover" />
+                <div class="w-16 h-16 rounded-full overflow-hidden bg-gray-200 border-2 border-primary-container">
+                    <span class="material-symbols-outlined text-primary-600 text-2xl">verified</span>
                 </div>
                 <div>
-                    <p class="text-xs text-on-surface-variant uppercase font-bold tracking-wide">Tıbbi Editör & Kontrol</p>
-                    <p class="text-xl font-headline font-bold">Dr. Senai Aksoy</p>
+                    <p class="text-xs text-gray-600 uppercase font-bold tracking-wide">Tıbbi Editör & Kontrol</p>
+                    <p class="text-xl font-headline font-bold">Yayın Kurulu</p>
                 </div>
             </div>
-            <div class="flex items-center gap-2 text-sm text-tertiary font-semibold">
+            <div class="flex items-center gap-2 text-sm text-mint-600 font-semibold">
                 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
                 Kanıta Dayalı Klinik Bilgi
             </div>

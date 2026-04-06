@@ -1,0 +1,362 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getAllTerms, getVideoTerms } from '../data/glossary';
+import VideoModal from '../components/VideoModal.astro';
+
+const terms = getAllTerms();
+const videoTerms = getVideoTerms();
+
+// Group terms by first letter
+const grouped: Record<string, typeof terms> = {};
+for (const entry of terms) {
+    const letter = entry.term.charAt(0).toUpperCase();
+    if (!grouped[letter]) grouped[letter] = [];
+    grouped[letter].push(entry);
+}
+const sortedLetters = Object.keys(grouped).sort((a, b) => a.localeCompare(b, 'tr'));
+
+// Icon mapping by category keyword
+function getIcon(term: string): string {
+    const t = term.toLowerCase();
+    if (['amh', 'fsh', 'lh', 'e2', 'progesteron'].some(k => t.includes(k))) return 'science';
+    if (['ivf', 'icsi', 'iui'].some(k => t.includes(k))) return 'biotech';
+    if (['pgt', 'karyotip'].some(k => t.includes(k))) return 'microscope';
+    if (['hsg', 'spermiogram'].some(k => t.includes(k))) return 'assignment';
+    if (['endometriozis', 'adenomyozis', 'pcos', 'varikosel', 'azospermi'].some(k => t.includes(k))) return 'healing';
+    if (['blastosist', 'vitrifikasyon', 'hatching'].some(k => t.includes(k))) return 'egg';
+    if (['endometrium', 'folikul', 'over'].some(k => t.includes(k))) return 'anatomy';
+    return 'menu_book';
+}
+---
+
+<BaseLayout title="Tip Terimleri Sozlugu | IVF ve Ureme Tibbi Terimleri | tupbebek.com" description="AMH, FSH, ICSI, blastosist, endometrium gibi medikal terimlerin aciklamalari ve ilgili kaynaklara baglantilar.">
+    <Header />
+
+    <main id="main-content" tabindex="-1" class="pt-32 pb-24">
+        <!-- Hero -->
+        <header class="max-w-5xl mx-auto px-6 mb-16">
+            <div class="flex flex-col md:flex-row gap-12 items-start">
+                <div class="flex-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-mint-100 text-mint-700 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+                        Tip Sozlugu
+                    </div>
+                    <h1 class="font-headline text-4xl md:text-5xl text-gray-900 leading-tight mb-6">
+                        Tip Terimleri Sozlugu
+                    </h1>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                        Ureme tibbi ve IVF sureclerinde sikca karsilasilan medikal terimlerin aciklamalari. Her terim klinik baglamda tanimlanmis ve ilgili sayfalara baglanti icermektedir.
+                    </p>
+
+                    <!-- Letter Navigation -->
+                    <nav class="flex flex-wrap gap-1.5" aria-label="Harf navigasyonu">
+                        {sortedLetters.map(letter => (
+                            <a
+                                href={`#letter-${letter}`}
+                                class="w-9 h-9 flex items-center justify-center rounded-lg text-sm font-bold text-gray-600 bg-gray-100 hover:bg-primary-600 hover:text-white transition-colors"
+                            >
+                                {letter}
+                            </a>
+                        ))}
+                    </nav>
+                </div>
+                <div class="hidden md:block w-64 shrink-0 aspect-square bg-gradient-to-br from-mint-50 to-primary-50 rounded-2xl flex items-center justify-center shadow-lg">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary-300 text-[120px]">dictionary</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Video Glossary Gallery -->
+        {videoTerms.length > 0 && (
+            <section class="max-w-5xl mx-auto px-6 mb-16">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center shrink-0">
+                        <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="font-headline text-xl font-bold text-gray-900">Görüntülü Tıbbi Sözlük</h2>
+                        <p class="text-xs text-gray-500">Kısa videolarla tıbbi terimleri öğrenin</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                    {videoTerms.map(entry => (
+                        <button
+                            type="button"
+                            class="video-term-card group relative bg-gray-900 rounded-xl overflow-hidden aspect-[3/4] cursor-pointer hover:ring-2 hover:ring-red-500 transition-all"
+                            data-video-id={entry.videoId}
+                            data-video-title={`${entry.term} nedir?`}
+                            aria-label={`${entry.term} videosunu izle`}
+                        >
+                            {/* Thumbnail */}
+                            <img
+                                src={`https://i.ytimg.com/vi/${entry.videoId}/maxresdefault.jpg`}
+                                alt={`${entry.term} video`}
+                                loading="lazy"
+                                class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                            />
+
+                            {/* Gradient overlay */}
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                            {/* Play icon */}
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-red-600/80 flex items-center justify-center group-hover:bg-red-600 group-hover:scale-110 transition-all duration-300">
+                                    <svg class="w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            {/* Term label */}
+                            <div class="absolute bottom-0 left-0 right-0 p-3">
+                                <p class="text-white font-bold text-sm truncate">{entry.term}</p>
+                                <p class="text-white/70 text-xs mt-0.5 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">timer</span>
+                                    Shorts
+                                </p>
+                            </div>
+
+                            {/* Shorts badge */}
+                            <div class="absolute top-2 right-2 px-1.5 py-0.5 bg-red-600 rounded text-white text-[10px] font-bold uppercase tracking-wider">
+                                Shorts
+                            </div>
+                        </button>
+                    ))}
+                </div>
+
+                <a
+                    href="https://www.youtube.com/@DocentDrSenaiAksoy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-red-600 hover:text-red-700 transition-colors"
+                >
+                    Tüm videoları izle
+                    <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+            </section>
+        )}
+
+        <!-- Search -->
+        <section class="max-w-5xl mx-auto px-6 mb-12">
+            <div class="relative max-w-md">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl">search</span>
+                <input
+                    type="text"
+                    id="glossary-search"
+                    placeholder="Terim ara..."
+                    class="w-full pl-12 pr-4 py-3 min-h-[44px] bg-white border border-gray-200 rounded-xl text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-600 transition-all"
+                    aria-label="Sozlukte terim ara"
+                />
+            </div>
+            <p id="search-status" class="text-sm text-gray-500 mt-2 hidden" aria-live="polite"></p>
+        </section>
+
+        <!-- Glossary Content -->
+        <section id="glossary-content" class="max-w-5xl mx-auto px-6">
+            {sortedLetters.map(letter => (
+                <div id={`letter-${letter}`} class="glossary-group mb-12 scroll-mt-24">
+                    <h2 class="font-headline text-2xl text-gray-900 mb-6 pb-3 border-b-2 border-primary-200 flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center text-primary-600 font-bold">{letter}</span>
+                        {letter} Harfi
+                    </h2>
+
+                    <div class="space-y-4">
+                        {grouped[letter].map(entry => (
+                            <div class="glossary-term group bg-white border border-gray-200 rounded-xl p-5 hover:border-primary-200 hover:shadow-sm transition-all" data-term={entry.term.toLowerCase()}>
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-mint-50 flex items-center justify-center shrink-0 group-hover:bg-mint-100 transition-colors">
+                                        <span class="material-symbols-outlined text-mint-600 text-xl">{getIcon(entry.term)}</span>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="font-headline text-lg font-bold text-gray-900 mb-1">{entry.term}</h3>
+                                        <p class="text-sm text-gray-600 leading-relaxed">{entry.definition}</p>
+                                        <div class="flex items-center gap-3 mt-3 flex-wrap">
+                                            {entry.href && (
+                                                <a
+                                                    href={entry.href}
+                                                    class="inline-flex items-center gap-1 text-xs font-semibold text-primary-600 hover:text-primary-700 transition-colors"
+                                                >
+                                                    Detaylı bilgi
+                                                    <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                                                </a>
+                                            )}
+                                            {entry.videoId && (
+                                                <button
+                                                    type="button"
+                                                    class="video-term-card inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold text-red-600 bg-red-50 hover:bg-red-100 rounded-full transition-colors cursor-pointer"
+                                                    data-video-id={entry.videoId}
+                                                    data-video-title={`${entry.term} nedir?`}
+                                                    aria-label={`${entry.term} videosunu izle`}
+                                                >
+                                                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                        <path d="M8 5v14l11-7z"/>
+                                                    </svg>
+                                                    Video izle
+                                                </button>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))}
+
+            <!-- No Results -->
+            <div id="no-results" class="hidden text-center py-16">
+                <span class="material-symbols-outlined text-gray-300 text-6xl mb-4">search_off</span>
+                <p class="text-gray-500 text-lg">Aradiginiz terim bulunamadi.</p>
+                <p class="text-gray-400 text-sm mt-1">Farkli bir anahtar kelime deneyin.</p>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="max-w-5xl mx-auto px-6 mt-16 mb-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-primary-50 rounded-xl p-5 text-center">
+                    <p class="font-headline text-2xl font-bold text-primary-700">{terms.length}</p>
+                    <p class="text-xs text-gray-600 mt-1">Tibbi Terim</p>
+                </div>
+                <div class="bg-mint-50 rounded-xl p-5 text-center">
+                    <p class="font-headline text-2xl font-bold text-mint-700">{sortedLetters.length}</p>
+                    <p class="text-xs text-gray-600 mt-1">Harf Grubu</p>
+                </div>
+                <div class="bg-apricot-50 rounded-xl p-5 text-center">
+                    <p class="font-headline text-2xl font-bold text-apricot-700">{terms.filter(t => t.href).length}</p>
+                    <p class="text-xs text-gray-600 mt-1">Baglantili Sayfa</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-5 text-center">
+                    <p class="font-headline text-2xl font-bold text-gray-700">{videoTerms.length}</p>
+                    <p class="text-xs text-gray-600 mt-1">Video</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Pages -->
+        <section class="max-w-5xl mx-auto px-6 mb-16">
+            <h2 class="font-headline text-2xl text-gray-900 mb-6">Ilgili Sayfalar</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="/tani-sureci" class="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary-200 transition-all block group">
+                    <span class="material-symbols-outlined text-primary-600 mb-2 text-2xl">assignment</span>
+                    <h3 class="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">Tani Sureci</h3>
+                    <p class="text-xs text-gray-500 mt-1">Infertilite degerlendirmesi adimlari</p>
+                </a>
+                <a href="/ilac-rehberi" class="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary-200 transition-all block group">
+                    <span class="material-symbols-outlined text-primary-600 mb-2 text-2xl">medication</span>
+                    <h3 class="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">Ilac Rehberi</h3>
+                    <p class="text-xs text-gray-500 mt-1">IVF ilaclari, dozajlar ve yan etkiler</p>
+                </a>
+                <a href="/tedavi-yontemleri" class="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary-200 transition-all block group">
+                    <span class="material-symbols-outlined text-primary-600 mb-2 text-2xl">biotech</span>
+                    <h3 class="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">Tedavi Yontemleri</h3>
+                    <p class="text-xs text-gray-500 mt-1">IVF, ICSI, IUI ve diger teknikler</p>
+                </a>
+                <a href="/pgt-merkezi" class="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary-200 transition-all block group">
+                    <span class="material-symbols-outlined text-primary-600 mb-2 text-2xl">microscope</span>
+                    <h3 class="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">PGT Merkezi</h3>
+                    <p class="text-xs text-gray-500 mt-1">Genetik tarama ve embriyo secimi</p>
+                </a>
+                <a href="/erkek-infertilitesi" class="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary-200 transition-all block group">
+                    <span class="material-symbols-outlined text-primary-600 mb-2 text-2xl">male</span>
+                    <h3 class="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">Erkek Infertilitesi</h3>
+                    <p class="text-xs text-gray-500 mt-1">Erkek faktor tani ve tedavi</p>
+                </a>
+                <a href="/makaleler" class="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary-200 transition-all block group">
+                    <span class="material-symbols-outlined text-primary-600 mb-2 text-2xl">library_books</span>
+                    <h3 class="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">Makaleler</h3>
+                    <p class="text-xs text-gray-500 mt-1">Terimlerin detayli aciklandigi makaleler</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Legal Disclaimer -->
+        <section class="max-w-3xl mx-auto px-6">
+            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-amber-600">info</span>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-900 mb-2">Tibbi Bilgi Notu</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Bu sozluk, tupbebek.com yayin kurulu tarafindan tibbi dogruluk acisindan incelenmistir. Sunulan bilgiler genel bilgilendirme amacidir; kisisel tibbi tani veya tedavi yerine gecmez. Saglik kararlari icin mutlaka bir hekime danisiniz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Video Modal -->
+    <VideoModal />
+
+    <Footer />
+</BaseLayout>
+
+<script is:inline>
+(function() {
+    // Video card click handlers
+    var videoCards = document.querySelectorAll('.video-term-card');
+    videoCards.forEach(function(card) {
+        card.addEventListener('click', function() {
+            var videoId = card.getAttribute('data-video-id');
+            var title = card.getAttribute('data-video-title');
+            if (videoId && window.openVideoModal) {
+                window.openVideoModal(videoId, title);
+            }
+        });
+    });
+
+    var input = document.getElementById('glossary-search');
+    var groups = document.querySelectorAll('.glossary-group');
+    var terms = document.querySelectorAll('.glossary-term');
+    var noResults = document.getElementById('no-results');
+    var status = document.getElementById('search-status');
+
+    function normalize(str) {
+        return str.toLowerCase()
+            .replace(/ı/g, 'i').replace(/ğ/g, 'g').replace(/ü/g, 'u')
+            .replace(/ş/g, 's').replace(/ö/g, 'o').replace(/ç/g, 'c');
+    }
+
+    if (input) {
+        input.addEventListener('input', function() {
+            var query = normalize(this.value.trim());
+            var visibleCount = 0;
+
+            terms.forEach(function(term) {
+                var text = normalize(term.getAttribute('data-term') || '');
+                var content = normalize(term.textContent || '');
+                var match = !query || text.indexOf(query) !== -1 || content.indexOf(query) !== -1;
+                term.style.display = match ? '' : 'none';
+                if (match) visibleCount++;
+            });
+
+            groups.forEach(function(group) {
+                var visibleTerms = group.querySelectorAll('.glossary-term:not([style*="display: none"])');
+                group.style.display = visibleTerms.length > 0 ? '' : 'none';
+            });
+
+            if (noResults) {
+                noResults.classList.toggle('hidden', visibleCount > 0 || !query);
+            }
+            if (status) {
+                if (query) {
+                    status.textContent = visibleCount + ' terim bulundu';
+                    status.classList.remove('hidden');
+                } else {
+                    status.classList.add('hidden');
+                }
+            }
+        });
+    }
+})();
+</script>

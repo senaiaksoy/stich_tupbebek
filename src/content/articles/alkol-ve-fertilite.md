@@ -2,7 +2,7 @@
 title: "Alkol ve Fertilite: Bebek Hayaliniz İçin Kadehi Bırakma Zamanı mı?"
 description: "Alkol tüketiminin kadın ve erkek üreme sağlığı üzerindeki etkileri. Tüp bebek tedavisi başarısını nasıl etkiler?"
 publishDate: 2026-03-31
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 category: "Yaşam Tarzı"
 image: "/images/articles/alkol-ve-fertilite.webp"
 imageAlt: "alkol ve fertilite kısırlık ilişkisi illüstrasyonu"
@@ -38,3 +38,4 @@ Alkol sadece kadınları değil, erkek üreme sağlığını da doğrudan etkile
 4. **Alternatifler:** Sosyal ortamlarda alkolsüz kokteyller veya bitki çayları gibi sağlıklı alternatifleri tercih edin.
 
 Bebek sahibi olma yolculuğu özveri gerektirebilir, ancak o küçük mucizeye kavuşmak için bu yaşam tarzı değişikliklerine kesinlikle değer.
+

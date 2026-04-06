@@ -24,7 +24,7 @@ Yumurta dondurma, sperm dondurma ve embriyo dondurma konularinda kapsamli bir bi
 - **Breadcrumb:** Ana Sayfa > Fertilite Koruma
 - **Baslik:** "Fertilite Koruma: *Geleceginizi* Guvence Altina Alin" (italic primary-color vurgulu)
 - **Alt metin:** 2-3 cumle — fertilitenin yasla azalmasi, modern kriyoprezervasyon teknolojisi ile koruma imkani
-- **Doktor karti:** Doc. Dr. Senai Aksoy (mevcut pattern)
+- **Doktor karti:** Doc. Yayın Kurulu (mevcut pattern)
 - **Hero gorsel:** Sag tarafta
 
 ### Sticky Quick-Nav
@@ -200,7 +200,7 @@ Yeni makale: "Kanser ve Fertilite: Onkolojik Hastalar Icin Rehber"
 ## 7. Sayfa Sonu & Destekleyici Ogeler
 
 ### Medikal Onay Karti
-- Doc. Dr. Senai Aksoy portre + isim + unvan
+- Doc. Yayın Kurulu portre + isim + unvan
 - "Bu sayfa tibbi olarak gozden gecirilmistir" notu
 - Son guncelleme tarihi
 
@@ -234,7 +234,7 @@ Mobil menude "Tedaviler" yalnizca flat bir link (`/tedavi-yontemleri`, satir 298
 - **Dosya:** `src/content/articles/yumurta-dondurma-rehberi.md`
 - **Baslik:** "Yumurta Dondurma: Surec, Basari Oranlari ve Sik Sorulan Sorular"
 - **Aciklama (description):** "Yumurta dondurma (oosit kriyoprezervasyon) sureci nasil isler? Hormonal stimulasyon, OPU, vitrifikasyon adimlari, yasa gore basari oranlari ve sik sorulan sorularin yanitlari."
-- **Yazar:** "Doc. Dr. Senai Aksoy"
+- **Yazar:** "Doc. Yayın Kurulu"
 - **Kategori:** "Tedavi"
 - **publishDate:** 2026-04-01
 - **image:** "/images/articles/yumurta-dondurma-rehberi.webp"
@@ -246,7 +246,7 @@ Mobil menude "Tedaviler" yalnizca flat bir link (`/tedavi-yontemleri`, satir 298
 - **Dosya:** `src/content/articles/kanser-ve-fertilite.md`
 - **Baslik:** "Kanser ve Fertilite: Onkolojik Hastalar Icin Rehber"
 - **Aciklama (description):** "Kanser tanisi sonrasi fertilite koruma secenekleri nelerdir? Onkolojik hastalarda yumurta, sperm ve embriyo dondurma surecleri, acil protokoller ve hasta haklari rehberi."
-- **Yazar:** "Doc. Dr. Senai Aksoy"
+- **Yazar:** "Doc. Yayın Kurulu"
 - **Kategori:** "Tedavi"
 - **publishDate:** 2026-04-01
 - **image:** "/images/articles/kanser-ve-fertilite.webp"
@@ -272,7 +272,7 @@ Mobil menude "Tedaviler" yalnizca flat bir link (`/tedavi-yontemleri`, satir 298
 
 ## 11. SEO
 
-- **`<title>`:** "Fertilite Koruma: Yumurta, Sperm ve Embriyo Dondurma | Doc. Dr. Senai Aksoy"
+- **`<title>`:** "Fertilite Koruma: Yumurta, Sperm ve Embriyo Dondurma | Doc. Yayın Kurulu"
 - **`<meta name="description">`:** "Yumurta dondurma, sperm dondurma ve embriyo dondurma hakkinda kapsamli bilgi. Onkolojik hastalarda fertilite koruma (oncofertility) secenekleri, basari oranlari ve guncel klinik veriler."
 - **JSON-LD:** BreadcrumbList (mevcut Breadcrumbs.astro patterni)
 

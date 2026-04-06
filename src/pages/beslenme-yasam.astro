@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Beslenme ve Yaşam Tarzı: Fertilite Optimizasyonu | tupbebek.com" description="IVF için beslenme rehberi, yaşam tarzı değişiklikleri, kilo yönetimi, antioksidanlar, alkol, kafein, sigara ve stres yönetimi.">
+    <Header />
+
+    <main id="main-content" tabindex="-1" class="pb-24">
+        <!-- Hero Section -->
+        <header class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 mb-20">
+            <div class="flex flex-col md:flex-row gap-12 items-start">
+                <div class="flex-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-mint-100 text-mint-700 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+                        Yaşam Tarzı Rehberi
+                    </div>
+                    <h1 class="font-headline text-5xl md:text-6xl text-gray-900 leading-tight mb-8">
+                        Beslenme ve Yaşam Tarzı: <span class="text-primary-600 italic">Fertiliteyi</span> Güçlendirmek
+                    </h1>
+                    <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border-l-4 border-primary">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                            <span class="material-symbols-outlined text-primary-600 text-2xl">verified</span>
+                        </div>
+                        <div>
+                            <p class="font-headline italic text-gray-900 text-sm">İnceleme:</p>
+                            <p class="font-bold text-primary-600">Yayın Kurulu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block w-72 shrink-0 aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-2xl">
+                    <img class="w-full h-full object-cover grayscale opacity-80" src="/images/library/tedavi/sperm_supp.webp" alt="Beslenme ve fertilite" width="512" height="512" loading="eager" fetchpriority="high"/>
+                </div>
+            </div>
+        </header>
+
+        <!-- Introduction -->
+        <section class="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 mb-16">
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-body italic mb-12">
+                Yaşam tarzı, üreme hormonlarını ve sperm/yumurta kalitesini doğrudan etkileyen dönüştürülebilir faktörlerdir. Etkiler genellikle 3-6 aydan sonra görünür, çünkü spermatogenez ve folikülogenez süreçleri birkaç ay sürer. Beslenme, kilo, fiziksel aktivite, stres yönetimi, alkol ve sigara, üreme sağlığına önemli katkı sağlayabilir veya zarar verebilir.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm border-t-2 border-primary-200">
+                    <span class="material-symbols-outlined text-primary-600 mb-3">eco</span>
+                    <h3 class="font-bold text-sm mb-2">Mediterranean</h3>
+                    <p class="text-xs text-gray-600 mb-0">Dengesiz beslenme tüketimi ile ilişkili</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm border-t-2 border-primary-200">
+                    <span class="material-symbols-outlined text-primary-600 mb-3">smoking_rooms</span>
+                    <h3 class="font-bold text-sm mb-2">Sigara & Alkol</h3>
+                    <p class="text-xs text-gray-600 mb-0">Sperm parametrelerini bozan ana faktörler</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm border-t-2 border-primary-200">
+                    <span class="material-symbols-outlined text-primary-600 mb-3">fitness_center</span>
+                    <h3 class="font-bold text-sm mb-2">Egzersiz & BMI</h3>
+                    <p class="text-xs text-gray-600 mb-0">Aşırı veya yetersiz aktivite riskleri</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Beslenme -->
+        <section id="beslenme" class="bg-gray-50 py-24 mb-24">
+            <div class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="md:w-1/2">
+                        <h2 class="font-headline text-3xl text-gray-900 mb-6">1. Beslenme ve Üreme Sağlığı</h2>
+                        <div class="space-y-4 text-gray-600">
+                            <p>
+                                Akdeniz diyeti (zeytinyağı, balık, ceviz, sebzeler, meyveler) UV ışınına karşı koruma sağlayan antioksidanları zengindir. Fosfolipitler, omega-3 yağ asitleri ve selenyum sperm fonksiyonunu destekler.
+                            </p>
+                            <div class="bg-white border-l-4 border-primary rounded-xl p-6">
+                                <h4 class="font-bold text-gray-900 text-sm mb-3">Fertiliteyi Destekleyen Besinler</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li>• <strong>Omega-3:</strong> Somon, ceviz, keten tohumu (sperm membran koruma)</li>
+                                    <li>• <strong>Cinko:</strong> Kabak çekirdeği, kırmızı et (sperm üretimi)</li>
+                                    <li>• <strong>Antiyoksidanlar:</strong> C vitamin, E, koenzim Q10 (DNA hasarını azaltır)</li>
+                                    <li>• <strong>Folik asit:</strong> Yeşil yapraklı sebzeler (DNA sentezi)</li>
+                                    <li>• <strong>Selenyum:</strong> Fındık, yumurta (sperm motilite)</li>
+                                </ul>
+                            </div>
+                            <p>
+                                Yüksek şeker ve işlenmiş gıdalar renal inflamasyonu artıran faktörlerdir. <a href="/makaleler/alkol-ve-fertilite" class="text-primary-600 hover:underline">Alkol tüketimi</a> testosteron seviyelerini düşürebilir ve sperm kalitesini etkileyebilir.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative group">
+                            <img class="rounded-2xl shadow-xl w-full" src="/images/library/laboratuvar/microbiota.webp" alt="Beslenme ve fertilite" width="512" height="512" loading="lazy"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Yaşam Tarzı -->
+        <section id="yasam" class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 mb-24">
+            <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="font-headline text-3xl text-gray-900 mb-6">2. Kilo, Egzersiz ve Stres Yönetimi</h2>
+                    <div class="space-y-4 text-gray-600">
+                        <p>
+                            <strong>BMI:</strong> Hem obezite (BMI &gt;30) hem de çok düşük kilo (BMI &lt;18) ovülasyonu durabilir. Düzenli döngü için ideal BMI 19-24 aralığıdır.
+                        </p>
+                        <p>
+                            <strong>Egzersiz:</strong> Orta şiddetli egzersiz (dolaşma, yüzme, yoga) avantajlıdır; ancak yoğun antrenman (maraton, profesyonel spor) hipogonadizme yol açabilir. Kadınlarda &lt;5 saat/yüksek şiddet + &lt;1 saat/olgunluk &lt;50 yüzdeli düzenli yakıt kullanımı düşük sperm sayısı ile ilişkilidir.
+                        </p>
+                        <p>
+                            <strong>Sigara:</strong> DNA fragmentasyonu artırır, motiliteyi ve morfolojiyi bozar. <a href="/makaleler/izotretinoin-sperm" class="text-primary-600 hover:underline">İzotretinoin</a> gibi ilaçlar da sperm üretimini baskılayabilir.
+                        </p>
+                        <p>
+                            <strong>Stres Yönetimi:</strong> Kronik stres kortizol seviyelerini yükseltir ve hipotalamik-hipofizer-amenKORTIKal ekseni baskılayarak sperm üretimini azaltabilir.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative group">
+                        <img class="rounded-2xl shadow-xl w-full" src="/images/library/hastalik/opkveivf.webp" alt="Yaşam tarzı faktörleri" width="512" height="512" loading="lazy"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Pages -->
+        <section class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 mb-16">
+            <h2 class="font-headline text-2xl text-gray-900 mb-6">İlgili Sayfalar</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/kadin-infertilitesi" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
+                    <span class="material-symbols-outlined text-primary-600 mb-2">woman</span>
+                    <h3 class="font-bold text-gray-900 text-sm">Kadın İnfertilitesi</h3>
+                    <p class="text-xs text-gray-600 mt-1">Hormonal ve anatomik faktörler</p>
+                </a>
+                <a href="/erkek-infertilitesi" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
+                    <span class="material-symbols-outlined text-primary-600 mb-2">man</span>
+                    <h3 class="font-bold text-gray-900 text-sm">Erkek İnfertilitesi</h3>
+                    <p class="text-xs text-gray-600 mt-1">Yaşam tarzı etkileri ve tedaviler</p>
+                </a>
+                <a href="/tibbi-sozluk" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
+                    <span class="material-symbols-outlined text-primary-600 mb-2">menu_book</span>
+                    <h3 class="font-bold text-gray-900 text-sm">Tıbbi Sözlük</h3>
+                    <p class="text-xs text-gray-600 mt-1">Hormon ve terminoloji rehberi</p>
+                </a>
+                <a href="/psikolojik-destek" class="border rounded-xl p-6 hover:shadow-lg transition-shadow block">
+                    <span class="material-symbols-outlined text-primary-600 mb-2">psychology</span>
+                    <h3 class="font-bold text-gray-900 text-sm">Psikolojik Destek</h3>
+                    <p class="text-xs text-gray-600 mt-1">Stres yönetimi ve duygusal sağlık</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Doktor Onay -->
+        <section class="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 mb-16">
+            <div class="bg-gray-50 p-8 rounded-2xl border-l-4 border-primary flex flex-col md:flex-row items-center gap-8">
+                <div class="w-20 h-20 rounded-full overflow-hidden bg-gray-200 shrink-0">
+                    <span class="material-symbols-outlined text-primary-600 text-2xl">verified</span>
+                </div>
+                <div>
+                    <p class="font-headline text-lg text-gray-900 mb-1">Yayın Kurulu</p>
+                    <p class="text-sm text-gray-600">
+                        Bu rehber, üreme sağlığı alanında uzman <strong class="text-primary-600">tupbebek.com yayın kurulu</strong> tarafından tıbbi açıdan incelenmiş ve onaylanmıştır.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Yasal Uyarı -->
+        <section class="max-w-3xl mx-auto px-4 md:px-6 lg:px-8">
+            <div class="bg-amber-50/50 border border-amber-200/50 rounded-xl p-6 text-sm text-gray-600">
+                <p><strong class="text-gray-900">Yasal Uyarı:</strong> Bu içerik genel bilgilendirme amaçlıdır. Beslenme ve ilaç takviyesi için profesyonel danışmanlık alın. Doktorunuzun önerileri yerine geçmez.</p>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</BaseLayout>

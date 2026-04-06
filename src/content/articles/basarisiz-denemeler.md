@@ -2,10 +2,10 @@
 title: "Başarısız Denemeler ve Psikolojik Destek: Yeni Bir Yol Haritası"
 description: "Tüp bebek tedavisinde olumsuz sonuç almak, yolun sonu değil, stratejinin yeniden kurgulandığı bir duraktır. Bilimsel ve duygusal olarak nasıl ilerlenmeli?"
 category: "Rehber"
-author: "Doç. Dr. Senai Aksoy"
+author: "tupbebek.com Yayın Kurulu"
 publishDate: 2024-03-31
-image: "/images/home/integrity.jpg"
-imageAlt: "Klinik dürüstlük ve destek vurgulayan tıbbi görsel"
+image: "/images/library/embriyo/yumurta_dna_kalitesi.webp"
+imageAlt: "Embriyo DNA kalitesi ve başarısız deneme analizi"
 ---
 
 Tüp bebek tedavisinde negatif sonuç almak, çiftler için en zorlu deneyimlerden biridir. Ancak modern üreme tıbbında, her başarısız deneme bir sonraki adım için kritik veriler sunar.
@@ -26,3 +26,4 @@ Başarısızlık sonrası biz ne yapıyoruz?
 - **Yaşam Tarzı Optimizasyonu:** Beslenmeden stres yönetimine kadar 3 aylık bir hazırlık dönemi.
 
 Unutmayın; bilim, her "olmadı" dediğinde bir sonraki "olacak" için yeni bir kapı aralar.
+

@@ -1,0 +1,150 @@
+---
+// EmptyStates.astro
+// Reusable empty state components
+// Usage: <EmptyStates type="no-results" query="xyz" />
+
+export interface Props {
+  type: 'no-results' | 'no-articles' | 'no-filters' | 'error' | 'offline';
+  query?: string;
+  icon?: string;
+  title?: string;
+  description?: string;
+  actionText?: string;
+  actionUrl?: string;
+}
+
+const {
+  type = 'no-results',
+  query = '',
+  icon,
+  title,
+  description,
+  actionText = 'Geri Dön',
+  actionUrl = '/'
+} = Astro.props;
+
+const defaultStates = {
+  'no-results': {
+    icon: 'article',
+    title: 'Sonuç Bulunamadı',
+    description: query
+      ? `"${query}" için eşleşen makale bulunamadı. Farklı bir terim deneyin.`
+      : 'Aradığınız içerik bulunamadı.',
+    actionText: 'Tüm Makaleleri Gör',
+    actionUrl: '/makaleler'
+  },
+  'no-articles': {
+    icon: 'library_books',
+    title: 'Henüz Makale Yok',
+    description: 'Bu kategoride henüz makale eklenmemiş. Lütfen daha sonra tekrar kontrol edin.',
+    actionText: 'Diğer Makaleleri Keşfet',
+    actionUrl: '/makaleler'
+  },
+  'no-filters': {
+    icon: 'tune',
+    title: 'Filtre Sonucu Yok',
+    description: 'Seçilen filtrelerle eşleşen içerik bulunamadı. Filtreleri değiştirmeyi deneyin.',
+    actionText: 'Filtreleri Temizle',
+    actionUrl: '#'
+  },
+  'error': {
+    icon: 'error',
+    title: 'Bir Hata Oluştu',
+    description: 'Sayfayı yüklerken bir problem yaşandı. Lütfen tekrar deneyin.',
+    actionText: 'Sayfayı Yenile',
+    actionUrl: '#'
+  },
+  'offline': {
+    icon: 'cloud_off',
+    title: 'İnternet Bağlantısı Yok',
+    description: 'Lütfen internet bağlantınızı kontrol edin ve tekrar deneyin.',
+    actionText: 'Tekrar Dene',
+    actionUrl: '#'
+  }
+};
+
+const state = defaultStates[type];
+const finalIcon = icon || state.icon;
+const finalTitle = title || state.title;
+const finalDescription = description || state.description;
+---
+
+<div class="flex items-center justify-center min-h-[400px] p-8">
+  <div class="text-center max-w-md">
+    <!-- Icon -->
+    <div class="mb-6 flex justify-center">
+      <div class="relative">
+        <div class="absolute inset-0 bg-primary-50 rounded-full blur-2xl"></div>
+        <span class="material-symbols-outlined text-6xl text-primary-600 relative">
+          {finalIcon}
+        </span>
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h2 class="text-3xl font-headline font-bold text-gray-900 mb-4">
+      {finalTitle}
+    </h2>
+
+    <!-- Description -->
+    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+      {finalDescription}
+    </p>
+
+    <!-- Action Button -->
+    {type === 'error' ? (
+      <button
+        onclick="location.reload()"
+        class="px-8 py-3 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-700
+               transition-all focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2">
+        {actionText}
+      </button>
+    ) : type === 'no-filters' ? (
+      <button
+        onclick="document.querySelectorAll('[data-filter]').forEach(el => el.checked = false); location.hash = '#';"
+        class="px-8 py-3 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-700
+               transition-all focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2">
+        {actionText}
+      </button>
+    ) : type === 'offline' ? (
+      <button
+        onclick="location.reload()"
+        class="px-8 py-3 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-700
+               transition-all focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2">
+        {actionText}
+      </button>
+    ) : (
+      <a href={actionUrl}
+         class="inline-block px-8 py-3 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-700
+                transition-all focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2">
+        {actionText}
+      </a>
+    )}
+
+    <!-- Secondary action for some states -->
+    {(type === 'no-results' || type === 'error') && (
+      <div class="mt-6 text-sm text-gray-500">
+        <p>Yardıma ihtiyacın var mı?</p>
+        <a href="/sss"
+           class="text-primary-600 hover:underline font-semibold">
+          Sıkça Sorulan Sorulara Bak
+        </a>
+      </div>
+    )}
+  </div>
+</div>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .material-symbols-outlined {
+    animation: float 3s ease-in-out infinite;
+  }
+</style>

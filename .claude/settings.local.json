@@ -7,7 +7,12 @@
       "Bash(git commit -m ':*)",
       "Bash(git restore:*)",
       "Bash(git commit:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(code test-auto.txt)",
+      "Bash(\"D:\\\\Microsoft VS Code\\\\code.exe\" --reuse-window test-auto.txt)",
+      "Bash(\"D:\\\\Microsoft VS Code\\\\bin\\\\code.exe\" test-auto.txt)",
+      "WebFetch(domain:www.healthline.com)",
+      "WebFetch(domain:dashboard.cloudflare.com)"
     ]
   }
 }

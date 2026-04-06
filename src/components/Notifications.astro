@@ -1,0 +1,262 @@
+---
+// Notifications.astro & Toast System
+// Reusable notification/toast components
+// Usage: <Notifications type="success" message="Saved!" duration={3000} />
+
+export interface Props {
+  type?: 'success' | 'error' | 'warning' | 'info';
+  message: string;
+  duration?: number;
+  closable?: boolean;
+  position?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center';
+  id?: string;
+}
+
+const {
+  type = 'info',
+  message,
+  duration = 4000,
+  closable = true,
+  position = 'top-right',
+  id = Math.random().toString(36).substr(2, 9)
+} = Astro.props;
+
+const iconMap = {
+  success: 'check_circle',
+  error: 'cancel',
+  warning: 'warning',
+  info: 'info'
+};
+
+const colorMap = {
+  success: {
+    bg: 'bg-emerald-50',
+    text: 'text-emerald-900',
+    icon: 'text-emerald-600',
+    border: 'border-emerald-200'
+  },
+  error: {
+    bg: 'bg-red-50',
+    text: 'text-red-900',
+    icon: 'text-red-600',
+    border: 'border-red-200'
+  },
+  warning: {
+    bg: 'bg-amber-50',
+    text: 'text-amber-900',
+    icon: 'text-amber-600',
+    border: 'border-amber-200'
+  },
+  info: {
+    bg: 'bg-blue-50',
+    text: 'text-blue-900',
+    icon: 'text-blue-600',
+    border: 'border-blue-200'
+  }
+};
+
+const colors = colorMap[type];
+const positionClass = {
+  'top-right': 'top-4 right-4',
+  'top-left': 'top-4 left-4',
+  'bottom-right': 'bottom-4 right-4',
+  'bottom-left': 'bottom-4 left-4',
+  'top-center': 'top-4 left-1/2 -translate-x-1/2'
+}[position];
+---
+
+<!-- Toast Container (for multiple toasts) -->
+<div id="toast-container" class="fixed z-[9999] pointer-events-none max-w-md">
+  <!-- Toasts will be inserted here by JS -->
+</div>
+
+<!-- Single Notification (for inline usage) -->
+<div
+  id={`notification-${id}`}
+  class="notification fixed {positionClass} z-[9999] animate-slide-in
+         {colors.bg} {colors.border} border rounded-xl shadow-lg
+         flex items-start gap-4 p-4 max-w-sm pointer-events-auto"
+  role="alert"
+  aria-live={type === 'error' ? 'assertive' : 'polite'}>
+
+  <!-- Icon -->
+  <span class="material-symbols-outlined {colors.icon} flex-shrink-0 mt-0.5">
+    {iconMap[type]}
+  </span>
+
+  <!-- Message -->
+  <div class="flex-1 {colors.text} text-sm font-medium">
+    {message}
+  </div>
+
+  <!-- Close Button -->
+  {closable && (
+    <button
+      onclick={`document.getElementById('notification-${id}').remove()`}
+      class="flex-shrink-0 {colors.icon} hover:opacity-75 transition-opacity
+             focus:outline-none focus:ring-2 focus:ring-offset-2"
+      aria-label="Close notification">
+      <span class="material-symbols-outlined text-xl">close</span>
+    </button>
+  )}
+</div>
+
+<style>
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  .animate-slide-out {
+    animation: slideOut 0.3s ease-in forwards;
+  }
+
+  .notification {
+    animation: slideIn 0.3s ease-out;
+  }
+</style>
+
+<script define:vars={{ id, duration, closable, type }}>
+  // Auto-remove notification after duration
+  if (duration > 0) {
+    const notif = document.getElementById(`notification-${id}`);
+    const timeout = setTimeout(() => {
+      if (notif) {
+        notif.classList.add('animate-slide-out');
+        setTimeout(() => notif.remove(), 300);
+      }
+    }, duration);
+
+    // Clear timeout if manually closed
+    if (closable) {
+      const closeBtn = notif?.querySelector('button');
+      closeBtn?.addEventListener('click', () => clearTimeout(timeout));
+    }
+  }
+</script>
+
+---
+
+<!-- Global Toast System (Use in BaseLayout) -->
+
+<script>
+  // Utility functions for global toast notifications
+  // Usage: showToast('Success!', 'success', 3000)
+
+  window.showToast = function(
+    message: string,
+    type: 'success' | 'error' | 'warning' | 'info' = 'info',
+    duration: number = 4000,
+    position: string = 'top-right'
+  ) {
+    const container = document.getElementById('toast-container') || createToastContainer();
+    const toastId = 'toast-' + Math.random().toString(36).substr(2, 9);
+
+    const colorMap = {
+      success: {
+        bg: 'bg-emerald-50',
+        text: 'text-emerald-900',
+        icon: 'text-emerald-600 check_circle',
+        border: 'border-emerald-200'
+      },
+      error: {
+        bg: 'bg-red-50',
+        text: 'text-red-900',
+        icon: 'text-red-600 cancel',
+        border: 'border-red-200'
+      },
+      warning: {
+        bg: 'bg-amber-50',
+        text: 'text-amber-900',
+        icon: 'text-amber-600 warning',
+        border: 'border-amber-200'
+      },
+      info: {
+        bg: 'bg-blue-50',
+        text: 'text-blue-900',
+        icon: 'text-blue-600 info',
+        border: 'border-blue-200'
+      }
+    };
+
+    const colors = colorMap[type];
+
+    const toast = document.createElement('div');
+    toast.id = toastId;
+    toast.className = `toast bg-white rounded-xl shadow-lg border flex items-start gap-4 p-4 mb-3
+                      max-w-sm animate-slide-in ${colors.bg} ${colors.border} ${colors.text}`;
+    toast.role = 'alert';
+    toast.setAttribute('aria-live', type === 'error' ? 'assertive' : 'polite');
+
+    // Create toast content
+    const [iconClass, iconName] = colors.icon.split(' ');
+    toast.innerHTML = `
+      <span class="material-symbols-outlined ${iconClass} flex-shrink-0 mt-0.5">
+        ${iconName}
+      </span>
+      <div class="flex-1 text-sm font-medium">${message}</div>
+      <button class="flex-shrink-0 hover:opacity-75 transition-opacity focus:outline-none"
+              aria-label="Close" onclick="this.closest('.toast').remove()">
+        <span class="material-symbols-outlined text-xl">close</span>
+      </button>
+    `;
+
+    container.appendChild(toast);
+
+    // Auto-remove after duration
+    if (duration > 0) {
+      setTimeout(() => {
+        toast.classList.add('animate-slide-out');
+        setTimeout(() => toast.remove(), 300);
+      }, duration);
+    }
+
+    return toastId;
+  };
+
+  // Utility to show error toast
+  window.showError = function(message: string, duration: number = 5000) {
+    return window.showToast(message, 'error', duration);
+  };
+
+  // Utility to show success toast
+  window.showSuccess = function(message: string, duration: number = 3000) {
+    return window.showToast(message, 'success', duration);
+  };
+
+  // Helper to create container if it doesn't exist
+  function createToastContainer() {
+    const container = document.createElement('div');
+    container.id = 'toast-container';
+    container.className = 'fixed z-[9999] pointer-events-none max-w-md';
+    // Position can be set via data attribute or CSS
+    document.body.appendChild(container);
+    return container;
+  }
+
+  // Make sure container exists on page load
+  if (!document.getElementById('toast-container')) {
+    createToastContainer();
+  }
+</script>
