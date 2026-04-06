@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="IVF (Tüp Bebek) Rehberi | tupbebek.com" description="Tüp bebek tedavisi hakkında adım adım rehber: hazırlık, yumurta toplama, embriyo transferi, bekleme süreci ve başarı oranları.">
+    <Header />
+
+    <main id="main-content" tabindex="-1" class="pt-20">
+        <!-- Hero -->
+        <header class="bg-surface-container-low pt-24 pb-20 px-4 md:px-8">
+            <div class="max-w-4xl mx-auto">
+                <nav class="flex items-center gap-2 mb-6 text-sm text-on-surface-variant font-label">
+                    <a href="/">Anasayfa</a>
+                    <span class="material-symbols-outlined text-sm">chevron_right</span>
+                    <a href="/tedavi-yontemleri">Tedavi Yöntemleri</a>
+                    <span class="material-symbols-outlined text-sm">chevron_right</span>
+                    <span>IVF Rehberi</span>
+                </nav>
+                <h1 class="font-headline text-4xl md:text-5xl font-bold text-on-surface leading-tight mb-6">
+                    Tüp Bebek (IVF) <span class="text-primary">Adım Adım Rehber</span>
+                </h1>
+                <p class="text-lg text-on-surface-variant leading-relaxed max-w-3xl">
+                    In vitro fertilizasyon (IVF), yumurta ve spermin laboratuvar ortamında birleştirilerek oluşan embriyonun rahim içine yerleştirilmesi işlemidir. Bu rehber, tedavi sürecini baştan sona anlatmaktadır.
+                </p>
+            </div>
+        </header>
+
+        <!-- İçerik -->
+        <div class="max-w-4xl mx-auto px-4 md:px-8 py-16 space-y-16">
+
+            <!-- Kimler İçin Uygundur -->
+            <section>
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-primary text-2xl">people</span>
+                    <h2 class="font-headline text-2xl font-bold text-on-surface">IVF Kimlere Uygulanır?</h2>
+                </div>
+                <div class="bg-surface-container-lowest border border-outline-variant/15 rounded-2xl p-8">
+                    <ul class="space-y-4 text-on-surface-variant">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-tertiary mt-0.5 text-lg">check_circle</span>
+                            <span>Tüp tıkanıklığı veya ciddi hasarı olan kadınlar</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-tertiary mt-0.5 text-lg">check_circle</span>
+                            <span>Orta-ağır erkek faktörü infertilitesi (düşük sperm sayısı veya motilitesi)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-tertiary mt-0.5 text-lg">check_circle</span>
+                            <span>Endometriozis kaynaklı infertilite</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-tertiary mt-0.5 text-lg">check_circle</span>
+                            <span>Açıklanamayan infertilite (diğer tedavilere yanıt alınamadığında)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-tertiary mt-0.5 text-lg">check_circle</span>
+                            <span>Azalmış over rezervi</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-tertiary mt-0.5 text-lg">check_circle</span>
+                            <span>Genetik tarama gereksinimi olan çiftler (PGT ile birlikte)</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Tedavi Aşamaları -->
+            <section>
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-primary text-2xl">timeline</span>
+                    <h2 class="font-headline text-2xl font-bold text-on-surface">Tedavi Aşamaları</h2>
+                </div>
+
+                <div class="space-y-6">
+                    {[
+                        { step: "1", icon: "clinical_notes", title: "Ön Değerlendirme ve Planlama", desc: "Hormon testleri (FSH, AMH, E2), ultrason ile antral folikül sayımı, sperm analizi ve gerekirse histeroskopi yapılır. Sonuçlara göre kişiye özel tedavi protokolü belirlenir." },
+                        { step: "2", icon: "medication", title: "Over Stimülasyonu (8-14 Gün)", desc: "Gonadotropin iğneleri ile yumurtalıkların uyarılması başlar. Düzenli ultrason ve kan testi takipleriyle folikül büyümesi izlenir. Foliküller yeterli büyüklüğe ulaştığında tetikleme iğnesi (hCG veya GnRH agonist) yapılır." },
+                        { step: "3", icon: "egg", title: "Yumurta Toplama (OPU)", desc: "Tetikleme iğnesinden 34-36 saat sonra, hafif sedasyon altında transvajinal ultrason eşliğinde yumurtalar toplanır. İşlem yaklaşık 15-20 dakika sürer." },
+                        { step: "4", icon: "science", title: "Döllenme ve Embriyo Kültürü", desc: "Toplanan yumurtalar aynı gün sperm ile birleştirilir. Klasik IVF veya ICSI (mikroenjeksiyon) yöntemi kullanılır. Embriyolar 3-5 gün boyunca laboratuvarda kültüre edilir." },
+                        { step: "5", icon: "transfer_within_a_station", title: "Embriyo Transferi", desc: "En kaliteli embriyo(lar) ince bir kateter ile rahim içine yerleştirilir. İşlem ağrısızdır ve anestezi gerektirmez. Güncel kılavuzlar tek embriyo transferini önerir." },
+                        { step: "6", icon: "monitor_heart", title: "Bekleme Süreci ve Beta-hCG", desc: "Transferden 12-14 gün sonra kan testi (beta-hCG) ile gebelik kontrolü yapılır. Bu süreçte progesteron desteği uygulanır." }
+                    ].map(item => (
+                        <div class="flex gap-6 items-start">
+                            <div class="shrink-0 w-14 h-14 rounded-2xl bg-primary-container flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-xl">{item.icon}</span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline text-lg font-bold text-on-surface mb-2">
+                                    <span class="text-primary mr-2">Adım {item.step}:</span>{item.title}
+                                </h3>
+                                <p class="text-on-surface-variant leading-relaxed">{item.desc}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <!-- Başarı Oranları -->
+            <section>
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-primary text-2xl">trending_up</span>
+                    <h2 class="font-headline text-2xl font-bold text-on-surface">Başarı Oranları</h2>
+                </div>
+                <div class="bg-primary-container/30 border border-primary/10 rounded-2xl p-8">
+                    <p class="text-on-surface-variant leading-relaxed mb-4">
+                        IVF başarı oranları yaş, over rezervi, infertilite nedeni ve embriyo kalitesine göre değişkenlik gösterir. Genel olarak:
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-1">%40-50</div>
+                            <div class="text-sm text-on-surface-variant">35 yaş altı</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-1">%25-35</div>
+                            <div class="text-sm text-on-surface-variant">35-40 yaş arası</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-1">%10-20</div>
+                            <div class="text-sm text-on-surface-variant">40 yaş üstü</div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-6 italic">
+                        Bu oranlar genel literatür verilerine dayanmaktadır. Bireysel başarı oranları doktorunuz tarafından değerlendirilmelidir.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sık Sorulan Sorular -->
+            <section>
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-primary text-2xl">help</span>
+                    <h2 class="font-headline text-2xl font-bold text-on-surface">Sık Sorulan Sorular</h2>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-surface-container-lowest border border-outline-variant/15 rounded-xl p-6">
+                        <h3 class="font-bold text-on-surface mb-2">IVF tedavisi ağrılı mıdır?</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Yumurta toplama işlemi sedasyon altında yapıldığı için ağrı hissedilmez. İğne uygulamaları hafif bir batma hissi verebilir. Embriyo transferi genellikle ağrısızdır.</p>
+                    </div>
+                    <div class="bg-surface-container-lowest border border-outline-variant/15 rounded-xl p-6">
+                        <h3 class="font-bold text-on-surface mb-2">Kaç embriyo transfer edilmelidir?</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Güncel tıbbi kılavuzlar, çoğul gebelik riskini azaltmak için tek embriyo transferini (eSET) önermektedir. Doktorunuz yaş ve embriyo kalitesine göre en uygun sayıyı belirleyecektir.</p>
+                    </div>
+                    <div class="bg-surface-container-lowest border border-outline-variant/15 rounded-xl p-6">
+                        <h3 class="font-bold text-on-surface mb-2">Transfer sonrası yatak istirahati gerekli midir?</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Güncel kanıtlar, transfer sonrası uzun süreli yatak istirahatinin gerekli olmadığını göstermektedir. Normal günlük aktivitelere devam edilebilir; ancak ağır egzersizden kaçınılması önerilir.</p>
+                    </div>
+                    <div class="bg-surface-container-lowest border border-outline-variant/15 rounded-xl p-6">
+                        <h3 class="font-bold text-on-surface mb-2">IVF kaç kez denenebilir?</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Tıbbi bir üst sınır yoktur. Ancak her deneme sonrası doktorunuz tedavi yanıtını değerlendirecek ve en uygun stratejiyi birlikte belirleyeceksiniz. Araştırmalar, kümülatif başarı oranının 3-6 siklusa kadar artmaya devam ettiğini göstermektedir.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="bg-surface-container-low border border-outline-variant/15 rounded-2xl p-8 md:p-12 text-center">
+                <span class="material-symbols-outlined text-primary text-4xl mb-4 block">medical_information</span>
+                <h2 class="font-headline text-2xl font-bold text-on-surface mb-4">Tedavi Sürecinize Hazır Olun</h2>
+                <p class="text-on-surface-variant leading-relaxed max-w-2xl mx-auto mb-6">
+                    Her hastanın tedavi süreci farklıdır. Kişiye özel değerlendirme için doktorunuzla görüşmenizi öneririz.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/tedavi-yontemleri" class="px-6 py-3 bg-primary text-on-primary rounded-xl font-semibold text-sm hover:bg-primary-dim transition-colors inline-flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg">arrow_back</span>
+                        Tüm Tedavi Yöntemleri
+                    </a>
+                    <a href="/makaleler/basari-oranlari" class="px-6 py-3 bg-surface-container-lowest border border-outline-variant/30 text-on-surface rounded-xl font-semibold text-sm hover:bg-surface-container transition-colors inline-flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg">insights</span>
+                        Başarı Oranları Makalesi
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <Footer />
+</BaseLayout>
